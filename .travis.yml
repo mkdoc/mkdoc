@@ -15,8 +15,9 @@ deploy:
   provider: npm
   email: freeformsystems@gmail.com
   api_key:
-    secure: XVWxCABsJRH/K+BXjYoMGCwKZJLn+WSFvRglnjnDf8KMFTvxiB+22KiIwYMu0o+0+ko2XayOMsQG8VCGkLVjrye61mM9KqVlIQsz/f6fKER2luXNoAqgU5YwmBfVdfOyltImFj8DDPwInj0XcqNFP8r1U1HpNpdXp3fOjV4nT/UDDPotX3N0RJV3hkzG+wwVUEs1KvVm1U9+q4gFFMC6OZNdv/1oNSPCxm1I7jfg4CMfsR8UL4E8pFntXCJLUoY1ylxROI2brC9EOxW+n6exSnz8UC/Ze5JUED+49YUV3f4tsAuiqQoICzIJOwnQZNM12sgVCP/jkhK4VP+k+mgOYHpIA5n35PLPsdeBUgDWTzWeUhdt/xWH1B/IPIWNVDU+OnfMuLoazmjD3CCOHwO5kB80G2LjWSvJXh6/1A4XpqsdpfqOp+FC/dwKRBW+CNcoOufpWviBnTLuqHAcwI3ui9uNQW12CFtIKuKJCJ2fstcdujZ92YWLQw6kGLgb/gzWMf8W7TIdaXIxMjte5Nx9PXnXR6CQ0w0zb0ebwHAWQY5U7a88Dj+5bGthgRZDG/Zo59OBDoVIZRsC0USDzFfq7Mx5Fpfb6XHNOcMQmkTAO7uEcBfnhPzZKkIaLu9Pr/ZnM44sFGWZ5ptyTOVD1xPpqbnHvvmUSsSTobAEKvc8T2A=
+    secure: tk6Isorb+c7d08GpDIoJmZWU7jfuzt1F5saXiASbm7nACuWb2lWOxJQ0DVgizBdLhcyWddHcUMMLf36LB1HFRZeIt88kVlToNmED/dOz+x703suEQVQvRXV517DKzzC50gvF650FzvJ/dwHJaGFWtJlEi0J++FVSOpti+ajvwE1iwl6yJ3g7bdo6AnTXmb6ozT6cr1ux5mw72c3fFYN9lsJtn++sleQbZbRGaCQPFwZX7T4oW1nF+A5WTfJHqBCPSLAsCN53Po/H7mQ1koqxoApcKKfNmHyp+jirwp5YaiSKPqkdm4P+OJTFXsKB9tOJtGzkO/rCGZ0n0+64c0LUIcSRtp/pZSV84EDnDcBavcryUW++ljVxQ8pvBCzBDWVmSqE2rM0sAKC8UxFZwJpnjVsBEU9TDa/sy3A2uQIl7IW3dvb+Kwd+nNi3N/zCS/zTlNf8SXAMWihCs9F/ylyITX1o4gerj07+qUvCeX+F1qFfXBg/6JrOZ33iu/CekR5ZIDtr1ri7gorbkBoG5kxWrGDsNzomTAD1fXIczwwuOlmCi1+bpMAkKCLWLjZAuU/CkCCmmqZJ/7mr6i8wHOeHiwEN1e5dCeMdPQZ1QjdVeDNsXxuE1OH8qbTQ9yYpvzV1kbK7Wvcry6dnrGzbuhZBbxq2LtVE1GW42YKD9/+Glik=
   on:
     tags: true
-    repo: tmpfs/mkapi
+    repo: mkdoc/mkdoc
+    branch: develop
     node: '4.1'
