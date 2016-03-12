@@ -1,0 +1,5 @@
+node_modules
+coverage
+target
+test/fixtures
+test/fixtures/full.js

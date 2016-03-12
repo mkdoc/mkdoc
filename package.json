@@ -1,0 +1,72 @@
+{
+  "name": "mkdoc",
+  "version": "1.0.0",
+  "description": "Markdown processing tools",
+  "author": "muji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkdoc/mkdoc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkdoc/mkdoc.git"
+  },
+  "keywords": [
+    "markdown",
+    "commonmark",
+    "docs",
+    "documentation",
+    "comments",
+    "api",
+    "generator"
+  ],
+  "directories": {
+    "bin": "./bin"
+  },
+  "dependencies": {
+    "cli-argparse": "~1.1.1",
+    "mkapi": "~1.1.0",
+    "string-repeater": "~1.0.3"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "coveralls": "~2.11.8",
+    "istanbul": "~0.4.2",
+    "mocha": "~2.4.5"
+  },
+  "scripts": {
+    "clean": "rm -rf coverage target",
+    "readme": "mdp --force -v",
+    "lint": "jshint . && jscs .",
+    "test": "NODE_env=test mocha ${SPEC:-test/spec}",
+    "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "mdp": {
+    "title": "Markdown Tools",
+    "pedantic": true,
+    "include": "doc/readme",
+    "require": "lib",
+    "links": "links.md",
+    "toc": "Table of Contents",
+    "base": "https://github.com/mkdoc/mkdoc",
+    "partial": [
+      {
+        "inc": [
+          "introduction.md",
+          "install.md"
+        ]
+      },
+      {
+        "title": "Usage",
+        "bin": "./bin/mkapi -h",
+        "type": "code"
+      },
+      {
+        "inc": [
+          "developer.md"
+        ]
+      }
+    ]
+  }
+}
