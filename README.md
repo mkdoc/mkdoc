@@ -18,7 +18,7 @@ Markdown Tools
 [<img src="http://img.shields.io/npm/v/mkdoc.svg?v=2" alt="npm version">](https://npmjs.org/package/mkdoc)
 [<img src="https://coveralls.io/repos/mkdoc/mkdoc/badge.svg?branch=master&service=github&v=2" alt="Coverage Status">](https://coveralls.io/github/mkdoc/mkdoc?branch=master).
 
-Command line interfaces to the mkdoc suite of tools.
+Command line interfaces to the suite of markdown processing tools.
 
 ## Install
 
