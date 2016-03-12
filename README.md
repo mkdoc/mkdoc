@@ -42,7 +42,7 @@ mkapi [options] [files...]
   -h, --help           Display this help and exit.
   --version            Print the version and exit.
 
-Report bugs to https://github.com/tmpfs/mdapi/issues
+Report bugs to https://github.com/mkdoc/mkapi/issues
 ```
 
 ## Developer
