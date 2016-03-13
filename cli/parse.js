@@ -1,26 +1,5 @@
-//var parser = require('../index')
-  //, json = Boolean(~process.argv.indexOf('--json'))
-  //, opts = {dotted: true}
-  //, stream = parser.load(process.argv[2], opts);
-
-//if(!json) {
-  //stream.on('comment', function(comment) {
-    //console.dir(comment)
-  //});
-//}else{
-  //stream = stream.stringify(parseInt(process.env.INDENT), true);
-  //stream.pipe(process.stdout);
-//}
-
-//stream.on('end', function() {
-  ////console.dir('ended');
-//});
-
-//stream.on('finish', function() {
-  ////console.dir('finished');
-//});
-
 var mkparse = require('mkparse')
+  , Collator = require('mkparse/lib/collator')
   , parser = require('cli-argparse')
   , usage = require('./usage')
   , version = require('./version')
@@ -48,7 +27,7 @@ var mkparse = require('mkparse')
   , pkg = require('mkparse/package.json');
 
 /**
- *  Write AST to a renderer.
+ *  Parse comments in files.
  */
 function cli(argv, cb) {
 
@@ -83,10 +62,16 @@ function cli(argv, cb) {
     if(!file) {
       return cb();  
     } 
-    var stream = mkparse.load(file, opts, next);
+    var stream = mkparse.load(file, opts, next)
+      , collator;
+
     if(args.flags.json) {
-      stream = stream.stringify(parseInt(process.env.INDENT), true);
+      stream = stream.stringify(
+        parseInt(args.options.indent) || 0, args.flags.comment);
       stream.pipe(process.stdout);
+    }else{
+      collator = new Collator(opts);      
+      stream.pipe(collator).pipe(process.stdout);
     }
   }
 
