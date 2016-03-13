@@ -4,6 +4,7 @@ var mkparse = require('mkparse')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
+      '-c, --content': 'Print non-comment content.',
       '-d, --dotted': 'Parse dotted names.',
       '-j, --json': 'Print comments as JSON.',
       '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 0).',
@@ -12,12 +13,13 @@ var mkparse = require('mkparse')
     }
   , hints = {
       flags: [
-        '--dotted'
+        '--dotted', '--content'
       ],
       options: [
         '-i'
       ],
       alias: {
+        '-c --content': 'content',
         '-j --json': 'json',
         '-i --indent': 'indent',
         '-h --help': 'help',
@@ -48,6 +50,7 @@ function cli(argv, cb) {
 
   opts.files = args.unparsed;
   opts.output = process.stdout;
+  opts.content = Boolean(args.flags.content);
 
   if(args.flags.help) {
     usage(pkg, options);
@@ -67,11 +70,11 @@ function cli(argv, cb) {
 
     if(args.flags.json) {
       stream = stream.stringify(
-        parseInt(args.options.indent) || 0, args.flags.comment);
-      stream.pipe(process.stdout);
+        parseInt(args.options.indent) || 0, !opts.content ? true : false);
+      stream.pipe(opts.output);
     }else{
       collator = new Collator(opts);      
-      stream.pipe(collator).pipe(process.stdout);
+      stream.pipe(collator).pipe(opts.output);
     }
   }
 
