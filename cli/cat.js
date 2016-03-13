@@ -35,11 +35,12 @@ function cli(argv, cb) {
   }
 
   function done(err, res) {
-    if(res.write instanceof Function) {
+    if(res && res.write instanceof Function) {
       res.once('error', cb);
       // listen for the end of the write stream
-      return res.once('end', cb);
+      return res.once('end', done);
     }
+    process.stdin.end();
     cb(err, res);
   }
 
