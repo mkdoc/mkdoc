@@ -19,5 +19,4 @@ deploy:
   on:
     tags: true
     repo: mkdoc/mkdoc
-    branch: develop
     node: '4.1'
