@@ -6,11 +6,10 @@ function error(msg) {
   console.error(prefix + msg);
   process.exit(1);
 }
-
-// Initialize the cli
-var cli = require('../cli/api');
+  
+var cli = require('../cli/cat')
 cli(null, function(err) {
   if(err) {
     error(err.message || err.stack); 
   }
-})
+});
