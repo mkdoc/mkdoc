@@ -12,4 +12,5 @@ cli(null, function(err) {
   if(err) {
     error(err.message || err.stack); 
   }
+  process.exit();
 });

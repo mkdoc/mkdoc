@@ -27,16 +27,27 @@ function cli(argv, cb) {
   opts.output = process.stdout;
 
   if(args.flags.h || args.flags.help) {
-    return usage(pkg, options);
+    usage(pkg, options);
+    return cb();
   }else if(args.flags.version) {
-    return version(pkg);
+    version(pkg);
+    return cb();
   }
 
-  var stream = cat(opts, cb);
+  function done(err, res) {
+    if(res.write instanceof Function) {
+      res.once('error', cb);
+      // listen for the end of the write stream
+      return res.once('end', cb);
+    }
+    cb(err, res);
+  }
+
+  var stream = cat(opts, done);
   stream.once('stdin', function(size, files) {
     if(!size && !files.length) {
       usage(pkg, options);
-      process.exit();
+      return cb();
     } 
   })
 }
