@@ -8,7 +8,7 @@ var out = require('mkout')
       '-x, --xml': 'Set output renderer to XML.',
       '-j, --json': 'Pass through input JSON.',
       '-t, --type [TYPE]': 'Set the output renderer type.',
-      '-h, --help': 'Display this help and exit.',
+      '--help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
     }
   , hints = {
@@ -16,10 +16,10 @@ var out = require('mkout')
         '-t'
       ],
       alias: {
-        '-m --md': 'markdown',
         '-h --html': 'html',
         '-x --xml': 'xml',
         '-j --json': 'json',
+        '-m --md': 'markdown',
         '-t --type': 'type'
       }
     }
@@ -54,7 +54,7 @@ function cli(argv, cb) {
     opts.type = args.options.type;
   }
 
-  if(args.flags.h || args.flags.help) {
+  if(args.flags.help) {
     usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
