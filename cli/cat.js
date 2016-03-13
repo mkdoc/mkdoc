@@ -3,28 +3,35 @@ var cat = require('mkcat')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
-    //'-o, --output=[FILE]': 'Write output to FILE (default: stdout).',
-    //'-t, --title=[VAL]': 'Title for initial heading.',
-    //'-l, --level=[NUM]': 'Initial heading level (default: 1).',
-    //'-L, --lang=[LANG]':
-      //'Language for fenced code blocks (default: javascript).',
-    //'-i, --indent=[NUM]': 'Number of spaces for JSON (default: 2).',
-    //'-a, --ast': 'Print AST as JSON.',
-    //'--[no]-private': 'Enable or disable private symbols',
-    //'--[no]-protected': 'Enable or disable protected symbols',
-    '-h, --help': 'Display this help and exit.',
-    '--version': 'Print the version and exit.'
-  }
+      '--no-ast': 'Disable AST output, prints input.',
+      '-h, --help': 'Display this help and exit.',
+      '--version': 'Print the version and exit.'
+    }
+  , hints = {
+      options: [
+      ],
+      flags: [
+        '--ast'
+      ],
+      alias: {
+        '-a --ast': 'ast'
+      }
+    }
   , pkg = require('mkcat/package.json');
 
 /**
  *  Concatenate stdin with file arguments.
  */
 function cli(argv, cb) {
-  var args = parser(argv)
+  var args = parser(argv, hints)
     , opts = {};
+
   opts.files = args.unparsed;
   opts.output = process.stdout;
+
+  if(args.flags.ast === false) {
+    opts.buffer = true; 
+  }
 
   if(args.flags.h || args.flags.help) {
     usage(pkg, options);
@@ -35,10 +42,13 @@ function cli(argv, cb) {
   }
 
   function done(err, res) {
-    if(res && res.write instanceof Function) {
+    if(res && res.once instanceof Function) {
       res.once('error', cb);
       // listen for the end of the write stream
       return res.once('end', done);
+    }
+    if(opts.buffer && res) {
+      opts.output.write(res); 
     }
     process.stdin.end();
     cb(err, res);
