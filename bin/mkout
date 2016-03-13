@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+// Print an error message
+function error(msg) {
+  var prefix = 'error: '
+  console.error(prefix + msg);
+  process.exit(1);
+}
+  
+var cli = require('../cli/out')
+cli(null, function(err) {
+  if(err) {
+    error(err.message || err.stack); 
+  }
+});

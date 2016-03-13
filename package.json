@@ -27,6 +27,7 @@
     "cli-argparse": "~1.1.1",
     "mkapi": "~1.1.3",
     "mkcat": "~1.0.3",
+    "mkout": "~1.0.0",
     "string-repeater": "~1.0.3"
   },
   "devDependencies": {

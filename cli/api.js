@@ -56,8 +56,6 @@ function cli(argv, cb) {
   opts.indent = parseInt(args.options.indent);
   opts.lang = args.options.lang;
 
-  //console.dir(args);
-
   if(args.options.title !== undefined) {
     opts.heading = args.options.title;
   }
