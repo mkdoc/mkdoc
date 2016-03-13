@@ -29,6 +29,12 @@ var out = require('mkout')
  *  Write AST to a renderer.
  */
 function cli(argv, cb) {
+
+  if(typeof argv === 'function') {
+    cb = argv;
+    argv = null;
+  }
+
   var args = parser(argv, hints)
     , opts = {}
     , k;

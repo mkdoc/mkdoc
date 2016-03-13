@@ -35,6 +35,11 @@ var parser = require('cli-argparse')
   , opts = {conf: {include: {}}};
 
 function cli(argv, cb) {
+  if(typeof argv === 'function') {
+    cb = argv;
+    argv = null;
+  }
+
   var args = parser(argv, hints);
 
   if(args.flags.h || args.flags.help) {
