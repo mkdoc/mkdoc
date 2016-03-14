@@ -4,6 +4,7 @@ var mkparse = require('mkparse')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
+      '-s, --strip': 'Print content only, remove comments.',
       '-c, --content': 'Print non-comment content.',
       '-d, --dotted': 'Parse dotted names.',
       '-j, --json': 'Print comments as JSON.',
@@ -13,12 +14,13 @@ var mkparse = require('mkparse')
     }
   , hints = {
       flags: [
-        '--dotted', '--content'
+        '--dotted', '--content', '--strip'
       ],
       options: [
         '-i'
       ],
       alias: {
+        '-s --strip': 'strip',
         '-c --content': 'content',
         '-j --json': 'json',
         '-i --indent': 'indent',
@@ -48,6 +50,14 @@ function cli(argv, cb) {
   opts.output = process.stdout;
   opts.content = Boolean(args.flags.content);
 
+  if(args.flags.strip) {
+    opts.content = true;
+    opts.comment = false;
+
+    // not printing comments, cannot print json
+    args.flags.json = false;
+  }
+
   if(args.flags.help) {
     usage(pkg, options);
     return cb();
@@ -59,7 +69,6 @@ function cli(argv, cb) {
   if(!files.length) {
     return cb(new Error('no files specified')); 
   }
-
 
   function next() {
     var file = files.shift();
