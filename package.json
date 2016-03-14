@@ -70,6 +70,13 @@
         "type": "code"
       },
       {
+        "title": "mkpi",
+        "text": "Execute tags in processing instructions.",
+        "level": 3,
+        "bin": "./bin/mkpi -h",
+        "type": "code"
+      },
+      {
         "title": "mkout",
         "text": "Render an AST to markdown, XML, HTML and JSON.",
         "level": 3,

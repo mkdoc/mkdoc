@@ -5,6 +5,7 @@ Table of Contents
   * [Install](#install)
   * [Usage](#usage)
     * [mkcat](#mkcat)
+    * [mkpi](#mkpi)
     * [mkout](#mkout)
     * [mkparse](#mkparse)
     * [mkapi](#mkapi)
@@ -40,6 +41,19 @@ Concatenate markdown documents to an AST.
 mkcat [options] [files...]
 
   --no-ast    Disable AST output, prints input.
+  -h, --help  Display this help and exit.
+  --version   Print the version and exit.
+
+Report bugs to https://github.com/mkdoc/mkcat/issues
+```
+
+### mkpi
+
+Execute tags in processing instructions.
+
+```
+mkcat [options] [files...]
+
   -h, --help  Display this help and exit.
   --version   Print the version and exit.
 
