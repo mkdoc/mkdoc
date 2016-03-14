@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var error = require('../cli/error')
+  , cli = require('../cli/pi');
+
+cli(function(err) {
+  if(err) {
+    error(err.message || err.stack); 
+  }
+});
