@@ -4,13 +4,13 @@ var fs = require('fs')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
-      '-m, --md': 'Set output renderer to markdown (default).',
-      '-h, --html': 'Set output renderer to HTML.',
+      '-d, --md': 'Set output renderer to markdown (default).',
+      '-m, --html': 'Set output renderer to HTML.',
       '-x, --xml': 'Set output renderer to XML.',
       '-j, --json': 'Pass through input JSON.',
       '-t, --type=[TYPE]': 'Set the output renderer type.',
       '-o, --output=[FILE]': 'Write output to FILE (default: stdout).',
-      '--help': 'Display this help and exit.',
+      '-h, --help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
     }
   , hints = {
@@ -19,12 +19,13 @@ var fs = require('fs')
         '-o'
       ],
       alias: {
-        '-o --output': 'output',
-        '-h --html': 'html',
+        '-d --md': 'markdown',
+        '-m --html': 'html',
         '-x --xml': 'xml',
         '-j --json': 'json',
-        '-m --md': 'markdown',
-        '-t --type': 'type'
+        '-t --type': 'type',
+        '-o --output': 'output',
+        '-h --help': 'help'
       }
     }
   , pkg = require('mkout/package.json');
@@ -68,7 +69,7 @@ function cli(argv, cb) {
     opts.type = args.options.type;
   }
 
-  if(args.flags.help) {
+  if(args.flags.h || args.flags.help) {
     usage(pkg, options);
     return cb();
   }else if(args.flags.version) {

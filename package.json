@@ -40,6 +40,7 @@
   },
   "scripts": {
     "clean": "rm -rf coverage target",
+    "docs": "npm run readme",
     "readme": "mdp --force -v",
     "lint": "jshint . && jscs .",
     "test": "NODE_env=test mocha ${SPEC:-test/spec}",
