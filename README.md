@@ -58,6 +58,7 @@ mkout [options] [files...]
   -x, --xml          Set output renderer to XML.
   -j, --json         Pass through input JSON.
   -t, --type [TYPE]  Set the output renderer type.
+  -o, --output       Write to file (default: stdout).
   --help             Display this help and exit.
   --version          Print the version and exit.
 

@@ -1,4 +1,5 @@
-var out = require('mkout')
+var fs = require('fs')
+  , out = require('mkout')
   , parser = require('cli-argparse')
   , usage = require('./usage')
   , version = require('./version')
@@ -8,14 +9,17 @@ var out = require('mkout')
       '-x, --xml': 'Set output renderer to XML.',
       '-j, --json': 'Pass through input JSON.',
       '-t, --type [TYPE]': 'Set the output renderer type.',
+      '-o, --output': 'Write to file (default: stdout).',
       '--help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
     }
   , hints = {
       options: [
-        '-t'
+        '-t',
+        '-o'
       ],
       alias: {
+        '-o --output': 'output',
         '-h --html': 'html',
         '-x --xml': 'xml',
         '-j --json': 'json',
@@ -41,6 +45,10 @@ function cli(argv, cb) {
 
   opts.files = args.unparsed;
   opts.output = process.stdout;
+
+  if(args.options.output) {
+    opts.output = fs.createWriteStream(args.options.output);
+  }
 
   // support --xml, --html etc.
   if(!args.options.type) {
