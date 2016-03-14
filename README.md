@@ -53,14 +53,14 @@ Render an AST to markdown, XML, HTML and JSON.
 ```
 mkout [options] [files...]
 
-  -m, --md           Set output renderer to markdown (default).
-  -h, --html         Set output renderer to HTML.
-  -x, --xml          Set output renderer to XML.
-  -j, --json         Pass through input JSON.
-  -t, --type [TYPE]  Set the output renderer type.
-  -o, --output       Write to file (default: stdout).
-  --help             Display this help and exit.
-  --version          Print the version and exit.
+  -m, --md             Set output renderer to markdown (default).
+  -h, --html           Set output renderer to HTML.
+  -x, --xml            Set output renderer to XML.
+  -j, --json           Pass through input JSON.
+  -t, --type=[TYPE]    Set the output renderer type.
+  -o, --output=[FILE]  Write output to FILE (default: stdout).
+  --help               Display this help and exit.
+  --version            Print the version and exit.
 
 Report bugs to https://github.com/mkdoc/mkout/issues
 ```
