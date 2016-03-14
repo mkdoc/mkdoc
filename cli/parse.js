@@ -44,10 +44,6 @@ function cli(argv, cb) {
       }
     , files = args.unparsed;
 
-  if(!files.length) {
-    return cb(new Error('no files specified')); 
-  }
-
   opts.files = args.unparsed;
   opts.output = process.stdout;
   opts.content = Boolean(args.flags.content);
@@ -59,6 +55,11 @@ function cli(argv, cb) {
     version(pkg);
     return cb();
   }
+
+  if(!files.length) {
+    return cb(new Error('no files specified')); 
+  }
+
 
   function next() {
     var file = files.shift();

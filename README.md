@@ -4,6 +4,10 @@ Table of Contents
 * [Markdown Tools](#markdown-tools)
   * [Install](#install)
   * [Usage](#usage)
+    * [mkcat](#mkcat)
+    * [mkout](#mkout)
+    * [mkparse](#mkparse)
+    * [mkapi](#mkapi)
   * [Developer](#developer)
     * [Test](#test)
     * [Cover](#cover)
@@ -27,6 +31,59 @@ npm i -g mkdoc
 ```
 
 ## Usage
+
+### mkcat
+
+Concatenate markdown documents to an AST.
+
+```
+mkcat [options] [files...]
+
+  --no-ast    Disable AST output, prints input.
+  -h, --help  Display this help and exit.
+  --version   Print the version and exit.
+
+Report bugs to https://github.com/mkdoc/mkcat/issues
+```
+
+### mkout
+
+Render an AST to markdown, XML, HTML and JSON.
+
+```
+mkout [options] [files...]
+
+  -m, --md           Set output renderer to markdown (default).
+  -h, --html         Set output renderer to HTML.
+  -x, --xml          Set output renderer to XML.
+  -j, --json         Pass through input JSON.
+  -t, --type [TYPE]  Set the output renderer type.
+  --help             Display this help and exit.
+  --version          Print the version and exit.
+
+Report bugs to https://github.com/mkdoc/mkout/issues
+```
+
+### mkparse
+
+Parse comments and tags (annotations) from source file(s).
+
+```
+mkparse [options] [files...]
+
+  -c, --content       Print non-comment content.
+  -d, --dotted        Parse dotted names.
+  -j, --json          Print comments as JSON.
+  -i, --indent=[NUM]  Number of spaces for JSON (default: 0).
+  -h, --help          Display this help and exit.
+  --version           Print the version and exit.
+
+Report bugs to https://github.com/mkdoc/mkparse/issues
+```
+
+### mkapi
+
+Generate API documentation from comments.
 
 ```
 mkapi [options] [files...]
