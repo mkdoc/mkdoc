@@ -71,8 +71,9 @@ Parse comments and tags (annotations) from source file(s).
 ```
 mkparse [options] [files...]
 
+  -l, --lang=[LANG]   Set language for all files.
   -s, --strip         Print content only, remove comments.
-  -c, --content       Print non-comment content.
+  -c, --content       Include non-comment content.
   -d, --dotted        Parse dotted names.
   -j, --json          Print comments as JSON.
   -i, --indent=[NUM]  Number of spaces for JSON (default: 0).

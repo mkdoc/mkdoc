@@ -1,11 +1,14 @@
-var mkparse = require('mkparse')
+var path = require('path')
+  , mkparse = require('mkparse')
+  , lang = require('mkparse/lang')
   , Collator = require('mkparse/lib/collator')
   , parser = require('cli-argparse')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
+      '-l, --lang=[LANG]': 'Set language for all files.',
       '-s, --strip': 'Print content only, remove comments.',
-      '-c, --content': 'Print non-comment content.',
+      '-c, --content': 'Include non-comment content.',
       '-d, --dotted': 'Parse dotted names.',
       '-j, --json': 'Print comments as JSON.',
       '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 0).',
@@ -17,9 +20,11 @@ var mkparse = require('mkparse')
         '--dotted', '--content', '--strip'
       ],
       options: [
-        '-i'
+        '-i',
+        '-l'
       ],
       alias: {
+        '-l --lang': 'lang',
         '-s --strip': 'strip',
         '-c --content': 'content',
         '-j --json': 'json',
@@ -70,11 +75,39 @@ function cli(argv, cb) {
     return cb(new Error('no files specified')); 
   }
 
+  if(args.options.lang && !lang.map[args.options.lang]) {
+    return cb(new Error('unknown language pack id: ' + args.options.lang)); 
+  }
+
   function next() {
     var file = files.shift();
     if(!file) {
       return cb();  
     } 
+
+    var name = path.basename(file)
+      , ext = name.substr(name.lastIndexOf('.'))
+      , id
+      , pack = args.options.lang;
+
+    if(!pack && ext) {
+      ext = ext.replace(/^\./, '');
+      id = lang.find(ext);
+      // not a trailing period if still not the empty string
+      if(ext && id) {
+        pack = id; 
+      }
+    }
+
+    if(pack && lang.exists(pack)) {
+      opts.rules = lang.load(pack);
+    }
+
+    if(!pack) {
+      console.error('unkown language for file %s (skipping)', file); 
+      return next();
+    }
+
     var stream = mkparse.load(file, opts, next)
       , collator;
 
