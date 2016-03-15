@@ -3,17 +3,18 @@ var pi = require('mkpi')
   , usage = require('./usage')
   , version = require('./version')
   , options = {
+      '-p, --preserve': 'Do not remove processing instructions.',
       '-h, --help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
     }
   , hints = {
-      options: [
-      ],
+      options: [],
       flags: [
-        //'--ast'
+        '--preserve', '--help'
       ],
       alias: {
-        //'-a --ast': 'ast'
+        '-p --preserve': 'preserve',
+        '-h --help': 'help'
       }
     }
   , pkg = require('mkcat/package.json');
@@ -29,9 +30,9 @@ function cli(argv, cb) {
   }
 
   var args = parser(argv, hints)
-    , opts = {};
+    , opts = {preserve: args.flags.preserve};
 
-  if(args.flags.h || args.flags.help) {
+  if(args.flags.help) {
     usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
