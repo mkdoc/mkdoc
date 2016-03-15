@@ -21,7 +21,7 @@ var parser = require('cli-argparse')
         '-l', '-t', '-o', '-i', '-L'
       ],
       flags: [
-        '--ast' 
+        '--ast', '--help'
       ],
       alias: {
         '-a --ast': 'ast',
@@ -29,7 +29,8 @@ var parser = require('cli-argparse')
         '-L --lang': 'lang',
         '-t --title': 'title',
         '-i --indent': 'indent',
-        '-o --output': 'output'
+        '-o --output': 'output',
+        '-h --help': 'help'
       }
     }
   , opts = {conf: {include: {}}};
