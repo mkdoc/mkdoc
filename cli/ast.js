@@ -32,7 +32,7 @@ function cli(argv, cb) {
   }
 
   var args = parser(argv, hints)
-    , indent = 2;
+    , indent = 0;
 
   if(args.flags.help) {
     usage(pkg, options);
@@ -56,11 +56,16 @@ function cli(argv, cb) {
     } 
 
     var doc = commonmark.parse('' + buf)
-      , res = stringify(doc, indent);
+      //, res = stringify(doc, indent);
+      //
+    //console.dir(doc._firstChild._listData);
 
-    process.stdout.write(res);
+    //console.dir(doc, {depth: 4});
 
-    done();
+    //process.stdout.write(res);
+    //done();
+    //
+    ast.serialize(doc, {indent: indent}, done).pipe(process.stdout);
   }
 
   fs.readFile(args.unparsed[0], onRead);
