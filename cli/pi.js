@@ -17,7 +17,7 @@ var pi = require('mkpi')
         '-h --help': 'help'
       }
     }
-  , pkg = require('mkcat/package.json');
+  , pkg = require('mkpi/package.json');
 
 /**
  *  Execute processing instructions in the AST written to stdin.
