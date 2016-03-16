@@ -1,5 +1,5 @@
 function error(msg) {
-  var prefix = 'error: '
+  var prefix = 'error: ';
   console.error(prefix + msg);
   process.exit(1);
 }
