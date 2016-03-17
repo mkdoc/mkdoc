@@ -1,7 +1,6 @@
 var gen = require('mkgen')
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
       '-m, --message=[MSG]': 'Custom message, parsed as markdown.',
       '-p, --prepend': 'Prepend message to the stream.',
@@ -45,10 +44,10 @@ function cli(argv, cb) {
   }
 
   if(args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 

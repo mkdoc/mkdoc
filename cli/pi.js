@@ -1,7 +1,6 @@
 var pi = require('mkpi')
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
       '-p, --preserve': 'Do not remove processing instructions.',
       '-h, --help': 'Display this help and exit.',
@@ -37,10 +36,10 @@ function cli(argv, cb) {
       };
 
   if(args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 

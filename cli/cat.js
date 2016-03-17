@@ -1,8 +1,8 @@
 var cat = require('mkcat')
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
+      synopsis: '[options] [files...]',
       '--no-ast': 'Disable AST output, prints input.',
       '-h, --help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
@@ -42,10 +42,10 @@ function cli(argv, cb) {
   }
 
   if(args.flags.h || args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 
@@ -65,7 +65,7 @@ function cli(argv, cb) {
   var stream = cat(opts, done);
   stream.once('stdin', function(size, files) {
     if(!size && !files.length) {
-      usage(pkg, options);
+      utils.usage(pkg, options);
       return cb();
     } 
   })

@@ -1,10 +1,9 @@
 var fs = require('fs')
   , ast = require('mkast')
-  , stringify = require('mkast/lib/stringify')
+  //, stringify = require('mkast/lib/stringify')
   , commonmark = new ast.Parser()
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
       '-h, --help': 'Display this help and exit.',
       '--version': 'Print the version and exit.'
@@ -35,10 +34,10 @@ function cli(argv, cb) {
     , indent = 0;
 
   if(args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 

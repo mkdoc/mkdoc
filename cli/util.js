@@ -4,13 +4,20 @@ function usage(pkg, opts) {
   var indent = '  '
     , max = 0
     , space = 2
-    , keys = Object.keys(opts);
+    , keys
+    , synopsis = opts.synopsis || '[options]';
+
+  delete opts.synopsis;
+
+  keys = Object.keys(opts)
 
   keys.forEach(function(key) {
     max = Math.max(max, key.length);
   })
 
-  console.log('%s %s', pkg.name, '[options] [files...]'); 
+  console.log('%s %s', pkg.name, synopsis); 
+  console.log();
+  console.log(pkg.description);
   console.log();
 
   keys.forEach(function(key) {
@@ -23,4 +30,18 @@ function usage(pkg, opts) {
   console.log('Report bugs to %s', pkg.bugs.url);
 }
 
-module.exports = usage;
+function version(pkg) {
+  console.log('%s %s', pkg.name, pkg.version); 
+}
+
+function error(msg) {
+  var prefix = 'error: ';
+  console.error(prefix + msg);
+  process.exit(1);
+}
+
+module.exports = {
+  usage: usage,
+  version: version,
+  error: error
+}

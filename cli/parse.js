@@ -3,9 +3,9 @@ var path = require('path')
   , lang = require('mkparse/lang')
   , Collator = require('mkparse/lib/collator')
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
+      synopsis: '[options] [files...]',
       '-l, --lang=[LANG]': 'Set language for all files.',
       '-s, --strip': 'Print content only, remove comments.',
       '-c, --content': 'Include non-comment content.',
@@ -64,10 +64,10 @@ function cli(argv, cb) {
   }
 
   if(args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 

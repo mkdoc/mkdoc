@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var error = require('../cli/error')
+var error = require('../cli/util').error
   , cli = require('../cli/api');
 
 cli(function(err) {

@@ -49,12 +49,14 @@ It can also accept input from `stdin`:
 cat file.md | mkcat | mkout
 ```
 
-However this is not recommended because file path information is lost, which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
+However this is not recommended because file path information is lost which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
 
 #### Usage
 
 ```null
 mkcat [options] [files...]
+
+Concatenate markdown to commonmark AST
 
   --no-ast    Disable AST output, prints input.
   -h, --help  Display this help and exit.
@@ -78,7 +80,9 @@ You can inline macro functions for application-specific logic or create custom m
 #### Usage
 
 ```null
-mkpi [options] [files...]
+mkpi [options]
+
+Processing instruction macros
 
   -p, --preserve  Do not remove processing instructions.
   -h, --help      Display this help and exit.
@@ -100,7 +104,9 @@ Typically used to append a generator message but may be used to inject any docum
 #### Usage
 
 ```null
-mkgen [options] [files...]
+mkgen [options]
+
+Stream message injection
 
   -m, --message=[MSG]  Custom message, parsed as markdown.
   -p, --prepend        Prepend message to the stream.
@@ -121,7 +127,9 @@ mkcat file.md | mkout --html
 #### Usage
 
 ```null
-mkout [options] [files...]
+mkout [options]
+
+Output renderers for commonmark
 
   -d, --md             Set output renderer to markdown (default).
   -m, --html           Set output renderer to HTML.
@@ -150,6 +158,8 @@ Low-level parser for working with comments and tag annotations, see [mkparse][].
 ```null
 mkparse [options] [files...]
 
+Generic comments parser
+
   -l, --lang=[LANG]   Set language for all files.
   -s, --strip         Print content only, remove comments.
   -c, --content       Include non-comment content.
@@ -170,6 +180,8 @@ Generate API documentation from comments.
 
 ```null
 mkapi [options] [files...]
+
+Markdown api documentation generator
 
   -o, --output=[FILE]  Write output to FILE (default: stdout).
   -t, --title=[VAL]    Title for initial heading.

@@ -1,8 +1,7 @@
 var fs = require('fs')
   , out = require('mkout')
   , parser = require('cli-argparse')
-  , usage = require('./usage')
-  , version = require('./version')
+  , utils = require('./util')
   , options = {
       '-d, --md': 'Set output renderer to markdown (default).',
       '-m, --html': 'Set output renderer to HTML.',
@@ -71,10 +70,10 @@ function cli(argv, cb) {
   }
 
   if(args.flags.h || args.flags.help) {
-    usage(pkg, options);
+    utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
-    version(pkg);
+    utils.version(pkg);
     return cb();
   }
 
