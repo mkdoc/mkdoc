@@ -20,7 +20,7 @@ npm i -g mkdoc
 
 Concatenate markdown documents to an AST.
 
-```shell
+```null
 mkcat [options] [files...]
 
   --no-ast    Disable AST output, prints input.
@@ -34,7 +34,7 @@ Report bugs to https://github.com/mkdoc/mkcat/issues
 
 Execute tags in processing instructions.
 
-```shell
+```null
 mkpi [options] [files...]
 
   -p, --preserve  Do not remove processing instructions.
@@ -48,7 +48,7 @@ Report bugs to https://github.com/mkdoc/mkpi/issues
 
 Render an AST to markdown, XML, HTML and JSON.
 
-```shell
+```null
 mkout [options] [files...]
 
   -d, --md             Set output renderer to markdown (default).
@@ -67,7 +67,7 @@ Report bugs to https://github.com/mkdoc/mkout/issues
 
 Parse comments and tag annotations from source file(s).
 
-```shell
+```null
 mkparse [options] [files...]
 
   -l, --lang=[LANG]   Set language for all files.
@@ -86,7 +86,7 @@ Report bugs to https://github.com/mkdoc/mkparse/issues
 
 Generate API documentation from comments.
 
-```shell
+```null
 mkapi [options] [files...]
 
   -o, --output=[FILE]  Write output to FILE (default: stdout).
