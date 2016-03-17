@@ -118,7 +118,7 @@ Report bugs to https://github.com/mkdoc/mkgen/issues
 
 ### mkout
 
-Render a serializerd stream to markdown, XML, HTML and JSON.
+Render a stream to markdown, XML, HTML and JSON.
 
 ```shell
 mkcat file.md | mkout --html

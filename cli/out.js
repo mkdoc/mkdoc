@@ -46,6 +46,7 @@ function cli(argv, cb) {
   opts.input = process.stdin;
   opts.files = args.unparsed;
   opts.output = process.stdout;
+  opts.pipeline = true;
 
   if(args.options.output) {
     opts.output = fs.createWriteStream(args.options.output);
