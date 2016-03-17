@@ -30,6 +30,10 @@ function cli(argv, cb) {
   var args = parser(argv, hints)
     , opts = {};
 
+  // read from stdin before files, but be aware that file
+  // information is lost so relative includes will not work as expected
+  opts.input = process.stdin;
+
   opts.files = args.unparsed;
   opts.output = process.stdout;
 

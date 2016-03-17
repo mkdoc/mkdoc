@@ -17,8 +17,7 @@ npm i -g mkdoc
 ## Usage
 
 ```javascript
-var fs = require('fs')
-  , doc = require('mkdoc')
+var doc = require('mkdoc')
   , pi = require('mkpi')
   , gen = require('mkgen')
   , out = require('mkout');
@@ -27,7 +26,7 @@ doc('doc/readme.md')
   .pipe(pi())
   .pipe(gen())
   .pipe(out())
-  .pipe(fs.createWriteStream('README.md'));
+  .pipe(process.stdout);
 ```
 
 Sample input is the [source file](/doc/readme.md) for this document.

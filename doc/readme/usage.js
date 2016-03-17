@@ -1,5 +1,4 @@
-var fs = require('fs')
-  , doc = require('../../index')
+var doc = require('../../index')
   , pi = require('mkpi')
   , gen = require('mkgen')
   , out = require('mkout');
@@ -7,5 +6,4 @@ var fs = require('fs')
 doc('doc/readme.md')
   .pipe(pi())
   .pipe(gen())
-  .pipe(out())
-  .pipe(fs.createWriteStream('README.md'));
+  .pipe(out({output: process.stdout}));

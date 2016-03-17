@@ -44,6 +44,7 @@ function cli(argv, cb) {
     , opts = {}
     , k;
 
+  opts.input = process.stdin;
   opts.files = args.unparsed;
   opts.output = process.stdout;
 
