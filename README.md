@@ -14,6 +14,22 @@ Creates stream pipelines that converts input [commonmark][] to an abstract synta
 npm i -g mkdoc
 ```
 
+## Usage
+
+```javascript
+var fs = require('fs')
+  , mkdoc = require('mkdoc')
+  , mkpi = require('mkpi')
+  , mkgen = require('mkgen')
+  , mkout = require('mkout');
+
+mkdoc('doc/readme.md')
+  .pipe(mkpi())
+  .pipe(mkgen())
+  .pipe(mkout())
+  .pipe(fs.createWriteStream('README.md'));
+```
+
 ## Command Line Tools
 
 Command line interfaces to a suite of [commonmark][] processing tools.
