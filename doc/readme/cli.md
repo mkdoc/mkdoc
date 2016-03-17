@@ -54,7 +54,7 @@ Typically used to append a generator message but may be used to inject any docum
 
 ### mkout
 
-Render a serializerd stream to markdown, XML, HTML and JSON; default output is markdown.
+Render a serializerd stream to markdown, XML, HTML and JSON.
 
 ```shell
 mkcat file.md | mkout --html
