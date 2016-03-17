@@ -25,8 +25,7 @@ var doc = require('mkdoc')
 doc('doc/readme.md')
   .pipe(pi())
   .pipe(gen())
-  .pipe(out())
-  .pipe(process.stdout);
+  .pipe(out({output: process.stdout}));
 ```
 
 Sample input is the [source file](/doc/readme.md) for this document.

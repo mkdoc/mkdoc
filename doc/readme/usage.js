@@ -6,4 +6,5 @@ var doc = require('../../index')
 doc('doc/readme.md')
   .pipe(pi())
   .pipe(gen())
-  .pipe(out({output: process.stdout}));
+  .pipe(out())
+  .pipe(process.stdout);
