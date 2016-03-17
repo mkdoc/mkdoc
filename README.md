@@ -115,7 +115,7 @@ Report bugs to https://github.com/mkdoc/mkout/issues
 Parse comments and tag annotations from source files.
 
 ```shell
-mkparse index.js
+mkparse index.js > index.doc.js
 ```
 
 Low-level parser for working with comments and tag annotations, see [mkparse][]. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.
