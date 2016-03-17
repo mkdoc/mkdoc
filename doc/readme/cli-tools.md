@@ -1,5 +1,8 @@
 ## Command Line Tools
 
+Command line interfaces to a suite of [commonmark][] processing tools.
+
+
 ### mkcat
 
 Reads one or more markdown documents and serializes them to the output stream, this program is typically used at the beginning of a transform pipeline before being sent to `mkout`:

@@ -6,7 +6,7 @@
 
 > Make markdown documents
 
-Command line interfaces to a suite of [commonmark][] processing tools.
+Creates stream pipelines that converts input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown, HTML or XML.
 
 ## Install
 
@@ -15,6 +15,8 @@ npm i -g mkdoc
 ```
 
 ## Command Line Tools
+
+Command line interfaces to a suite of [commonmark][] processing tools.
 
 ### mkcat
 
