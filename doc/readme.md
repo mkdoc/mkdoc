@@ -9,6 +9,10 @@ Creates stream pipelines that converts input [commonmark][] to an abstract synta
 <? @include {=readme}
       install.md
       usage.md
-      cli.md
+      cli.md ?>
+
+<? @exec mkapi index.js --level=2 --title=API ?>
+
+<? @include {=readme}
       license.md
       links.md ?>
