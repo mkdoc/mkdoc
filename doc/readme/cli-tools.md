@@ -20,7 +20,7 @@ Include markdown documents, source files and the output of commands:
 mkcat doc/readme.md | mkpi | mkout > README.md
 ```
 
-This program parses and executes processing instructions such as `<? @include intro.md install.md ?>`, see the [mkpi docs][] for more details.
+This program parses and executes processing instructions such as `<? @include intro.md install.md ?>`, see the [mkpi docs][mkpi] for more details.
 
 #### Usage
 
