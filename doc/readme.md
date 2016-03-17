@@ -8,6 +8,6 @@ Creates stream pipelines that converts input [commonmark][] to an abstract synta
 
 <? @include {=readme}
       install.md
-      cli-tools.md
+      cli.md
       license.md
       links.md ?>

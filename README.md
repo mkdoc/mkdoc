@@ -20,7 +20,7 @@ Command line interfaces to a suite of [commonmark][] processing tools.
 
 ### mkcat
 
-Reads one or more markdown documents and serializes them to the output stream, this program is typically used at the beginning of a transform pipeline before being sent to `mkout`:
+Reads one or more markdown documents and serializes them to the output stream, this program is normally used at the beginning of a transform pipeline before being sent to `mkout`:
 
 ```shell
 mkcat file.md | mkout --xml
@@ -46,7 +46,9 @@ Include markdown documents, source files and the output of commands:
 mkcat doc/readme.md | mkpi | mkout > README.md
 ```
 
-This program parses and executes processing instructions such as `<? @include intro.md install.md ?>`, see the [mkpi docs][mkpi] for more details.
+This program parses and executes processing instructions such as `<? @include intro.md install.md ?>`.
+
+You can inline macro functions for application-specific logic or create custom macro functions that may be shared between projects, see the [mkpi docs][mkpi] for more details.
 
 #### Usage
 
@@ -62,11 +64,13 @@ Report bugs to https://github.com/mkdoc/mkpi/issues
 
 ### mkgen
 
-Appends or prepends a document to a stream.
+Appends or prepends a document node to the stream:
 
 ```shell
 mkcat doc/readme.md | mkpi | mkgen | mkout > README.md
 ```
+
+Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.
 
 #### Usage
 
@@ -83,11 +87,11 @@ Report bugs to https://github.com/mkdoc/mkgen/issues
 
 ### mkout
 
+Render a serializerd stream to markdown, XML, HTML and JSON; default output is markdown.
+
 ```shell
 mkcat file.md | mkout --html
 ```
-
-Render a serializerd stream to markdown, XML, HTML and JSON; default output is markdown.
 
 #### Usage
 
@@ -109,6 +113,12 @@ Report bugs to https://github.com/mkdoc/mkout/issues
 ### mkparse
 
 Parse comments and tag annotations from source files.
+
+```shell
+mkparse index.js
+```
+
+Low-level parser for working with comments and tag annotations, see [mkparse][]. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.
 
 #### Usage
 
