@@ -18,17 +18,19 @@ npm i -g mkdoc
 
 ```javascript
 var fs = require('fs')
-  , mkdoc = require('mkdoc')
-  , mkpi = require('mkpi')
-  , mkgen = require('mkgen')
-  , mkout = require('mkout');
+  , doc = require('mkdoc')
+  , pi = require('mkpi')
+  , gen = require('mkgen')
+  , out = require('mkout');
 
-mkdoc('doc/readme.md')
-  .pipe(mkpi())
-  .pipe(mkgen())
-  .pipe(mkout())
+doc('doc/readme.md')
+  .pipe(pi())
+  .pipe(gen())
+  .pipe(out())
   .pipe(fs.createWriteStream('README.md'));
 ```
+
+Sample input is the [source file](/doc/readme.md) for this document.
 
 ## Command Line Tools
 
