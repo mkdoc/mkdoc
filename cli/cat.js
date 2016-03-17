@@ -36,6 +36,7 @@ function cli(argv, cb) {
 
   opts.files = args.unparsed;
   opts.output = process.stdout;
+  opts.serialize = true;
 
   if(args.flags.ast === false) {
     opts.buffer = true; 
