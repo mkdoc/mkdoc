@@ -4,7 +4,7 @@
 
 > Make markdown documents
 
-Command line interfaces to a suite of markdown processing tools.
+Command line interfaces to a suite of [commonmark][] processing tools.
 
 <? @include {=readme}
       install.md
