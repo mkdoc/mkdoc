@@ -58,9 +58,9 @@ mkcat [options] [files...]
 
 Concatenate markdown to commonmark AST
 
-  --no-ast    Disable AST output, prints input.
-  -h, --help  Display this help and exit.
-  --version   Print the version and exit.
+  --no-ast    Disable AST output, prints input
+  -h, --help  Display this help and exit
+  --version   Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkcat/issues
 ```
@@ -84,9 +84,9 @@ mkpi [options]
 
 Processing instruction macros
 
-  -p, --preserve  Do not remove processing instructions.
-  -h, --help      Display this help and exit.
-  --version       Print the version and exit.
+  -p, --preserve  Do not remove processing instructions
+  -h, --help      Display this help and exit
+  --version       Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkpi/issues
 ```
@@ -108,10 +108,10 @@ mkgen [options]
 
 Stream message injection
 
-  -m, --message=[MSG]  Custom message, parsed as markdown.
-  -p, --prepend        Prepend message to the stream.
-  -h, --help           Display this help and exit.
-  --version            Print the version and exit.
+  -m, --message=[MSG]  Custom message, parsed as markdown
+  -p, --prepend        Prepend message to the stream
+  -h, --help           Display this help and exit
+  --version            Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkgen/issues
 ```
@@ -131,14 +131,14 @@ mkout [options]
 
 Output renderers for commonmark
 
-  -d, --md             Set output renderer to markdown (default).
-  -m, --html           Set output renderer to HTML.
-  -x, --xml            Set output renderer to XML.
-  -j, --json           Pass through input JSON.
-  -t, --type=[TYPE]    Set the output renderer type.
-  -o, --output=[FILE]  Write output to FILE (default: stdout).
-  -h, --help           Display this help and exit.
-  --version            Print the version and exit.
+  -d, --md             Set output renderer to markdown (default)
+  -m, --html           Set output renderer to HTML
+  -x, --xml            Set output renderer to XML
+  -j, --json           Pass through input JSON
+  -t, --type=[TYPE]    Set the output renderer type
+  -o, --output=[FILE]  Write output to FILE (default: stdout)
+  -h, --help           Display this help and exit
+  --version            Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkout/issues
 ```
@@ -160,14 +160,14 @@ mkparse [options] [files...]
 
 Generic comments parser
 
-  -l, --lang=[LANG]   Set language for all files.
-  -s, --strip         Print content only, remove comments.
-  -c, --content       Include non-comment content.
-  -d, --dotted        Parse dotted names.
-  -j, --json          Print comments as JSON.
-  -i, --indent=[NUM]  Number of spaces for JSON (default: 0).
-  -h, --help          Display this help and exit.
-  --version           Print the version and exit.
+  -l, --lang=[LANG]   Set language for all files
+  -s, --strip         Print content only, remove comments
+  -c, --content       Include non-comment content
+  -d, --dotted        Parse dotted names
+  -j, --json          Print comments as JSON
+  -i, --indent=[NUM]  Number of spaces for JSON (default: 0)
+  -h, --help          Display this help and exit
+  --version           Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkparse/issues
 ```
@@ -183,16 +183,16 @@ mkapi [options] [files...]
 
 Markdown api documentation generator
 
-  -o, --output=[FILE]  Write output to FILE (default: stdout).
-  -t, --title=[VAL]    Title for initial heading.
-  -l, --level=[NUM]    Initial heading level (default: 1).
-  -L, --lang=[LANG]    Language for fenced code blocks (default: javascript).
-  -i, --indent=[NUM]   Number of spaces for JSON (default: 2).
-  -a, --ast            Print AST as JSON.
+  -o, --output=[FILE]  Write output to FILE (default: stdout)
+  -t, --title=[VAL]    Title for initial heading
+  -l, --level=[NUM]    Initial heading level (default: 1)
+  -L, --lang=[LANG]    Language for fenced code blocks (default: javascript)
+  -i, --indent=[NUM]   Number of spaces for JSON (default: 2)
+  -a, --ast            Print AST as JSON
   --[no]-private       Enable or disable private symbols
   --[no]-protected     Enable or disable protected symbols
-  -h, --help           Display this help and exit.
-  --version            Print the version and exit.
+  -h, --help           Display this help and exit
+  --version            Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkapi/issues
 ```

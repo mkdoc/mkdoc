@@ -3,14 +3,14 @@ var fs = require('fs')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
-      '-d, --md': 'Set output renderer to markdown (default).',
-      '-m, --html': 'Set output renderer to HTML.',
-      '-x, --xml': 'Set output renderer to XML.',
-      '-j, --json': 'Pass through input JSON.',
-      '-t, --type=[TYPE]': 'Set the output renderer type.',
-      '-o, --output=[FILE]': 'Write output to FILE (default: stdout).',
-      '-h, --help': 'Display this help and exit.',
-      '--version': 'Print the version and exit.'
+      '-d, --md': 'Set output renderer to markdown (default)',
+      '-m, --html': 'Set output renderer to HTML',
+      '-x, --xml': 'Set output renderer to XML',
+      '-j, --json': 'Pass through input JSON',
+      '-t, --type=[TYPE]': 'Set the output renderer type',
+      '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
+      '-h, --help': 'Display this help and exit',
+      '--version': 'Print the version and exit'
     }
   , hints = {
       options: [

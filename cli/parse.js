@@ -6,14 +6,14 @@ var path = require('path')
   , utils = require('./util')
   , options = {
       synopsis: '[options] [files...]',
-      '-l, --lang=[LANG]': 'Set language for all files.',
-      '-s, --strip': 'Print content only, remove comments.',
-      '-c, --content': 'Include non-comment content.',
-      '-d, --dotted': 'Parse dotted names.',
-      '-j, --json': 'Print comments as JSON.',
-      '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 0).',
-      '-h, --help': 'Display this help and exit.',
-      '--version': 'Print the version and exit.'
+      '-l, --lang=[LANG]': 'Set language for all files',
+      '-s, --strip': 'Print content only, remove comments',
+      '-c, --content': 'Include non-comment content',
+      '-d, --dotted': 'Parse dotted names',
+      '-j, --json': 'Print comments as JSON',
+      '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 0)',
+      '-h, --help': 'Display this help and exit',
+      '--version': 'Print the version and exit'
     }
   , hints = {
       flags: [
