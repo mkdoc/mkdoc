@@ -30,7 +30,11 @@ function cli(argv, cb) {
   }
 
   var args = parser(argv, hints)
-    , opts = {preserve: args.flags.preserve};
+    , opts = {
+        preserve: args.flags.preserve,
+        input: process.stdin, 
+        output: process.stdout
+      };
 
   if(args.flags.help) {
     usage(pkg, options);

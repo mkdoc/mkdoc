@@ -34,7 +34,11 @@ function cli(argv, cb) {
   }
 
   var args = parser(argv, hints)
-    , opts = {prepend: args.flags.prepend};
+    , opts = {
+        prepend: args.flags.prepend,
+        input: process.stdin, 
+        output: process.stdout
+      };
 
   if(args.options.message) {
     opts.message = args.options.message; 
