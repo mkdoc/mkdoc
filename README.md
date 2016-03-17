@@ -43,6 +43,14 @@ Reads one or more markdown documents and serializes them to the output stream, t
 mkcat file.md | mkout --xml
 ```
 
+It can also accept input from `stdin`:
+
+```shell
+cat file.md | mkcat | mkout
+```
+
+However this is not recommended because file path information is lost, which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
+
 #### Usage
 
 ```null
