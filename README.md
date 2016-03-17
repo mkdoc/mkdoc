@@ -56,7 +56,7 @@ However this is not recommended because file path information is lost which is i
 ```null
 mkcat [options] [files...]
 
-Concatenate markdown to commonmark AST
+Concatenate source files to an abstract syntax tree.
 
   --no-ast    Disable AST output, prints input
   -h, --help  Display this help and exit
@@ -82,7 +82,7 @@ You can inline macro functions for application-specific logic or create custom m
 ```null
 mkpi [options]
 
-Processing instruction macros
+Processing instruction macros.
 
   -p, --preserve  Do not remove processing instructions
   -h, --help      Display this help and exit
@@ -106,7 +106,7 @@ Typically used to append a generator message but may be used to inject any docum
 ```null
 mkgen [options]
 
-Stream message injection
+Message injection.
 
   -m, --message=[MSG]  Custom message, parsed as markdown
   -p, --prepend        Prepend message to the stream
@@ -129,7 +129,7 @@ mkcat file.md | mkout --html
 ```null
 mkout [options]
 
-Output renderers for commonmark
+Render an abstract syntax tree.
 
   -d, --md             Set output renderer to markdown (default)
   -m, --html           Set output renderer to HTML
@@ -158,7 +158,7 @@ Low-level parser for working with comments and tag annotations, see [mkparse][].
 ```null
 mkparse [options] [files...]
 
-Generic comments parser
+Parse source file comments.
 
   -l, --lang=[LANG]   Set language for all files
   -s, --strip         Print content only, remove comments
@@ -181,7 +181,7 @@ Generate API documentation from comments.
 ```null
 mkapi [options] [files...]
 
-Markdown api documentation generator
+Markdown api documentation generator.
 
   -o, --output=[FILE]  Write output to FILE (default: stdout)
   -t, --title=[VAL]    Title for initial heading

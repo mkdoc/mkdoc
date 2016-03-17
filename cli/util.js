@@ -17,7 +17,7 @@ function usage(pkg, opts) {
 
   console.log('%s %s', pkg.name, synopsis); 
   console.log();
-  console.log(pkg.description);
+  console.log(pkg.description + '.');
   console.log();
 
   keys.forEach(function(key) {
