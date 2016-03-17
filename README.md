@@ -24,6 +24,8 @@ Reads one or more markdown documents and serializes them to the output stream, t
 mkcat file.md | mkout --xml
 ```
 
+#### Usage
+
 ```null
 mkcat [options] [files...]
 
@@ -44,6 +46,8 @@ mkcat doc/readme.md | mkpi | mkout > README.md
 
 This program parses and executes processing instructions such as `<? @include intro.md install.md ?>`, see the [mkpi docs][] for more details.
 
+#### Usage
+
 ```null
 mkpi [options] [files...]
 
@@ -61,6 +65,8 @@ Appends or prepends a document to a stream.
 ```shell
 mkcat doc/readme.md | mkpi | mkgen | mkout > README.md
 ```
+
+#### Usage
 
 ```null
 mkgen [options] [files...]
@@ -81,6 +87,8 @@ mkcat file.md | mkout --html
 
 Render a serializerd stream to markdown, XML, HTML and JSON; default output is markdown.
 
+#### Usage
+
 ```null
 mkout [options] [files...]
 
@@ -100,6 +108,8 @@ Report bugs to https://github.com/mkdoc/mkout/issues
 
 Parse comments and tag annotations from source files.
 
+#### Usage
+
 ```null
 mkparse [options] [files...]
 
@@ -118,6 +128,8 @@ Report bugs to https://github.com/mkdoc/mkparse/issues
 ### mkapi
 
 Generate API documentation from comments.
+
+#### Usage
 
 ```null
 mkapi [options] [files...]
