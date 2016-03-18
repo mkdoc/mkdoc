@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "cli-argparse": "~1.1.1",
+    "mkabs": "~1.0.2",
     "mkapi": "~1.1.3",
     "mkast": "~1.1.4",
     "mkcat": "~1.0.3",
@@ -32,6 +33,7 @@
     "mkout": "~1.0.0",
     "mkparse": "~1.5.0",
     "mkpi": "~1.0.1",
+    "mkref": "~1.0.3",
     "string-repeater": "~1.0.3"
   },
   "devDependencies": {
