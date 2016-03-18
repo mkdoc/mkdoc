@@ -31,8 +31,6 @@ doc('doc/readme.md')
   .pipe(process.stdout);
 ```
 
-Sample input is the [source file](/doc/readme.md) for this document.
-
 The equivalent command line:
 
 ```shell
@@ -40,6 +38,8 @@ mkcat doc/readme.md | mkpi | mkgen | mkref | mkout
 ```
 
 But the stream pipeline version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
+
+Sample input is the [source file](/doc/readme.md) for this document.
 
 ## Command Line Tools
 
