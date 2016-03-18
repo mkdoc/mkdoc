@@ -52,6 +52,18 @@ Typically used to append a generator message but may be used to inject any docum
 
 <?@exec {} mkgen -h ?>
 
+### mkref
+
+Collates link references and appends them to the stream.
+
+```shell
+mkcat doc/readme.md | mkpi | mkref | mkout > README.md
+```
+
+#### Usage
+
+<?@exec {} mkref -h ?>
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.

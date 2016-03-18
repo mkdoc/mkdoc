@@ -36,7 +36,7 @@ Sample input is the [source file](/doc/readme.md) for this document.
 The equivalent command line:
 
 ```shell
-mkcat doc/readme.md | mkpi | mkgen | mkout
+mkcat doc/readme.md | mkpi | mkgen | mkref | mkout
 ```
 
 But the stream pipeline version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
@@ -124,6 +124,27 @@ Message injection.
   --version            Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkgen/issues
+```
+
+### mkref
+
+Collates link references and appends them to the stream.
+
+```shell
+mkcat doc/readme.md | mkpi | mkref | mkout > README.md
+```
+
+#### Usage
+
+```
+mkref [options]
+
+Link reference collation.
+
+  -h, --help  Display this help and exit
+  --version   Print the version and exit
+
+Report bugs to https://github.com/mkdoc/mkref/issues
 ```
 
 ### mkout
