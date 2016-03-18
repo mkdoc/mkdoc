@@ -14,6 +14,7 @@ var abs = require('mkabs')
         '--help'
       ],
       alias: {
+        '-b --base': 'base',
         '-h --help': 'help'
       }
     }
@@ -34,6 +35,10 @@ function cli(argv, cb) {
         input: process.stdin, 
         output: process.stdout
       };
+
+  if(args.options.base) {
+    opts.base = args.options.base; 
+  }
 
   if(args.flags.help) {
     utils.usage(pkg, options);
