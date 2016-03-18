@@ -43,11 +43,7 @@ function cli(argv, cb) {
     return cb();
   }
 
-  function done(err) {
-    cb(err);
-  }
-
-  pi(opts, done);
+  pi(opts, cb);
 }
 
 module.exports = cli;

@@ -7,7 +7,6 @@ var ref = require('mkref')
     }
   , hints = {
       options: [
-        '-m'
       ],
       flags: [
         '--help'
@@ -42,11 +41,7 @@ function cli(argv, cb) {
     return cb();
   }
 
-  function done(err) {
-    cb(err);
-  }
-
-  ref(opts, done);
+  ref(opts, cb);
 }
 
 module.exports = cli;

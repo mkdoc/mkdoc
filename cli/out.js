@@ -78,11 +78,7 @@ function cli(argv, cb) {
     return cb();
   }
 
-  function done(err, res) {
-    cb(err, res);
-  }
-
-  out(opts, done);
+  out(opts, cb);
 }
 
 module.exports = cli;
