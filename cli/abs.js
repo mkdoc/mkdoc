@@ -3,18 +3,20 @@ var abs = require('mkabs')
   , utils = require('./util')
   , options = {
       '-b, --base=[URL]': 'Base URL for absolute links',
+      '-r, --relative=[PATH]': 'Relative path when repository url',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
   , hints = {
       options: [
-        '-b'
+        '-b', '-r'
       ],
       flags: [
         '--help'
       ],
       alias: {
         '-b --base': 'base',
+        '-r --relative': 'rel',
         '-h --help': 'help'
       }
     }
@@ -38,6 +40,10 @@ function cli(argv, cb) {
 
   if(args.options.base) {
     opts.base = args.options.base; 
+  }
+
+  if(args.options.rel) {
+    opts.rel = args.options.rel; 
   }
 
   if(args.flags.help) {
