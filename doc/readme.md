@@ -4,7 +4,7 @@
 
 > Make markdown documents
 
-Creates stream pipelines that converts input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown, HTML or XML.
+Creates stream pipelines that convert input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown or to another format such as HTML, XML or JSON.
 
 <? @include {=readme}
       install.md

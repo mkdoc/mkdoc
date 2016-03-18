@@ -6,7 +6,7 @@
 
 > Make markdown documents
 
-Creates stream pipelines that converts input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown, HTML or XML.
+Creates stream pipelines that convert input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown or to another format such as HTML, XML or JSON.
 
 ## Install
 
@@ -30,6 +30,14 @@ doc('doc/readme.md')
 ```
 
 Sample input is the [source file](/doc/readme.md) for this document.
+
+The equivalent command line:
+
+```shell
+mkcat doc/readme.md | mkpi | mkgen | mkout
+```
+
+But the stream pipeline version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
 
 ## Command Line Tools
 
