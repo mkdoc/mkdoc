@@ -64,6 +64,18 @@ mkcat doc/readme.md | mkpi | mkref | mkout > README.md
 
 <?@exec {} mkref -h ?>
 
+### mkabs
+
+Make relative links absolute using the data in `package.json` if no base URL is given.
+
+```shell
+mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
+```
+
+#### Usage
+
+<?@exec {} mkabs -h ?>
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.
