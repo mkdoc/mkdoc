@@ -149,7 +149,7 @@ Report bugs to https://github.com/mkdoc/mkref/issues
 
 ### mkabs
 
-Make relative links absolute using the data in `package.json` by if no base URL is given.
+Make relative links absolute using the data in `package.json` if no base URL is given.
 
 ```shell
 mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
@@ -158,15 +158,15 @@ mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
 #### Usage
 
 ```
-mkref [options]
+mkabs [options]
 
-Link reference collation.
+Make relative links absolute.
 
   -b, --base=[URL]  Base URL for absolute links
   -h, --help        Display this help and exit
   --version         Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkref/issues
+Report bugs to https://github.com/mkdoc/mkabs/issues
 ```
 
 ### mkout

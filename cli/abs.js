@@ -18,7 +18,7 @@ var abs = require('mkabs')
         '-h --help': 'help'
       }
     }
-  , pkg = require('mkref/package.json');
+  , pkg = require('mkabs/package.json');
 
 /**
  *  Make relative links absolute.
