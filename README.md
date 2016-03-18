@@ -61,7 +61,7 @@ However this is not recommended because file path information is lost which is i
 
 #### Usage
 
-```null
+```
 mkcat [options] [files...]
 
 Concatenate source files to an abstract syntax tree.
@@ -87,7 +87,7 @@ You can inline macro functions for application-specific logic or create custom m
 
 #### Usage
 
-```null
+```
 mkpi [options]
 
 Processing instruction macros.
@@ -111,7 +111,7 @@ Typically used to append a generator message but may be used to inject any docum
 
 #### Usage
 
-```null
+```
 mkgen [options]
 
 Message injection.
@@ -134,7 +134,7 @@ mkcat file.md | mkout --html
 
 #### Usage
 
-```null
+```
 mkout [options]
 
 Render an abstract syntax tree.
@@ -163,7 +163,7 @@ Low-level parser for working with comments and tag annotations, see [mkparse][].
 
 #### Usage
 
-```null
+```
 mkparse [options] [files...]
 
 Parse source file comments.
@@ -186,7 +186,7 @@ Generate API documentation from comments.
 
 #### Usage
 
-```null
+```
 mkapi [options] [files...]
 
 Markdown api documentation generator.
