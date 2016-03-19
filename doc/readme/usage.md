@@ -1,6 +1,6 @@
 ## Usage
 
-This example illustrates how to create [README.md](/README.md) from the [source file](/doc/readme.md) and the [include files](/doc/readme):
+This example illustrates how to create a readme file like this one from a [source file](/doc/readme.md) and some [include files](/doc/readme):
 
 <? @source {javascript=s/(\.\.\/)+index/mkdoc/gm} usage.js ?>
 
