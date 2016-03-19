@@ -1,12 +1,12 @@
 var doc = require('../../index')
   , pi = require('mkpi')
-  , gen = require('mkgen')
+  , msg = require('mkmsg')
   , ref = require('mkref')
   , out = require('mkout');
 
 doc('doc/readme.md')
   .pipe(pi())
-  .pipe(gen())
+  .pipe(msg())
   .pipe(ref())
   .pipe(out())
   .pipe(process.stdout);

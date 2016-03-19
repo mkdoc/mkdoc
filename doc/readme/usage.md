@@ -5,7 +5,7 @@
 The equivalent command line:
 
 ```shell
-mkcat doc/readme.md | mkpi | mkgen | mkref | mkout
+mkcat doc/readme.md | mkpi | mkmsg | mkref | mkout
 ```
 
 But the stream pipeline version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.

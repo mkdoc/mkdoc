@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var error = require('../cli/util').error
-  , cli = require('../cli/gen');
+  , cli = require('../cli/msg');
 
 cli(function(err) {
   if(err) {

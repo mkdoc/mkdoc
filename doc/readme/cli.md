@@ -38,19 +38,19 @@ You can inline macro functions for application-specific logic or create custom m
 
 <?@exec {} mkpi -h ?>
 
-### mkgen
+### mkmsg
 
-Appends or prepends a document node to the stream:
+Appends or prepends a document to the stream:
 
 ```shell
-mkcat doc/readme.md | mkpi | mkgen | mkout > README.md
+mkcat doc/readme.md | mkpi | mkmsg | mkout > README.md
 ```
 
 Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.
 
 #### Usage
 
-<?@exec {} mkgen -h ?>
+<?@exec {} mkmsg -h ?>
 
 ### mkref
 

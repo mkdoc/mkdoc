@@ -1,4 +1,4 @@
-var gen = require('mkgen')
+var msg = require('mkmsg')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
@@ -20,10 +20,10 @@ var gen = require('mkgen')
         '-h --help': 'help'
       }
     }
-  , pkg = require('mkgen/package.json');
+  , pkg = require('mkmsg/package.json');
 
 /**
- *  Execute processing instructions in the AST written to stdin.
+ *  Append or prepend a message to the stream.
  */
 function cli(argv, cb) {
 
@@ -51,7 +51,7 @@ function cli(argv, cb) {
     return cb();
   }
 
-  gen(opts, cb);
+  msg(opts, cb);
 }
 
 module.exports = cli;

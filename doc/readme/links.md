@@ -1,6 +1,6 @@
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkpi]: https://github.com/mkdoc/mkpi
-[mkgen]: https://github.com/mkdoc/mkgen
+[mkmsg]: https://github.com/mkdoc/mkmsg
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
