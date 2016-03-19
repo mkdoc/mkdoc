@@ -45,7 +45,6 @@
   "scripts": {
     "clean": "rm -rf coverage target",
     "docs": "npm run readme",
-    "readme": "mkcat doc/readme.md | mkpi | mkmsg | mkref | mkabs | mkout > README.md",
     "lint": "jshint . && jscs .",
     "test": "NODE_env=test mocha ${SPEC:-test/spec}",
     "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}",
