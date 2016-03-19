@@ -1,5 +1,7 @@
 ## Usage
 
+This example illustrates how to create [README.md](/README.md) from the [source file](/doc/readme.md) and the [include files](/doc/readme):
+
 <? @source {javascript=s/(\.\.\/)+index/mkdoc/gm} usage.js ?>
 
 The equivalent command line:

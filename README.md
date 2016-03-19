@@ -24,6 +24,8 @@ npm i -g mkdoc
 
 ## Usage
 
+This example illustrates how to create [README.md](https://github.com/mkdoc/mkdoc/blob/master/README.md) from the [source file](https://github.com/mkdoc/mkdoc/blob/master/doc/readme.md) and the [include files](https://github.com/mkdoc/mkdoc/blob/master/doc/readme):
+
 ```javascript
 var doc = require('mkdoc')
   , pi = require('mkpi')
