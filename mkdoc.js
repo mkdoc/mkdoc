@@ -3,6 +3,7 @@ var mk = require('mktask');
 // @task readme build the api docs.
 function api(cb) {
   //console.dir('api called');
+  //console.dir(this.args);
   cb();
 }
 

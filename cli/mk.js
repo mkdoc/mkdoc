@@ -15,7 +15,7 @@ var path = require('path')
       flags: [],
       alias: {}
     }
-  , NAME = process.env.TASK_FILE || 'mk.js'
+  , NAME = process.env.TASK_FILE || 'mkdoc.js'
   , pkg = require('mktask/package.json');
 
 var deps = {
@@ -119,7 +119,7 @@ function cli(argv, cb) {
   }
 
   // set up execution scope for default task collection
-  runner.scope = deps;
+  runner.scope = {args: args};
 
   if(!list.length) {
     // try to run the main function 
