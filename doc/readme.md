@@ -8,8 +8,8 @@ Creates stream pipelines that convert input [commonmark][] to an abstract syntax
 
 <? @include {=readme}
       install.md
-      usage.md
       features.md
+      usage.md
       cli.md ?>
 
 <? @exec mkapi index.js --level=2 --title=API ?>
