@@ -18,6 +18,9 @@ var path = require('path')
   , NAME = process.env.TASK_FILE || 'mk.js'
   , pkg = require('mktask/package.json');
 
+// decorate with `doc` function
+mk.doc = require('../index');
+
 /**
  *  Run task build files.
  */
