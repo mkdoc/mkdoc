@@ -10,4 +10,4 @@ The equivalent command line:
 mkcat doc/readme.md | mkpi | mkmsg | mkref | mkout
 ```
 
-But the stream pipeline version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
+But the javascript version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
