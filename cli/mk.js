@@ -18,8 +18,25 @@ var path = require('path')
   , NAME = process.env.TASK_FILE || 'mk.js'
   , pkg = require('mktask/package.json');
 
+var deps = {
+  abs: require('mkabs'),
+  api: require('mkapi'),
+  ast: require('mkast'),
+  cat: require('mkcat'),
+  msg: require('mkmsg'),
+  out: require('mkout'),
+  parse: require('mkparse'),
+  pi: require('mkpi'),
+  ref: require('mkref')
+};
+
 // decorate with `doc` function
 mk.doc = require('../index');
+
+// static stream creation access
+for(var k in deps) {
+  mk[k] = deps[k];
+}
 
 /**
  *  Run task build files.
@@ -102,17 +119,7 @@ function cli(argv, cb) {
   }
 
   // set up execution scope for default task collection
-  runner.scope = {
-    abs: require('mkabs'),
-    api: require('mkapi'),
-    ast: require('mkast'),
-    cat: require('mkcat'),
-    msg: require('mkmsg'),
-    out: require('mkout'),
-    parse: require('mkparse'),
-    pi: require('mkpi'),
-    ref: require('mkref')
-  }
+  runner.scope = deps;
 
   if(!list.length) {
     // try to run the main function 

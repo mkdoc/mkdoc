@@ -235,7 +235,7 @@ Generate API documentation from comments.
 ```
 mkapi [options] [files...]
 
-Markdown api documentation generator.
+Documentation generator.
 
   -o, --output=[FILE]  Write output to FILE (default: stdout)
   -t, --title=[VAL]    Title for initial heading
