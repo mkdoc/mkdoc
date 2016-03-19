@@ -16,15 +16,18 @@ var cat = require('mkcat')
  *  @returns an output stream.
  */
 function doc(files, opts) {
-  var i;
+  var i = 0
+    , arg;
 
   // list of files rather than an array
-  if(typeof files === 'string') {
-    files = [files]; 
-    // start from next arg
-    i = 1;
-    while(typeof arguments[i++] === 'string') {
-      files.push(arguments[i - 1]);
+  if(typeof files === 'string' || Array.isArray(files)) {
+    files = Array.isArray(files) ? files : [files]; 
+    while((arg = arguments[i++])) {
+      if(typeof arg === 'string') {
+        files.push(arg);
+      }else if(Array.isArray(arg)) {
+        files = files.concat(arg); 
+      }
     }
 
     // grab options arguments
