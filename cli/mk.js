@@ -91,17 +91,23 @@ function cli(argv, cb) {
   runner = collection.run();
   list = args.unparsed;
 
-  if(!list.length) {
-    // try to run the main function 
-    runner.exec(runner.MAIN, cb);
-  }else{
-     
+  for(var i = 0;i < list.length;i++) {
+    if(!runner.get(list[i])) {
+      return cb(
+        new Error('task not found: ' + list[i])); 
+    } 
   }
 
-  //console.dir(list);
-  //console.dir(file);
-  //console.dir(tasks);
-  //console.dir(collection);
+  if(!list.length) {
+    // try to run the main function 
+    if(runner.get(runner.MAIN)) {
+      runner.exec(runner.MAIN, cb);
+    }else{
+      runner.each(cb);
+    }
+  }else{
+    runner.each(list, cb);  
+  }
 }
 
 module.exports = cli;

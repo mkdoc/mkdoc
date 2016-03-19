@@ -37,7 +37,7 @@ function version(pkg) {
 }
 
 function error(msg) {
-  var prefix = 'error: ';
+  var prefix = 'ERR | ';
   console.error(prefix + msg);
   process.exit(1);
 }
