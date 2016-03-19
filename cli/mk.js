@@ -101,6 +101,19 @@ function cli(argv, cb) {
     } 
   }
 
+  // set up execution scope for default task collection
+  runner.scope = {
+    abs: require('mkabs'),
+    api: require('mkapi'),
+    ast: require('mkast'),
+    cat: require('mkcat'),
+    msg: require('mkmsg'),
+    out: require('mkout'),
+    parse: require('mkparse'),
+    pi: require('mkpi'),
+    ref: require('mkref')
+  }
+
   if(!list.length) {
     // try to run the main function 
     if(runner.get(runner.MAIN)) {

@@ -6,9 +6,13 @@ function api(cb) {
 }
 
 
-function readme(cb) {
-  console.dir('readme called');
-  cb();
+function readme() {
+  mk.doc('doc/readme.md')
+    .pipe(this.pi())
+    .pipe(this.msg())
+    .pipe(this.ref())
+    .pipe(this.out())
+    .pipe(mk.dest('README.md.log'));
 }
 
 function main(cb) {
