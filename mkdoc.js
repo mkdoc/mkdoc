@@ -1,6 +1,6 @@
 var mk = require('mktask');
 
-// @task readme build the api docs.
+// @task api build the api docs.
 function api(cb) {
   mk.api(
     ['index.js'],
