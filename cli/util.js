@@ -5,8 +5,10 @@ function usage(pkg, opts) {
     , max = 0
     , space = 2
     , keys
+    , name = opts.name || pkg.name
     , synopsis = opts.synopsis || '[options]';
 
+  delete opts.name;
   delete opts.synopsis;
 
   keys = Object.keys(opts)
@@ -15,7 +17,7 @@ function usage(pkg, opts) {
     max = Math.max(max, key.length);
   })
 
-  console.log('%s %s', pkg.name, synopsis); 
+  console.log('%s %s', name, synopsis); 
   console.log();
   console.log(pkg.description + '.');
   console.log();
