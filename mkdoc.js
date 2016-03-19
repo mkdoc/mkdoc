@@ -2,9 +2,12 @@ var mk = require('mktask');
 
 // @task readme build the api docs.
 function api(cb) {
-  //console.dir('api called');
-  //console.dir(this.args);
-  cb();
+  mk.api(
+    ['index.js'],
+    {
+      stream: mk.dest('API.md'),
+      heading: 'API'
+    }, cb);
 }
 
 // @task readme build the readme file.

@@ -1,4 +1,5 @@
-var parser = require('cli-argparse')
+var fs = require('fs')
+  , parser = require('cli-argparse')
   , parse = require('mkapi')
   , pkg = require('mkapi/package.json')
   , utils = require('./util')
@@ -61,6 +62,10 @@ function cli(argv, cb) {
   opts.ast = args.flags.ast;
   opts.indent = parseInt(args.options.indent);
   opts.lang = args.options.lang;
+
+  if(args.options.output) {
+    opts.stream = fs.createWriteStream(args.options.output); 
+  }
 
   if(args.options.title !== undefined) {
     opts.heading = args.options.title;
