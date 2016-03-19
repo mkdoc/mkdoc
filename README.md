@@ -33,12 +33,12 @@ var doc = require('mkdoc')
   , ref = require('mkref')
   , out = require('mkout');
 
-doc('doc/readme.md')
-  .pipe(pi())
-  .pipe(msg())
-  .pipe(ref())
-  .pipe(out())
-  .pipe(process.stdout);
+doc('doc/readme.md')          // read markdown source document
+  .pipe(pi())                 // parse processing instructions, includes etc.
+  .pipe(msg())                // append generator message
+  .pipe(ref())                // include link references
+  .pipe(out())                // convert abstract syntax tree to markdown
+  .pipe(process.stdout);      // print the document
 ```
 
 The equivalent command line:
