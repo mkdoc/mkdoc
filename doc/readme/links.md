@@ -4,6 +4,7 @@
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
+[mktask]: https://github.com/mkdoc/mktask
 
 [jshint]: http://jshint.com
 [jscs]: http://jscs.info
