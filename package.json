@@ -34,7 +34,6 @@
     "mkparse": "~1.5.0",
     "mkpi": "~1.0.1",
     "mkref": "~1.0.3",
-    "mmsgg": "~1.0.0",
     "string-repeater": "~1.0.3"
   },
   "devDependencies": {
