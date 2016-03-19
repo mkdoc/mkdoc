@@ -2,6 +2,28 @@
 
 Command line interfaces to a suite of [commonmark][] processing tools.
 
+### mk
+
+Runs tasks in build files, by default searches for `mkdoc.js` in the current working directory and parent directories.
+
+```shell
+mk
+```
+
+When called with no arguments if a `main` task is available it is invoked otherwise all tasks are executed in sequence.
+
+Specified tasks are executed in sequence:
+
+```shell
+mk api readme
+```
+
+See the [mkdoc.js](/mkdoc.js) file for an example and [mktask][] for information on creating task functions.
+
+#### Usage
+
+<?@exec {} mk -h ?>
+
 ### mkcat
 
 Reads one or more markdown documents and serializes them to the output stream, this program is normally used at the beginning of a transform pipeline before being sent to `mkout`:
