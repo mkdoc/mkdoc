@@ -74,7 +74,15 @@ See the [mkdoc.js](https://github.com/mkdoc/mkdoc/blob/master/mkdoc.js) file for
 #### Usage
 
 ```
-'@todo show task info: parse comments'
+mk [task...]
+
+Streaming task runner.
+
+  --tasks     Print task information
+  -h, --help  Display this help and exit
+  --version   Print the version and exit
+
+Report bugs to https://github.com/mkdoc/mktask/issues
 ```
 
 ### mkcat

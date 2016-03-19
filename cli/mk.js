@@ -1,19 +1,22 @@
 var path = require('path')
   , fs = require('fs')
   , mk = require('mktask')
+  , mkparse = require('mkparse')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
       name: 'mk',
       synopsis: '[task...]',
-      '-h': 'Print task information',
-      '--help': 'Display this help and exit',
+      '--tasks': 'Print task information',
+      '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
   , hints = {
       options: [],
       flags: [],
-      alias: {}
+      alias: {
+        '-h --help': 'help'
+      }
     }
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
   , pkg = require('mktask/package.json');
@@ -38,6 +41,17 @@ for(var k in deps) {
   mk[k] = deps[k];
 }
 
+function print(file, cb) {
+  var parse = mkparse.load(file, cb);
+  parse.on('comment', function(comment) {
+    comment.tags.forEach(function(tag) {
+      if(tag.id === 'task') {
+        console.log('TASK | [%s] %s', tag.name, tag.description); 
+      }
+    })
+  })
+}
+
 /**
  *  Run task build files.
  */
@@ -50,10 +64,7 @@ function cli(argv, cb) {
 
   var args = parser(argv, hints);
 
-  if(args.flags.h) {
-    console.dir('@todo show task info: parse comments'); 
-    return cb();
-  }else if(args.flags.help) {
+  if(args.flags.help) {
     utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
@@ -65,7 +76,8 @@ function cli(argv, cb) {
     , file = path.join(dir, NAME)
     , tasks
     , list
-    , stat;
+    , stat
+    , printing = false;
 
   function get() {
     try {
@@ -74,6 +86,11 @@ function cli(argv, cb) {
     }catch(e) {}
 
     if(stat && stat.isFile()) {
+      if(args.flags.tasks) {
+        printing = true;
+        print(file, cb); 
+        return true;
+      }
       try {
         return require(file);
       }catch(e) {
@@ -88,6 +105,10 @@ function cli(argv, cb) {
     if(dir === '/') {
       break; 
     }
+  }
+
+  if(printing) {
+    return; 
   }
 
   if(!tasks) {
