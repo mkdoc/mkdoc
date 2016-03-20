@@ -14,7 +14,8 @@ var cat = require('mkcat')
         '--ast'
       ],
       alias: {
-        '-a --ast': 'ast'
+        '-a --ast': 'ast',
+        '-h --help': 'help'
       }
     }
   , pkg = require('mkcat/package.json');
@@ -42,7 +43,7 @@ function cli(argv, cb) {
     opts.buffer = true; 
   }
 
-  if(args.flags.h || args.flags.help) {
+  if(args.flags.help) {
     utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
