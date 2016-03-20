@@ -76,7 +76,7 @@ See the [mkdoc.js](https://github.com/mkdoc/mkdoc/blob/master/mkdoc.js) file for
 ```
 mk [task...]
 
-Streaming task runner.
+Task runner.
 
   --tasks     Print task information
   -h, --help  Display this help and exit

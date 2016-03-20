@@ -142,16 +142,7 @@ function cli(argv, cb) {
   // set up execution scope for default task collection
   runner.scope = {args: args};
 
-  if(!list.length) {
-    // try to run the main function 
-    if(runner.get(runner.MAIN)) {
-      runner.exec(runner.MAIN, cb);
-    }else{
-      runner.each(cb);
-    }
-  }else{
-    runner.each(list, cb);  
-  }
+  runner.each(list, cb);  
 }
 
 module.exports = cli;
