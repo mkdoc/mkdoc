@@ -118,20 +118,41 @@ function cli(argv, cb) {
     }
 
     function req(mod) {
+
+      // return our reference to `mktask` so there are not 
+      // module conflicts
       if(mod === 'mktask') {
         return mk; 
       }
+
+      // resolve relative paths
+      if(/^\.\.?\//.test(mod)) {
+        mod = path.join(process.cwd(), mod);
+      }
+
+      //console.error('require proxy %s', mod);
       return require(mod);
     }
 
-    var context = vm.createContext({require: req, console: console});
-    context.mk = mk;
+    var context = vm.createContext(
+        {
+          Buffer: Buffer,
+          require: req,
+          console: console,
+          process: process,
+          setTimeout: setTimeout,
+          setInterval: setInterval,
+          clearTimeout: clearTimeout,
+          clearInterval: clearInterval,
+          setImmediate: setImmediate,
+          clearImmediate: clearImmediate
+        });
 
     if(stat && stat.isFile()) {
       try {
         var contents = fs.readFileSync(file).toString('utf8')
           , script = new vm.Script(contents);
-        script.runInContext(context);
+        script.runInContext(context, {filename: file});
         return true;
 
 
