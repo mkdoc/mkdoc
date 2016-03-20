@@ -17,8 +17,10 @@ function readme(cb) {
     .pipe(mk.msg())
     .pipe(mk.ref())
     .pipe(mk.abs())
-    .pipe(mk.out())
-    .pipe(mk.dest('README.md'))
+    .pipe(mk.ast.stringify())
+    .pipe(process.stdout)
+    //.pipe(mk.out())
+    //.pipe(mk.dest('README.md'))
     .on('finish', cb);
 }
 
