@@ -7,14 +7,20 @@ var path = require('path')
   , options = {
       name: 'mk',
       synopsis: '[task...]',
+      '-f, --file=[FILE...]': 'Load specific task files',
       '--tasks': 'Print task information',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
   , hints = {
-      options: [],
-      flags: [],
+      options: [
+        '-f'
+      ],
+      flags: [
+        '--tasks'
+      ],
       alias: {
+        '-f --file': 'files',
         '-h --help': 'help'
       }
     }
@@ -41,21 +47,36 @@ for(var k in deps) {
   mk[k] = deps[k];
 }
 
-function print(file, runner, cb) {
-  var parse = mkparse.load(file, cb);
-  parse.on('comment', function(comment) {
-    var missing;
-    //console.dir(comment);
-    comment.tags.forEach(function(tag) {
-      missing = '';
-      if(tag.id === 'task') {
-        if(!runner.get(tag.name)) {
-          missing = ' (missing)'; 
+function print(files, runner, cb) {
+  var list = files.slice();
+
+  function next(err) {
+    if(err) {
+      return cb(err); 
+    }
+
+    var file = list.shift();
+    if(!file) {
+      return cb(); 
+    }
+
+    var parse = mkparse.load(file, next);
+    parse.on('comment', function(comment) {
+      var missing;
+      //console.dir(comment);
+      comment.tags.forEach(function(tag) {
+        missing = '';
+        if(tag.id === 'task') {
+          if(!runner.get(tag.name)) {
+            missing = ' (missing)'; 
+          }
+          console.log('TASK | [%s] %s%s', tag.name, tag.description, missing); 
         }
-        console.log('TASK | [%s] %s%s', tag.name, tag.description, missing); 
-      }
+      })
     })
-  })
+  }
+
+  next();
 }
 
 /**
@@ -80,15 +101,20 @@ function cli(argv, cb) {
 
   var dir = process.cwd()
     , file = path.join(dir, NAME)
+    , files = args.options.files
     , tasks
     , list
     , stat;
 
-  function get() {
+  function get(file, strict) {
     try {
       stat = fs.statSync(file)
     // ok if the file does not exist, searching parents
     }catch(e) {}
+
+    if(strict && (!stat || stat && !stat.isFile())) {
+      return cb(new Error('invalid file: ' + file)); 
+    }
 
     if(stat && stat.isFile()) {
       try {
@@ -99,11 +125,26 @@ function cli(argv, cb) {
     }
   }
 
-  while(!(tasks = get(file))) {
-    dir = path.dirname(dir);
-    file = path.join(dir, NAME);
-    if(dir === '/') {
-      break; 
+  if(files) {
+
+    if(!Array.isArray(files)) {
+      files = [files]; 
+    }
+
+    files.forEach(function(file) {
+      if(!/^\.?\//.test(file)) {
+        file = path.join(process.cwd(), file);
+      }
+      tasks = get(file, true);
+    })
+  
+  }else{
+    while(!(tasks = get(file))) {
+      dir = path.dirname(dir);
+      file = path.join(dir, NAME);
+      if(dir === '/') {
+        break; 
+      }
     }
   }
 
@@ -129,7 +170,13 @@ function cli(argv, cb) {
   list = args.unparsed;
 
   if(args.flags.tasks) {
-    return print(file, runner, cb); 
+
+    // print from auto-detected file
+    if(!files) {
+      files = [file];
+    }
+       
+    return print(files, runner, cb); 
   }
 
   for(var i = 0;i < list.length;i++) {

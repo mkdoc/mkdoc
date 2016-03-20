@@ -78,9 +78,10 @@ mk [task...]
 
 Task runner.
 
-  --tasks     Print task information
-  -h, --help  Display this help and exit
-  --version   Print the version and exit
+  -f, --file=[FILE...]  Load specific task files
+  --tasks               Print task information
+  -h, --help            Display this help and exit
+  --version             Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mktask/issues
 ```
