@@ -79,7 +79,7 @@ mk [task...]
 Task runner.
 
   -f, --file=[FILE...]  Load specific task files
-  --tasks               Print task information
+  --tasks               Print task comments
   -h, --help            Display this help and exit
   --version             Print the version and exit
 
