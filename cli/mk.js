@@ -41,12 +41,18 @@ for(var k in deps) {
   mk[k] = deps[k];
 }
 
-function print(file, cb) {
+function print(file, runner, cb) {
   var parse = mkparse.load(file, cb);
   parse.on('comment', function(comment) {
+    var missing;
+    //console.dir(comment);
     comment.tags.forEach(function(tag) {
+      missing = '';
       if(tag.id === 'task') {
-        console.log('TASK | [%s] %s', tag.name, tag.description); 
+        if(!runner.get(tag.name)) {
+          missing = ' (missing)'; 
+        }
+        console.log('TASK | [%s] %s%s', tag.name, tag.description, missing); 
       }
     })
   })
@@ -76,8 +82,7 @@ function cli(argv, cb) {
     , file = path.join(dir, NAME)
     , tasks
     , list
-    , stat
-    , printing = false;
+    , stat;
 
   function get() {
     try {
@@ -86,11 +91,6 @@ function cli(argv, cb) {
     }catch(e) {}
 
     if(stat && stat.isFile()) {
-      if(args.flags.tasks) {
-        printing = true;
-        print(file, cb); 
-        return true;
-      }
       try {
         return require(file);
       }catch(e) {
@@ -105,10 +105,6 @@ function cli(argv, cb) {
     if(dir === '/') {
       break; 
     }
-  }
-
-  if(printing) {
-    return; 
   }
 
   if(!tasks) {
@@ -131,6 +127,10 @@ function cli(argv, cb) {
 
   runner = collection.run();
   list = args.unparsed;
+
+  if(args.flags.tasks) {
+    return print(file, runner, cb); 
+  }
 
   for(var i = 0;i < list.length;i++) {
     if(!runner.get(list[i])) {
