@@ -1,6 +1,7 @@
 var path = require('path')
   , fs = require('fs')
   , mk = require('mktask')
+  , vm = require('vm')
   , mkparse = require('mkparse')
   , parser = require('cli-argparse')
   , utils = require('./util')
@@ -116,9 +117,25 @@ function cli(argv, cb) {
       return cb(new Error('invalid file: ' + file)); 
     }
 
+    function req(mod) {
+      if(mod === 'mktask') {
+        return mk; 
+      }
+      return require(mod);
+    }
+
+    var context = vm.createContext({require: req, console: console});
+    context.mk = mk;
+
     if(stat && stat.isFile()) {
       try {
-        return require(file);
+        var contents = fs.readFileSync(file).toString('utf8')
+          , script = new vm.Script(contents);
+        script.runInContext(context);
+        return true;
+
+
+        //return require(file);
       }catch(e) {
         return cb(e); 
       }
