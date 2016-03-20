@@ -1,7 +1,6 @@
 var filter = require('mkfilter')
   , ast = require('mkast')
   , Node = ast.Node
-  , types = Node.types
   , parser = require('cli-argparse')
   , utils = require('./util')
   , keys = {}
@@ -30,6 +29,7 @@ var filter = require('mkfilter')
   , pkg = require('mkfilter/package.json');
 
 //
+var types = Node.types.concat(Node.extensions);
 types.forEach(function(type) {
   filters[type] = false;
   var key = type.replace(/_/g, '-')

@@ -33,6 +33,7 @@ var deps = {
   api: require('mkapi'),
   ast: require('mkast'),
   cat: require('mkcat'),
+  filter: require('mkfilter'),
   msg: require('mkmsg'),
   out: require('mkout'),
   parse: require('mkparse'),
