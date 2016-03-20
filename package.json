@@ -44,7 +44,6 @@
   },
   "scripts": {
     "clean": "rm -rf coverage target",
-    "docs": "npm run readme",
     "lint": "jshint . && jscs .",
     "test": "NODE_env=test mocha ${SPEC:-test/spec}",
     "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}",
