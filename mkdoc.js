@@ -11,14 +11,15 @@ function api(cb) {
 }
 
 // @task readme build the readme file.
-function readme() {
+function readme(cb) {
   mk.doc('doc/readme.md')
     .pipe(mk.pi())
     .pipe(mk.msg())
     .pipe(mk.ref())
     .pipe(mk.abs())
     .pipe(mk.out())
-    .pipe(mk.dest('README.md'));
+    .pipe(mk.dest('README.md'))
+    .on('finish', cb);
 }
 
 mk.task(api);
