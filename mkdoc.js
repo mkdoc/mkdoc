@@ -14,13 +14,13 @@ function api(cb) {
 function readme(cb) {
   mk.doc('doc/readme.md')
     .pipe(mk.pi())
-    .pipe(mk.msg())
     .pipe(mk.ref())
     .pipe(mk.abs())
-    .pipe(mk.ast.stringify())
-    .pipe(process.stdout)
-    //.pipe(mk.out())
-    //.pipe(mk.dest('README.md'))
+    .pipe(mk.msg())
+    //.pipe(mk.ast.stringify())
+    //.pipe(process.stdout)
+    .pipe(mk.out())
+    .pipe(mk.dest('README.md'))
     .on('finish', cb);
 }
 

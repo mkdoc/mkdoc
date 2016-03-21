@@ -6,7 +6,7 @@ var doc = require('../../index')
 
 doc('doc/readme.md')          // read markdown source document
   .pipe(pi())                 // parse processing instructions, includes etc.
-  .pipe(msg())                // append generator message
   .pipe(ref())                // include link references
+  .pipe(msg())                // append generator message
   .pipe(out())                // convert abstract syntax tree to markdown
   .pipe(process.stdout);      // print the document
