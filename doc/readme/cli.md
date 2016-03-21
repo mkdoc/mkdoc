@@ -20,10 +20,6 @@ mk api readme
 
 See the [mkdoc.js](/mkdoc.js) file for an example and [mktask][] for information on creating task functions.
 
-#### Usage
-
-<?@exec {} mk -h ?>
-
 ### mkcat
 
 Reads one or more markdown documents and serializes them to the output stream, this program is normally used at the beginning of a transform pipeline before being sent to `mkout`:
@@ -40,10 +36,6 @@ cat file.md | mkcat | mkout
 
 However this is not recommended because file path information is lost which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
 
-#### Usage
-
-<?@exec {} mkcat -h ?>
-
 ### mkpi
 
 Include markdown documents, source files and the output of commands:
@@ -56,10 +48,6 @@ This program parses and executes processing instructions such as `<? @include in
 
 You can inline macro functions for application-specific logic or create custom macro functions that may be shared between projects, see the [mkpi docs][mkpi] for more details.
 
-#### Usage
-
-<?@exec {} mkpi -h ?>
-
 ### mkmsg
 
 Appends or prepends a document to the stream:
@@ -70,10 +58,6 @@ mkcat doc/readme.md | mkpi | mkmsg | mkout > README.md
 
 Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.
 
-#### Usage
-
-<?@exec {} mkmsg -h ?>
-
 ### mkref
 
 Collates link references and appends them to the stream.
@@ -81,10 +65,6 @@ Collates link references and appends them to the stream.
 ```shell
 mkcat doc/readme.md | mkpi | mkref | mkout > README.md
 ```
-
-#### Usage
-
-<?@exec {} mkref -h ?>
 
 ### mkabs
 
@@ -94,10 +74,6 @@ Make relative links absolute using the data in `package.json` if no base URL is 
 mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
 ```
 
-#### Usage
-
-<?@exec {} mkabs -h ?>
-
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.
@@ -105,10 +81,6 @@ Render a stream to markdown, XML, HTML and JSON.
 ```shell
 mkcat file.md | mkout --html
 ```
-
-#### Usage
-
-<?@exec {} mkout -h ?>
 
 ### mkparse
 
@@ -120,14 +92,6 @@ mkparse index.js > index.doc.js
 
 Low-level parser for working with comments and tag annotations, see [mkparse][]. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.
 
-#### Usage
-
-<?@exec {} mkparse -h ?>
-
 ### mkapi
 
 Generate API documentation from comments.
-
-#### Usage
-
-<?@exec {} mkapi -h ?>
