@@ -44,7 +44,7 @@ doc('doc/readme.md')          // read markdown source document
 The equivalent command line:
 
 ```shell
-mkcat doc/readme.md | mkpi | mkmsg | mkref | mkout
+mkcat doc/readme.md | mkpi | mkref | mkmsg | mkout
 ```
 
 But the javascript version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
