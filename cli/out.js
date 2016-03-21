@@ -7,6 +7,7 @@ var fs = require('fs')
       '-m, --html': 'Set output renderer to HTML',
       '-x, --xml': 'Set output renderer to XML',
       '-y, --yaml': 'Set output renderer to YAML',
+      '-Y, --yaml-full': 'Do not compact YAML output',
       '-j, --json': 'Pass through input JSON',
       '-t, --type=[TYPE]': 'Set the output renderer type',
       '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
@@ -23,6 +24,7 @@ var fs = require('fs')
         '-m --html': 'html',
         '-x --xml': 'xml',
         '-y --yaml': 'yaml',
+        '-Y --yaml-full': 'yamlFull',
         '-j --json': 'json',
         '-t --type': 'type',
         '-o --output': 'output',
@@ -48,6 +50,7 @@ function cli(argv, cb) {
   opts.input = process.stdin;
   opts.files = args.unparsed;
   opts.output = process.stdout;
+  opts.render = {};
   opts.cli = true;
 
   if(args.options.output) {
@@ -70,6 +73,10 @@ function cli(argv, cb) {
 
   if(args.options.type) {
     opts.type = args.options.type;
+  }
+
+  if(args.flags.yamlFull) {
+    opts.render.compact = false; 
   }
 
   if(args.flags.h || args.flags.help) {
