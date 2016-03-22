@@ -18,7 +18,7 @@ mk api readme
 
 See the [mkdoc.js](/mkdoc.js) file for an example and [mktask][] for information on creating task functions.
 
-[mktask][] | [mktask help][cli help]
+[mktask][] | [mk help][mktask help]
 
 ### mkcat
 
@@ -36,7 +36,7 @@ cat file.md | mkcat | mkout
 
 However this is not recommended because file path information is lost which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
 
-[mkcat][] | [mkcat help][cli help]
+[mkcat][] | [mkcat help][]
 
 ### mkpi
 
