@@ -85,7 +85,7 @@ mk api readme
 
 See the [mkdoc.js](https://github.com/mkdoc/mkdoc/blob/master/mkdoc.js) file for an example and [mktask][] for information on creating task functions.
 
-[Source Code][mktask] | [Help (CLI)][mktask help]
+[Source Code][mktask] | [CLI Help][mktask help]
 
 ### mkcat
 
@@ -103,7 +103,7 @@ cat file.md | mkcat | mkout
 
 However this is not recommended because file path information is lost which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
 
-[Source Code][mkcat] | [Help (CLI)][mkcat help]
+[Source Code][mkcat] | [CLI Help][mkcat help]
 
 ### mkpi
 
@@ -117,7 +117,7 @@ This program parses and executes processing instructions such as `<? @include in
 
 You can inline macro functions for application-specific logic or create custom macro functions that may be shared between projects, see the [mkpi docs][mkpi] for more details.
 
-[mkpi][] | [mkpi help][cli help]
+[Source Code][mkpi] | [CLI Help][mkpi help]
 
 ### mkmsg
 
@@ -129,7 +129,7 @@ mkcat doc/readme.md | mkpi | mkmsg | mkout > README.md
 
 Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.
 
-[mkmsg][] | [mkmsg help][cli help]
+[Source Code][mkmsg] | [CLI Help][mkmsg help]
 
 ### mkref
 
@@ -139,7 +139,7 @@ Collates link references and appends them to the stream.
 mkcat doc/readme.md | mkpi | mkref | mkout > README.md
 ```
 
-[mkref][] | [mkref help][cli help]
+[Source Code][mkref] | [CLI Help][mkref help]
 
 ### mkabs
 
@@ -149,7 +149,7 @@ Make relative links absolute using the data in `package.json` if no base URL is 
 mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
 ```
 
-[mkabs][] | [mkabs help][cli help]
+[Source Code][mkabs] | [CLI Help][mkabs help]
 
 ### mkout
 
@@ -159,7 +159,7 @@ Render a stream to markdown, XML, HTML and JSON.
 mkcat file.md | mkout --html
 ```
 
-[mkout][] | [mkout help][cli help]
+[Source Code][mkout] | [CLI Help][mkout help]
 
 ### mkparse
 
@@ -171,7 +171,7 @@ mkparse index.js > index.doc.js
 
 Low-level parser for working with comments and tag annotations, see [mkparse][]. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.
 
-[mkparse][] | [mkparse help][cli help]
+[Source Code][mkparse] | [CLI Help][mkparse help]
 
 ### mkapi
 
@@ -181,7 +181,7 @@ Generate API documentation from comments in source files.
 mkapi index.js lib/*.js --title=API > API.md
 ```
 
-[mkapi][] | [mkapi help][cli help]
+[Source Code][mkapi] | [CLI Help][mkapi help]
 
 ## API
 
