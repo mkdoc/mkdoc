@@ -18,7 +18,7 @@ mk api readme
 
 See the [mkdoc.js](/mkdoc.js) file for an example and [mktask][] for information on creating task functions.
 
-[mktask][] | [mktask-help][cli help]
+[mktask][] | [mktask help][cli help]
 
 ### mkcat
 
@@ -36,7 +36,7 @@ cat file.md | mkcat | mkout
 
 However this is not recommended because file path information is lost which is important for some processing tools such as [mkpi][] which uses the file path to resolve relative include files.
 
-[mkcat][] | [mkcat-help][cli help]
+[mkcat][] | [mkcat help][cli help]
 
 ### mkpi
 
@@ -50,7 +50,7 @@ This program parses and executes processing instructions such as `<? @include in
 
 You can inline macro functions for application-specific logic or create custom macro functions that may be shared between projects, see the [mkpi docs][mkpi] for more details.
 
-[mkpi][] | [mkpi-help][cli help]
+[mkpi][] | [mkpi help][cli help]
 
 ### mkmsg
 
@@ -62,7 +62,7 @@ mkcat doc/readme.md | mkpi | mkmsg | mkout > README.md
 
 Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.
 
-[mkmsg][] | [mkmsg-help][cli help]
+[mkmsg][] | [mkmsg help][cli help]
 
 ### mkref
 
@@ -72,7 +72,7 @@ Collates link references and appends them to the stream.
 mkcat doc/readme.md | mkpi | mkref | mkout > README.md
 ```
 
-[mkref][] | [mkref-help][cli help]
+[mkref][] | [mkref help][cli help]
 
 ### mkabs
 
@@ -82,7 +82,7 @@ Make relative links absolute using the data in `package.json` if no base URL is 
 mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
 ```
 
-[mkabs][] | [mkabs-help][cli help]
+[mkabs][] | [mkabs help][cli help]
 
 ### mkout
 
@@ -92,7 +92,7 @@ Render a stream to markdown, XML, HTML and JSON.
 mkcat file.md | mkout --html
 ```
 
-[mkout][] | [mkout-help][cli help]
+[mkout][] | [mkout help][cli help]
 
 ### mkparse
 
@@ -104,7 +104,7 @@ mkparse index.js > index.doc.js
 
 Low-level parser for working with comments and tag annotations, see [mkparse][]. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.
 
-[mkparse][] | [mkparse-help][cli help]
+[mkparse][] | [mkparse help][cli help]
 
 ### mkapi
 
@@ -114,4 +114,4 @@ Generate API documentation from comments in source files.
 mkapi index.js lib/*.js --title=API > API.md
 ```
 
-[mkapi][] | [mkapi-help][cli help]
+[mkapi][] | [mkapi help][cli help]
