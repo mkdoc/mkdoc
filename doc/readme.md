@@ -10,6 +10,7 @@ Creates stream pipelines that convert input [commonmark][] to an abstract syntax
       install.md
       features.md
       usage.md
+      modules.md
       cli.md ?>
 
 <? @exec mkapi index.js --level=2 --title=API ?>
