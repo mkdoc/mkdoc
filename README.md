@@ -151,6 +151,24 @@ mkcat doc/readme.md | mkpi | mkref | mkabs | mkout > README.md
 
 [Source Code][mkabs] | [CLI Help][mkabs help]
 
+### mkfilter
+
+Filters nodes by type from a stream.
+
+To remove all headings from a document:
+
+```shell
+mkcat doc/readme.md | mkfilter --heading | mkout
+```
+
+Remove everything but code blocks from a document:
+
+```shell
+mkcat doc/readme.md | mkfilter --code-block --invert | mkout
+```
+
+[Source Code][mkfilter] | [CLI Help][mkfilter help]
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.
