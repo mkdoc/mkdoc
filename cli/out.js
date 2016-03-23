@@ -76,6 +76,8 @@ function cli(argv, cb) {
   }
 
   if(args.flags.yamlFull) {
+    // implies yaml type, means that -yY is not necessary -Y is enough
+    opts.type = 'yaml';
     opts.render.compact = false; 
   }
 
