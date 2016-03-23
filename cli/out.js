@@ -3,30 +3,36 @@ var fs = require('fs')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
-      '-d, --md': 'Set output renderer to markdown (default)',
       '-m, --html': 'Set output renderer to HTML',
       '-x, --xml': 'Set output renderer to XML',
       '-y, --yaml': 'Set output renderer to YAML',
       '-Y, --yaml-full': 'Do not compact YAML output',
+      '-t, --text': 'Set output renderer to TEXT',
       '-j, --json': 'Pass through input JSON',
-      '-t, --type=[TYPE]': 'Set the output renderer type',
       '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
   , hints = {
       options: [
-        '-t',
         '-o'
       ],
+      flags: [
+        '--html',
+        '--xml',
+        '--yaml',
+        '--yaml-full',
+        '--text',
+        '--json',
+        '--help'
+      ],
       alias: {
-        '-d --md': 'markdown',
         '-m --html': 'html',
         '-x --xml': 'xml',
         '-y --yaml': 'yaml',
         '-Y --yaml-full': 'yamlFull',
+        '-t --text': 'text',
         '-j --json': 'json',
-        '-t --type': 'type',
         '-o --output': 'output',
         '-h --help': 'help'
       }
@@ -58,28 +64,22 @@ function cli(argv, cb) {
   }
 
   // support --xml, --html etc.
-  if(!args.options.type) {
-    for(k in out.types) {
-      if(args.flags[k]) {
-        args.options.type = k;
-        break;
-      } 
+  for(k in out.types) {
+    if(args.flags[k]) {
+      opts.type = k;
+      break;
     } 
+  } 
 
-    if(args.flags.json) {
-      args.options.type = 'json';
-    }
-  }
-
-  if(args.options.type) {
-    opts.type = args.options.type;
+  if(args.flags.json) {
+    opts.type = 'json';
   }
 
   if(args.flags.yamlFull) {
     opts.render.compact = false; 
   }
 
-  if(args.flags.h || args.flags.help) {
+  if(args.flags.help) {
     utils.usage(pkg, options);
     return cb();
   }else if(args.flags.version) {
