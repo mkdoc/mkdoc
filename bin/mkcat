@@ -3,6 +3,12 @@
 var error = require('../cli/util').error
   , cli = require('../cli/cat');
 
+// hack for stdin issue with child_process.exec
+// when executed via an @exec tag
+if(process.env.MKPI) {
+  process.stdin.end();
+}
+
 cli(function(err) {
   if(err) {
     error(err.message || err.stack); 
