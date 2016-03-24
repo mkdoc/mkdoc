@@ -3,12 +3,14 @@ var fs = require('fs')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
-      '-m, --html': 'Set output renderer to HTML',
+      '-H, --html': 'Set output renderer to HTML',
       '-x, --xml': 'Set output renderer to XML',
+      '-m, --man': 'Set output renderer to MAN',
       '-y, --yaml': 'Set output renderer to YAML',
       '-Y, --yaml-full': 'Do not compact YAML output',
       '-t, --text': 'Set output renderer to TEXT',
-      '-j, --json': 'Pass through input JSON',
+      '-j, --json': 'Set output renderer to JSON',
+      '-n, --noop': 'Pass through input JSON',
       '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
@@ -20,19 +22,23 @@ var fs = require('fs')
       flags: [
         '--html',
         '--xml',
+        '--man',
         '--yaml',
         '--yaml-full',
         '--text',
         '--json',
+        '--noop',
         '--help'
       ],
       alias: {
-        '-m --html': 'html',
+        '-H --html': 'html',
         '-x --xml': 'xml',
+        '-m --man': 'man',
         '-y --yaml': 'yaml',
         '-Y --yaml-full': 'yamlFull',
         '-t --text': 'text',
         '-j --json': 'json',
+        '-n --noop': 'noop',
         '-o --output': 'output',
         '-h --help': 'help'
       }
@@ -71,8 +77,8 @@ function cli(argv, cb) {
     } 
   } 
 
-  if(args.flags.json) {
-    opts.type = 'json';
+  if(args.flags.noop) {
+    opts.type = out.NOOP;
   }
 
   if(args.flags.yamlFull) {
