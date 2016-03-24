@@ -185,6 +185,14 @@ function cli(argv, cb) {
         break; 
       }
     }
+
+    // change to parent directory of mkdoc.js
+    // so that input and output paths are relative to
+    // the mkdoc.js file and not the cwd when in a deeper
+    // directory
+    if(tasks) {
+      process.chdir(path.dirname(file));
+    }
   }
 
   if(!tasks) {
