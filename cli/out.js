@@ -7,10 +7,10 @@ var fs = require('fs')
       '-H, --html': 'Set output renderer to HTML',
       '-x, --xml': 'Set output renderer to XML',
       '-m, --man': 'Set output renderer to MAN',
-      '-y, --yaml': 'Set output renderer to YAML',
-      '-Y, --yaml-full': 'Do not compact YAML output',
       '-t, --text': 'Set output renderer to TEXT',
       '-j, --json': 'Set output renderer to JSON',
+      '-y, --yaml': 'Set output renderer to YAML',
+      '-Y, --yaml-full': 'Do not compact YAML output',
       '-n, --noop': 'Pass through input JSON',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
