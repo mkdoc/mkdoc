@@ -102,6 +102,22 @@ mkcat doc/readme.md | mkfilter --code-block --invert | mkout
 
 [Source Code][mkfilter] | [CLI Help][mkfilter help]
 
+### mktoc
+
+Create a standalone table of contents:
+
+```shell
+mkcat README.md | mktoc -s | mkout > TOC.md
+```
+
+Inject the table of contents into a document containing the `<!-- @toc -->` marker:
+
+```shell
+mkcat readme.md | mktoc | mkout > README.md
+```
+
+[Source Code][mktoc] | [CLI Help][mktoc help]
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.

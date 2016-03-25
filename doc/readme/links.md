@@ -8,6 +8,7 @@
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
+[mktoc]: https://github.com/mkdoc/mktoc
 [mktask]: https://github.com/mkdoc/mktask
 
 [mkcat help]: https://github.com/mkdoc/mkcat#help
@@ -19,6 +20,7 @@
 [mkout help]: https://github.com/mkdoc/mkout#help
 [mkparse help]: https://github.com/mkdoc/mkparse#help
 [mkapi help]: https://github.com/mkdoc/mkapi#help
+[mktoc help]: https://github.com/mkdoc/mktoc#help
 [mktask help]: https://github.com/mkdoc/mktask#help
 
 [jshint]: http://jshint.com

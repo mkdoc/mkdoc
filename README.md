@@ -169,6 +169,22 @@ mkcat doc/readme.md | mkfilter --code-block --invert | mkout
 
 [Source Code][mkfilter] | [CLI Help][mkfilter help]
 
+### mktoc
+
+Create a standalone table of contents:
+
+```shell
+mkcat README.md | mktoc -s | mkout > TOC.md
+```
+
+Inject the table of contents into a document containing the `<!-- @toc -->` marker:
+
+```shell
+mkcat readme.md | mktoc | mkout > README.md
+```
+
+[Source Code][mktoc] | [CLI Help][mktoc help]
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.
@@ -228,7 +244,7 @@ MIT
 
 ---
 
-*Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 25, 2016*
+*Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016*
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
@@ -240,6 +256,7 @@ MIT
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
+[mktoc]: https://github.com/mkdoc/mktoc
 [mktask]: https://github.com/mkdoc/mktask
 [mkcat help]: https://github.com/mkdoc/mkcat#help
 [mkfilter help]: https://github.com/mkdoc/mkfilter#help
@@ -250,6 +267,7 @@ MIT
 [mkout help]: https://github.com/mkdoc/mkout#help
 [mkparse help]: https://github.com/mkdoc/mkparse#help
 [mkapi help]: https://github.com/mkdoc/mkapi#help
+[mktoc help]: https://github.com/mkdoc/mktoc#help
 [mktask help]: https://github.com/mkdoc/mktask#help
 [jshint]: http://jshint.com
 [jscs]: http://jscs.info
