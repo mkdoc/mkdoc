@@ -60,6 +60,7 @@ Designed to be modular, a brief overview:
 * [mkmsg][] injects a message into a stream.
 * [mkref][] injects link references into a stream.
 * [mkabs][] makes links absolute.
+* [mktoc][] creates a table of contents list.
 * [mkfilter][] removes nodes from the stream by type.
 * [mkout][] renders the tree to an output format (XML, HTML etc).
 * [mkparse][] parses comments from source files.
