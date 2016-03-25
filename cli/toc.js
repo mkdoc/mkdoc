@@ -3,9 +3,10 @@ var toc = require('mktoc')
   , utils = require('./util')
   , options = {
       '-t, --title=[TITLE]': 'Set initial heading',
-      '-l, --level=[NUM]': 'Set initial heading level',
-      '-d, --depth=[NUM]': 'Ignore headings below a depth',
-      '-s, --standalone': 'Create standalone index',
+      '-l, --level=[NUM]': 'Set level for initial heading',
+      '-d, --depth=[LEVEL]': 'Ignore headings below LEVEL',
+      '-m, --max=[LEVEL]': 'Ignore headings above LEVEL',
+      '-s, --standalone': 'Standalone index, discards input',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
@@ -13,7 +14,8 @@ var toc = require('mktoc')
       options: [
         '-t',
         '-l',
-        '-d'
+        '-d',
+        '-m'
       ],
       flags: [
         '--standalone',
@@ -23,6 +25,7 @@ var toc = require('mktoc')
         '-t --title': 'title',
         '-l --level': 'level',
         '-d --depth': 'depth',
+        '-m --max': 'max',
         '-s --standalone': 'standalone',
         '-h --help': 'help'
       }
@@ -41,7 +44,8 @@ function cli(argv, cb) {
 
   var args = parser(argv, hints)
     , level = parseInt(args.options.level) || 1
-    , depth = parseInt(args.options.depth) || 1;
+    , depth = parseInt(args.options.depth) || 1
+    , max = parseInt(args.options.max) || 6;
 
   if(level < 1) {
     level = 1; 
@@ -51,13 +55,18 @@ function cli(argv, cb) {
     depth = 1; 
   }
 
+  if(max < 1) {
+    max = 1; 
+  }
+
   var opts = {
         input: process.stdin, 
         output: process.stdout,
         standalone: args.flags.standalone,
         title: args.options.title,
         level: level,
-        depth: depth
+        depth: depth,
+        max: max
       };
 
   if(args.flags.help) {
