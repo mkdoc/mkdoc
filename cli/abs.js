@@ -4,6 +4,7 @@ var abs = require('mkabs')
   , options = {
       '-b, --base=[URL]': 'Base URL for absolute links',
       '-r, --relative=[PATH]': 'Relative path when repository url',
+      '-g, --greedy': 'Convert links starting with # and ?',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
@@ -12,11 +13,13 @@ var abs = require('mkabs')
         '-b', '-r'
       ],
       flags: [
+        '--greedy',
         '--help'
       ],
       alias: {
         '-b --base': 'base',
         '-r --relative': 'rel',
+        '-g --greedy': 'greedy',
         '-h --help': 'help'
       }
     }
@@ -35,7 +38,8 @@ function cli(argv, cb) {
   var args = parser(argv, hints)
     , opts = {
         input: process.stdin, 
-        output: process.stdout
+        output: process.stdout,
+        greedy: args.flags.greedy
       };
 
   if(args.options.base) {
