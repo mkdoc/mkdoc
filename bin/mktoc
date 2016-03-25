@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var error = require('../cli/util').error
+  , cli = require('../cli/toc');
+
+cli(function(err) {
+  if(err) {
+    error(err.message || err.stack); 
+  }
+});

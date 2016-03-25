@@ -38,7 +38,8 @@ var deps = {
   out: require('mkout'),
   parse: require('mkparse'),
   pi: require('mkpi'),
-  ref: require('mkref')
+  ref: require('mkref'),
+  toc: require('mktoc')
 };
 
 // decorate with `doc` function

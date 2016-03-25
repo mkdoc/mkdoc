@@ -36,6 +36,7 @@
     "mkpi": "~1.0.1",
     "mkref": "~1.0.3",
     "mktask": "~1.2.0",
+    "mktoc": "~1.0.0",
     "string-repeater": "~1.0.3"
   },
   "devDependencies": {
