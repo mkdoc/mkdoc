@@ -2,6 +2,7 @@ var toc = require('mktoc')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
+      '-s, --standalone': 'Create standalone index',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
@@ -9,9 +10,11 @@ var toc = require('mktoc')
       options: [
       ],
       flags: [
+        '--standalone',
         '--help'
       ],
       alias: {
+        '-s --standalone': 'standalone',
         '-h --help': 'help'
       }
     }
@@ -30,7 +33,8 @@ function cli(argv, cb) {
   var args = parser(argv, hints)
     , opts = {
         input: process.stdin, 
-        output: process.stdout
+        output: process.stdout,
+        standalone: args.flags.standalone
       };
 
   if(args.flags.help) {
