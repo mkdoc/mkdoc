@@ -6,6 +6,7 @@ var toc = require('mktoc')
       '-l, --level=[NUM]': 'Set level for initial heading',
       '-d, --depth=[LEVEL]': 'Ignore headings below LEVEL',
       '-m, --max=[LEVEL]': 'Ignore headings above LEVEL',
+      '-b, --base=[URL]': 'Base URL for absolute links',
       '-s, --standalone': 'Standalone index, discards input',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
@@ -15,7 +16,8 @@ var toc = require('mktoc')
         '-t',
         '-l',
         '-d',
-        '-m'
+        '-m',
+        '-b'
       ],
       flags: [
         '--standalone',
@@ -26,6 +28,7 @@ var toc = require('mktoc')
         '-l --level': 'level',
         '-d --depth': 'depth',
         '-m --max': 'max',
+        '-b --base': 'base',
         '-s --standalone': 'standalone',
         '-h --help': 'help'
       }
@@ -64,6 +67,7 @@ function cli(argv, cb) {
         output: process.stdout,
         standalone: args.flags.standalone,
         title: args.options.title,
+        base: args.options.base,
         level: level,
         depth: depth,
         max: max
