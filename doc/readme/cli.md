@@ -109,13 +109,13 @@ Converts heading levels, use this to indent or outdent headings.
 To increment all headings:
 
 ```shell
-mkcat doc/readme.md | mklevel --all=1 | mkout
+mkcat README.md | mklevel --all=1 | mkout
 ```
 
 To convert level 3 headings to level 2:
 
 ```shell
-mkcat doc/readme.md | mklevel -3=-1 | mkout
+mkcat README.md | mklevel -3=-1 | mkout
 ```
 
 [Source Code][mklevel] | [CLI Help][mklevel help]
