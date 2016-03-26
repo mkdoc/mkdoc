@@ -6,8 +6,13 @@
 
 Creates stream pipelines that convert input [commonmark][] to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown or to another format such as HTML, XML or JSON.
 
+<? @include readme/install.md ?>
+
+***
+<!-- @toc -->
+***
+
 <? @include {=readme}
-      install.md
       features.md
       usage.md
       modules.md

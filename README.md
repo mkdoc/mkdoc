@@ -14,6 +14,30 @@ Creates stream pipelines that convert input [commonmark][] to an abstract syntax
 npm i -g mkdoc
 ```
 
+---
+
+- [Install](#install)
+- [Features](#features)
+- [Usage](#usage)
+- [Modules](#modules)
+- [Command Line Tools](#command-line-tools)
+   - [mk](#mk)
+   - [mkcat](#mkcat)
+   - [mkpi](#mkpi)
+   - [mkmsg](#mkmsg)
+   - [mkref](#mkref)
+   - [mkabs](#mkabs)
+   - [mkfilter](#mkfilter)
+   - [mktoc](#mktoc)
+   - [mkout](#mkout)
+   - [mkparse](#mkparse)
+   - [mkapi](#mkapi)
+- [API](#api)
+   - [doc](#doc)
+- [License](#license)
+
+---
+
 ## Features
 
 * Command line and programmatic control.
@@ -245,7 +269,7 @@ MIT
 
 ---
 
-*Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016*
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
