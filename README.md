@@ -14,6 +14,14 @@ Creates stream pipelines that convert input [commonmark][] to an abstract syntax
 npm i -g mkdoc
 ```
 
+## Features
+
+* Command line and programmatic control.
+* Streaming build system, see [mktask][].
+* DSL for including files, executing commands and more, see [mkpi][].
+* Comment parser for 30+ languages, see [mkparse][].
+* Fast, modular code with good coverage.
+
 ---
 
 - [Install](#install)
@@ -37,14 +45,6 @@ npm i -g mkdoc
 - [License](#license)
 
 ---
-
-## Features
-
-* Command line and programmatic control.
-* Streaming build system, see [mktask][].
-* DSL for including files, executing commands and more, see [mkpi][].
-* Comment parser for 30+ languages, see [mkparse][].
-* Fast, modular code with good coverage.
 
 ## Usage
 
