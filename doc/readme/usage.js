@@ -11,6 +11,6 @@ doc('doc/readme.md')          // read markdown source document
   .pipe(ref())                // include link references
   .pipe(abs())                // make links absolute
   .pipe(msg())                // append generator message
-  .pipe(toc())             // create and inject table of contents list
+  .pipe(toc())                // create and inject table of contents list
   .pipe(out())                // convert abstract syntax tree to markdown
   .pipe(process.stdout);      // print the document
