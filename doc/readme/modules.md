@@ -11,6 +11,7 @@ Designed to be modular, a brief overview:
 * [mkabs][] makes links absolute.
 * [mktoc][] creates a table of contents list.
 * [mkfilter][] removes nodes from the stream by type.
+* [mklevel][] changes heading levels.
 * [mkout][] renders the tree to an output format (XML, HTML etc).
 * [mkparse][] parses comments from source files.
 * [mkapi][] generates API documentation from comments.

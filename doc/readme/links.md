@@ -1,6 +1,7 @@
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
 [mkfilter]: https://github.com/mkdoc/mkfilter
+[mklevel]: https://github.com/mkdoc/mklevel
 [mkpi]: https://github.com/mkdoc/mkpi
 [mkmsg]: https://github.com/mkdoc/mkmsg
 [mkref]: https://github.com/mkdoc/mkref
@@ -13,6 +14,7 @@
 
 [mkcat help]: https://github.com/mkdoc/mkcat#help
 [mkfilter help]: https://github.com/mkdoc/mkfilter#help
+[mklevel help]: https://github.com/mkdoc/mklevel#help
 [mkpi help]: https://github.com/mkdoc/mkpi#help
 [mkmsg help]: https://github.com/mkdoc/mkmsg#help
 [mkref help]: https://github.com/mkdoc/mkref#help

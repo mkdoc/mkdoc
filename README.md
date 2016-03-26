@@ -36,6 +36,7 @@ npm i -g mkdoc
    - [mkref](#mkref)
    - [mkabs](#mkabs)
    - [mkfilter](#mkfilter)
+   - [mklevel](#mklevel)
    - [mktoc](#mktoc)
    - [mkout](#mkout)
    - [mkparse](#mkparse)
@@ -86,6 +87,7 @@ Designed to be modular, a brief overview:
 * [mkabs][] makes links absolute.
 * [mktoc][] creates a table of contents list.
 * [mkfilter][] removes nodes from the stream by type.
+* [mklevel][] changes heading levels.
 * [mkout][] renders the tree to an output format (XML, HTML etc).
 * [mkparse][] parses comments from source files.
 * [mkapi][] generates API documentation from comments.
@@ -194,6 +196,24 @@ mkcat doc/readme.md | mkfilter --code-block --invert | mkout
 
 [Source Code][mkfilter] | [CLI Help][mkfilter help]
 
+### mklevel
+
+Converts heading levels, use this to indent or outdent headings.
+
+To increment all headings:
+
+```shell
+mkcat doc/readme.md | mklevel --all=1 | mkout
+```
+
+To convert level 3 headings to level 2:
+
+```shell
+mkcat doc/readme.md | mklevel -3=-1 | mkout
+```
+
+[Source Code][mklevel] | [CLI Help][mklevel help]
+
 ### mktoc
 
 Create a standalone table of contents:
@@ -274,6 +294,7 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
 [mkfilter]: https://github.com/mkdoc/mkfilter
+[mklevel]: https://github.com/mkdoc/mklevel
 [mkpi]: https://github.com/mkdoc/mkpi
 [mkmsg]: https://github.com/mkdoc/mkmsg
 [mkref]: https://github.com/mkdoc/mkref
@@ -285,6 +306,7 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
 [mktask]: https://github.com/mkdoc/mktask
 [mkcat help]: https://github.com/mkdoc/mkcat#help
 [mkfilter help]: https://github.com/mkdoc/mkfilter#help
+[mklevel help]: https://github.com/mkdoc/mklevel#help
 [mkpi help]: https://github.com/mkdoc/mkpi#help
 [mkmsg help]: https://github.com/mkdoc/mkmsg#help
 [mkref help]: https://github.com/mkdoc/mkref#help

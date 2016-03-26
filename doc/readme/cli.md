@@ -102,6 +102,24 @@ mkcat doc/readme.md | mkfilter --code-block --invert | mkout
 
 [Source Code][mkfilter] | [CLI Help][mkfilter help]
 
+### mklevel
+
+Converts heading levels, use this to indent or outdent headings.
+
+To increment all headings:
+
+```shell
+mkcat doc/readme.md | mklevel --all=1 | mkout
+```
+
+To convert level 3 headings to level 2:
+
+```shell
+mkcat doc/readme.md | mklevel -3=-1 | mkout
+```
+
+[Source Code][mklevel] | [CLI Help][mklevel help]
+
 ### mktoc
 
 Create a standalone table of contents:
