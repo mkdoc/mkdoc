@@ -12,6 +12,7 @@ Designed to be modular, a brief overview:
 * [mktoc][] creates a table of contents list.
 * [mkfilter][] removes nodes from the stream by type.
 * [mklevel][] changes heading levels.
+* [mktransform][] add custom stream transformations to the pipeline.
 * [mkout][] renders the tree to an output format (XML, HTML etc).
 * [mkparse][] parses comments from source files.
 * [mkapi][] generates API documentation from comments.

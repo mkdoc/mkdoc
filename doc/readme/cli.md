@@ -120,6 +120,16 @@ mkcat README.md | mklevel -3=-1 | mkout
 
 [Source Code][mklevel] | [CLI Help][mklevel help]
 
+### mktransform
+
+Add stream classes from files to a pipeline:
+
+```shell
+mkcat README.md | mktransform file.js transformer.js | mkout
+```
+
+[Source Code][mktransform] | [CLI Help][mktransform help]
+
 ### mktoc
 
 Create a standalone table of contents:

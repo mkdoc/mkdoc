@@ -37,6 +37,7 @@ npm i -g mkdoc
    - [mkabs](#mkabs)
    - [mkfilter](#mkfilter)
    - [mklevel](#mklevel)
+   - [mktransform](#mktransform)
    - [mktoc](#mktoc)
    - [mkout](#mkout)
    - [mkparse](#mkparse)
@@ -92,6 +93,7 @@ Designed to be modular, a brief overview:
 * [mktoc][] creates a table of contents list.
 * [mkfilter][] removes nodes from the stream by type.
 * [mklevel][] changes heading levels.
+* [mktransform][] add custom stream transformations to the pipeline.
 * [mkout][] renders the tree to an output format (XML, HTML etc).
 * [mkparse][] parses comments from source files.
 * [mkapi][] generates API documentation from comments.
@@ -218,6 +220,16 @@ mkcat README.md | mklevel -3=-1 | mkout
 
 [Source Code][mklevel] | [CLI Help][mklevel help]
 
+### mktransform
+
+Add stream classes from files to a pipeline:
+
+```shell
+mkcat README.md | mktransform file.js transformer.js | mkout
+```
+
+[Source Code][mktransform] | [CLI Help][mktransform help]
+
 ### mktoc
 
 Create a standalone table of contents:
@@ -293,12 +305,13 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 27, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
 [mkfilter]: https://github.com/mkdoc/mkfilter
 [mklevel]: https://github.com/mkdoc/mklevel
+[mktransform]: https://github.com/mkdoc/mktransform
 [mkpi]: https://github.com/mkdoc/mkpi
 [mkmsg]: https://github.com/mkdoc/mkmsg
 [mkref]: https://github.com/mkdoc/mkref
@@ -311,6 +324,7 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on March 26, 2016
 [mkcat help]: https://github.com/mkdoc/mkcat#help
 [mkfilter help]: https://github.com/mkdoc/mkfilter#help
 [mklevel help]: https://github.com/mkdoc/mklevel#help
+[mktransform help]: https://github.com/mkdoc/mktransform#help
 [mkpi help]: https://github.com/mkdoc/mkpi#help
 [mkmsg help]: https://github.com/mkdoc/mkmsg#help
 [mkref help]: https://github.com/mkdoc/mkref#help
