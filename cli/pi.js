@@ -2,6 +2,7 @@ var pi = require('mkpi')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
+      '-s, --safe': 'Disable the @exec and @macro directives',
       '-p, --preserve': 'Do not remove processing instructions',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
@@ -9,9 +10,10 @@ var pi = require('mkpi')
   , hints = {
       options: [],
       flags: [
-        '--preserve', '--help'
+        '--safe', '--preserve', '--help'
       ],
       alias: {
+        '-s --safe': 'safe',
         '-p --preserve': 'preserve',
         '-h --help': 'help'
       }
@@ -31,6 +33,7 @@ function cli(argv, cb) {
   var args = parser(argv, hints)
     , opts = {
         preserve: args.flags.preserve,
+        safe: args.flags.safe,
         input: process.stdin, 
         output: process.stdout
       };
