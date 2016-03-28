@@ -7,7 +7,7 @@ This example illustrates how to create a readme file like this one from a [sourc
 The equivalent command line:
 
 ```shell
-mkcat doc/readme.md | mkpi | mkref | mkmsg | mkout
+mkcat doc/readme.md | mkpi | mkref | mkabs | mkmsg | mktoc | mkout
 ```
 
 But the javascript version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.
