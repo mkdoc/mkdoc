@@ -1,114 +1,115 @@
 var path = require('path')
-  , mkparse = require('mkparse')
+  , parse = require('mkparse')
   , lang = require('mkparse/lang')
   , Collator = require('mkparse/lib/collator')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      flags: [
-        '--dotted', '--content', '--strip'
-      ],
-      options: [
-        '-i',
-        '-l'
-      ],
-      alias: {
-        '-l --lang': 'lang',
-        '-s --strip': 'strip',
-        '-c --content': 'content',
-        '-j --json': 'json',
-        '-i --indent': 'indent',
-        '-h --help': 'help',
-        '-d --dotted': 'dotted'
-      }
-    }
-  , pkg = require('mkparse/package.json');
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mkparse.json')
+  , pkg = require('mkparse/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Parse comments in files.
+ *  @name mkparse
+ *  @cli doc/cli/mkparse.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , opts = {
-        dotted: args.flags.dotted
+  var opts = {
+      output: process.stdout
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mkparse.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
+      };
+
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
+    }
+
+    var files = this.unparsed
+      // file iterator
+      , it = next.bind(this);
+
+    if(!files.length) {
+      return cb(new Error('no files specified')); 
+    }
+
+    this.files = files;
+    this.content = Boolean(this.content);
+
+    if(this.strip) {
+      this.content = true;
+      this.comment = false;
+
+      // not printing comments, cannot print json
+      this.json = false;
+    }
+
+    if(this.lang && !lang.map[this.lang]) {
+      return cb(new Error('unknown language pack id: ' + this.lang)); 
+    }
+
+    function next() {
+      var file = files.shift();
+      if(!file) {
+        return cb();  
+      } 
+
+      // attempt to work out language from file extension
+      var name = path.basename(file)
+        , ext = name.substr(name.lastIndexOf('.'))
+        , id
+        , pack = this.lang;
+
+      if(!pack && ext) {
+        ext = ext.replace(/^\./, '');
+        id = lang.find(ext);
+        // not a trailing period if still not the empty string
+        if(ext && id) {
+          pack = id; 
+        }
       }
-    , files = args.unparsed;
 
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mkparse.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
+      if(pack && lang.exists(pack)) {
+        opts.rules = lang.load(pack);
+      }
 
-  opts.files = args.unparsed;
-  opts.output = process.stdout;
-  opts.content = Boolean(args.flags.content);
+      if(!pack) {
+        console.error('unkown language for file %s (skipping)', file); 
+        return next();
+      }
 
-  if(args.flags.strip) {
-    opts.content = true;
-    opts.comment = false;
+      var stream = parse.load(file, this, next)
+        , collator;
 
-    // not printing comments, cannot print json
-    args.flags.json = false;
-  }
-
-  if(!files.length) {
-    return cb(new Error('no files specified')); 
-  }
-
-  if(args.options.lang && !lang.map[args.options.lang]) {
-    return cb(new Error('unknown language pack id: ' + args.options.lang)); 
-  }
-
-  function next() {
-    var file = files.shift();
-    if(!file) {
-      return cb();  
-    } 
-
-    var name = path.basename(file)
-      , ext = name.substr(name.lastIndexOf('.'))
-      , id
-      , pack = args.options.lang;
-
-    if(!pack && ext) {
-      ext = ext.replace(/^\./, '');
-      id = lang.find(ext);
-      // not a trailing period if still not the empty string
-      if(ext && id) {
-        pack = id; 
+      if(this.json) {
+        stream = stream.stringify(
+          parseInt(this.indent) || 0, !this.content ? true : false);
+        stream.pipe(this.output);
+      }else{
+        collator = new Collator(this);
+        stream.pipe(collator).pipe(this.output);
       }
     }
 
-    if(pack && lang.exists(pack)) {
-      opts.rules = lang.load(pack);
-    }
-
-    if(!pack) {
-      console.error('unkown language for file %s (skipping)', file); 
-      return next();
-    }
-
-    var stream = mkparse.load(file, opts, next)
-      , collator;
-
-    if(args.flags.json) {
-      stream = stream.stringify(
-        parseInt(args.options.indent) || 0, !opts.content ? true : false);
-      stream.pipe(opts.output);
-    }else{
-      collator = new Collator(opts);      
-      stream.pipe(collator).pipe(opts.output);
-    }
-  }
-
-  next();
+    it();
+  })
 }
 
-module.exports = cli;
+module.exports = main;
