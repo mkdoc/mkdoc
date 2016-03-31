@@ -52,13 +52,15 @@ function cli(argv, cb) {
     }
 
     function done(err, res) {
+
       if(res && res.once instanceof Function) {
         res.once('error', cb);
         // listen for the end of the write stream
         return res.once('end', done);
       }
+
       if(opts.buffer && res) {
-        opts.output.write(res); 
+        opts.output.write('' + res); 
       }
       process.stdin.end();
       cb(err, res);
@@ -66,10 +68,8 @@ function cli(argv, cb) {
 
     var stream = cat(opts, done);
     stream.once('stdin', function(size, files) {
-      // @todo restore this, likely listening on the wrong stream now
-      //console.dir('stdin called');
       if(!size && !files.length) {
-        help({conf: {file: 'doc/help/mkcat.txt'}}, cb);
+        help.print(runtime.help.file, {runtime: runtime}, cb);
       } 
     })
 

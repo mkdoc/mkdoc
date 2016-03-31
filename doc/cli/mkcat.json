@@ -4,9 +4,9 @@
   "name": "mkcat",
   "synopsis": "[options] [files...]",
   "options": {
-    "noAst": {
+    "ast": {
       "literal": "--no-ast",
-      "key": "noAst",
+      "key": "ast",
       "description": "Disable AST output, prints input",
       "names": [
         "--no-ast"

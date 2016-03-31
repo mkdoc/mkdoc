@@ -83,18 +83,18 @@
       ],
       "type": "flag"
     },
-    "[no]Private": {
+    "private": {
       "literal": "--[no]-private",
-      "key": "[no]Private",
+      "key": "private",
       "description": "Enable or disable private symbols",
       "names": [
         "--[no]-private"
       ],
       "type": "flag"
     },
-    "[no]Protected": {
+    "protected": {
       "literal": "--[no]-protected",
-      "key": "[no]Protected",
+      "key": "protected",
       "description": "Enable or disable protected symbols",
       "names": [
         "--[no]-protected"
