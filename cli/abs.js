@@ -1,8 +1,8 @@
 var abs = require('mkabs')
   , bin = require('mkcli')
   , def = require('../doc/cli/mkabs.json')
-  , prg = bin.load(def, pkg)
-  , pkg = require('mkabs/package.json');
+  , pkg = require('mkabs/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
  *  Make relative links absolute.
@@ -19,16 +19,16 @@ function cli(argv, cb) {
       output: process.stdout
     }
     , runtime = {
-      target: opts,
-      help: {
-        file: 'doc/help/mkabs.txt'
-      },
-      version: pkg,
-      plugins: [
-        require('mkcli/plugin/help'),
-        require('mkcli/plugin/version')
-      ]
-    };
+        target: opts,
+        help: {
+          file: 'doc/help/mkabs.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
+      };
 
   prg.run(argv, runtime, function parsed(err) {
     if(err) {
