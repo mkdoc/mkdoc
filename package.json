@@ -24,7 +24,6 @@
     "bin": "./bin"
   },
   "dependencies": {
-    "cli-argparse": "~1.1.1",
     "mkabs": "~1.1.0",
     "mkapi": "~1.1.3",
     "mkast": "~1.2.2",
