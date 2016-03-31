@@ -1,21 +1,25 @@
 var abs = require('mkabs')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , hints = {
-      options: [
-        '-b', '-r'
-      ],
-      flags: [
-        '--greedy',
-        '--help'
-      ],
-      alias: {
-        '-b --base': 'base',
-        '-r --relative': 'rel',
-        '-g --greedy': 'greedy',
-        '-h --help': 'help'
-      }
-    }
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mkabs.json')
+  , prg = bin.load(def, pkg)
+  , hints = prg.hints()
+  //, hints = {
+      //options: [
+        //'-b', '-r'
+      //],
+      //flags: [
+        //'--greedy',
+        //'--help'
+      //],
+      //alias: {
+        //'-b --base': 'base',
+        //'-r --relative': 'rel',
+        //'-g --greedy': 'greedy',
+        //'-h --help': 'help'
+      //}
+    //}
   , pkg = require('mkabs/package.json');
 
 /**
@@ -38,8 +42,8 @@ function cli(argv, cb) {
     opts.base = args.options.base; 
   }
 
-  if(args.options.rel) {
-    opts.rel = args.options.rel; 
+  if(args.options.relative) {
+    opts.rel = args.options.relative;
   }
 
   if(args.flags.help) {
