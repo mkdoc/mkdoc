@@ -5,14 +5,6 @@ var path = require('path')
   , mkparse = require('mkparse')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      name: 'mk',
-      synopsis: '[task...]',
-      '-f, --file=[FILE...]': 'Load specific task files',
-      '--tasks': 'Print task comments',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
   , hints = {
       options: [
         '-f'
