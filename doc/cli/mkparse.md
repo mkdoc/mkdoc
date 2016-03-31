@@ -16,3 +16,4 @@ Parse source file comments.
 * `-i, --indent=[NUM] {=0}` Number of spaces for JSON
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
+

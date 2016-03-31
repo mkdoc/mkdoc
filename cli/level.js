@@ -68,7 +68,7 @@ function main(argv, cb) {
 
     this.levels = levels;
 
-    level(opts, cb);
+    level(this, cb);
   })
 }
 

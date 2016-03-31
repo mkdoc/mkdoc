@@ -40,7 +40,7 @@ function main(argv, cb) {
     if(err) {
       return cb(err); 
     }
-    abs(opts, cb);
+    abs(this, cb);
   })
 }
 

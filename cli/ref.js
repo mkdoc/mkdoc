@@ -39,7 +39,7 @@ function cli(argv, cb) {
     if(err) {
       return cb(err); 
     }
-    ref(opts, cb);
+    ref(this, cb);
   })
 }
 

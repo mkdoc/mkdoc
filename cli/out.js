@@ -66,7 +66,7 @@ function main(argv, cb) {
       this.render.compact = false; 
     }
 
-    out(opts, cb);
+    out(this, cb);
   })
 }
 

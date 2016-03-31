@@ -45,10 +45,11 @@ function main(argv, cb) {
       return cb(err); 
     }
 
-    opts.files = this.unparsed;
+    this.files = this.unparsed;
 
+    // @todo: fix handling of this option
     if(this.ast === false) {
-      opts.buffer = true; 
+      this.buffer = true; 
     }
 
     function done(err, res) {
@@ -62,11 +63,12 @@ function main(argv, cb) {
       if(opts.buffer && res) {
         opts.output.write('' + res); 
       }
+
       process.stdin.end();
       cb(err, res);
     }
 
-    var stream = cat(opts, done);
+    var stream = cat(this, done);
     stream.once('stdin', function(size, files) {
       if(!size && !files.length) {
         help.print(runtime.help.file, {runtime: runtime}, cb);
