@@ -1,0 +1,51 @@
+{
+  "description": "Task runner.",
+  "type": "program",
+  "name": "mk",
+  "synopsis": "[task...]",
+  "options": {
+    "file": {
+      "literal": "-f, --file=[FILE...]",
+      "key": "file",
+      "description": " Load specific task files",
+      "names": [
+        "-f",
+        "--file"
+      ],
+      "type": "option",
+      "extra": "=[FILE...]",
+      "required": false,
+      "multiple": true
+    },
+    "tasks": {
+      "literal": "--tasks",
+      "key": "tasks",
+      "description": " Print task list",
+      "names": [
+        "--tasks"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": " Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": " Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

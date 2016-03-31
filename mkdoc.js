@@ -16,7 +16,7 @@ function bin(type, ext, src, out, buffer, cb) {
     }
 
     var source = path.join(src, file)
-      , name = file.replace(/\.md$/, '')
+      , name = file.replace(/\.[\w]+$/, '')
       , dest = name + '.' + ext
       , pkg;
 

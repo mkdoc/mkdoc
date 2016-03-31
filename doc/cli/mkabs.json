@@ -1,0 +1,65 @@
+{
+  "description": "Make relative links absolute.",
+  "type": "program",
+  "name": "mkabs",
+  "synopsis": "[options]",
+  "options": {
+    "base": {
+      "literal": "-b, --base=[URL]",
+      "key": "base",
+      "description": " Base URL for absolute links",
+      "names": [
+        "-b",
+        "--base"
+      ],
+      "type": "option",
+      "extra": "=[URL]",
+      "required": false,
+      "multiple": false
+    },
+    "relative": {
+      "literal": "-r, --relative=[PATH]",
+      "key": "relative",
+      "description": " Relative path when repository url",
+      "names": [
+        "-r",
+        "--relative"
+      ],
+      "type": "option",
+      "extra": "=[PATH]",
+      "required": false,
+      "multiple": false
+    },
+    "greedy": {
+      "literal": "-g, --greedy",
+      "key": "greedy",
+      "description": " Convert links starting with # and ?",
+      "names": [
+        "-g",
+        "--greedy"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": " Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": " Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}
