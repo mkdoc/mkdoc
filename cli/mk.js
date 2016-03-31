@@ -9,29 +9,6 @@ var fs = require('fs')
   , pkg = require('mktask/package.json')
   , prg = bin.load(def, pkg);
 
-var deps = {
-  abs: require('mkabs'),
-  api: require('mkapi'),
-  ast: require('mkast'),
-  cat: require('mkcat'),
-  cli: require('mkcli'),
-  filter: require('mkfilter'),
-  msg: require('mkmsg'),
-  out: require('mkout'),
-  parse: require('mkparse'),
-  pi: require('mkpi'),
-  ref: require('mkref'),
-  toc: require('mktoc')
-};
-
-// decorate with `doc` function
-mk.doc = require('../index');
-
-// static stream creation access
-for(var k in deps) {
-  mk[k] = deps[k];
-}
-
 function print(files, runner, cb) {
   var list = files.slice();
 
@@ -98,6 +75,29 @@ function main(argv, cb) {
   prg.run(argv, runtime, function parsed(err) {
     if(err) {
       return cb(err); 
+    }
+
+    var deps = {
+      abs: require('mkabs'),
+      api: require('mkapi'),
+      ast: require('mkast'),
+      cat: require('mkcat'),
+      cli: require('mkcli'),
+      filter: require('mkfilter'),
+      msg: require('mkmsg'),
+      out: require('mkout'),
+      parse: require('mkparse'),
+      pi: require('mkpi'),
+      ref: require('mkref'),
+      toc: require('mktoc')
+    };
+
+    // decorate with `doc` function
+    mk.doc = require('../index');
+
+    // static stream creation access
+    for(var k in deps) {
+      mk[k] = deps[k];
     }
 
     var dir = process.cwd()
