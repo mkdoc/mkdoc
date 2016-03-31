@@ -1,39 +1,14 @@
 var fs = require('fs')
+  , path = require('path')
   , out = require('mkout')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [
-        '-o'
-      ],
-      flags: [
-        '--html',
-        '--xml',
-        '--man',
-        '--yaml',
-        '--yaml-full',
-        '--text',
-        '--json',
-        '--noop',
-        '--help'
-      ],
-      alias: {
-        '-H --html': 'html',
-        '-x --xml': 'xml',
-        '-m --man': 'man',
-        '-y --yaml': 'yaml',
-        '-Y --yaml-full': 'yamlFull',
-        '-t --text': 'text',
-        '-j --json': 'json',
-        '-n --noop': 'noop',
-        '-o --output': 'output',
-        '-h --help': 'help'
-      }
-    }
-  , pkg = require('mkout/package.json');
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mkout.json')
+  , pkg = require('mkout/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Write AST to a renderer.
+ *  @name mkout
+ *  @cli doc/cli/mkout.md
  */
 function cli(argv, cb) {
 
@@ -42,45 +17,57 @@ function cli(argv, cb) {
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , opts = {}
-    , k;
+  var opts = {
+      input: process.stdin, 
+      output: process.stdout,
+      cli: true,
+      render: {}
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mkout.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
+      };
 
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mkout.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
+    }
 
-  opts.input = process.stdin;
-  opts.files = args.unparsed;
-  opts.output = process.stdout;
-  opts.render = {};
-  opts.cli = true;
+    if(typeof this.output === 'string') {
+      this.output = fs.createWriteStream(this.output);
+    }
 
-  if(args.options.output) {
-    opts.output = fs.createWriteStream(args.options.output);
-  }
-
-  // support --xml, --html etc.
-  for(k in out.types) {
-    if(args.flags[k]) {
-      opts.type = k;
-      break;
+    // support --xml, --html etc.
+    for(var k in out.types) {
+      if(this.args.flags[k]) {
+        this.type = k;
+        break;
+      } 
     } 
-  } 
 
-  if(args.flags.noop) {
-    opts.type = out.NOOP;
-  }
+    if(this.noop) {
+      this.type = out.NOOP;
+    }
 
-  if(args.flags.yamlFull) {
-    // implies yaml type, means that -yY is not necessary -Y is enough
-    opts.type = 'yaml';
-    opts.render.compact = false; 
-  }
+    if(this.yamlFull) {
+      // implies yaml type, means that -yY is not necessary -Y is enough
+      this.type = 'yaml';
+      this.render.compact = false; 
+    }
 
-  out(opts, cb);
+    out(opts, cb);
+  })
 }
 
 module.exports = cli;
