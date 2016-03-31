@@ -1,93 +1,79 @@
-var toc = require('mktoc')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [
-        '-t',
-        '-l',
-        '-d',
-        '-m',
-        '-b',
-        '-p',
-        '-B',
-        '-E'
-      ],
-      flags: [
-        '--disable',
-        '--ordered',
-        '--standalone',
-        '--help'
-      ],
-      alias: {
-        '-t --title': 'title',
-        '-l --level': 'level',
-        '-d --depth': 'depth',
-        '-m --max': 'max',
-        '-p --prefix': 'prefix',
-        '-b --base': 'base',
-        '-B --bullet': 'bullet',
-        '-E --delimiter': 'delimiter',
-        '-D --disable': 'disable',
-        '-o --ordered': 'ordered',
-        '-s --standalone': 'standalone',
-        '-h --help': 'help'
-      }
-    }
-  , pkg = require('mktoc/package.json');
+var path = require('path')
+  , toc = require('mktoc')
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mktoc.json')
+  , pkg = require('mktoc/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Resolve link tocerences.
+ *  @name mktoc
+ *  @cli doc/cli/mktoc.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , level = parseInt(args.options.level) || 1
-    , depth = parseInt(args.options.depth) || 1
-    , max = parseInt(args.options.max) || 6;
-
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mktoc.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
-
-  if(level < 1) {
-    level = 1; 
-  }
-
-  if(depth < 1) {
-    depth = 1; 
-  }
-
-  if(max < 1) {
-    max = 1; 
-  }
-
   var opts = {
-    input: process.stdin, 
-    output: process.stdout,
-    standalone: args.flags.standalone,
-    title: args.options.title,
-    base: args.options.base,
-    prefix: args.options.prefix,
-    link: !args.flags.disable,
-    bullet: args.options.bullet,
-    delimiter: args.options.delimiter,
-    level: level,
-    depth: depth,
-    max: max
-  };
+      input: process.stdin, 
+      output: process.stdout
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mktoc.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
+      };
 
-  if(args.flags.ordered) {
-    opts.type = 'ordered'; 
-  }
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
+    }
 
-  toc(opts, cb);
+    var level = parseInt(this.level) || 1
+      , depth = parseInt(this.depth) || 1
+      , max = parseInt(this.max) || 6;
+
+    if(level < 1) {
+      level = 1; 
+    }
+
+    if(depth < 1) {
+      depth = 1; 
+    }
+
+    if(max < 1) {
+      max = 1; 
+    }
+
+    this.standalone = this.standalone;
+    this.title = this.title;
+    this.base = this.base;
+    this.prefix = this.prefix;
+    this.link = !this.disable;
+    this.bullet = this.bullet;
+    this.delimiter = this.delimiter;
+    this.level = level;
+    this.depth = depth;
+    this.max = max;
+
+    if(this.ordered) {
+      this.type = 'ordered'; 
+    }
+
+    toc(this, cb);
+  })
 }
 
-module.exports = cli;
+module.exports = main;
