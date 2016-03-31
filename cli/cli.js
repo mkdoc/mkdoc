@@ -34,7 +34,7 @@ function prg(argv, cb) {
     , opts = {
         input: process.stdin, 
         output: process.stdout,
-        type: args.options.type || cli.types.JSON
+        type: args.options.type || cli.types.json
       };
 
   if(args.flags.help) {
