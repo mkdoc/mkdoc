@@ -1,0 +1,8 @@
+mktransform [files...]
+
+Custom stream transformations.
+
+  -h, --help          Display help and exit
+  --version           Print the version and exit
+
+Report bugs to https://github.com/mkdoc/mktransform/issues

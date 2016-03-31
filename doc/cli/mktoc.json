@@ -1,0 +1,163 @@
+{
+  "description": "Generates a table of contents index.",
+  "type": "program",
+  "name": "mktoc",
+  "synopsis": "[options]",
+  "options": {
+    "title": {
+      "literal": "-t, --title=[TITLE]",
+      "key": "title",
+      "description": "Set initial heading",
+      "names": [
+        "-t",
+        "--title"
+      ],
+      "type": "option",
+      "extra": "=[TITLE]",
+      "required": false,
+      "multiple": false
+    },
+    "level": {
+      "literal": "-l, --level=[NUM]",
+      "key": "level",
+      "description": "Set level for initial heading",
+      "names": [
+        "-l",
+        "--level"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "depth": {
+      "literal": "-d, --depth=[LEVEL]",
+      "key": "depth",
+      "description": "Ignore headings below LEVEL",
+      "names": [
+        "-d",
+        "--depth"
+      ],
+      "type": "option",
+      "extra": "=[LEVEL]",
+      "required": false,
+      "multiple": false
+    },
+    "max": {
+      "literal": "-m, --max=[LEVEL]",
+      "key": "max",
+      "description": "Ignore headings above LEVEL",
+      "names": [
+        "-m",
+        "--max"
+      ],
+      "type": "option",
+      "extra": "=[LEVEL]",
+      "required": false,
+      "multiple": false
+    },
+    "prefix": {
+      "literal": "-p, --prefix=[VAL]",
+      "key": "prefix",
+      "description": "Set link destination prefix to VAL",
+      "names": [
+        "-p",
+        "--prefix"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false
+    },
+    "base": {
+      "literal": "-b, --base=[URL]",
+      "key": "base",
+      "description": "Base URL for absolute links",
+      "names": [
+        "-b",
+        "--base"
+      ],
+      "type": "option",
+      "extra": "=[URL]",
+      "required": false,
+      "multiple": false
+    },
+    "bullet": {
+      "literal": "-B, --bullet=[CHAR]",
+      "key": "bullet",
+      "description": "Character for bullet lists",
+      "names": [
+        "-B",
+        "--bullet"
+      ],
+      "type": "option",
+      "extra": "=[CHAR]",
+      "required": false,
+      "multiple": false
+    },
+    "delimiter": {
+      "literal": "-E, --delimiter=[CHAR]",
+      "key": "delimiter",
+      "description": "Delimiter for ordered lists",
+      "names": [
+        "-E",
+        "--delimiter"
+      ],
+      "type": "option",
+      "extra": "=[CHAR]",
+      "required": false,
+      "multiple": false
+    },
+    "disable": {
+      "literal": "-D, --disable",
+      "key": "disable",
+      "description": "Disable automatic links",
+      "names": [
+        "-D",
+        "--disable"
+      ],
+      "type": "flag"
+    },
+    "ordered": {
+      "literal": "-o, --ordered",
+      "key": "ordered",
+      "description": "Create an ordered list",
+      "names": [
+        "-o",
+        "--ordered"
+      ],
+      "type": "flag"
+    },
+    "standalone": {
+      "literal": "-s, --standalone",
+      "key": "standalone",
+      "description": "Standalone index, discards input",
+      "names": [
+        "-s",
+        "--standalone"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

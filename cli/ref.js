@@ -1,10 +1,6 @@
 var ref = require('mkref')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  //, options = {
-      //'-h, --help': 'Display this help and exit',
-      //'--version': 'Print the version and exit'
-    //}
   , hints = {
       options: [
       ],

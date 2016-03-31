@@ -1,0 +1,29 @@
+{
+  "description": "Link reference collation.",
+  "type": "program",
+  "name": "mkref",
+  "synopsis": "[options]",
+  "options": {
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}
