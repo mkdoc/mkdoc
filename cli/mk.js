@@ -65,8 +65,8 @@ function print(files, runner, cb) {
 }
 
 /**
- *  @name mkmk
- *  @cli doc/cli/mkmk.md
+ *  @name mk
+ *  @cli doc/cli/mk.md
  */
 function main(argv, cb) {
 
@@ -84,7 +84,7 @@ function main(argv, cb) {
         target: opts,
         hints: prg,
         help: {
-          file: 'doc/help/mkmk.txt'
+          file: 'doc/help/mk.txt'
         },
         version: pkg,
         plugins: [
@@ -233,7 +233,6 @@ function main(argv, cb) {
     runner.scope = {args: this.args};
 
     runner.each(list, cb);  
-
   })
 }
 

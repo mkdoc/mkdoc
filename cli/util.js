@@ -1,40 +1,16 @@
-var fs = require('fs');
-
 function error(msg) {
   var prefix = 'ERR | ';
   console.error(prefix + msg);
   process.exit(1);
 }
 
-// @deprecated
-function version(pkg) {
-  return function() {
-    console.log('%s %s', pkg.name, pkg.version); 
-  }
-}
-
-// @deprecated
-function help(file) {
-  return function() {
-    fs.createReadStream(file).pipe(process.stdout);
-  }
-}
-
-function finish(err, res) {
+function finish(err) {
   if(err) {
     error(err.message || err.stack); 
-
-  // @deprecated
-  }else if(!err && res) {
-    if(typeof res === 'function') {
-      res(); 
-    } 
   }
 }
 
 module.exports = {
-  help: help,
-  version: version,
   error: error,
   finish: finish
 }
