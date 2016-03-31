@@ -6,12 +6,14 @@ function error(msg) {
   process.exit(1);
 }
 
+// @deprecated
 function version(pkg) {
   return function() {
     console.log('%s %s', pkg.name, pkg.version); 
   }
 }
 
+// @deprecated
 function help(file) {
   return function() {
     fs.createReadStream(file).pipe(process.stdout);
@@ -21,6 +23,8 @@ function help(file) {
 function finish(err, res) {
   if(err) {
     error(err.message || err.stack); 
+
+  // @deprecated
   }else if(!err && res) {
     if(typeof res === 'function') {
       res(); 
