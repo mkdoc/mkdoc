@@ -69,12 +69,13 @@ function main(argv, cb) {
     }
 
     var stream = cat(this, done);
+
+    // show help when no files and no input on stdin
     stream.once('stdin', function(size, files) {
       if(!size && !files.length) {
         help.print(runtime.help.file, {runtime: runtime}, cb);
       } 
     })
-
   })
 }
 

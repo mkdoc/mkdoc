@@ -1,44 +1,47 @@
-var pi = require('mkpi')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [],
-      flags: [
-        '--safe', '--preserve', '--help'
-      ],
-      alias: {
-        '-s --safe': 'safe',
-        '-p --preserve': 'preserve',
-        '-h --help': 'help'
-      }
-    }
-  , pkg = require('mkpi/package.json');
+var path = require('path')
+  , pi = require('mkpi')
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mkpi.json')
+  , pkg = require('mkpi/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Execute processing instructions in the AST written to stdin.
+ *  @name mkpi
+ *  @cli doc/cli/mkpi.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , opts = {
-        preserve: args.flags.preserve,
-        safe: args.flags.safe,
-        input: process.stdin, 
-        output: process.stdout
+  var opts = {
+      input: process.stdin, 
+      output: process.stdout
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mkpi.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
       };
 
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mkpi.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
-
-  pi(opts, cb);
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
+    }
+    pi(this, cb);
+  })
 }
 
-module.exports = cli;
+module.exports = main;
