@@ -1,34 +1,31 @@
 {
-  "description": "Markdown command line interface definition.",
+  "description": "Message injection.",
   "type": "program",
-  "name": "mkcli",
+  "name": "mkmsg",
   "synopsis": "[options]",
   "options": {
-    "package": {
-      "literal": "-p, --package=[FILE]",
-      "key": "package",
-      "description": "Use package descriptor",
+    "message": {
+      "literal": "-m, --message=[MSG]",
+      "key": "message",
+      "description": "Custom message, parsed as markdown",
       "names": [
-        "-p",
-        "--package"
+        "-m",
+        "--message"
       ],
       "type": "option",
-      "extra": "=[FILE]",
+      "extra": "=[MSG]",
       "required": false,
       "multiple": false
     },
-    "type": {
-      "literal": "-t, --type=[TYPE]",
-      "key": "type",
-      "description": "Output renderer type",
+    "prepend": {
+      "literal": "-p, --prepend",
+      "key": "prepend",
+      "description": "Prepend message to the stream",
       "names": [
-        "-t",
-        "--type"
+        "-p",
+        "--prepend"
       ],
-      "type": "option",
-      "extra": "=[TYPE]",
-      "required": false,
-      "multiple": false
+      "type": "flag"
     },
     "help": {
       "literal": "-h, --help",

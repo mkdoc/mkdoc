@@ -1,0 +1,96 @@
+{
+  "description": "Parse source file comments.",
+  "type": "program",
+  "name": "mkparse",
+  "synopsis": "[options] [files...]",
+  "options": {
+    "lang": {
+      "literal": "-l, --lang=[LANG]",
+      "key": "lang",
+      "description": "Set language for all files",
+      "names": [
+        "-l",
+        "--lang"
+      ],
+      "type": "option",
+      "extra": "=[LANG]",
+      "required": false,
+      "multiple": false
+    },
+    "strip": {
+      "literal": "-s, --strip",
+      "key": "strip",
+      "description": "Print content only, remove comments",
+      "names": [
+        "-s",
+        "--strip"
+      ],
+      "type": "flag"
+    },
+    "content": {
+      "literal": "-c, --content",
+      "key": "content",
+      "description": "Include non-comment content",
+      "names": [
+        "-c",
+        "--content"
+      ],
+      "type": "flag"
+    },
+    "dotted": {
+      "literal": "-d, --dotted",
+      "key": "dotted",
+      "description": "Parse dotted names",
+      "names": [
+        "-d",
+        "--dotted"
+      ],
+      "type": "flag"
+    },
+    "json": {
+      "literal": "-j, --json",
+      "key": "json",
+      "description": "Print comments as JSON",
+      "names": [
+        "-j",
+        "--json"
+      ],
+      "type": "flag"
+    },
+    "indent": {
+      "literal": "-i, --indent=[NUM] {=0}",
+      "key": "indent",
+      "description": "Number of spaces for JSON",
+      "names": [
+        "-i",
+        "--indent"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "0"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

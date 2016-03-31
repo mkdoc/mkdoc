@@ -1,0 +1,122 @@
+{
+  "type": "program",
+  "name": "mkout",
+  "synopsis": "[options]",
+  "options": {
+    "output": {
+      "literal": "-o, --output=[FILE] {=stdout}",
+      "key": "output",
+      "description": "Write output to FILE",
+      "names": [
+        "-o",
+        "--output"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "value": "stdout"
+    },
+    "html": {
+      "literal": "-H, --html",
+      "key": "html",
+      "description": "Set output renderer to HTML",
+      "names": [
+        "-H",
+        "--html"
+      ],
+      "type": "flag"
+    },
+    "json": {
+      "literal": "-j, --json",
+      "key": "json",
+      "description": "Set output renderer to JSON",
+      "names": [
+        "-j",
+        "--json"
+      ],
+      "type": "flag"
+    },
+    "man": {
+      "literal": "-m, --man",
+      "key": "man",
+      "description": "Set output renderer to MAN",
+      "names": [
+        "-m",
+        "--man"
+      ],
+      "type": "flag"
+    },
+    "text": {
+      "literal": "-t, --text",
+      "key": "text",
+      "description": "Set output renderer to TEXT",
+      "names": [
+        "-t",
+        "--text"
+      ],
+      "type": "flag"
+    },
+    "xml": {
+      "literal": "-x, --xml",
+      "key": "xml",
+      "description": "Set output renderer to XML",
+      "names": [
+        "-x",
+        "--xml"
+      ],
+      "type": "flag"
+    },
+    "yaml": {
+      "literal": "-y, --yaml",
+      "key": "yaml",
+      "description": "Set output renderer to YAML",
+      "names": [
+        "-y",
+        "--yaml"
+      ],
+      "type": "flag"
+    },
+    "yamlFull": {
+      "literal": "-Y, --yaml-full",
+      "key": "yamlFull",
+      "description": "Do not compact YAML output",
+      "names": [
+        "-Y",
+        "--yaml-full"
+      ],
+      "type": "flag"
+    },
+    "noop": {
+      "literal": "-n, --noop",
+      "key": "noop",
+      "description": "Pass through input JSON",
+      "names": [
+        "-n",
+        "--noop"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

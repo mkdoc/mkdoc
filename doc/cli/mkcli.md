@@ -12,3 +12,4 @@ Markdown command line interface definition.
 * `-t, --type=[TYPE]` Output renderer type
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
+

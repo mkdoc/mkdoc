@@ -18,3 +18,4 @@ Documentation generator.
 * `--[no]-protected` Enable or disable protected symbols
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
+

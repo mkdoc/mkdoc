@@ -11,3 +11,4 @@ Concatenate source files to an abstract syntax tree.
 * `--no-ast` Disable AST output, prints input
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
+

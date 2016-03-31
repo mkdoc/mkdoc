@@ -2,7 +2,7 @@ mkcli [options]
 
 Markdown command line interface definition.
 
-  -p, --package=[FILE]    Use package descriptor
+  -p, --package=[FILE]  Use package descriptor
   -t, --type=[TYPE]   Output renderer type
   -h, --help          Display help and exit
   --version           Print the version and exit

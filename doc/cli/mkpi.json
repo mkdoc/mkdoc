@@ -1,28 +1,26 @@
 {
-  "description": "Task runner.",
+  "description": "Processing instruction macros.",
   "type": "program",
-  "name": "mk",
-  "synopsis": "[task...]",
+  "name": "mkpi",
+  "synopsis": "[options]",
   "options": {
-    "file": {
-      "literal": "-f, --file=[FILE...]",
-      "key": "file",
-      "description": "Load specific task files",
+    "safe": {
+      "literal": "-s, --safe",
+      "key": "safe",
+      "description": "Disable the @exec and @macro directives",
       "names": [
-        "-f",
-        "--file"
+        "-s",
+        "--safe"
       ],
-      "type": "option",
-      "extra": "=[FILE...]",
-      "required": false,
-      "multiple": true
+      "type": "flag"
     },
-    "tasks": {
-      "literal": "--tasks",
-      "key": "tasks",
-      "description": "Print task list",
+    "preserve": {
+      "literal": "-p, --preserve",
+      "key": "preserve",
+      "description": "Do not remove processing instructions",
       "names": [
-        "--tasks"
+        "-p",
+        "--preserve"
       ],
       "type": "flag"
     },

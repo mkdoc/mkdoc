@@ -4,17 +4,6 @@ var path = require('path')
   , Collator = require('mkparse/lib/collator')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      synopsis: '[options] [files...]',
-      '-l, --lang=[LANG]': 'Set language for all files',
-      '-s, --strip': 'Print content only, remove comments',
-      '-c, --content': 'Include non-comment content',
-      '-d, --dotted': 'Parse dotted names',
-      '-j, --json': 'Print comments as JSON',
-      '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 0)',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
   , hints = {
       flags: [
         '--dotted', '--content', '--strip'
@@ -51,6 +40,12 @@ function cli(argv, cb) {
       }
     , files = args.unparsed;
 
+  if(args.flags.help) {
+    return cb(null, utils.help('doc/help/mkparse.txt'));
+  }else if(args.flags.version) {
+    return cb(null, utils.version(pkg));
+  }
+
   opts.files = args.unparsed;
   opts.output = process.stdout;
   opts.content = Boolean(args.flags.content);
@@ -61,14 +56,6 @@ function cli(argv, cb) {
 
     // not printing comments, cannot print json
     args.flags.json = false;
-  }
-
-  if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
-  }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
   }
 
   if(!files.length) {

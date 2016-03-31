@@ -1,12 +1,6 @@
 var pi = require('mkpi')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  //, options = {
-      //'-s, --safe': 'Disable the @exec and @macro directives',
-      //'-p, --preserve': 'Do not remove processing instructions',
-      //'-h, --help': 'Display this help and exit',
-      //'--version': 'Print the version and exit'
-    //}
   , hints = {
       options: [],
       flags: [

@@ -1,12 +1,6 @@
 var msg = require('mkmsg')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  //, options = {
-      //'-m, --message=[MSG]': 'Custom message, parsed as markdown',
-      //'-p, --prepend': 'Prepend message to the stream',
-      //'-h, --help': 'Display this help and exit',
-      //'--version': 'Print the version and exit'
-    //}
   , hints = {
       options: [
         '-m'

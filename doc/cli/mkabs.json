@@ -7,7 +7,7 @@
     "base": {
       "literal": "-b, --base=[URL]",
       "key": "base",
-      "description": " Base URL for absolute links",
+      "description": "Base URL for absolute links",
       "names": [
         "-b",
         "--base"
@@ -20,7 +20,7 @@
     "relative": {
       "literal": "-r, --relative=[PATH]",
       "key": "relative",
-      "description": " Relative path when repository url",
+      "description": "Relative path when repository url",
       "names": [
         "-r",
         "--relative"
@@ -33,7 +33,7 @@
     "greedy": {
       "literal": "-g, --greedy",
       "key": "greedy",
-      "description": " Convert links starting with # and ?",
+      "description": "Convert links starting with # and ?",
       "names": [
         "-g",
         "--greedy"
@@ -43,7 +43,7 @@
     "help": {
       "literal": "-h, --help",
       "key": "help",
-      "description": " Display help and exit",
+      "description": "Display help and exit",
       "names": [
         "-h",
         "--help"
@@ -53,7 +53,7 @@
     "version": {
       "literal": "--version",
       "key": "version",
-      "description": " Print the version and exit",
+      "description": "Print the version and exit",
       "names": [
         "--version"
       ],

@@ -7,7 +7,7 @@
     "output": {
       "literal": "-o, --output=[FILE] {=stdout}",
       "key": "output",
-      "description": " Write output to FILE",
+      "description": "Write output to FILE",
       "names": [
         "-o",
         "--output"
@@ -21,7 +21,7 @@
     "title": {
       "literal": "-t, --title=[VAL]",
       "key": "title",
-      "description": " Title for initial heading",
+      "description": "Title for initial heading",
       "names": [
         "-t",
         "--title"
@@ -34,7 +34,7 @@
     "level": {
       "literal": "-l, --level=[NUM] {=1}",
       "key": "level",
-      "description": " Initial heading level",
+      "description": "Initial heading level",
       "names": [
         "-l",
         "--level"
@@ -48,7 +48,7 @@
     "lang": {
       "literal": "-L, --lang=[LANG] {=javascript}",
       "key": "lang",
-      "description": " Language for fenced code blocks",
+      "description": "Language for fenced code blocks",
       "names": [
         "-L",
         "--lang"
@@ -62,7 +62,7 @@
     "indent": {
       "literal": "-i, --indent=[NUM] {=2}",
       "key": "indent",
-      "description": " Number of spaces for JSON",
+      "description": "Number of spaces for JSON",
       "names": [
         "-i",
         "--indent"
@@ -76,7 +76,7 @@
     "ast": {
       "literal": "-a, --ast",
       "key": "ast",
-      "description": " Print AST as JSON",
+      "description": "Print AST as JSON",
       "names": [
         "-a",
         "--ast"
@@ -86,7 +86,7 @@
     "[no]Private": {
       "literal": "--[no]-private",
       "key": "[no]Private",
-      "description": " Enable or disable private symbols",
+      "description": "Enable or disable private symbols",
       "names": [
         "--[no]-private"
       ],
@@ -95,7 +95,7 @@
     "[no]Protected": {
       "literal": "--[no]-protected",
       "key": "[no]Protected",
-      "description": " Enable or disable protected symbols",
+      "description": "Enable or disable protected symbols",
       "names": [
         "--[no]-protected"
       ],
@@ -104,7 +104,7 @@
     "help": {
       "literal": "-h, --help",
       "key": "help",
-      "description": " Display help and exit",
+      "description": "Display help and exit",
       "names": [
         "-h",
         "--help"
@@ -114,7 +114,7 @@
     "version": {
       "literal": "--version",
       "key": "version",
-      "description": " Print the version and exit",
+      "description": "Print the version and exit",
       "names": [
         "--version"
       ],

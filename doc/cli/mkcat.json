@@ -7,7 +7,7 @@
     "noAst": {
       "literal": "--no-ast",
       "key": "noAst",
-      "description": " Disable AST output, prints input",
+      "description": "Disable AST output, prints input",
       "names": [
         "--no-ast"
       ],
@@ -16,7 +16,7 @@
     "help": {
       "literal": "-h, --help",
       "key": "help",
-      "description": " Display help and exit",
+      "description": "Display help and exit",
       "names": [
         "-h",
         "--help"
@@ -26,7 +26,7 @@
     "version": {
       "literal": "--version",
       "key": "version",
-      "description": " Print the version and exit",
+      "description": "Print the version and exit",
       "names": [
         "--version"
       ],
