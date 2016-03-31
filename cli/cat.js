@@ -9,7 +9,7 @@ var path = require('path')
  *  @name mkcat
  *  @cli doc/cli/mkcat.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
@@ -76,4 +76,4 @@ function cli(argv, cb) {
   })
 }
 
-module.exports = cli;
+module.exports = main;

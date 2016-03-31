@@ -10,7 +10,7 @@ var fs = require('fs')
  *  @name mkout
  *  @cli doc/cli/mkout.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
@@ -70,4 +70,4 @@ function cli(argv, cb) {
   })
 }
 
-module.exports = cli;
+module.exports = main;

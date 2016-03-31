@@ -9,7 +9,7 @@ var path = require('path')
  *  @name mkabs
  *  @cli doc/cli/mkabs.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
@@ -44,4 +44,4 @@ function cli(argv, cb) {
   })
 }
 
-module.exports = cli;
+module.exports = main;
