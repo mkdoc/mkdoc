@@ -1,60 +1,70 @@
 var path = require('path')
   , transform = require('mktransform')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [
-      ],
-      flags: [
-        '--help'
-      ],
-      alias: {
-        '-h --help': 'help'
-      }
-    }
-  , pkg = require('mktransform/package.json');
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mktransform.json')
+  , pkg = require('mktransform/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Add custom stream transformations to the pipeline.
+ *  @name mktransform
+ *  @cli doc/cli/mktransform.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
+
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , file
-    , opts = {
-        input: process.stdin, 
-        output: process.stdout,
-        transforms: []
+  var opts = {
+      input: process.stdin, 
+      output: process.stdout,
+      transforms: []
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mktransform.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
       };
 
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mktransform.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
-
-  for(var i = 0;i < args.unparsed.length;i++) {
-    file = args.unparsed[i];
-    if(!/^\//.test(file)) {
-      file = path.join(process.cwd(), file);
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
     }
+
+    var i
+      , file;
+
+    for(i = 0;i < this.unparsed.length;i++) {
+      file = this.unparsed[i];
+      if(!/^\//.test(file)) {
+        file = path.join(process.cwd(), file);
+      }
+      try {
+        this.transforms.push(require(file));
+      }catch(e) {
+        return cb(e); 
+      }
+    }
+
+    // transform can throw on bad export
     try {
-      opts.transforms.push(require(file));
+      transform(this, cb);
     }catch(e) {
       return cb(e); 
     }
-  }
 
-  // transform can throw on bad export
-  try {
-    transform(opts, cb);
-  }catch(e) {
-    return cb(e); 
-  }
+  })
 }
 
-module.exports = cli;
+module.exports = main;
