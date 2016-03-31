@@ -2,19 +2,19 @@ var fs = require('fs')
   , out = require('mkout')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
-      '-H, --html': 'Set output renderer to HTML',
-      '-j, --json': 'Set output renderer to JSON',
-      '-m, --man': 'Set output renderer to MAN',
-      '-t, --text': 'Set output renderer to TEXT',
-      '-x, --xml': 'Set output renderer to XML',
-      '-y, --yaml': 'Set output renderer to YAML',
-      '-Y, --yaml-full': 'Do not compact YAML output',
-      '-n, --noop': 'Pass through input JSON',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //'-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
+      //'-H, --html': 'Set output renderer to HTML',
+      //'-j, --json': 'Set output renderer to JSON',
+      //'-m, --man': 'Set output renderer to MAN',
+      //'-t, --text': 'Set output renderer to TEXT',
+      //'-x, --xml': 'Set output renderer to XML',
+      //'-y, --yaml': 'Set output renderer to YAML',
+      //'-Y, --yaml-full': 'Do not compact YAML output',
+      //'-n, --noop': 'Pass through input JSON',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
         '-o'
@@ -59,6 +59,12 @@ function cli(argv, cb) {
     , opts = {}
     , k;
 
+  if(args.flags.help) {
+    return cb(null, utils.help('doc/help/mkout.txt'));
+  }else if(args.flags.version) {
+    return cb(null, utils.version(pkg));
+  }
+
   opts.input = process.stdin;
   opts.files = args.unparsed;
   opts.output = process.stdout;
@@ -85,14 +91,6 @@ function cli(argv, cb) {
     // implies yaml type, means that -yY is not necessary -Y is enough
     opts.type = 'yaml';
     opts.render.compact = false; 
-  }
-
-  if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
-  }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
   }
 
   out(opts, cb);

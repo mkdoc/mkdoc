@@ -1,12 +1,12 @@
 var cat = require('mkcat')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      synopsis: '[options] [files...]',
-      '--no-ast': 'Disable AST output, prints input',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //synopsis: '[options] [files...]',
+      //'--no-ast': 'Disable AST output, prints input',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
       ],
@@ -44,11 +44,9 @@ function cli(argv, cb) {
   }
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkcat.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   function done(err, res) {
@@ -67,8 +65,7 @@ function cli(argv, cb) {
   var stream = cat(opts, done);
   stream.once('stdin', function(size, files) {
     if(!size && !files.length) {
-      utils.usage(pkg, options);
-      return cb();
+      return cb(null, utils.help('doc/help/mkcat.txt'));
     } 
   })
 }

@@ -60,11 +60,9 @@ function cli(argv, cb) {
       };
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkfilter.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   var k

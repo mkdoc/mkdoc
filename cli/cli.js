@@ -2,12 +2,12 @@ var path = require('path')
   , cli = require('mkcli')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      '-p, --package=[FILE]': 'Use package descriptor',
-      '-t, --type=[TYPE]': 'Output renderer type',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //'-p, --package=[FILE]': 'Use package descriptor',
+      //'-t, --type=[TYPE]': 'Output renderer type',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
         '-t',
@@ -58,11 +58,9 @@ function prg(argv, cb) {
       };
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkcli.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   cli(opts, cb);

@@ -1,10 +1,10 @@
 var ref = require('mkref')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
       ],
@@ -34,11 +34,9 @@ function cli(argv, cb) {
       };
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkref.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   ref(opts, cb);

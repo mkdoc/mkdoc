@@ -1,12 +1,12 @@
 var msg = require('mkmsg')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      '-m, --message=[MSG]': 'Custom message, parsed as markdown',
-      '-p, --prepend': 'Prepend message to the stream',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //'-m, --message=[MSG]': 'Custom message, parsed as markdown',
+      //'-p, --prepend': 'Prepend message to the stream',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
         '-m'
@@ -44,11 +44,9 @@ function cli(argv, cb) {
   }
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkmsg.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   msg(opts, cb);

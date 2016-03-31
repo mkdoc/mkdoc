@@ -2,11 +2,11 @@ var path = require('path')
   , transform = require('mktransform')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      synopsis: '[files...]',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //synopsis: '[files...]',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
       ],
@@ -37,11 +37,9 @@ function cli(argv, cb) {
       };
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mktransform.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   for(var i = 0;i < args.unparsed.length;i++) {
