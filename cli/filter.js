@@ -4,15 +4,7 @@ var filter = require('mkfilter')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , keys = {}
-  , options = {
-    '-i, --invert': 'Invert the filter'
-  }
-  , append = {
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
   , filters = {}
-  , k
   , hints = {
       options: [
       ],
@@ -28,20 +20,15 @@ var filter = require('mkfilter')
     }
   , pkg = require('mkfilter/package.json');
 
-//
+// update hints
 var types = Node.types.concat(Node.extensions);
 types.forEach(function(type) {
   filters[type] = false;
   var key = type.replace(/_/g, '-')
     , nm = '--' + key;
   keys[key] = type;
-  options[nm] = 'Filter ' + type.replace(/_/g, ' ') + ' nodes';
   hints.flags.push(nm);
 })
-
-for(k in append) {
-  options[k] = append[k];
-}
 
 /**
  *  Filter nodes by type.
