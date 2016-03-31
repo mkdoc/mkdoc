@@ -2,16 +2,19 @@ var cli = require('mkcli')
   , parser = require('cli-argparse')
   , utils = require('./util')
   , options = {
+      '-t, --type=[TYPE]': 'Output renderer type',
       '-h, --help': 'Display this help and exit',
       '--version': 'Print the version and exit'
     }
   , hints = {
       options: [
+        '-t'
       ],
       flags: [
         '--help'
       ],
       alias: {
+        '-t --type': 'type',
         '-h --help': 'help'
       }
     }
@@ -30,7 +33,8 @@ function prg(argv, cb) {
   var args = parser(argv, hints)
     , opts = {
         input: process.stdin, 
-        output: process.stdout
+        output: process.stdout,
+        type: args.options.type || cli.types.JSON
       };
 
   if(args.flags.help) {
