@@ -1,24 +1,13 @@
-var path = require('path')
-  , fs = require('fs')
-  , mk = require('mktask')
+var fs = require('fs')
+  , path = require('path')
   , vm = require('vm')
+  , mk = require('mktask')
   , mkparse = require('mkparse')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [
-        '-f'
-      ],
-      flags: [
-        '--tasks'
-      ],
-      alias: {
-        '-f --file': 'files',
-        '-h --help': 'help'
-      }
-    }
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
-  , pkg = require('mktask/package.json');
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mk.json')
+  , pkg = require('mktask/package.json')
+  , prg = bin.load(def, pkg);
 
 var deps = {
   abs: require('mkabs'),
@@ -76,159 +65,176 @@ function print(files, runner, cb) {
 }
 
 /**
- *  Run task build files.
+ *  @name mkmk
+ *  @cli doc/cli/mkmk.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints);
+  var opts = {
+      input: process.stdin, 
+      output: process.stdout
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mkmk.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
+      };
 
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mk.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
-
-  var dir = process.cwd()
-    , file = path.join(dir, NAME)
-    , files = args.options.files
-    , tasks
-    , list
-    , stat;
-
-  function get(file, strict) {
-    try {
-      stat = fs.statSync(file)
-      // ok if the file does not exist, searching parents
-    }catch(e) {}
-
-    if(strict && (!stat || stat && !stat.isFile())) {
-      return cb(new Error('invalid file: ' + file)); 
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
     }
 
-    function req(mod) {
+    var dir = process.cwd()
+      , file = path.join(dir, NAME)
+      , files = this.file
+      , tasks
+      , list
+      , stat;
 
-      // return our reference to `mktask` so there are not 
-      // module conflicts
-      if(mod === 'mktask') {
-        return mk; 
-      }
-
-      // resolve relative paths
-      if(/^\.\.?\//.test(mod)) {
-        mod = path.join(process.cwd(), mod);
-      }
-
-      //console.error('require proxy %s', mod);
-      return require(mod);
-    }
-
-    var context = vm.createContext(
-        {
-          Buffer: Buffer,
-          require: req,
-          console: console,
-          process: process,
-          setTimeout: setTimeout,
-          setInterval: setInterval,
-          clearTimeout: clearTimeout,
-          clearInterval: clearInterval,
-          setImmediate: setImmediate,
-          clearImmediate: clearImmediate
-        });
-
-    if(stat && stat.isFile()) {
+    function get(file, strict) {
       try {
-        var contents = fs.readFileSync(file).toString('utf8')
-          , script = new vm.Script(contents);
-        script.runInContext(context, {filename: file});
-        return true;
+        stat = fs.statSync(file)
+        // ok if the file does not exist, searching parents
+      }catch(e) {}
 
+      if(strict && (!stat || stat && !stat.isFile())) {
+        return cb(new Error('invalid file: ' + file)); 
+      }
 
-        //return require(file);
-      }catch(e) {
-        return cb(e); 
+      function req(mod) {
+
+        // return our reference to `mktask` so there are not 
+        // module conflicts
+        if(mod === 'mktask') {
+          return mk; 
+        }
+
+        // resolve relative paths
+        if(/^\.\.?\//.test(mod)) {
+          mod = path.join(process.cwd(), mod);
+        }
+
+        //console.error('require proxy %s', mod);
+        return require(mod);
+      }
+
+      var context = vm.createContext(
+          {
+            Buffer: Buffer,
+            require: req,
+            console: console,
+            process: process,
+            setTimeout: setTimeout,
+            setInterval: setInterval,
+            clearTimeout: clearTimeout,
+            clearInterval: clearInterval,
+            setImmediate: setImmediate,
+            clearImmediate: clearImmediate
+          });
+
+      if(stat && stat.isFile()) {
+        try {
+          var contents = fs.readFileSync(file).toString('utf8')
+            , script = new vm.Script(contents);
+          script.runInContext(context, {filename: file});
+          return true;
+        }catch(e) {
+          return cb(e); 
+        }
       }
     }
-  }
 
-  if(files) {
+    if(files) {
 
-    if(!Array.isArray(files)) {
-      files = [files]; 
-    }
-
-    files.forEach(function(file) {
-      if(!/^\.?\//.test(file)) {
-        file = path.join(process.cwd(), file);
+      if(!Array.isArray(files)) {
+        files = [files]; 
       }
-      tasks = get(file, true);
-    })
-  
-  }else{
-    while(!(tasks = get(file))) {
-      dir = path.dirname(dir);
-      file = path.join(dir, NAME);
-      if(dir === '/') {
-        break; 
+
+      files.forEach(function(file) {
+        if(!/^\.?\//.test(file)) {
+          file = path.join(process.cwd(), file);
+        }
+        tasks = get(file, true);
+      })
+    
+    }else{
+      while(!(tasks = get(file))) {
+        dir = path.dirname(dir);
+        file = path.join(dir, NAME);
+        if(dir === '/') {
+          break; 
+        }
+      }
+
+      // change to parent directory of mkdoc.js
+      // so that input and output paths are relative to
+      // the mkdoc.js file and not the cwd when in a deeper
+      // directory
+      if(tasks) {
+        process.chdir(path.dirname(file));
       }
     }
 
-    // change to parent directory of mkdoc.js
-    // so that input and output paths are relative to
-    // the mkdoc.js file and not the cwd when in a deeper
-    // directory
-    if(tasks) {
-      process.chdir(path.dirname(file));
-    }
-  }
-
-  if(!tasks) {
-    return cb(
-      new Error(
-        'no task file (' + NAME + ') found in ' + process.cwd()
-        + ' or any parent directories '
-      )); 
-  }
-
-  var collection = mk.task()
-    , runner;
-
-  if(!collection.tasks.length) {
-    return cb(
-      new Error(
-        'task file ' + file + ' does not define task functions'
-      )); 
-  }
-
-  runner = collection.run();
-  list = args.unparsed;
-
-  if(args.flags.tasks) {
-
-    // print from auto-detected file
-    if(!files) {
-      files = [file];
-    }
-       
-    return print(files, runner, cb); 
-  }
-
-  for(var i = 0;i < list.length;i++) {
-    if(!runner.get(list[i])) {
+    if(!tasks) {
       return cb(
-        new Error('task not found: ' + list[i])); 
-    } 
-  }
+        new Error(
+          'no task file (' + NAME + ') found in ' + process.cwd()
+          + ' or any parent directories '
+        )); 
+    }
 
-  // set up execution scope for default task collection
-  runner.scope = {args: args};
+    var collection = mk.task()
+      , runner;
 
-  runner.each(list, cb);  
+    if(!collection.tasks.length) {
+      return cb(
+        new Error(
+          'task file ' + file + ' does not define task functions'
+        )); 
+    }
+
+    runner = collection.run();
+    list = this.unparsed;
+
+    if(this.tasks) {
+
+      // print from auto-detected file
+      if(!files) {
+        files = [file];
+      }
+         
+      return print(files, runner, cb); 
+    }
+
+    for(var i = 0;i < list.length;i++) {
+      if(!runner.get(list[i])) {
+        return cb(
+          new Error('task not found: ' + list[i])); 
+      } 
+    }
+
+    // set up execution scope for default task collection
+    runner.scope = {args: this.args};
+
+    runner.each(list, cb);  
+
+  })
 }
 
-module.exports = cli;
+module.exports = main;
