@@ -1,49 +1,47 @@
-var msg = require('mkmsg')
-  , parser = require('cli-argparse')
-  , utils = require('./util')
-  , hints = {
-      options: [
-        '-m'
-      ],
-      flags: [
-        '--prepend', '--help'
-      ],
-      alias: {
-        '-m --message': 'message',
-        '-p --prepend': 'prepend',
-        '-h --help': 'help'
-      }
-    }
-  , pkg = require('mkmsg/package.json');
+var path = require('path')
+  , msg = require('mkmsg')
+  , bin = require('mkcli')
+  , def = require('../doc/cli/mkmsg.json')
+  , pkg = require('mkmsg/package.json')
+  , prg = bin.load(def, pkg);
 
 /**
- *  Append or prepend a message to the stream.
+ *  @name mkmsg
+ *  @cli doc/cli/mkmsg.md
  */
-function cli(argv, cb) {
+function main(argv, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
-  var args = parser(argv, hints)
-    , opts = {
-        prepend: args.flags.prepend,
-        input: process.stdin, 
-        output: process.stdout
+  var opts = {
+      input: process.stdin, 
+      output: process.stdout
+    }
+    , runtime = {
+        base: path.normalize(path.join(__dirname, '..')),
+        target: opts,
+        hints: prg,
+        help: {
+          file: 'doc/help/mkmsg.txt'
+        },
+        version: pkg,
+        plugins: [
+          require('mkcli/plugin/hints'),
+          require('mkcli/plugin/argv'),
+          require('mkcli/plugin/help'),
+          require('mkcli/plugin/version')
+        ]
       };
 
-  if(args.options.message) {
-    opts.message = args.options.message; 
-  }
-
-  if(args.flags.help) {
-    return cb(null, utils.help('doc/help/mkmsg.txt'));
-  }else if(args.flags.version) {
-    return cb(null, utils.version(pkg));
-  }
-
-  msg(opts, cb);
+  prg.run(argv, runtime, function parsed(err) {
+    if(err) {
+      return cb(err); 
+    }
+    msg(this, cb);
+  })
 }
 
-module.exports = cli;
+module.exports = main;
