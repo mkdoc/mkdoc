@@ -1,4 +1,6 @@
-var mk = require('mktask');
+var fs = require('fs')
+  , path = require('path')
+  , mk = require('mktask');
 
 // @task api build the api docs.
 function api(cb) {
@@ -8,6 +10,39 @@ function api(cb) {
       stream: mk.dest('API.md'),
       heading: 'API'
     }, cb);
+}
+
+// @task help build the cli help files.
+function help(cb) {
+  var src = 'doc/cli'
+    , out = 'doc/help'
+    , files = fs.readdirSync(src);
+
+  function next(err) {
+    if(err) {
+      return cb(err); 
+    }
+
+    var file = files.shift();
+    if(!file) {
+      return cb();
+    }
+
+    var source = path.join(src, file)
+      , name = file.replace(/\.md$/, '')
+      , dest = name + '.txt'
+      , pkg = require(name + '/package.json');
+
+    dest = path.join(out, dest);
+
+    mk.doc(source)
+      .pipe(mk.cli.src())
+      .pipe(mk.cli.dest({type: 'help', pkg: pkg}))
+      .pipe(mk.dest(dest))
+      .on('finish', next);
+  }
+
+  next();
 }
 
 // @task readme build the readme file.
@@ -26,4 +61,5 @@ function readme(cb) {
 }
 
 mk.task(api);
+mk.task(help);
 mk.task(readme);

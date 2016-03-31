@@ -1,13 +1,6 @@
 var abs = require('mkabs')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  , options = {
-      '-b, --base=[URL]': 'Base URL for absolute links',
-      '-r, --relative=[PATH]': 'Relative path when repository url',
-      '-g, --greedy': 'Convert links starting with # and ?',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
   , hints = {
       options: [
         '-b', '-r'
@@ -29,7 +22,6 @@ var abs = require('mkabs')
  *  Make relative links absolute.
  */
 function cli(argv, cb) {
-
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
@@ -51,11 +43,9 @@ function cli(argv, cb) {
   }
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mkabs.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   abs(opts, cb);

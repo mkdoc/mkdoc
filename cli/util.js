@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var repeat = require('string-repeater');
 
 function usage(pkg, opts) {
@@ -32,18 +34,38 @@ function usage(pkg, opts) {
   console.log('Report bugs to %s', pkg.bugs.url);
 }
 
-function version(pkg) {
-  console.log('%s %s', pkg.name, pkg.version); 
-}
-
 function error(msg) {
   var prefix = 'ERR | ';
   console.error(prefix + msg);
   process.exit(1);
 }
 
+function version(pkg) {
+  return function() {
+    console.log('%s %s', pkg.name, pkg.version); 
+  }
+}
+
+function help(file) {
+  return function() {
+    fs.createReadStream(file).pipe(process.stdout);
+  }
+}
+
+function finish(err, res) {
+  if(err) {
+    error(err.message || err.stack); 
+  }else if(!err && res) {
+    if(typeof res === 'function') {
+      res(); 
+    } 
+  }
+}
+
 module.exports = {
   usage: usage,
+  help: help,
   version: version,
-  error: error
+  error: error,
+  finish: finish
 }
