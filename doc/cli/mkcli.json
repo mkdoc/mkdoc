@@ -1,0 +1,55 @@
+{
+  "description": "Markdown command line interface definition.",
+  "type": "program",
+  "name": "mkcli",
+  "synopsis": "[options]",
+  "options": {
+    "package": {
+      "literal": "-p, --package=[FILE]",
+      "key": "package",
+      "description": " Use package descriptor",
+      "names": [
+        "-p",
+        "--package"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false
+    },
+    "type": {
+      "literal": "-t, --type=[TYPE]",
+      "key": "type",
+      "description": " Output renderer type",
+      "names": [
+        "-t",
+        "--type"
+      ],
+      "type": "option",
+      "extra": "=[TYPE]",
+      "required": false,
+      "multiple": false
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": " Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": " Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

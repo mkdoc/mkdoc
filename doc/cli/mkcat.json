@@ -1,0 +1,38 @@
+{
+  "description": "Concatenate source files to an abstract syntax tree.",
+  "type": "program",
+  "name": "mkcat",
+  "synopsis": "[options] [files...]",
+  "options": {
+    "noAst": {
+      "literal": "--no-ast",
+      "key": "noAst",
+      "description": " Disable AST output, prints input",
+      "names": [
+        "--no-ast"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": " Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": " Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}

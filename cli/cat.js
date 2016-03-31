@@ -1,12 +1,6 @@
 var cat = require('mkcat')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  //, options = {
-      //synopsis: '[options] [files...]',
-      //'--no-ast': 'Disable AST output, prints input',
-      //'-h, --help': 'Display this help and exit',
-      //'--version': 'Print the version and exit'
-    //}
   , hints = {
       options: [
       ],

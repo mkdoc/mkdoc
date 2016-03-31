@@ -2,12 +2,6 @@ var path = require('path')
   , cli = require('mkcli')
   , parser = require('cli-argparse')
   , utils = require('./util')
-  //, options = {
-      //'-p, --package=[FILE]': 'Use package descriptor',
-      //'-t, --type=[TYPE]': 'Output renderer type',
-      //'-h, --help': 'Display this help and exit',
-      //'--version': 'Print the version and exit'
-    //}
   , hints = {
       options: [
         '-t',
