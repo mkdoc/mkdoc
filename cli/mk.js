@@ -103,7 +103,7 @@ function cli(argv, cb) {
   function get(file, strict) {
     try {
       stat = fs.statSync(file)
-    // ok if the file does not exist, searching parents
+      // ok if the file does not exist, searching parents
     }catch(e) {}
 
     if(strict && (!stat || stat && !stat.isFile())) {
