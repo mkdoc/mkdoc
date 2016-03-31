@@ -38,7 +38,8 @@
     "mkref": "~1.0.3",
     "mktask": "~1.2.0",
     "mktoc": "~1.0.0",
-    "mktransform": "~1.0.2"
+    "mktransform": "~1.0.2",
+    "through3": "~1.1.6"
   },
   "devDependencies": {
     "chai": "~3.5.0",
