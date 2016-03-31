@@ -1,0 +1,114 @@
+{
+  "description": "Modify heading levels.",
+  "type": "program",
+  "name": "mklevel",
+  "synopsis": "[options]",
+  "options": {
+    "1": {
+      "literal": "-1=[NUM]",
+      "key": "1",
+      "description": "Modify level 1 headings by NUM",
+      "names": [
+        "-1"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "2": {
+      "literal": "-2=[NUM]",
+      "key": "2",
+      "description": "Modify level 2 headings by NUM",
+      "names": [
+        "-2"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "3": {
+      "literal": "-3=[NUM]",
+      "key": "3",
+      "description": "Modify level 3 headings by NUM",
+      "names": [
+        "-3"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "4": {
+      "literal": "-4=[NUM]",
+      "key": "4",
+      "description": "Modify level 4 headings by NUM",
+      "names": [
+        "-4"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "5": {
+      "literal": "-5=[NUM]",
+      "key": "5",
+      "description": "Modify level 5 headings by NUM",
+      "names": [
+        "-5"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "6": {
+      "literal": "-6=[NUM]",
+      "key": "6",
+      "description": "Modify level 6 headings by NUM",
+      "names": [
+        "-6"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "all": {
+      "literal": "-a, --all=[NUM]",
+      "key": "all",
+      "description": "Modify all headings by NUM",
+      "names": [
+        "-a",
+        "--all"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}
