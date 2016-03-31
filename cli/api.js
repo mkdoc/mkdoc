@@ -3,20 +3,20 @@ var fs = require('fs')
   , parse = require('mkapi')
   , pkg = require('mkapi/package.json')
   , utils = require('./util')
-  , options = {
-      synopsis: '[options] [files...]',
-      '-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
-      '-t, --title=[VAL]': 'Title for initial heading',
-      '-l, --level=[NUM]': 'Initial heading level (default: 1)',
-      '-L, --lang=[LANG]':
-        'Language for fenced code blocks (default: javascript)',
-      '-i, --indent=[NUM]': 'Number of spaces for JSON (default: 2)',
-      '-a, --ast': 'Print AST as JSON',
-      '--[no]-private': 'Enable or disable private symbols',
-      '--[no]-protected': 'Enable or disable protected symbols',
-      '-h, --help': 'Display this help and exit',
-      '--version': 'Print the version and exit'
-    }
+  //, options = {
+      //synopsis: '[options] [files...]',
+      //'-o, --output=[FILE]': 'Write output to FILE (default: stdout)',
+      //'-t, --title=[VAL]': 'Title for initial heading',
+      //'-l, --level=[NUM]': 'Initial heading level (default: 1)',
+      //'-L, --lang=[LANG]':
+        //'Language for fenced code blocks (default: javascript)',
+      //'-i, --indent=[NUM]': 'Number of spaces for JSON (default: 2)',
+      //'-a, --ast': 'Print AST as JSON',
+      //'--[no]-private': 'Enable or disable private symbols',
+      //'--[no]-protected': 'Enable or disable protected symbols',
+      //'-h, --help': 'Display this help and exit',
+      //'--version': 'Print the version and exit'
+    //}
   , hints = {
       options: [
         '-l', '-t', '-o', '-i', '-L'
@@ -44,10 +44,10 @@ function cli(argv, cb) {
 
   var args = parser(argv, hints);
 
-  if(args.flags.h || args.flags.help) {
-    return utils.usage(pkg, options);
+  if(args.flags.help) {
+    return cb(null, utils.help('doc/help/mkapi.txt'));
   }else if(args.flags.version) {
-    return utils.version(pkg);
+    return cb(null, utils.version(pkg));
   }
 
   if(!args.unparsed.length) {

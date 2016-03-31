@@ -1,0 +1,126 @@
+{
+  "description": "Documentation generator.",
+  "type": "program",
+  "name": "mkapi",
+  "synopsis": "[options] [files...]",
+  "options": {
+    "output": {
+      "literal": "-o, --output=[FILE] {=stdout}",
+      "key": "output",
+      "description": " Write output to FILE",
+      "names": [
+        "-o",
+        "--output"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "value": "stdout"
+    },
+    "title": {
+      "literal": "-t, --title=[VAL]",
+      "key": "title",
+      "description": " Title for initial heading",
+      "names": [
+        "-t",
+        "--title"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false
+    },
+    "level": {
+      "literal": "-l, --level=[NUM] {=1}",
+      "key": "level",
+      "description": " Initial heading level",
+      "names": [
+        "-l",
+        "--level"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "1"
+    },
+    "lang": {
+      "literal": "-L, --lang=[LANG] {=javascript}",
+      "key": "lang",
+      "description": " Language for fenced code blocks",
+      "names": [
+        "-L",
+        "--lang"
+      ],
+      "type": "option",
+      "extra": "=[LANG]",
+      "required": false,
+      "multiple": false,
+      "value": "javascript"
+    },
+    "indent": {
+      "literal": "-i, --indent=[NUM] {=2}",
+      "key": "indent",
+      "description": " Number of spaces for JSON",
+      "names": [
+        "-i",
+        "--indent"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "2"
+    },
+    "ast": {
+      "literal": "-a, --ast",
+      "key": "ast",
+      "description": " Print AST as JSON",
+      "names": [
+        "-a",
+        "--ast"
+      ],
+      "type": "flag"
+    },
+    "[no]Private": {
+      "literal": "--[no]-private",
+      "key": "[no]Private",
+      "description": " Enable or disable private symbols",
+      "names": [
+        "--[no]-private"
+      ],
+      "type": "flag"
+    },
+    "[no]Protected": {
+      "literal": "--[no]-protected",
+      "key": "[no]Protected",
+      "description": " Enable or disable protected symbols",
+      "names": [
+        "--[no]-protected"
+      ],
+      "type": "flag"
+    },
+    "help": {
+      "literal": "-h, --help",
+      "key": "help",
+      "description": " Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag"
+    },
+    "version": {
+      "literal": "--version",
+      "key": "version",
+      "description": " Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag"
+    }
+  },
+  "commands": {},
+  "sections": []
+}
