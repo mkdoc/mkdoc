@@ -2,9 +2,9 @@ mkmsg [options]
 
 Message injection.
 
-  -m, --message=[MSG] Custom message, parsed as markdown
-  -p, --prepend       Prepend message to the stream
-  -h, --help          Display help and exit
-  --version           Print the version and exit
+  -m, --message=[MSG]     Custom message, parsed as markdown
+  -p, --prepend           Prepend message to the stream
+  -h, --help              Display help and exit
+  --version               Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkmsg/issues

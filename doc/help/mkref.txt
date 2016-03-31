@@ -2,7 +2,7 @@ mkref [options]
 
 Link reference collation.
 
-  -h, --help          Display help and exit
-  --version           Print the version and exit
+  -h, --help              Display help and exit
+  --version               Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkref/issues
