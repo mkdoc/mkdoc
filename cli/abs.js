@@ -5,21 +5,6 @@ var abs = require('mkabs')
   , def = require('../doc/cli/mkabs.json')
   , prg = bin.load(def, pkg)
   , hints = prg.hints()
-  //, hints = {
-      //options: [
-        //'-b', '-r'
-      //],
-      //flags: [
-        //'--greedy',
-        //'--help'
-      //],
-      //alias: {
-        //'-b --base': 'base',
-        //'-r --relative': 'rel',
-        //'-g --greedy': 'greedy',
-        //'-h --help': 'help'
-      //}
-    //}
   , pkg = require('mkabs/package.json');
 
 /**
