@@ -96,11 +96,9 @@ function cli(argv, cb) {
   var args = parser(argv, hints);
 
   if(args.flags.help) {
-    utils.usage(pkg, options);
-    return cb();
+    return cb(null, utils.help('doc/help/mk.txt'));
   }else if(args.flags.version) {
-    utils.version(pkg);
-    return cb();
+    return cb(null, utils.version(pkg));
   }
 
   var dir = process.cwd()

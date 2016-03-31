@@ -31,8 +31,9 @@ function help(cb) {
     var source = path.join(src, file)
       , name = file.replace(/\.md$/, '')
       , dest = name + '.txt'
-      , pkg = require(name + '/package.json');
+      , pkg;
 
+    pkg = require((name === 'mk' ? 'mktask' : name) + '/package.json');
     dest = path.join(out, dest);
 
     mk.doc(source)

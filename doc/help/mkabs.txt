@@ -6,7 +6,7 @@ Make relative links absolute.
   -r, --relative=[PATH]   
                       Relative path when repository url
   -g, --greedy        Convert links starting with # and ?
-  -h, --help          Display this help and exit
+  -h, --help          Display help and exit
   --version           Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkabs/issues
