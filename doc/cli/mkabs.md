@@ -3,7 +3,7 @@
 Make relative links absolute.
 
 ```synopsis
-[options...]
+[options]
 ```
 
 ## Options

@@ -1,4 +1,4 @@
-mkabs [options...]
+mkabs [options]
 
 Make relative links absolute.
 
