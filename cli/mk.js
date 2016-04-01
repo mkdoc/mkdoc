@@ -1,6 +1,8 @@
 var fs = require('fs')
   , path = require('path')
   , vm = require('vm')
+  , util = require('util')
+  , EOL = require('os').EOL
   , mk = require('mktask')
   , mkparse = require('mkparse')
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
@@ -9,10 +11,12 @@ var fs = require('fs')
   , pkg = require('mktask/package.json')
   , prg = bin.load(def, pkg);
 
-function print(files, runner, cb) {
+function print(files, runner, output, cb) {
   var list = files.slice();
 
   function next(err) {
+
+    /* istanbul ignore next: files are validated earlier so tough to mock */
     if(err) {
       return cb(err); 
     }
@@ -32,7 +36,9 @@ function print(files, runner, cb) {
           if(!runner.get(tag.name)) {
             missing = ' (missing)'; 
           }
-          console.log('TASK | [%s] %s%s', tag.name, tag.description, missing); 
+          output.write(
+            util.format(
+              'TASK | [%s] %s%s', tag.name, tag.description, missing) + EOL);
         }
       })
     })
@@ -124,7 +130,15 @@ function main(argv, conf, cb) {
       , files = this.file
       , tasks
       , list
+      , called = false
       , stat;
+
+    function done(err) {
+      if(!called) {
+        called = true; 
+        cb(err);
+      } 
+    }
 
     function get(file, strict) {
       try {
@@ -133,7 +147,7 @@ function main(argv, conf, cb) {
       }catch(e) {}
 
       if(strict && (!stat || stat && !stat.isFile())) {
-        return cb(new Error('invalid file: ' + file)); 
+        return done(new Error('invalid file: ' + file)); 
       }
 
       function req(mod) {
@@ -174,7 +188,7 @@ function main(argv, conf, cb) {
           script.runInContext(context, {filename: file});
           return true;
         }catch(e) {
-          return cb(e); 
+          return done(e); 
         }
       }
     }
@@ -211,7 +225,7 @@ function main(argv, conf, cb) {
     }
 
     if(!tasks) {
-      return cb(
+      return done(
         new Error(
           'no task file (' + NAME + ') found in ' + process.cwd()
           + ' or any parent directories '
@@ -222,7 +236,7 @@ function main(argv, conf, cb) {
       , runner;
 
     if(!collection.tasks.length) {
-      return cb(
+      return done(
         new Error(
           'task file ' + file + ' does not define task functions'
         )); 
@@ -238,12 +252,12 @@ function main(argv, conf, cb) {
         files = [file];
       }
          
-      return print(files, runner, cb); 
+      return print(files, runner, conf.output, done); 
     }
 
     for(var i = 0;i < list.length;i++) {
       if(!runner.get(list[i])) {
-        return cb(
+        return done(
           new Error('task not found: ' + list[i])); 
       } 
     }
@@ -251,7 +265,7 @@ function main(argv, conf, cb) {
     // set up execution scope for default task collection
     runner.scope = {args: this.args};
 
-    runner.each(list, cb);  
+    runner.each(list, done);  
   })
 }
 
