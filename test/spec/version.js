@@ -7,6 +7,7 @@ var expect = require('chai').expect
   , filter = require('../../cli/filter')
   , level = require('../../cli/level')
   , mk = require('../../cli/mk')
+  , msg = require('../../cli/msg')
 
 describe('version:', function() {
 
@@ -118,4 +119,18 @@ describe('version:', function() {
     })
   });
 
+  it('should print version (msg)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkmsg-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    msg(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(msg.pkg.name + ' ' + msg.pkg.version + '\n');
+      done();
+    })
+  });
 });
