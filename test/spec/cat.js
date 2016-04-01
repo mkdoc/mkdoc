@@ -70,4 +70,25 @@ describe('cat:', function() {
     // must end input stream
     conf.input.end();
   });
+
+  it('should callback with error on missing file (ENOENT)', function(done) {
+    var argv = ['non-existent.md']
+      , target = 'target/mkcat-enoent-error.json.log'
+      , conf = {
+          input: new PassThrough(),
+          output: fs.createWriteStream(target)
+        };
+
+    cat(argv, conf, function(err) {
+      function fn() {
+        throw err; 
+      }
+      expect(fn).throws(/ENOENT/);
+      done();
+    })
+
+    // write mock data to input stream
+    conf.input.end(fs.readFileSync('test/fixtures/paragraph.md'));
+  });
+
 });
