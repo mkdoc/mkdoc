@@ -108,7 +108,10 @@ function main(argv, conf, cb) {
       }
 
       if(!pack) {
-        console.error('unkown language for file %s (skipping)', file); 
+        /* istanbul ignore next: always in test env */
+        if(process.env.NODE_ENV !== 'test') {
+          console.error('unkown language for file %s (skipping)', file); 
+        }
         return it();
       }
 

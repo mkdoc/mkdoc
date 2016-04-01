@@ -52,7 +52,7 @@
     "clean": "rm -rf coverage target",
     "lint": "jshint . && jscs .",
     "pretest": "rm -rf target && mkdir target",
-    "test": "NODE_env=test mocha ${SPEC:-test/spec}",
+    "test": "NODE_ENV=test mocha ${SPEC:-test/spec}",
     "precover": "npm run pretest",
     "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
