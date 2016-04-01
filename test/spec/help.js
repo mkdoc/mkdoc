@@ -11,6 +11,7 @@ var expect = require('chai').expect
   , out = require('../../cli/out')
   , parse = require('../../cli/parse')
   , pi = require('../../cli/pi')
+  , ref = require('../../cli/ref')
 
 describe('help:', function() {
 
@@ -174,6 +175,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + pi.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (ref)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkref-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    ref(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + ref.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })

@@ -11,6 +11,7 @@ var expect = require('chai').expect
   , out = require('../../cli/out')
   , parse = require('../../cli/parse')
   , pi = require('../../cli/pi')
+  , ref = require('../../cli/ref')
 
 describe('version:', function() {
 
@@ -179,6 +180,21 @@ describe('version:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(pi.pkg.name + ' ' + pi.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (ref)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkref-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    ref(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(ref.pkg.name + ' ' + ref.pkg.version + '\n');
       done();
     })
   });
