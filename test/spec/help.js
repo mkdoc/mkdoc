@@ -4,6 +4,7 @@ var expect = require('chai').expect
   , api = require('../../cli/api')
   , cat = require('../../cli/cat')
   , cli = require('../../cli/cli')
+  , filter = require('../../cli/filter')
 
 describe('help:', function() {
 
@@ -62,6 +63,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + cli.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (filter)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkfilter-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    filter(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + filter.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })

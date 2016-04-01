@@ -11,8 +11,8 @@ var path = require('path')
   , filters = {}
 
 types.forEach(function(type) {
-  filters[type] = false;
   var key = type.replace(/_/g, '-');
+  filters[type] = false;
   keys[prg.camelcase(key)] = type;
 })
 
@@ -20,25 +20,42 @@ types.forEach(function(type) {
  *  @name mkfilter
  *  @cli doc/cli/mkfilter.md
  */
-function main(argv, cb) {
+function main(argv, conf, cb) {
 
+  /* istanbul ignore if: always pass argv in test env */
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
+  /* istanbul ignore if: always pass conf in test env */
+  if(typeof conf === 'function') {
+    cb = conf;
+    conf = null;
+  }
+
+  /* istanbul ignore next: always pass conf in test env */
+  conf = conf || {};
+  /* istanbul ignore next: never print to stdout in test env */
+  conf.output = conf.output || process.stdout;
+
   var opts = {
       input: process.stdin, 
-      output: process.stdout
+      output: conf.output
     }
     , runtime = {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
         hints: prg,
         help: {
-          file: 'doc/help/mkfilter.txt'
+          file: 'doc/help/mkfilter.txt',
+          output: conf.output
         },
-        version: pkg,
+        version: {
+          name: pkg.name,
+          version: pkg.version,
+          output: conf.output
+        },
         plugins: [
           require('mkcli/plugin/hints'),
           require('mkcli/plugin/argv'),
@@ -47,8 +64,8 @@ function main(argv, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err) {
-    if(err) {
+  prg.run(argv, runtime, function parsed(err, req) {
+    if(err || req.aborted) {
       return cb(err); 
     }
 
@@ -78,5 +95,7 @@ function main(argv, cb) {
     filter(this, cb);
   })
 }
+
+main.pkg = pkg;
 
 module.exports = main;

@@ -4,6 +4,7 @@ var expect = require('chai').expect
   , api = require('../../cli/api')
   , cat = require('../../cli/cat')
   , cli = require('../../cli/cli')
+  , filter = require('../../cli/filter')
 
 describe('version:', function() {
 
@@ -63,6 +64,22 @@ describe('version:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(cli.pkg.name + ' ' + cli.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (filter)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkfilter-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    filter(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(
+        filter.pkg.name + ' ' + filter.pkg.version + '\n');
       done();
     })
   });
