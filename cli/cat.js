@@ -100,7 +100,7 @@ function main(argv, conf, cb) {
         help.print(
           runtime.help.file,
           {runtime: runtime, conf: runtime.help}, done);
-      } 
+      }
     })
 
     stream.once('finish', done);
