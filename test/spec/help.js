@@ -10,6 +10,7 @@ var expect = require('chai').expect
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
   , parse = require('../../cli/parse')
+  , pi = require('../../cli/pi')
 
 describe('help:', function() {
 
@@ -162,4 +163,20 @@ describe('help:', function() {
       done();
     })
   });
+
+  it('should print help (pi)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkpi-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    pi(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + pi.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
 });

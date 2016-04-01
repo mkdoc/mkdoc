@@ -10,6 +10,7 @@ var expect = require('chai').expect
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
   , parse = require('../../cli/parse')
+  , pi = require('../../cli/pi')
 
 describe('version:', function() {
 
@@ -166,4 +167,20 @@ describe('version:', function() {
       done();
     })
   });
+
+  it('should print version (pi)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkpi-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    pi(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(pi.pkg.name + ' ' + pi.pkg.version + '\n');
+      done();
+    })
+  });
+
 });
