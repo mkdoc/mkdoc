@@ -5,6 +5,7 @@ var expect = require('chai').expect
   , cat = require('../../cli/cat')
   , cli = require('../../cli/cli')
   , filter = require('../../cli/filter')
+  , level = require('../../cli/level')
 
 describe('version:', function() {
 
@@ -80,6 +81,22 @@ describe('version:', function() {
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(
         filter.pkg.name + ' ' + filter.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (level)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mklevel-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    level(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(
+        level.pkg.name + ' ' + level.pkg.version + '\n');
       done();
     })
   });

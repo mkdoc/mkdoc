@@ -5,6 +5,7 @@ var expect = require('chai').expect
   , cat = require('../../cli/cat')
   , cli = require('../../cli/cli')
   , filter = require('../../cli/filter')
+  , level = require('../../cli/level')
 
 describe('help:', function() {
 
@@ -82,4 +83,20 @@ describe('help:', function() {
       done();
     })
   });
+
+  it('should print help (level)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mklevel-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    level(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + level.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
 });
