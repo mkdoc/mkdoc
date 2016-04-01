@@ -11,17 +11,21 @@ var path = require('path')
  */
 function main(argv, conf, cb) {
 
+  /* istanbul ignore if: always pass argv in test env */
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
+  /* istanbul ignore if: always pass conf in test env */
   if(typeof conf === 'function') {
     cb = conf;
     conf = null;
   }
 
+  /* istanbul ignore next: always pass conf in test env */
   conf = conf || {};
+  /* istanbul ignore next: never print to stdout in test env */
   conf.output = conf.output || process.stdout;
 
   var opts = {
@@ -50,14 +54,10 @@ function main(argv, conf, cb) {
       };
 
   prg.run(argv, runtime, function parsed(err, req) {
-    if(err) {
+    if(err || req.aborted) {
       return cb(err); 
     }
-
-    if(req.aborted) {
-      return cb(err); 
-    }
-
+    
     abs(this, cb);
   })
 }
