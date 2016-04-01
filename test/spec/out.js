@@ -2,6 +2,7 @@ var expect = require('chai').expect
   , fs = require('fs')
   , ast = require('mkast')
   , Node = ast.Node
+  , yaml = require('js-yaml')
   , out = require('../../cli/out')
   , utils = require('../util')
   , PassThrough = require('through3').passthrough();
@@ -12,7 +13,7 @@ function assert(result) {
   expect(result[2].type).to.eql(Node.EOF);
 }
 
-describe('cat:', function() {
+describe('out:', function() {
 
   it('should passthrough json with --noop', function(done) {
     var argv = ['-n']
@@ -84,6 +85,27 @@ describe('cat:', function() {
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql('Paragraph.\n\n');
       done();
+    })
+
+    // write mock data to input stream
+    conf.input.end(fs.readFileSync('test/fixtures/paragraph.json.log'));
+  });
+
+  it('should render with --yaml-full argument', function(done) {
+    var target = 'target/mkout-yaml-full-option.yml'
+      , argv = ['--yaml-full']
+      , conf = {
+          input: new PassThrough(),
+          output: fs.createWriteStream(target)
+        };
+
+    out(argv, conf, function(err) {
+      expect(err).to.eql(undefined);
+      var contents = '' + fs.readFileSync(target);
+      yaml.safeLoadAll(contents, function(doc) {
+        expect(doc[0]).to.be.an('object');
+        done();
+      })
     })
 
     // write mock data to input stream
