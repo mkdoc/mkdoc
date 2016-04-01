@@ -6,6 +6,7 @@ var expect = require('chai').expect
   , cli = require('../../cli/cli')
   , filter = require('../../cli/filter')
   , level = require('../../cli/level')
+  , mk = require('../../cli/mk')
 
 describe('help:', function() {
 
@@ -99,4 +100,18 @@ describe('help:', function() {
     })
   });
 
+  it('should print help (mk)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mk-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    mk(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + mk.pkg.name.replace('task', '') + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
 });
