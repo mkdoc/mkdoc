@@ -92,10 +92,10 @@ function main(argv, cb) {
 
       if(!pack) {
         console.error('unkown language for file %s (skipping)', file); 
-        return next();
+        return it();
       }
 
-      var stream = parse.load(file, this, next)
+      var stream = parse.load(file, this, it)
         , collator;
 
       if(this.json) {
