@@ -67,6 +67,7 @@ function main(argv, conf, cb) {
     this.files = this.unparsed;
 
     function done(err, res) {
+      process.stdin.end();
       cb(err || null, res);
     }
 
