@@ -13,6 +13,7 @@ var expect = require('chai').expect
   , pi = require('../../cli/pi')
   , ref = require('../../cli/ref')
   , toc = require('../../cli/toc')
+  , transform = require('../../cli/transform')
 
 describe('version:', function() {
 
@@ -211,6 +212,22 @@ describe('version:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(toc.pkg.name + ' ' + toc.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (transform)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mktransform-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    transform(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(
+        transform.pkg.name + ' ' + transform.pkg.version + '\n');
       done();
     })
   });

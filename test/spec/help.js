@@ -13,6 +13,7 @@ var expect = require('chai').expect
   , pi = require('../../cli/pi')
   , ref = require('../../cli/ref')
   , toc = require('../../cli/toc')
+  , transform = require('../../cli/transform')
 
 describe('help:', function() {
 
@@ -206,6 +207,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + toc.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (transform)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mktransform-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    transform(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + transform.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })
