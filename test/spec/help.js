@@ -8,6 +8,7 @@ var expect = require('chai').expect
   , level = require('../../cli/level')
   , mk = require('../../cli/mk')
   , msg = require('../../cli/msg')
+  , out = require('../../cli/out')
 
 describe('help:', function() {
 
@@ -126,6 +127,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + msg.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (out)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkout-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    out(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + out.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })
