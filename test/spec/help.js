@@ -9,6 +9,7 @@ var expect = require('chai').expect
   , mk = require('../../cli/mk')
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
+  , parse = require('../../cli/parse')
 
 describe('help:', function() {
 
@@ -142,6 +143,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + out.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (parse)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkparse-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    parse(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + parse.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })

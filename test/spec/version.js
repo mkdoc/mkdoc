@@ -9,6 +9,7 @@ var expect = require('chai').expect
   , mk = require('../../cli/mk')
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
+  , parse = require('../../cli/parse')
 
 describe('version:', function() {
 
@@ -146,6 +147,22 @@ describe('version:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(out.pkg.name + ' ' + out.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (parse)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkparse-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    parse(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(
+        parse.pkg.name + ' ' + parse.pkg.version + '\n');
       done();
     })
   });
