@@ -25,8 +25,6 @@ function doc(files, opts) {
     while((arg = args.shift())) {
       if(typeof arg === 'string') {
         files.push(arg);
-      }else if(Array.isArray(arg)) {
-        files = files.concat(arg); 
       }else if(arg && typeof arg === 'object') {
         opts = arg; 
       }
