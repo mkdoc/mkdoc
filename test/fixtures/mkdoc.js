@@ -6,6 +6,9 @@ var mk = require('mktask');
 
 // @task readme build the readme file.
 function readme(cb) {
+  //mk.doc('paragraph.md')
+    //.pipe(mk.out())
+    //.on('finish', cb);
   cb();
 }
 

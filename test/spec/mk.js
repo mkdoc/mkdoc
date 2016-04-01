@@ -63,7 +63,22 @@ describe('mk:', function() {
           output: fs.createWriteStream(target)
         };
 
-    process.chdir('empty');
+    process.nextTick(function() {
+      process.chdir('empty');
+
+      mk(argv, conf, function(err) {
+        expect(err).to.eql(undefined);
+        done();
+      })
+    });
+  });
+
+  it('should load multiple task files', function(done) {
+    var argv = ['-f=mkdoc.js', '-f=./mkdoc-require.js', 'readme']
+      , target = '../../target/mk-tasks-files.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
 
     mk(argv, conf, function(err) {
       expect(err).to.eql(undefined);
@@ -118,10 +133,7 @@ describe('mk:', function() {
 
   it('should error with task that throws', function(done) {
     var argv = ['throwable']
-      , target = '../../target/mk-task-throws.txt'
-      , conf = {
-          output: fs.createWriteStream(target)
-        };
+      , conf = {};
 
     mk(argv, conf, function(err) {
       function fn() {
@@ -132,12 +144,23 @@ describe('mk:', function() {
     })
   });
 
+  it('should error compiling script', function(done) {
+    var argv = ['-f=paragraph.md']
+      , conf = {};
+
+    mk(argv, conf, function(err) {
+      function fn() {
+        throw err;
+      }
+      expect(fn).throws(SyntaxError);
+      done();
+    })
+  });
+
+  // NOTE: should be the last test
   it('should error with no mkdoc.js in parents', function(done) {
     var argv = ['--tasks']
-      , target = '../../target/mk-parent-tasks.txt'
-      , conf = {
-          output: fs.createWriteStream(target)
-        };
+      , conf = {};
 
     process.chdir('/sbin');
 
@@ -149,6 +172,5 @@ describe('mk:', function() {
       done();
     })
   });
-
 
 });
