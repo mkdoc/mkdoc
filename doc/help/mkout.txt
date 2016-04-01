@@ -1,6 +1,6 @@
 mkout [options]
 
-  -o, --output=[FILE]     Write output to FILE
+  -o, --output=[FILE]     Write output to FILE (default: stdout)
   -H, --html              Set output renderer to HTML
   -j, --json              Set output renderer to JSON
   -m, --man               Set output renderer to MAN
