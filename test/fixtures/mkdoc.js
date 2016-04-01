@@ -9,4 +9,10 @@ function readme(cb) {
   cb();
 }
 
+// @task throwable throws an error.
+function throwable() {
+  throw new Error('mock error');
+}
+
 mk.task(readme);
+mk.task(throwable);

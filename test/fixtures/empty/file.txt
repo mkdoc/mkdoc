@@ -1,0 +1,1 @@
+This directory is empty, it is used so that parent directory lookup by mk(1) can be tested.
