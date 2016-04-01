@@ -73,6 +73,10 @@ function main(argv, conf, cb) {
 
     var stream = cat(this);
 
+    stream.once('error', function(err) {
+      done(err); 
+    })
+
     // show help when no files and no input on stdin
     stream.once('stdin', function(size, files) {
       if(!size && !files.length) {
