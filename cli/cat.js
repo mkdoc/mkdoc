@@ -66,24 +66,7 @@ function main(argv, conf, cb) {
 
     this.files = this.unparsed;
 
-    // @todo: fix handling of this option
-    if(this.ast === false) {
-      this.buffer = true; 
-    }
-
     function done(err, res) {
-
-      if(res && res.once instanceof Function) {
-        res.once('error', cb);
-        // listen for the end of the write stream
-        return res.once('end', done);
-      }
-
-      if(opts.buffer && res) {
-        opts.output.write('' + res); 
-      }
-
-      process.stdin.end();
       cb(err || null, res);
     }
 

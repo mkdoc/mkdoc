@@ -1,18 +1,9 @@
 {
-  "description": "Concatenate source files to an abstract syntax tree.",
+  "description": "Reads markdown documents from stdin and files; writes serialized nodes to stdout.",
   "type": "program",
   "name": "mkcat",
   "synopsis": "[options] [files...]",
   "options": {
-    "ast": {
-      "literal": "--no-ast",
-      "key": "ast",
-      "description": "Disable AST output, prints input",
-      "names": [
-        "--no-ast"
-      ],
-      "type": "flag"
-    },
     "help": {
       "literal": "-h, --help",
       "key": "help",

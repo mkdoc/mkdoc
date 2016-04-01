@@ -1,6 +1,6 @@
 # mkcat
 
-Concatenate source files to an abstract syntax tree.
+Reads markdown documents from stdin and files; writes serialized nodes to stdout.
 
 ```synopsis
 [options] [files...]
@@ -8,7 +8,6 @@ Concatenate source files to an abstract syntax tree.
 
 ## Options
 
-* `--no-ast` Disable AST output, prints input
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
