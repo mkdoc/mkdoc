@@ -27,11 +27,13 @@ function main(argv, conf, cb) {
   conf = conf || {};
   /* istanbul ignore next: never print to stdout in test env */
   conf.output = conf.output || process.stdout;
+  /* istanbul ignore next: never read from stdin in test env */
+  conf.input = conf.input || process.stdin;
 
   var opts = {
       // read from stdin before files, but be aware that file
       // information is lost so relative includes will not work as expected
-      input: process.stdin, 
+      input: conf.input, 
       output: conf.output,
       serialize: true
     }
@@ -82,17 +84,26 @@ function main(argv, conf, cb) {
       }
 
       process.stdin.end();
-      cb(err, res);
+      cb(err || null, res);
     }
 
-    var stream = cat(this, done);
+    var stream = cat(this);
 
     // show help when no files and no input on stdin
     stream.once('stdin', function(size, files) {
       if(!size && !files.length) {
-        help.print(runtime.help.file, {runtime: runtime}, cb);
+
+        // ensure the finish event does not fire before we complete
+        // writing the help output
+        stream.removeListener('finish', done);
+
+        help.print(
+          runtime.help.file,
+          {runtime: runtime, conf: runtime.help}, done);
       } 
     })
+
+    stream.once('finish', done);
   })
 }
 
