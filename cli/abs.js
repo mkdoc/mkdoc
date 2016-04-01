@@ -62,4 +62,6 @@ function main(argv, conf, cb) {
   })
 }
 
+main.pkg = pkg;
+
 module.exports = main;
