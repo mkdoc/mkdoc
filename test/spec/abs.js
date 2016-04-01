@@ -16,7 +16,7 @@ function assert(result) {
 
 describe('abs:', function() {
 
-  it('should read from input stream', function(done) {
+  it('should make link absolute', function(done) {
     var argv = ['-b', 'http://example.com']
       , target = 'target/mkabs-absolute.json.log'
       , conf = {
