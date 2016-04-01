@@ -27,9 +27,11 @@ function main(argv, conf, cb) {
   conf = conf || {};
   /* istanbul ignore next: never print to stdout in test env */
   conf.output = conf.output || process.stdout;
+  /* istanbul ignore next: never read from stdin in test env */
+  conf.input = conf.input || process.stdin;
 
   var opts = {
-      input: process.stdin, 
+      input: conf.input, 
       output: conf.output
     }
     , runtime = {
