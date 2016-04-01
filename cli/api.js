@@ -28,11 +28,8 @@ function main(argv, conf, cb) {
   conf = conf || {};
   /* istanbul ignore next: never print to stdout in test env */
   conf.output = conf.output || process.stdout;
-  /* istanbul ignore next: never read from stdin in test env */
-  conf.input = conf.input || process.stdin;
 
   var opts = {
-      input: conf.input, 
       output: conf.output,
       conf: {include: {}}
     }
@@ -74,11 +71,7 @@ function main(argv, conf, cb) {
     this.indent = parseInt(this.indent);
 
     if(typeof this.output === 'string') {
-      this.stream = fs.createWriteStream(this.output); 
-    }
-
-    if(this.title !== undefined) {
-      this.heading = this.title;
+      this.output = fs.createWriteStream(this.output); 
     }
 
     if(this.private !== undefined) {
@@ -89,12 +82,7 @@ function main(argv, conf, cb) {
       this.conf.include.protected = this.protected;
     }
 
-    api(this.unparsed, this, function(err) {
-      if(err) {
-        return cb(err); 
-      }
-      cb(null);
-    });
+    api(this.unparsed, this, cb);
   })
 }
 
