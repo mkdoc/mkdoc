@@ -9,25 +9,38 @@ var path = require('path')
  *  @name mkabs
  *  @cli doc/cli/mkabs.md
  */
-function main(argv, cb) {
+function main(argv, conf, cb) {
 
   if(typeof argv === 'function') {
     cb = argv;
     argv = null;
   }
 
+  if(typeof conf === 'function') {
+    cb = conf;
+    conf = null;
+  }
+
+  conf = conf || {};
+  conf.output = conf.output || process.stdout;
+
   var opts = {
       input: process.stdin, 
-      output: process.stdout
+      output: conf.output
     }
     , runtime = {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
         hints: prg,
         help: {
-          file: 'doc/help/mkabs.txt'
+          file: 'doc/help/mkabs.txt',
+          output: conf.output
         },
-        version: pkg,
+        version: {
+          name: pkg.name,
+          version: pkg.version,
+          output: conf.output
+        },
         plugins: [
           require('mkcli/plugin/hints'),
           require('mkcli/plugin/argv'),
@@ -36,10 +49,15 @@ function main(argv, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err) {
+  prg.run(argv, runtime, function parsed(err, req) {
     if(err) {
       return cb(err); 
     }
+
+    if(req.aborted) {
+      return cb(err); 
+    }
+
     abs(this, cb);
   })
 }
