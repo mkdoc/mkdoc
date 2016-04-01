@@ -12,6 +12,7 @@ var expect = require('chai').expect
   , parse = require('../../cli/parse')
   , pi = require('../../cli/pi')
   , ref = require('../../cli/ref')
+  , toc = require('../../cli/toc')
 
 describe('version:', function() {
 
@@ -195,6 +196,21 @@ describe('version:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(ref.pkg.name + ' ' + ref.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (toc)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mktoc-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    toc(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      expect(contents).to.eql(toc.pkg.name + ' ' + toc.pkg.version + '\n');
       done();
     })
   });

@@ -12,6 +12,7 @@ var expect = require('chai').expect
   , parse = require('../../cli/parse')
   , pi = require('../../cli/pi')
   , ref = require('../../cli/ref')
+  , toc = require('../../cli/toc')
 
 describe('help:', function() {
 
@@ -190,6 +191,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + ref.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (toc)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mktoc-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    toc(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^' + toc.pkg.name + ' ');
       expect(re.test(contents)).to.eql(true);
       done();
     })
