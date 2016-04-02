@@ -6,6 +6,7 @@ var expect = require('chai').expect
   , cli = require('../../cli/cli')
   , filter = require('../../cli/filter')
   , level = require('../../cli/level')
+  , man = require('../../cli/man')
   , mk = require('../../cli/mk')
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
@@ -105,6 +106,23 @@ describe('version:', function() {
       var contents = '' + fs.readFileSync(target);
       expect(contents).to.eql(
         level.pkg.name + ' ' + level.pkg.version + '\n');
+      done();
+    })
+  });
+
+  it('should print version (man)', function(done) {
+    var argv = ['--version']
+      , target = 'target/mkman-version.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+
+    man(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target);
+      // NOTE: hard-coded name, uses version from mkout
+      expect(contents).to.eql(
+        'mkman ' + out.pkg.version + '\n');
       done();
     })
   });

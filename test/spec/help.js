@@ -6,6 +6,7 @@ var expect = require('chai').expect
   , cli = require('../../cli/cli')
   , filter = require('../../cli/filter')
   , level = require('../../cli/level')
+  , man = require('../../cli/man')
   , mk = require('../../cli/mk')
   , msg = require('../../cli/msg')
   , out = require('../../cli/out')
@@ -102,6 +103,21 @@ describe('help:', function() {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
         , re = new RegExp('^' + level.pkg.name + ' ');
+      expect(re.test(contents)).to.eql(true);
+      done();
+    })
+  });
+
+  it('should print help (man)', function(done) {
+    var argv = ['-h']
+      , target = 'target/mkman-help.txt'
+      , conf = {
+          output: fs.createWriteStream(target)
+        };
+    man(argv, conf, function(err) {
+      expect(err).to.eql(null);
+      var contents = '' + fs.readFileSync(target)
+        , re = new RegExp('^mkman ');
       expect(re.test(contents)).to.eql(true);
       done();
     })
