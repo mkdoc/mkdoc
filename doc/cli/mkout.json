@@ -6,7 +6,7 @@
     "output": {
       "literal": "-o, --output=[FILE] {=stdout}",
       "key": "output",
-      "description": "Write output to FILE",
+      "description": "Write output to FILE (default: stdout)",
       "names": [
         "-o",
         "--output"

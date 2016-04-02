@@ -60,7 +60,7 @@
     "indent": {
       "literal": "-i, --indent=[NUM] {=0}",
       "key": "indent",
-      "description": "Number of spaces for JSON",
+      "description": "Number of spaces for JSON (default: 0)",
       "names": [
         "-i",
         "--indent"

@@ -20,7 +20,10 @@ function bin(type, ext, src, out, buffer, cb) {
       , dest = name + '.' + ext
       , pkg;
 
-    pkg = require((name === 'mk' ? 'mktask' : name) + '/package.json');
+    try {
+      pkg = require((name === 'mk' ? 'mktask' : name) + '/package.json');
+      // NOTE: some programs do not have a corresponding module, eg: mkman
+    }catch(e){}
     dest = path.join(out, dest);
 
     var opts = {type: type, pkg: pkg};

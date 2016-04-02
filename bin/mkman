@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var util = require('../cli/util')
+  , cli = require('../cli/man');
+
+cli(util.finish);

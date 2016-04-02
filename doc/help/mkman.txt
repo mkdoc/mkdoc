@@ -1,0 +1,7 @@
+mkman [options]
+
+Render to troff man page.
+
+  -h, --help              Display help and exit
+  --version               Print the version and exit
+
