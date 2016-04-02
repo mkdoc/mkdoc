@@ -42,11 +42,11 @@ function main(argv, conf, cb) {
         target: opts.render,
         hints: prg,
         help: {
-          file: 'doc/help/mkout.txt',
+          file: 'doc/help/mkman.txt',
           output: conf.output
         },
         version: {
-          name: pkg.name,
+          name: 'mkman',
           version: pkg.version,
           output: conf.output
         },
