@@ -1,9 +1,8 @@
 var path = require('path')
   , cli = require('mkcli')
-  , bin = require('mkcli')
   , def = require('../doc/cli/mkcli.json')
   , pkg = require('mkcli/package.json')
-  , prg = bin.load(def, pkg);
+  , prg = cli.load(def);
 
 /**
  *  @name mkcli
@@ -55,7 +54,7 @@ function main(argv, conf, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err, req) {
+  cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
     }

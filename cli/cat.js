@@ -1,9 +1,9 @@
 var path = require('path')
   , cat = require('mkcat')
-  , bin = require('mkcli')
+  , cli = require('mkcli')
   , def = require('../doc/cli/mkcat.json')
   , pkg = require('mkcat/package.json')
-  , prg = bin.load(def, pkg);
+  , prg = cli.load(def);
 
 /**
  *  @name mkcat
@@ -59,7 +59,7 @@ function main(argv, conf, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err, req) {
+  cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
     }

@@ -6,10 +6,10 @@ var fs = require('fs')
   , mk = require('mktask')
   , mkparse = require('mkparse')
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
-  , bin = require('mkcli')
+  , cli = require('mkcli')
   , def = require('../doc/cli/mk.json')
   , pkg = require('mktask/package.json')
-  , prg = bin.load(def, pkg);
+  , prg = cli.load(def);
 
 function print(files, runner, output, cb) {
   var list = files.slice();
@@ -97,7 +97,7 @@ function main(argv, conf, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err, req) {
+  cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
     }

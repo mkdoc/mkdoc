@@ -1,19 +1,19 @@
 var path = require('path')
   , filter = require('mkfilter')
-  , bin = require('mkcli')
+  , cli = require('mkcli')
   , ast = require('mkast')
   , Node = ast.Node
   , types = Node.types.concat(Node.extensions)
   , def = require('../doc/cli/mkfilter.json')
   , pkg = require('mkfilter/package.json')
-  , prg = bin.load(def, pkg)
+  , prg = cli.load(def)
   , keys = {}
   , filters = {}
 
 types.forEach(function(type) {
   var key = type.replace(/_/g, '-');
   filters[type] = false;
-  keys[prg.camelcase(key)] = type;
+  keys[cli.camelcase(key)] = type;
 })
 
 /**
@@ -66,7 +66,7 @@ function main(argv, conf, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err, req) {
+  cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
     }

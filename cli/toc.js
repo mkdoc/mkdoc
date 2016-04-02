@@ -1,9 +1,9 @@
 var path = require('path')
   , toc = require('mktoc')
-  , bin = require('mkcli')
+  , cli = require('mkcli')
   , def = require('../doc/cli/mktoc.json')
   , pkg = require('mktoc/package.json')
-  , prg = bin.load(def, pkg);
+  , prg = cli.load(def);
 
 /**
  *  @name mktoc
@@ -55,7 +55,7 @@ function main(argv, conf, cb) {
         ]
       };
 
-  prg.run(argv, runtime, function parsed(err, req) {
+  cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
     }
