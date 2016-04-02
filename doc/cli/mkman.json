@@ -4,6 +4,75 @@
   "name": "mkman",
   "synopsis": "[options]",
   "options": {
+    "title": {
+      "literal": "-t, --title=[VAL] {=UNTITLED}",
+      "key": "title",
+      "description": "Set the page title (default: UNTITLED)",
+      "names": [
+        "-t",
+        "--title"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "UNTITLED"
+    },
+    "section": {
+      "literal": "-s, --section=[NUM] {=1}",
+      "key": "section",
+      "description": "Set the section number (default: 1)",
+      "names": [
+        "-s",
+        "--section"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "1"
+    },
+    "inline": {
+      "literal": "-i, --inline=[VAL] {=strong}",
+      "key": "inline",
+      "description": "Inline code rendering style (default: strong)",
+      "names": [
+        "-i",
+        "--inline"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "strong"
+    },
+    "locale": {
+      "literal": "-l, --locale=[VAL] {=en-gb}",
+      "key": "locale",
+      "description": "Locale for automatic date generation (default: en-gb)",
+      "names": [
+        "-l",
+        "--locale"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "en-gb"
+    },
+    "date": {
+      "literal": "-d, --date=[VAL]",
+      "key": "date",
+      "description": "Use specific date",
+      "names": [
+        "-d",
+        "--date"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false
+    },
     "help": {
       "literal": "-h, --help",
       "key": "help",

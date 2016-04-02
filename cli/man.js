@@ -1,7 +1,7 @@
 var path = require('path')
   , out = require('mkout')
   , bin = require('mkcli')
-  , def = require('../doc/cli/mkout.json')
+  , def = require('../doc/cli/mkman.json')
   , pkg = require('mkout/package.json')
   , prg = bin.load(def, pkg);
 
@@ -63,6 +63,7 @@ function main(argv, conf, cb) {
       return cb(err); 
     }
 
+    // NOTE: we pass `opts` not `this` as the scope is the `render` object
     out(opts, cb);
   })
 }
