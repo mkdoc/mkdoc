@@ -1,12 +1,14 @@
 {
+  "description": "Render to various output formats.",
   "type": "program",
   "name": "mkout",
-  "synopsis": "[options]",
+  "synopsis": [
+    "[options]"
+  ],
   "options": {
     "output": {
-      "literal": "-o, --output=[FILE] {=stdout}",
       "key": "output",
-      "description": "Write output to FILE (default: stdout)",
+      "description": "Write output to FILE",
       "names": [
         "-o",
         "--output"
@@ -18,7 +20,6 @@
       "value": "stdout"
     },
     "html": {
-      "literal": "-H, --html",
       "key": "html",
       "description": "Set output renderer to HTML",
       "names": [
@@ -28,7 +29,6 @@
       "type": "flag"
     },
     "json": {
-      "literal": "-j, --json",
       "key": "json",
       "description": "Set output renderer to JSON",
       "names": [
@@ -38,7 +38,6 @@
       "type": "flag"
     },
     "man": {
-      "literal": "-m, --man",
       "key": "man",
       "description": "Set output renderer to MAN",
       "names": [
@@ -48,7 +47,6 @@
       "type": "flag"
     },
     "text": {
-      "literal": "-t, --text",
       "key": "text",
       "description": "Set output renderer to TEXT",
       "names": [
@@ -58,7 +56,6 @@
       "type": "flag"
     },
     "xml": {
-      "literal": "-x, --xml",
       "key": "xml",
       "description": "Set output renderer to XML",
       "names": [
@@ -68,7 +65,6 @@
       "type": "flag"
     },
     "yaml": {
-      "literal": "-y, --yaml",
       "key": "yaml",
       "description": "Set output renderer to YAML",
       "names": [
@@ -78,7 +74,6 @@
       "type": "flag"
     },
     "yamlFull": {
-      "literal": "-Y, --yaml-full",
       "key": "yamlFull",
       "description": "Do not compact YAML output",
       "names": [
@@ -88,7 +83,6 @@
       "type": "flag"
     },
     "noop": {
-      "literal": "-n, --noop",
       "key": "noop",
       "description": "Pass through input JSON",
       "names": [
@@ -98,7 +92,6 @@
       "type": "flag"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -108,7 +101,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

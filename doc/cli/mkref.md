@@ -1,12 +1,18 @@
-# mkref
+# Name
 
-Link reference collation.
+mkref
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Link reference collation.
+
+# Options
 
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit

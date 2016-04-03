@@ -1,12 +1,18 @@
-# mkapi
+# Name
 
-Documentation generator.
+mkapi
 
-```synopsis
+# Synopsis
+
+```
 [options] [files...]
 ```
 
-## Options
+# Description
+
+Documentation generator.
+
+# Options
 
 * `-o, --output=[FILE] {=stdout}` Write output to FILE
 * `-t, --title=[VAL]` Title for initial heading

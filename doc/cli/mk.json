@@ -2,10 +2,11 @@
   "description": "Task runner.",
   "type": "program",
   "name": "mk",
-  "synopsis": "[task...]",
+  "synopsis": [
+    "[task...]"
+  ],
   "options": {
     "file": {
-      "literal": "-f, --file=[FILE...]",
       "key": "file",
       "description": "Load specific task files",
       "names": [
@@ -18,7 +19,6 @@
       "multiple": true
     },
     "tasks": {
-      "literal": "--tasks",
       "key": "tasks",
       "description": "Print task list",
       "names": [
@@ -27,7 +27,6 @@
       "type": "flag"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -37,7 +36,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

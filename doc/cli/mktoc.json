@@ -2,10 +2,11 @@
   "description": "Generates a table of contents index.",
   "type": "program",
   "name": "mktoc",
-  "synopsis": "[options]",
+  "synopsis": [
+    "[options]"
+  ],
   "options": {
     "title": {
-      "literal": "-t, --title=[TITLE]",
       "key": "title",
       "description": "Set initial heading",
       "names": [
@@ -18,7 +19,6 @@
       "multiple": false
     },
     "level": {
-      "literal": "-l, --level=[NUM]",
       "key": "level",
       "description": "Set level for initial heading",
       "names": [
@@ -31,7 +31,6 @@
       "multiple": false
     },
     "depth": {
-      "literal": "-d, --depth=[LEVEL]",
       "key": "depth",
       "description": "Ignore headings below LEVEL",
       "names": [
@@ -44,7 +43,6 @@
       "multiple": false
     },
     "max": {
-      "literal": "-m, --max=[LEVEL]",
       "key": "max",
       "description": "Ignore headings above LEVEL",
       "names": [
@@ -57,7 +55,6 @@
       "multiple": false
     },
     "prefix": {
-      "literal": "-p, --prefix=[VAL]",
       "key": "prefix",
       "description": "Set link destination prefix to VAL",
       "names": [
@@ -70,7 +67,6 @@
       "multiple": false
     },
     "base": {
-      "literal": "-b, --base=[URL]",
       "key": "base",
       "description": "Base URL for absolute links",
       "names": [
@@ -83,7 +79,6 @@
       "multiple": false
     },
     "bullet": {
-      "literal": "-B, --bullet=[CHAR]",
       "key": "bullet",
       "description": "Character for bullet lists",
       "names": [
@@ -96,7 +91,6 @@
       "multiple": false
     },
     "delimiter": {
-      "literal": "-E, --delimiter=[CHAR]",
       "key": "delimiter",
       "description": "Delimiter for ordered lists",
       "names": [
@@ -109,7 +103,6 @@
       "multiple": false
     },
     "disable": {
-      "literal": "-D, --disable",
       "key": "disable",
       "description": "Disable automatic links",
       "names": [
@@ -119,7 +112,6 @@
       "type": "flag"
     },
     "ordered": {
-      "literal": "-o, --ordered",
       "key": "ordered",
       "description": "Create an ordered list",
       "names": [
@@ -129,7 +121,6 @@
       "type": "flag"
     },
     "standalone": {
-      "literal": "-s, --standalone",
       "key": "standalone",
       "description": "Standalone index, discards input",
       "names": [
@@ -139,7 +130,6 @@
       "type": "flag"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -149,7 +139,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

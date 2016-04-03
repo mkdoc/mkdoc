@@ -2,10 +2,11 @@
   "description": "Parse source file comments.",
   "type": "program",
   "name": "mkparse",
-  "synopsis": "[options] [files...]",
+  "synopsis": [
+    "[options] [files...]"
+  ],
   "options": {
     "lang": {
-      "literal": "-l, --lang=[LANG]",
       "key": "lang",
       "description": "Set language for all files",
       "names": [
@@ -18,7 +19,6 @@
       "multiple": false
     },
     "strip": {
-      "literal": "-s, --strip",
       "key": "strip",
       "description": "Print content only, remove comments",
       "names": [
@@ -28,7 +28,6 @@
       "type": "flag"
     },
     "content": {
-      "literal": "-c, --content",
       "key": "content",
       "description": "Include non-comment content",
       "names": [
@@ -38,7 +37,6 @@
       "type": "flag"
     },
     "dotted": {
-      "literal": "-d, --dotted",
       "key": "dotted",
       "description": "Parse dotted names",
       "names": [
@@ -48,7 +46,6 @@
       "type": "flag"
     },
     "json": {
-      "literal": "-j, --json",
       "key": "json",
       "description": "Print comments as JSON",
       "names": [
@@ -58,9 +55,8 @@
       "type": "flag"
     },
     "indent": {
-      "literal": "-i, --indent=[NUM] {=0}",
       "key": "indent",
-      "description": "Number of spaces for JSON (default: 0)",
+      "description": "Number of spaces for JSON",
       "names": [
         "-i",
         "--indent"
@@ -72,7 +68,6 @@
       "value": "0"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -82,7 +77,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

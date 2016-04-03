@@ -1,7 +1,10 @@
-mkparse [options] [files...]
+mkparse
 
-Parse source file comments.
+Usage: mkparse [options] [files...]
 
+  Parse source file comments.
+
+Options
   -l, --lang=[LANG]       Set language for all files
   -s, --strip             Print content only, remove comments
   -c, --content           Include non-comment content

@@ -1,7 +1,10 @@
-mklevel [options]
+mklevel
 
-Modify heading levels.
+Usage: mklevel [options]
 
+  Modify heading levels.
+
+Options
   -1=[NUM]                Modify level 1 headings by NUM
   -2=[NUM]                Modify level 2 headings by NUM
   -3=[NUM]                Modify level 3 headings by NUM

@@ -35,8 +35,13 @@ function bin(type, ext, src, out, buffer, cb) {
       stream = stream.pipe(mk.ast.convert());
     }
       
-    stream.pipe(mk.cli.src(opts))
-      .pipe(mk.cli.dest(opts))
+    stream = stream.pipe(mk.cli.src(opts));
+
+    if(type === mk.cli.types.json) {
+      stream = stream.pipe(mk.cli.compile());
+    }
+
+    stream.pipe(mk.cli.dest(opts))
       .pipe(mk.dest(dest))
       .on('finish', next);
   }

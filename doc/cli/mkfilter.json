@@ -2,10 +2,11 @@
   "description": "Filter nodes by type.",
   "type": "program",
   "name": "mkfilter",
-  "synopsis": "[options]",
+  "synopsis": [
+    "[options]"
+  ],
   "options": {
     "invert": {
-      "literal": "-i, --invert",
       "key": "invert",
       "description": "Invert the filter",
       "names": [
@@ -15,7 +16,6 @@
       "type": "flag"
     },
     "document": {
-      "literal": "--document",
       "key": "document",
       "description": "Filter document nodes",
       "names": [
@@ -24,7 +24,6 @@
       "type": "flag"
     },
     "softbreak": {
-      "literal": "--softbreak",
       "key": "softbreak",
       "description": "Filter softbreak nodes",
       "names": [
@@ -33,7 +32,6 @@
       "type": "flag"
     },
     "linebreak": {
-      "literal": "--linebreak",
       "key": "linebreak",
       "description": "Filter linebreak nodes",
       "names": [
@@ -42,7 +40,6 @@
       "type": "flag"
     },
     "list": {
-      "literal": "--list",
       "key": "list",
       "description": "Filter list nodes",
       "names": [
@@ -51,7 +48,6 @@
       "type": "flag"
     },
     "item": {
-      "literal": "--item",
       "key": "item",
       "description": "Filter item nodes",
       "names": [
@@ -60,7 +56,6 @@
       "type": "flag"
     },
     "paragraph": {
-      "literal": "--paragraph",
       "key": "paragraph",
       "description": "Filter paragraph nodes",
       "names": [
@@ -69,7 +64,6 @@
       "type": "flag"
     },
     "text": {
-      "literal": "--text",
       "key": "text",
       "description": "Filter text nodes",
       "names": [
@@ -78,7 +72,6 @@
       "type": "flag"
     },
     "heading": {
-      "literal": "--heading",
       "key": "heading",
       "description": "Filter heading nodes",
       "names": [
@@ -87,7 +80,6 @@
       "type": "flag"
     },
     "emph": {
-      "literal": "--emph",
       "key": "emph",
       "description": "Filter emph nodes",
       "names": [
@@ -96,7 +88,6 @@
       "type": "flag"
     },
     "strong": {
-      "literal": "--strong",
       "key": "strong",
       "description": "Filter strong nodes",
       "names": [
@@ -105,7 +96,6 @@
       "type": "flag"
     },
     "link": {
-      "literal": "--link",
       "key": "link",
       "description": "Filter link nodes",
       "names": [
@@ -114,7 +104,6 @@
       "type": "flag"
     },
     "image": {
-      "literal": "--image",
       "key": "image",
       "description": "Filter image nodes",
       "names": [
@@ -123,7 +112,6 @@
       "type": "flag"
     },
     "code": {
-      "literal": "--code",
       "key": "code",
       "description": "Filter code nodes",
       "names": [
@@ -132,7 +120,6 @@
       "type": "flag"
     },
     "codeBlock": {
-      "literal": "--code-block",
       "key": "codeBlock",
       "description": "Filter code block nodes",
       "names": [
@@ -141,7 +128,6 @@
       "type": "flag"
     },
     "blockQuote": {
-      "literal": "--block-quote",
       "key": "blockQuote",
       "description": "Filter block quote nodes",
       "names": [
@@ -150,7 +136,6 @@
       "type": "flag"
     },
     "thematicBreak": {
-      "literal": "--thematic-break",
       "key": "thematicBreak",
       "description": "Filter thematic break nodes",
       "names": [
@@ -159,7 +144,6 @@
       "type": "flag"
     },
     "htmlInline": {
-      "literal": "--html-inline",
       "key": "htmlInline",
       "description": "Filter html inline nodes",
       "names": [
@@ -168,7 +152,6 @@
       "type": "flag"
     },
     "htmlBlock": {
-      "literal": "--html-block",
       "key": "htmlBlock",
       "description": "Filter html block nodes",
       "names": [
@@ -177,7 +160,6 @@
       "type": "flag"
     },
     "customInline": {
-      "literal": "--custom-inline",
       "key": "customInline",
       "description": "Filter custom inline nodes",
       "names": [
@@ -186,7 +168,6 @@
       "type": "flag"
     },
     "customBlock": {
-      "literal": "--custom-block",
       "key": "customBlock",
       "description": "Filter custom block nodes",
       "names": [
@@ -195,7 +176,6 @@
       "type": "flag"
     },
     "eof": {
-      "literal": "--eof",
       "key": "eof",
       "description": "Filter eof nodes",
       "names": [
@@ -204,7 +184,6 @@
       "type": "flag"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -214,7 +193,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

@@ -1,7 +1,10 @@
-mkman [options]
+mkman
 
-Render to troff man page.
+Usage: mkman [options]
 
+  Render to troff man page.
+
+Options
   -t, --title=[VAL]       Set the page title (default: UNTITLED)
   -s, --section=[NUM]     Set the section number (default: 1)
   -i, --inline=[VAL]      Inline code rendering style (default: strong)

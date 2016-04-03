@@ -1,7 +1,10 @@
-mkcli [options]
+mkcli
 
-Markdown command line interface definition.
+Usage: mkcli [options]
 
+  Markdown command line interface definition.
+
+Options
   -p, --package=[FILE]    Use package descriptor
   -t, --type=[TYPE]       Output renderer type
   -h, --help              Display help and exit

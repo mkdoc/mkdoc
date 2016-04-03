@@ -1,12 +1,18 @@
-# mkpi
+# Name
 
-Processing instruction macros.
+mkpi
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Processing instruction macros.
+
+# Options
 
 * `-s, --safe` Disable the @exec and @macro directives
 * `-p, --preserve` Do not remove processing instructions

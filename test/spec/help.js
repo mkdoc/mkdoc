@@ -27,7 +27,7 @@ describe('help:', function() {
     abs(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + abs.pkg.name + ' ');
+        , re = new RegExp('^' + abs.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -42,7 +42,7 @@ describe('help:', function() {
     api(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + api.pkg.name + ' ');
+        , re = new RegExp('^' + api.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -57,7 +57,7 @@ describe('help:', function() {
     cat(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + cat.pkg.name + ' ');
+        , re = new RegExp('^' + cat.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -72,7 +72,7 @@ describe('help:', function() {
     cli(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + cli.pkg.name + ' ');
+        , re = new RegExp('^' + cli.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -87,7 +87,7 @@ describe('help:', function() {
     filter(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + filter.pkg.name + ' ');
+        , re = new RegExp('^' + filter.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -102,7 +102,7 @@ describe('help:', function() {
     level(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + level.pkg.name + ' ');
+        , re = new RegExp('^' + level.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -117,7 +117,7 @@ describe('help:', function() {
     man(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^mkman ');
+        , re = new RegExp('^mkman');
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -132,7 +132,7 @@ describe('help:', function() {
     mk(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + mk.pkg.name.replace('task', '') + ' ');
+        , re = new RegExp('^' + mk.pkg.name.replace('task', ''));
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -147,7 +147,7 @@ describe('help:', function() {
     msg(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + msg.pkg.name + ' ');
+        , re = new RegExp('^' + msg.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -162,7 +162,7 @@ describe('help:', function() {
     out(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + out.pkg.name + ' ');
+        , re = new RegExp('^' + out.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -177,7 +177,7 @@ describe('help:', function() {
     parse(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + parse.pkg.name + ' ');
+        , re = new RegExp('^' + parse.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -192,7 +192,7 @@ describe('help:', function() {
     pi(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + pi.pkg.name + ' ');
+        , re = new RegExp('^' + pi.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -207,7 +207,7 @@ describe('help:', function() {
     ref(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + ref.pkg.name + ' ');
+        , re = new RegExp('^' + ref.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -222,7 +222,7 @@ describe('help:', function() {
     toc(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + toc.pkg.name + ' ');
+        , re = new RegExp('^' + toc.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })
@@ -237,7 +237,7 @@ describe('help:', function() {
     transform(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + transform.pkg.name + ' ');
+        , re = new RegExp('^' + transform.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })

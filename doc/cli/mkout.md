@@ -1,10 +1,18 @@
-# mkout
+# Name
 
-```synopsis
+mkout
+
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Render to various output formats.
+
+# Options
 
 * `-o, --output=[FILE] {=stdout}` Write output to FILE
 * `-H, --html` Set output renderer to HTML

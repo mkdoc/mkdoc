@@ -1,12 +1,18 @@
-# program
+# Name
 
-Mock program.
+program
 
-```synposis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Mock program.
+
+# Options
 
 * `-f, --foo` Flag argument
 * `-b, --bar=[FOO]` Option argument

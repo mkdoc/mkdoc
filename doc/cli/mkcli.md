@@ -1,12 +1,18 @@
-# mkcli
+# Name
 
-Markdown command line interface definition.
+mkcli
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Markdown command line interface definition.
+
+# Options
 
 * `-p, --package=[FILE]` Use package descriptor
 * `-t, --type=[TYPE]` Output renderer type

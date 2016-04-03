@@ -1,12 +1,18 @@
-# mkparse
+# Name
 
-Parse source file comments.
+mkparse
 
-```synopsis
+# Synopsis
+
+```
 [options] [files...]
 ```
 
-## Options
+# Description
+
+Parse source file comments.
+
+# Options
 
 * `-l, --lang=[LANG]` Set language for all files
 * `-s, --strip` Print content only, remove comments

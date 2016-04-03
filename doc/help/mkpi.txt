@@ -1,7 +1,10 @@
-mkpi [options]
+mkpi
 
-Processing instruction macros.
+Usage: mkpi [options]
 
+  Processing instruction macros.
+
+Options
   -s, --safe              Disable the @exec and @macro directives
   -p, --preserve          Do not remove processing instructions
   -h, --help              Display help and exit

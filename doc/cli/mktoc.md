@@ -1,12 +1,18 @@
-# mktoc
+# Name
 
-Generates a table of contents index.
+mktoc
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Generates a table of contents index.
+
+# Options
 
 * `-t, --title=[TITLE]` Set initial heading
 * `-l, --level=[NUM]` Set level for initial heading

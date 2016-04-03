@@ -1,7 +1,10 @@
-mk [task...]
+mk
 
-Task runner.
+Usage: mk [task...]
 
+  Task runner.
+
+Options
   -f, --file=[FILE...]    Load specific task files
   --tasks                 Print task list
   -h, --help              Display help and exit

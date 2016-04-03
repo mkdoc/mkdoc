@@ -1,7 +1,10 @@
-mkfilter [options]
+mkfilter
 
-Filter nodes by type.
+Usage: mkfilter [options]
 
+  Filter nodes by type.
+
+Options
   -i, --invert            Invert the filter
   --document              Filter document nodes
   --softbreak             Filter softbreak nodes

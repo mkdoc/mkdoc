@@ -1,7 +1,10 @@
-mktoc [options]
+mktoc
 
-Generates a table of contents index.
+Usage: mktoc [options]
 
+  Generates a table of contents index.
+
+Options
   -t, --title=[TITLE]     Set initial heading
   -l, --level=[NUM]       Set level for initial heading
   -d, --depth=[LEVEL]     Ignore headings below LEVEL

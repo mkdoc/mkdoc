@@ -1,7 +1,10 @@
-mktransform [files...]
+mktransform
 
-Custom stream transformations.
+Usage: mktransform [files...]
 
+  Custom stream transformations.
+
+Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 

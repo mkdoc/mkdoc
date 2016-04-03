@@ -2,10 +2,11 @@
   "description": "Reads markdown documents from stdin and files; writes serialized nodes to stdout.",
   "type": "program",
   "name": "mkcat",
-  "synopsis": "[options] [files...]",
+  "synopsis": [
+    "[options] [files...]"
+  ],
   "options": {
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -15,7 +16,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

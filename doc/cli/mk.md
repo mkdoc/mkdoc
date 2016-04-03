@@ -1,12 +1,18 @@
-# mk
+# Name
 
-Task runner.
+mk
 
-```synopsis
+# Synopsis
+
+```
 [task...]
 ```
 
-## Options
+# Description
+
+Task runner.
+
+# Options
 
 * `-f, --file=[FILE...]` Load specific task files
 * `--tasks` Print task list

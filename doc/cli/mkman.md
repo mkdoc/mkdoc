@@ -1,12 +1,18 @@
-# mkman
+# Name
 
-Render to troff man page.
+mkman
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Render to troff man page.
+
+# Options
 
 * `-t, --title=[VAL] {=UNTITLED}` Set the page title
 * `-s, --section=[NUM] {=1}` Set the section number

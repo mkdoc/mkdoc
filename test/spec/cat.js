@@ -24,7 +24,7 @@ describe('cat:', function() {
     cat(argv, conf, function(err) {
       expect(err).to.eql(null);
       var contents = '' + fs.readFileSync(target)
-        , re = new RegExp('^' + cat.pkg.name + ' ');
+        , re = new RegExp('^' + cat.pkg.name);
       expect(re.test(contents)).to.eql(true);
       done();
     })

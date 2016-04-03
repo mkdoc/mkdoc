@@ -1,12 +1,18 @@
-# mkabs
+# Name
 
-Make relative links absolute.
+mkabs
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Make relative links absolute.
+
+# Options
 
 * `-b, --base=[URL]` Base URL for absolute links
 * `-r, --relative=[PATH]` Relative path when repository url

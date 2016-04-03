@@ -1,12 +1,18 @@
-# mkfilter
+# Name
 
-Filter nodes by type.
+mkfilter
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options 
+# Description
+
+Filter nodes by type.
+
+# Options 
 
 * `-i, --invert` Invert the filter
 * `--document` Filter document nodes

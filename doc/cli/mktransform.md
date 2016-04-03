@@ -1,12 +1,18 @@
-# mktransform
+# Name
 
-Custom stream transformations.
+mktransform
 
-```synopsis
+# Synopsis
+
+```
 [files...]
 ```
 
-## Options
+# Description
+
+Custom stream transformations.
+
+# Options
 
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit

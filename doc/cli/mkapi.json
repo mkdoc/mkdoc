@@ -2,12 +2,13 @@
   "description": "Documentation generator.",
   "type": "program",
   "name": "mkapi",
-  "synopsis": "[options] [files...]",
+  "synopsis": [
+    "[options] [files...]"
+  ],
   "options": {
     "output": {
-      "literal": "-o, --output=[FILE] {=stdout}",
       "key": "output",
-      "description": "Write output to FILE (default: stdout)",
+      "description": "Write output to FILE",
       "names": [
         "-o",
         "--output"
@@ -19,7 +20,6 @@
       "value": "stdout"
     },
     "title": {
-      "literal": "-t, --title=[VAL]",
       "key": "title",
       "description": "Title for initial heading",
       "names": [
@@ -32,9 +32,8 @@
       "multiple": false
     },
     "level": {
-      "literal": "-l, --level=[NUM] {=1}",
       "key": "level",
-      "description": "Initial heading level (default: 1)",
+      "description": "Initial heading level",
       "names": [
         "-l",
         "--level"
@@ -46,9 +45,8 @@
       "value": "1"
     },
     "lang": {
-      "literal": "-L, --lang=[LANG] {=javascript}",
       "key": "lang",
-      "description": "Language for fenced code blocks (default: javascript)",
+      "description": "Language for fenced code blocks",
       "names": [
         "-L",
         "--lang"
@@ -60,9 +58,8 @@
       "value": "javascript"
     },
     "indent": {
-      "literal": "-i, --indent=[NUM] {=2}",
       "key": "indent",
-      "description": "Number of spaces for JSON (default: 2)",
+      "description": "Number of spaces for JSON",
       "names": [
         "-i",
         "--indent"
@@ -74,7 +71,6 @@
       "value": "2"
     },
     "ast": {
-      "literal": "-a, --ast",
       "key": "ast",
       "description": "Print AST as JSON",
       "names": [
@@ -84,7 +80,6 @@
       "type": "flag"
     },
     "private": {
-      "literal": "--[no]-private",
       "key": "private",
       "description": "Enable or disable private symbols",
       "names": [
@@ -93,7 +88,6 @@
       "type": "flag"
     },
     "protected": {
-      "literal": "--[no]-protected",
       "key": "protected",
       "description": "Enable or disable protected symbols",
       "names": [
@@ -102,7 +96,6 @@
       "type": "flag"
     },
     "help": {
-      "literal": "-h, --help",
       "key": "help",
       "description": "Display help and exit",
       "names": [
@@ -112,7 +105,6 @@
       "type": "flag"
     },
     "version": {
-      "literal": "--version",
       "key": "version",
       "description": "Print the version and exit",
       "names": [

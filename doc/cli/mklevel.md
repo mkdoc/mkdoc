@@ -1,12 +1,18 @@
-# mklevel
+# Name
 
-Modify heading levels.
+mklevel
 
-```synopsis
+# Synopsis
+
+```
 [options]
 ```
 
-## Options
+# Description
+
+Modify heading levels.
+
+# Options
 
 * `-1=[NUM]` Modify level 1 headings by NUM
 * `-2=[NUM]` Modify level 2 headings by NUM
