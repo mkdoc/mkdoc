@@ -42,7 +42,7 @@ function bin(type, ext, src, out, cb) {
 
     // json output needs to go through the compiler
     if(type === mk.cli.JSON) {
-      stream = stream.pipe(mk.cli.compile());
+      stream = stream.pipe(mk.cli.compiler());
     }
 
     // hook up output renderer
