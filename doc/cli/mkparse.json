@@ -1,5 +1,4 @@
 {
-  "description": "Parse source file comments.",
   "names": [
     "mkparse"
   ],

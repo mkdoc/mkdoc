@@ -1,5 +1,5 @@
 {
-  "description": "Markdown command line interface definition.",
+  "description": "Compiles markdown command line interface definitions to JSON and supplies renderers for converting the definitions to help files and man pages.",
   "names": [
     "mkcli"
   ],
@@ -31,7 +31,81 @@
       "type": "option",
       "extra": "=[TYPE]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "kind": [
+        "json",
+        "help",
+        "man"
+      ]
+    },
+    "cols": {
+      "key": "cols",
+      "description": "Wrap help output at NUM",
+      "names": [
+        "-c",
+        "--cols"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "80"
+    },
+    "split": {
+      "key": "split",
+      "description": "Split help columns at NUM",
+      "names": [
+        "-s",
+        "--split"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "26"
+    },
+    "indent": {
+      "key": "indent",
+      "description": "Number of spaces for help indentation",
+      "names": [
+        "-i",
+        "--indent"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "2"
+    },
+    "align": {
+      "key": "align",
+      "description": "Align first help column left or right",
+      "names": [
+        "-a",
+        "--align"
+      ],
+      "type": "option",
+      "extra": "=[TYPE]",
+      "required": false,
+      "multiple": false,
+      "kind": [
+        "left",
+        "right"
+      ],
+      "value": "left"
+    },
+    "usage": {
+      "key": "usage",
+      "description": "Set usage message for help synopsis",
+      "names": [
+        "-u",
+        "--usage"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "Usage: "
     },
     "help": {
       "key": "help",

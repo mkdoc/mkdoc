@@ -1,5 +1,5 @@
 {
-  "description": "Reads markdown documents from stdin and files; writes serialized nodes to stdout.",
+  "description": "Reads markdown documents from stdin and files; writes serialized nodes to stdout.\n\nThe output is newline-delimited JSON records representing the abstract syntax tree for the input document(s).",
   "names": [
     "mkcat"
   ],
