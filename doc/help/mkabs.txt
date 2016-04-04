@@ -22,4 +22,4 @@ Options
 
   Report bugs to https://github.com/mkdoc/mkabs/issues
 
-mkabs@1.2.2
+mkabs@1.2.3
