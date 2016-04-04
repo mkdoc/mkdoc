@@ -41,9 +41,19 @@ function bin(type, ext, src, out, buffer, cb) {
       stream = stream.pipe(mk.cli.compile());
     }
 
-    stream.pipe(mk.cli.dest(opts))
-      .pipe(mk.dest(dest))
-      .on('finish', next);
+    stream = stream
+      .pipe(mk.cli.dest(opts))
+    
+    if(type !== mk.cli.types.json) {
+      //stream = stream.pipe(mk.ast.stringify());
+      if(type === mk.cli.HELP) {
+        stream = stream.pipe(mk.out({type: 'text'}))
+      }
+    }
+    
+    stream = stream.pipe(mk.dest(dest));
+
+    stream.on('finish', next);
   }
 
   next();

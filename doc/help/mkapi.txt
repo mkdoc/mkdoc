@@ -19,4 +19,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkapi/issues
+  Report bugs to https://github.com/mkdoc/mkapi/issues
+
+mkapi@1.1.7

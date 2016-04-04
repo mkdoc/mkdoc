@@ -8,4 +8,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkref/issues
+  Report bugs to https://github.com/mkdoc/mkref/issues
+
+mkref@1.0.8

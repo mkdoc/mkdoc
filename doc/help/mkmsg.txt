@@ -10,4 +10,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkmsg/issues
+  Report bugs to https://github.com/mkdoc/mkmsg/issues
+
+mkmsg@1.2.5

@@ -10,4 +10,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkcli/issues
+  Report bugs to https://github.com/mkdoc/mkcli/issues
+
+mkcli@1.0.11 https://github.com/mkdoc/mkcli

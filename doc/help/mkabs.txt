@@ -12,4 +12,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkabs/issues
+  Report bugs to https://github.com/mkdoc/mkabs/issues
+
+mkabs@1.2.2

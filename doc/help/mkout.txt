@@ -18,4 +18,6 @@ Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkout/issues
+  Report bugs to https://github.com/mkdoc/mkout/issues
+
+mkout@1.0.29
