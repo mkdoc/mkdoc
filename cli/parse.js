@@ -59,7 +59,7 @@ function main(argv, conf, cb) {
       return cb(err); 
     }
 
-    var files = this.unparsed
+    var files = req.unparsed
       // file iterator
       , it = next.bind(this);
 

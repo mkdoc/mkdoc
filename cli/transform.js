@@ -64,8 +64,8 @@ function main(argv, conf, cb) {
     var i
       , file;
 
-    for(i = 0;i < this.unparsed.length;i++) {
-      file = this.unparsed[i];
+    for(i = 0;i < req.unparsed.length;i++) {
+      file = req.unparsed[i];
       if(!/^\//.test(file)) {
         file = path.join(process.cwd(), file);
       }

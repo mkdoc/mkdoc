@@ -59,7 +59,7 @@ function main(argv, conf, cb) {
       return cb(err); 
     }
 
-    if(!this.unparsed.length) {
+    if(!req.unparsed.length) {
       return cb(new Error('no files specified'));
     }
 
@@ -82,7 +82,7 @@ function main(argv, conf, cb) {
       this.conf.include.protected = this.protected;
     }
 
-    api(this.unparsed, this, cb);
+    api(req.unparsed, this, cb);
   })
 }
 

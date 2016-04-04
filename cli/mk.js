@@ -243,7 +243,7 @@ function main(argv, conf, cb) {
     }
 
     runner = collection.run();
-    list = this.unparsed;
+    list = req.unparsed;
 
     if(this.tasks) {
 
