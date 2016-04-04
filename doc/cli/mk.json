@@ -1,5 +1,8 @@
 {
   "description": "Task runner.",
+  "names": [
+    "mk"
+  ],
   "type": "program",
   "name": "mk",
   "synopsis": [

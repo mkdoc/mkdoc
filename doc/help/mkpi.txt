@@ -5,9 +5,9 @@ Usage: mkpi [options]
   Processing instruction macros.
 
 Options
-  -s, --safe              Disable the @exec and @macro directives
-  -p, --preserve          Do not remove processing instructions
-  -h, --help              Display help and exit
-  --version               Print the version and exit
+  -s, --safe              -s, --safe Disable the @exec and @macro directives
+  -p, --preserve          -p, --preserve Do not remove processing instructions
+  -h, --help              -h, --help Display help and exit
+  --version               --version Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkpi/issues

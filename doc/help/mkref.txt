@@ -5,7 +5,7 @@ Usage: mkref [options]
   Link reference collation.
 
 Options
-  -h, --help              Display help and exit
-  --version               Print the version and exit
+  -h, --help              -h, --help Display help and exit
+  --version               --version Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkref/issues

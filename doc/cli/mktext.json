@@ -1,12 +1,12 @@
 {
-  "description": "Reads markdown documents from stdin and files; writes serialized nodes to stdout.",
+  "description": "Render to plain text.",
   "names": [
-    "mkcat"
+    "mktext"
   ],
   "type": "program",
-  "name": "mkcat",
+  "name": "mktext",
   "synopsis": [
-    "[options] [files...]"
+    "[options]"
   ],
   "options": {
     "help": {

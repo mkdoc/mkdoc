@@ -1,5 +1,8 @@
 {
   "description": "Message injection.",
+  "names": [
+    "mkmsg"
+  ],
   "type": "program",
   "name": "mkmsg",
   "synopsis": [

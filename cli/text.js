@@ -1,13 +1,13 @@
 var path = require('path')
   , out = require('mkout')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkman.json')
+  , def = require('../doc/cli/mktext.json')
   , pkg = require('mkout/package.json')
   , prg = cli.load(def);
 
 /**
- *  @name mkman
- *  @cli doc/cli/mkman.md
+ *  @name mktext
+ *  @cli doc/cli/mktext.md
  */
 function main(argv, conf, cb) {
 
@@ -34,7 +34,7 @@ function main(argv, conf, cb) {
       input: conf.input, 
       output: conf.output,
       cli: true,
-      type: out.MAN,
+      type: out.TEXT,
       render: {}
     }
     , runtime = {
@@ -42,11 +42,11 @@ function main(argv, conf, cb) {
         target: opts.render,
         hints: prg,
         help: {
-          file: 'doc/help/mkman.txt',
+          file: 'doc/help/mktext.txt',
           output: conf.output
         },
         version: {
-          name: 'mkman',
+          name: 'mktext',
           version: pkg.version,
           output: conf.output
         },

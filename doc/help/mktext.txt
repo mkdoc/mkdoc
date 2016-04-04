@@ -1,11 +1,10 @@
-mktransform
+mktext
 
-Usage: mktransform [files...]
+Usage: mktext [options]
 
-  Custom stream transformations.
+  Render to plain text.
 
 Options
   -h, --help              -h, --help Display help and exit
   --version               --version Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mktransform/issues

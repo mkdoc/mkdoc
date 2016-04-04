@@ -1,5 +1,8 @@
 {
   "description": "Modify heading levels.",
+  "names": [
+    "mklevel"
+  ],
   "type": "program",
   "name": "mklevel",
   "synopsis": [

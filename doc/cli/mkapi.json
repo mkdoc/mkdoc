@@ -1,5 +1,8 @@
 {
   "description": "Documentation generator.",
+  "names": [
+    "mkapi"
+  ],
   "type": "program",
   "name": "mkapi",
   "synopsis": [

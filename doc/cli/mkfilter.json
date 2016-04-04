@@ -1,5 +1,8 @@
 {
   "description": "Filter nodes by type.",
+  "names": [
+    "mkfilter"
+  ],
   "type": "program",
   "name": "mkfilter",
   "synopsis": [

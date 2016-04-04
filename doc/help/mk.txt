@@ -5,9 +5,9 @@ Usage: mk [task...]
   Task runner.
 
 Options
-  -f, --file=[FILE...]    Load specific task files
-  --tasks                 Print task list
-  -h, --help              Display help and exit
-  --version               Print the version and exit
+  -f, --file=[FILE...]    -f, --file=[FILE...] Load specific task files
+  --tasks                 --tasks Print task list
+  -h, --help              -h, --help Display help and exit
+  --version               --version Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mktask/issues

@@ -1,5 +1,8 @@
 {
   "description": "Processing instruction macros.",
+  "names": [
+    "mkpi"
+  ],
   "type": "program",
   "name": "mkpi",
   "synopsis": [

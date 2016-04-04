@@ -5,29 +5,29 @@ Usage: mkfilter [options]
   Filter nodes by type.
 
 Options
-  -i, --invert            Invert the filter
-  --document              Filter document nodes
-  --softbreak             Filter softbreak nodes
-  --linebreak             Filter linebreak nodes
-  --list                  Filter list nodes
-  --item                  Filter item nodes
-  --paragraph             Filter paragraph nodes
-  --text                  Filter text nodes
-  --heading               Filter heading nodes
-  --emph                  Filter emph nodes
-  --strong                Filter strong nodes
-  --link                  Filter link nodes
-  --image                 Filter image nodes
-  --code                  Filter code nodes
-  --code-block            Filter code block nodes
-  --block-quote           Filter block quote nodes
-  --thematic-break        Filter thematic break nodes
-  --html-inline           Filter html inline nodes
-  --html-block            Filter html block nodes
-  --custom-inline         Filter custom inline nodes
-  --custom-block          Filter custom block nodes
-  --eof                   Filter eof nodes
-  -h, --help              Display help and exit
-  --version               Print the version and exit
+  -i, --invert            -i, --invert Invert the filter
+  --document              --document Filter document nodes
+  --softbreak             --softbreak Filter softbreak nodes
+  --linebreak             --linebreak Filter linebreak nodes
+  --list                  --list Filter list nodes
+  --item                  --item Filter item nodes
+  --paragraph             --paragraph Filter paragraph nodes
+  --text                  --text Filter text nodes
+  --heading               --heading Filter heading nodes
+  --emph                  --emph Filter emph nodes
+  --strong                --strong Filter strong nodes
+  --link                  --link Filter link nodes
+  --image                 --image Filter image nodes
+  --code                  --code Filter code nodes
+  --code-block            --code-block Filter code block nodes
+  --block-quote           --block-quote Filter block quote nodes
+  --thematic-break        --thematic-break Filter thematic break nodes
+  --html-inline           --html-inline Filter html inline nodes
+  --html-block            --html-block Filter html block nodes
+  --custom-inline         --custom-inline Filter custom inline nodes
+  --custom-block          --custom-block Filter custom block nodes
+  --eof                   --eof Filter eof nodes
+  -h, --help              -h, --help Display help and exit
+  --version               --version Print the version and exit
 
 Report bugs to https://github.com/mkdoc/mkfilter/issues

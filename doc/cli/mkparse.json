@@ -1,5 +1,8 @@
 {
   "description": "Parse source file comments.",
+  "names": [
+    "mkparse"
+  ],
   "type": "program",
   "name": "mkparse",
   "synopsis": [

@@ -1,5 +1,8 @@
 {
   "description": "Custom stream transformations.",
+  "names": [
+    "mktransform"
+  ],
   "type": "program",
   "name": "mktransform",
   "synopsis": [

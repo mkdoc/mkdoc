@@ -1,5 +1,8 @@
 {
   "description": "Link reference collation.",
+  "names": [
+    "mkref"
+  ],
   "type": "program",
   "name": "mkref",
   "synopsis": [

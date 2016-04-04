@@ -5,11 +5,15 @@ Usage: mkman [options]
   Render to troff man page.
 
 Options
-  -t, --title=[VAL]       Set the page title (default: UNTITLED)
-  -s, --section=[NUM]     Set the section number (default: 1)
-  -i, --inline=[VAL]      Inline code rendering style (default: strong)
-  -l, --locale=[VAL]      Locale for automatic date generation (default: en-gb)
-  -d, --date=[VAL]        Use specific date
-  -h, --help              Display help and exit
-  --version               Print the version and exit
+  -t, --title=[VAL]       -t, --title=[VAL] Set the page title (default:
+                          UNTITLED)
+  -s, --section=[NUM]     -s, --section=[NUM] Set the section number (default:
+                          1)
+  -i, --inline=[VAL]      -i, --inline=[VAL] Inline code rendering style
+                          (default: strong)
+  -l, --locale=[VAL]      -l, --locale=[VAL] Locale for automatic date
+                          generation (default: en-gb)
+  -d, --date=[VAL]        -d, --date=[VAL] Use specific date
+  -h, --help              -h, --help Display help and exit
+  --version               --version Print the version and exit
 

@@ -1,5 +1,8 @@
 {
   "description": "Render to troff man page.",
+  "names": [
+    "mkman"
+  ],
   "type": "program",
   "name": "mkman",
   "synopsis": [

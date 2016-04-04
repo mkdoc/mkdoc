@@ -1,5 +1,8 @@
 {
   "description": "Generates a table of contents index.",
+  "names": [
+    "mktoc"
+  ],
   "type": "program",
   "name": "mktoc",
   "synopsis": [

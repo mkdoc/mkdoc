@@ -1,5 +1,8 @@
 {
   "description": "Markdown command line interface definition.",
+  "names": [
+    "mkcli"
+  ],
   "type": "program",
   "name": "mkcli",
   "synopsis": [

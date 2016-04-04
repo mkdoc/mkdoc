@@ -1,5 +1,8 @@
 {
   "description": "Make relative links absolute.",
+  "names": [
+    "mkabs"
+  ],
   "type": "program",
   "name": "mkabs",
   "synopsis": [
