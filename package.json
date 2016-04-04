@@ -24,7 +24,7 @@
     "bin": "./bin"
   },
   "dependencies": {
-    "mkabs": "~1.2.2",
+    "mkabs": "~1.2.3",
     "mkapi": "~1.1.7",
     "mkast": "~1.2.6",
     "mkcat": "~1.1.5",
