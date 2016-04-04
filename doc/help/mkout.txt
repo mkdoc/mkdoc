@@ -1,6 +1,3 @@
-mkout
-
-Render to various output formats.
 
 Usage: mkout [options]
 
@@ -17,6 +14,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkout/issues
-
-mkout@1.0.29

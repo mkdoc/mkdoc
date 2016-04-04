@@ -1,6 +1,3 @@
-mkfilter
-
-Filter nodes by type.
 
 Usage: mkfilter [options]
 
@@ -30,6 +27,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkfilter/issues
-
-mkfilter@1.1.3

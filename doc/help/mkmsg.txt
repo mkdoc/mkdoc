@@ -1,6 +1,3 @@
-mkmsg
-
-Message injection.
 
 Usage: mkmsg [options]
 
@@ -10,6 +7,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkmsg/issues
-
-mkmsg@1.2.5

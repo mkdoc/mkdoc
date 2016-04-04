@@ -109,7 +109,7 @@
     },
     "section": {
       "key": "section",
-      "description": "Include help sections matching patterns",
+      "description": "Include sections matching patterns in help output",
       "names": [
         "-S",
         "--section"
@@ -118,6 +118,33 @@
       "extra": "=[PTN...]",
       "required": false,
       "multiple": true
+    },
+    "header": {
+      "key": "header",
+      "description": "Include default header in help output",
+      "names": [
+        "-H",
+        "--header"
+      ],
+      "type": "flag"
+    },
+    "footer": {
+      "key": "footer",
+      "description": "Include default footer in help output",
+      "names": [
+        "-F",
+        "--footer"
+      ],
+      "type": "flag"
+    },
+    "newline": {
+      "key": "newline",
+      "description": "Print leading newline when no header",
+      "names": [
+        "-N",
+        "--newline"
+      ],
+      "type": "flag"
     },
     "help": {
       "key": "help",

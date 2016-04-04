@@ -1,6 +1,3 @@
-mkparse
-
-Parse source file comments.
 
 Usage: mkparse [options] [files...]
 
@@ -14,6 +11,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkparse/issues
-
-mkparse@1.5.9

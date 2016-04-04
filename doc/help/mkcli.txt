@@ -1,6 +1,3 @@
-mkcli
-
-Compiles markdown cli definitions.
 
 Usage: mkcli [options]
 
@@ -15,10 +12,10 @@ Options
   -i, --indent=[NUM]      Number of spaces for help indentation (default: 2)
   -a, --align=[TYPE]      Align first help column left or right (default: left)
   -u, --usage=[VAL]       Set usage message for help synopsis (default: Usage:)
-  -S, --section=[PTN...]  Include help sections matching patterns
+  -S, --section=[PTN...]  Include sections matching patterns in help output
+  -H, --header            Include default header in help output
+  -F, --footer            Include default footer in help output
+  -N, --newline           Print leading newline when no header
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkcli/issues
-
-mkcli@1.0.13 https://github.com/mkdoc/mkcli

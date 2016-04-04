@@ -1,6 +1,3 @@
-mkcat
-
-Reads markdown documents.
 
 Usage: mkcat [options] [files...]
 
@@ -15,6 +12,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkcat/issues
-
-mkcat@1.1.5

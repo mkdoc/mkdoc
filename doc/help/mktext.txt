@@ -1,6 +1,3 @@
-mktext
-
-Render to plain text.
 
 Usage: mktext [options]
 

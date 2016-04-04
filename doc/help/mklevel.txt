@@ -1,6 +1,3 @@
-mklevel
-
-Modify heading levels.
 
 Usage: mklevel [options]
 
@@ -15,6 +12,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mklevel/issues
-
-mklevel@1.0.3

@@ -1,6 +1,3 @@
-mkman
-
-Render to troff man page.
 
 Usage: mkman [options]
 

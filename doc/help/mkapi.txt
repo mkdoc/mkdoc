@@ -1,6 +1,3 @@
-mkapi
-
-Documentation generator.
 
 Usage: mkapi [options] [files...]
 
@@ -16,6 +13,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkapi/issues
-
-mkapi@1.1.7

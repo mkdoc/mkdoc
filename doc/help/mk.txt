@@ -1,6 +1,3 @@
-mk
-
-Task runner.
 
 Usage: mk [task...]
 
@@ -13,6 +10,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mktask/issues
-
-mktask@1.3.7

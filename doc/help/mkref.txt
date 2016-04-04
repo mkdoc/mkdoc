@@ -1,6 +1,3 @@
-mkref
-
-Link reference collation.
 
 Usage: mkref [options]
 
@@ -8,6 +5,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-  Report bugs to https://github.com/mkdoc/mkref/issues
-
-mkref@1.0.8
