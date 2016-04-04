@@ -31,20 +31,20 @@ function bin(type, ext, src, out, cb) {
     var stream = mk.doc(source);
 
     // prevent circular references when json output type
-    if(type === mk.cli.types.json) {
+    if(type === mk.cli.JSON) {
       stream = stream.pipe(mk.ast.convert());
     }
       
     stream = stream.pipe(mk.cli.src(opts));
 
-    if(type === mk.cli.types.json) {
+    if(type === mk.cli.JSON) {
       stream = stream.pipe(mk.cli.compile());
     }
 
     stream = stream
       .pipe(mk.cli.dest(opts))
     
-    if(type !== mk.cli.types.json) {
+    if(type !== mk.cli.JSON) {
       //stream = stream.pipe(mk.ast.stringify());
       if(type === mk.cli.HELP) {
         stream = stream.pipe(mk.out({type: 'text'}))
@@ -73,14 +73,14 @@ function api(cb) {
 function help(cb) {
   var src = 'doc/cli'
     , out = 'doc/help';
-  bin('help', 'txt', src, out, cb);
+  bin(mk.cli.HELP, 'txt', src, out, cb);
 }
 
 // @task cli build the cli definition files.
 function cli(cb) {
   var src = 'doc/cli'
     , out = 'doc/cli';
-  bin('json', 'json', src, out, cb);
+  bin(mk.cli.JSON, 'json', src, out, cb);
 }
 
 // @task readme build the readme file.
