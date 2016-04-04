@@ -146,6 +146,15 @@
       ],
       "type": "flag"
     },
+    "preserve": {
+      "key": "preserve",
+      "description": "Do not upper case headings in man output",
+      "names": [
+        "-P",
+        "--preserve"
+      ],
+      "type": "flag"
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",

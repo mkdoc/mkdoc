@@ -25,6 +25,7 @@ Compiles markdown command line interface definitions to JSON and supplies render
 * `-H, --header` Include default header in help output
 * `-F, --footer` Include default footer in help output
 * `-N, --newline` Print leading newline when no header
+* `-P, --preserve` Do not upper case headings in man output
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
