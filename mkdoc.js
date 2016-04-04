@@ -2,7 +2,7 @@ var fs = require('fs')
   , path = require('path')
   , mk = require('mktask');
 
-function bin(type, ext, src, out, buffer, cb) {
+function bin(type, ext, src, out, cb) {
   var files = fs.readdirSync(src);
 
   function next(err) {
@@ -73,14 +73,14 @@ function api(cb) {
 function help(cb) {
   var src = 'doc/cli'
     , out = 'doc/help';
-  bin('help', 'txt', src, out, false, cb);
+  bin('help', 'txt', src, out, cb);
 }
 
 // @task cli build the cli definition files.
 function cli(cb) {
   var src = 'doc/cli'
     , out = 'doc/cli';
-  bin('json', 'json', src, out, true, cb);
+  bin('json', 'json', src, out, cb);
 }
 
 // @task readme build the readme file.
