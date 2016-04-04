@@ -15,4 +15,4 @@ Options
 
   Report bugs to https://github.com/mkdoc/mkcli/issues
 
-mkcli@1.0.11 https://github.com/mkdoc/mkcli
+mkcli@1.0.12 https://github.com/mkdoc/mkcli

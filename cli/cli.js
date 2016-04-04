@@ -74,7 +74,7 @@ function main(argv, conf, cb) {
     }
 
     this.pkg = pack;
-    this.type = this.type || cli.types.json;
+    this.type = this.type || cli.JSON;
 
     cli(this, cb);
   })
