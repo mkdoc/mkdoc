@@ -1,4 +1,3 @@
-
 Usage: mkapi [options] [files...]
 
 Options
@@ -13,3 +12,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
+mkapi@1.1.7

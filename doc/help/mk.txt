@@ -1,4 +1,3 @@
-
 Usage: mk [task...]
 
   Runs tasks defined in a task file. Searches for mkdoc.js in the current
@@ -10,3 +9,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
+mktask@1.3.7

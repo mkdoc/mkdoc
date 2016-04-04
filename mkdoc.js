@@ -28,7 +28,7 @@ function bin(type, ext, src, out, cb) {
 
     dest = path.join(out, dest);
 
-    var opts = {type: type, pkg: pkg, newline: true};
+    var opts = {type: type, pkg: pkg, newline: false, footer: true};
 
     var stream = mk.doc(source);
 

@@ -1,4 +1,3 @@
-
 Usage: mkman [options]
 
 Options

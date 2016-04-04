@@ -1,4 +1,3 @@
-
 Usage: mktext [options]
 
 Options

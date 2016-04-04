@@ -1,4 +1,3 @@
-
 Usage: mkabs [options]
 
   Converts relative links beginning with / to absolute URLs; when the --greedy
@@ -17,3 +16,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
+mkabs@1.2.3

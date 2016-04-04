@@ -1,4 +1,3 @@
-
 Usage: mkpi [options]
 
 Options
@@ -7,3 +6,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
+mkpi@1.1.5
