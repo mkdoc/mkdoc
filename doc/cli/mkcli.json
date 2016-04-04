@@ -38,6 +38,23 @@
         "man"
       ]
     },
+    "style": {
+      "key": "style",
+      "description": "Help output style",
+      "names": [
+        "-y",
+        "--style"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "kind": [
+        "col",
+        "list",
+        "cmd"
+      ]
+    },
     "cols": {
       "key": "cols",
       "description": "Wrap help output at NUM",
