@@ -103,5 +103,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "modify heading levels"
 }

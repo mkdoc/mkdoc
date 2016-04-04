@@ -110,5 +110,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "render to various output formats"
 }

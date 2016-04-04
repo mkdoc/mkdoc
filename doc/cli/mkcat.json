@@ -26,5 +26,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "reads markdown documents"
 }

@@ -25,5 +25,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "render to plain text"
 }

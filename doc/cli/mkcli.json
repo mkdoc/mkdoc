@@ -124,5 +124,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "compiles markdown cli definitions"
 }

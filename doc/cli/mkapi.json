@@ -114,5 +114,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "documentation generator"
 }

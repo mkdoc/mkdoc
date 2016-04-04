@@ -25,5 +25,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "link reference collation"
 }

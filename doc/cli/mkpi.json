@@ -43,5 +43,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "processing instruction macros"
 }

@@ -202,5 +202,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "filter nodes by type"
 }

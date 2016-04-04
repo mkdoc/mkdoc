@@ -89,5 +89,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "render to troff man page"
 }

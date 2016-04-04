@@ -148,5 +148,6 @@
       ],
       "type": "flag"
     }
-  }
+  },
+  "summary": "generates a table of contents index"
 }
