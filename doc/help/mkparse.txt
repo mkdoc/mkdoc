@@ -5,15 +5,14 @@ Parse source file comments.
 Usage: mkparse [options] [files...]
 
 Options
-  -l, --lang=[LANG]       -l, --lang=[LANG] Set language for all files
-  -s, --strip             -s, --strip Print content only, remove comments
-  -c, --content           -c, --content Include non-comment content
-  -d, --dotted            -d, --dotted Parse dotted names
-  -j, --json              -j, --json Print comments as JSON
-  -i, --indent=[NUM]      -i, --indent=[NUM] Number of spaces for JSON
-                          (default: 0)
-  -h, --help              -h, --help Display help and exit
-  --version               --version Print the version and exit
+  -l, --lang=[LANG]       Set language for all files
+  -s, --strip             Print content only, remove comments
+  -c, --content           Include non-comment content
+  -d, --dotted            Parse dotted names
+  -j, --json              Print comments as JSON
+  -i, --indent=[NUM]      Number of spaces for JSON (default: 0)
+  -h, --help              Display help and exit
+  --version               Print the version and exit
 
   Report bugs to https://github.com/mkdoc/mkparse/issues
 

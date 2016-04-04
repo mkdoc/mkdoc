@@ -22,8 +22,10 @@ function bin(type, ext, src, out, cb) {
 
     try {
       pkg = require((name === 'mk' ? 'mktask' : name) + '/package.json');
-      // NOTE: some programs do not have a corresponding module, eg: mkman
+      // NOTE: some programs do not have a corresponding
+      // NOTE: module, eg: mkman, mktext etc.
     }catch(e){}
+
     dest = path.join(out, dest);
 
     var opts = {type: type, pkg: pkg};
@@ -34,18 +36,20 @@ function bin(type, ext, src, out, cb) {
     if(type === mk.cli.JSON) {
       stream = stream.pipe(mk.ast.convert());
     }
-      
+     
+    // parse state information from the input doc(s)
     stream = stream.pipe(mk.cli.src(opts));
 
+    // json output needs to go through the compiler
     if(type === mk.cli.JSON) {
       stream = stream.pipe(mk.cli.compile());
     }
 
-    stream = stream
-      .pipe(mk.cli.dest(opts))
+    // hook up output renderer
+    stream = stream.pipe(mk.cli.dest(opts))
     
     if(type !== mk.cli.JSON) {
-      //stream = stream.pipe(mk.ast.stringify());
+      // need to convert the json records using an output renderer
       if(type === mk.cli.HELP) {
         stream = stream.pipe(mk.out({type: 'text'}))
       }

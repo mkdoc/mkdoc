@@ -5,6 +5,6 @@ Render to plain text.
 Usage: mktext [options]
 
 Options
-  -h, --help              -h, --help Display help and exit
-  --version               --version Print the version and exit
+  -h, --help              Display help and exit
+  --version               Print the version and exit
 
