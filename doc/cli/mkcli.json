@@ -38,6 +38,15 @@
         "man"
       ]
     },
+    "full": {
+      "key": "full",
+      "description": "Do not compact compiled descriptor",
+      "names": [
+        "-f",
+        "--full"
+      ],
+      "type": "flag"
+    },
     "cols": {
       "key": "cols",
       "description": "Wrap help output at NUM",

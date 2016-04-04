@@ -6,6 +6,7 @@ Usage: mkcli [options]
 Options
   -p, --package=[FILE]    Use package descriptor
   -t, --type=[TYPE]       Output renderer type
+  -f, --full              Do not compact compiled descriptor
   -c, --cols=[NUM]        Wrap help output at NUM (default: 80)
   -s, --split=[NUM]       Split help columns at NUM (default: 26)
   -i, --indent=[NUM]      Number of spaces for help indentation (default: 2)
@@ -19,4 +20,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkcli@1.0.14 https://github.com/mkdoc/mkcli
+mkcli@1.0.15 https://github.com/mkdoc/mkcli

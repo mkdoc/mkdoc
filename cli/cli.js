@@ -96,6 +96,10 @@ function main(argv, conf, cb) {
       }
     })
 
+    // compiler compacts the output by default
+    // allow including the tree nodes when full is set
+    this.compact = !this.full;
+
     cli(this, cb);
   })
 }
