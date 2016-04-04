@@ -1,16 +1,12 @@
 # Name
 
-mkman
+mkman - render to troff man page
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Render to troff man page.
 
 # Options
 
@@ -22,3 +18,6 @@ Render to troff man page.
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+# See Also
+
+mkout(1)

@@ -1,9 +1,15 @@
 mkcat
 
+Reads markdown documents.
+
 Usage: mkcat [options] [files...]
 
   Reads markdown documents from stdin and files; writes serialized nodes to
   stdout.
+
+  Reads markdown documents from stdin and files; writes serialized nodes to
+  stdout.  The output is newline-delimited JSON records representing the abstract syntax
+  tree for the input document(s).
 
 Options
   -h, --help              -h, --help Display help and exit

@@ -1,16 +1,12 @@
 # Name
 
-mkfilter
+mkfilter - filter nodes by type
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Filter nodes by type.
 
 # Options 
 

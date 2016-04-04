@@ -1,16 +1,12 @@
 # Name
 
-mktransform
+mktransform - custom stream transformations
 
 # Synopsis
 
 ```
 [files...]
 ```
-
-# Description
-
-Custom stream transformations.
 
 # Options
 

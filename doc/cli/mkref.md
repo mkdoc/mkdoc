@@ -1,16 +1,12 @@
 # Name
 
-mkref
+mkref - link reference collation
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Link reference collation.
 
 # Options
 

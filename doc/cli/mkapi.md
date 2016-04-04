@@ -1,16 +1,12 @@
 # Name
 
-mkapi
+mkapi - documentation generator
 
 # Synopsis
 
 ```
 [options] [files...]
 ```
-
-# Description
-
-Documentation generator.
 
 # Options
 

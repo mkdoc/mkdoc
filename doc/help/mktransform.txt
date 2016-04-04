@@ -1,8 +1,8 @@
 mktransform
 
-Usage: mktransform [files...]
+Custom stream transformations.
 
-  Custom stream transformations.
+Usage: mktransform [files...]
 
 Options
   -h, --help              -h, --help Display help and exit

@@ -1,6 +1,6 @@
 # Name
 
-mk
+mk - task runner
 
 # Synopsis
 
@@ -10,7 +10,7 @@ mk
 
 # Description
 
-Task runner.
+Runs tasks defined in a task file. Searches for `mkdoc.js` in the current directory or parent directory and executes the tasks specified on the command line.
 
 # Options
 
@@ -18,4 +18,8 @@ Task runner.
 * `--tasks` Print task list
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
+
+# Environment
+
+If TASK_FILE is set it changes the name of the file searched for, default is `mkdoc.js`.
 

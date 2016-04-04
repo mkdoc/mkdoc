@@ -1,6 +1,6 @@
 # Name
 
-mkabs
+mkabs - make relative links absolute
 
 # Synopsis
 
@@ -10,7 +10,9 @@ mkabs
 
 # Description
 
-Make relative links absolute.
+Converts relative links beginning with `/` to absolute URLs; when the --greedy option is given links beginning with `#` and `?` are also made absolute.
+
+When no --base URL is given and a package.json file is available in the current working directory the base URL is extracted from the repository URL in package.json and the --relative path when not set assumes a github repository using the `/blob/master` path.
 
 # Options
 

@@ -1,8 +1,11 @@
 mkcli
 
+Compiles markdown cli definitions.
+
 Usage: mkcli [options]
 
-  Markdown command line interface definition.
+  Compiles markdown command line interface definitions to JSON and supplies
+  renderers for converting the definitions to help files and man pages.
 
 Options
   -p, --package=[FILE]    -p, --package=[FILE] Use package descriptor

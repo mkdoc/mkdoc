@@ -1,8 +1,8 @@
 mktoc
 
-Usage: mktoc [options]
+Generates a table of contents index.
 
-  Generates a table of contents index.
+Usage: mktoc [options]
 
 Options
   -t, --title=[TITLE]     -t, --title=[TITLE] Set initial heading

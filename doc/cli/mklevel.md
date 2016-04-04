@@ -1,16 +1,12 @@
 # Name
 
-mklevel
+mklevel - modify heading levels
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Modify heading levels.
 
 # Options
 

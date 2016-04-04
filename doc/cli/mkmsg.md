@@ -1,16 +1,12 @@
 # Name
 
-mkmsg
+mkmsg - message injection
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Message injection.
 
 # Options
 

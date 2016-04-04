@@ -1,6 +1,6 @@
 # Name
 
-mktext
+mktext - render to plain text
 
 # Synopsis
 
@@ -8,12 +8,11 @@ mktext
 [options]
 ```
 
-# Description
-
-Render to plain text.
-
 # Options
 
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+# See Also
+
+mkout(1)

@@ -1,16 +1,12 @@
 # Name
 
-mkparse
+mkparse - parse source file comments
 
 # Synopsis
 
 ```
 [options] [files...]
 ```
-
-# Description
-
-Parse source file comments.
 
 # Options
 

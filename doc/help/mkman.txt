@@ -1,8 +1,8 @@
 mkman
 
-Usage: mkman [options]
+Render to troff man page.
 
-  Render to troff man page.
+Usage: mkman [options]
 
 Options
   -t, --title=[VAL]       -t, --title=[VAL] Set the page title (default:

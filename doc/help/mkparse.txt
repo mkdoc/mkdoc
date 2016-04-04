@@ -1,8 +1,8 @@
 mkparse
 
-Usage: mkparse [options] [files...]
+Parse source file comments.
 
-  Parse source file comments.
+Usage: mkparse [options] [files...]
 
 Options
   -l, --lang=[LANG]       -l, --lang=[LANG] Set language for all files

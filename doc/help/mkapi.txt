@@ -1,8 +1,8 @@
 mkapi
 
-Usage: mkapi [options] [files...]
+Documentation generator.
 
-  Documentation generator.
+Usage: mkapi [options] [files...]
 
 Options
   -o, --output=[FILE]     -o, --output=[FILE] Write output to FILE (default:

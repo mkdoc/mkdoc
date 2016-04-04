@@ -1,16 +1,12 @@
 # Name
 
-mktoc
+mktoc - generates a table of contents index
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Generates a table of contents index.
 
 # Options
 

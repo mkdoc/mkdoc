@@ -1,8 +1,8 @@
 mkfilter
 
-Usage: mkfilter [options]
+Filter nodes by type.
 
-  Filter nodes by type.
+Usage: mkfilter [options]
 
 Options
   -i, --invert            -i, --invert Invert the filter

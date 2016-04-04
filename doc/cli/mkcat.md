@@ -1,6 +1,6 @@
 # Name
 
-mkcat
+mkcat - reads markdown documents
 
 # Synopsis
 
@@ -11,6 +11,8 @@ mkcat
 # Description
 
 Reads markdown documents from stdin and files; writes serialized nodes to stdout.
+
+The output is newline-delimited JSON records representing the abstract syntax tree for the input document(s).
 
 # Options
 

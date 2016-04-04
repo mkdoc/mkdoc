@@ -1,8 +1,8 @@
 mkmsg
 
-Usage: mkmsg [options]
+Message injection.
 
-  Message injection.
+Usage: mkmsg [options]
 
 Options
   -m, --message=[MSG]     -m, --message=[MSG] Custom message, parsed as markdown

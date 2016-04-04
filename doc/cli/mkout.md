@@ -1,16 +1,12 @@
 # Name
 
-mkout
+mkout - render to various output formats
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Render to various output formats.
 
 # Options
 

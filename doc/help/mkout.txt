@@ -1,8 +1,8 @@
 mkout
 
-Usage: mkout [options]
+Render to various output formats.
 
-  Render to various output formats.
+Usage: mkout [options]
 
 Options
   -o, --output=[FILE]     -o, --output=[FILE] Write output to FILE (default:

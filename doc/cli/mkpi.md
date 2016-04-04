@@ -1,16 +1,12 @@
 # Name
 
-mkpi
+mkpi - processing instruction macros
 
 # Synopsis
 
 ```
 [options]
 ```
-
-# Description
-
-Processing instruction macros.
 
 # Options
 

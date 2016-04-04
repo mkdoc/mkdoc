@@ -1,6 +1,6 @@
 # Name
 
-mkcli
+mkcli - compiles markdown cli definitions
 
 # Synopsis
 
@@ -10,7 +10,7 @@ mkcli
 
 # Description
 
-Markdown command line interface definition.
+Compiles markdown command line interface definitions to JSON and supplies renderers for converting the definitions to help files and man pages.
 
 # Options
 

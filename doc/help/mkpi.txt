@@ -1,8 +1,8 @@
 mkpi
 
-Usage: mkpi [options]
+Processing instruction macros.
 
-  Processing instruction macros.
+Usage: mkpi [options]
 
 Options
   -s, --safe              -s, --safe Disable the @exec and @macro directives

@@ -1,8 +1,8 @@
 mktext
 
-Usage: mktext [options]
+Render to plain text.
 
-  Render to plain text.
+Usage: mktext [options]
 
 Options
   -h, --help              -h, --help Display help and exit
