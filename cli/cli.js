@@ -37,6 +37,7 @@ function main(argv, conf, cb) {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
         hints: prg,
+        multiple: prg,
         help: {
           file: 'doc/help/mkcli.txt',
           output: conf.output
@@ -50,7 +51,8 @@ function main(argv, conf, cb) {
           require('mkcli/plugin/hints'),
           require('mkcli/plugin/argv'),
           require('mkcli/plugin/help'),
-          require('mkcli/plugin/version')
+          require('mkcli/plugin/version'),
+          require('mkcli/plugin/multiple')
         ]
       };
 
@@ -85,6 +87,14 @@ function main(argv, conf, cb) {
         this.indent += ' '; 
       }
     }
+
+    this.section = this.section.map(function(ptn) {
+      try {
+        return new RegExp(ptn, 'im'); 
+      }catch(e) {
+        return cb(e); 
+      }
+    })
 
     cli(this, cb);
   })

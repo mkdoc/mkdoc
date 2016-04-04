@@ -1,7 +1,11 @@
 function error(msg) {
   var prefix = 'ERR | ';
-  process.stdout.write(prefix + msg + '\n');
+  process.stderr.write(prefix + msg + '\n');
   process.exitCode = 1;
+  /* istanbul ignore next: always in test env */
+  if(!process.env.NODE_ENV) {
+    process.exit(); 
+  }
 }
 
 function finish(err) {

@@ -21,6 +21,7 @@ Compiles markdown command line interface definitions to JSON and supplies render
 * `-i, --indent=[NUM] {=2}` Number of spaces for help indentation
 * `-a, --align=[TYPE] {left|right=left}` Align first help column left or right
 * `-u, --usage=[VAL] {=Usage:}` Set usage message for help synopsis
+* `-S, --section=[PTN...]` Include help sections matching patterns
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 

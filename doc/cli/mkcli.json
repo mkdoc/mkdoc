@@ -107,6 +107,18 @@
       "multiple": false,
       "value": "Usage:"
     },
+    "section": {
+      "key": "section",
+      "description": "Include help sections matching patterns",
+      "names": [
+        "-S",
+        "--section"
+      ],
+      "type": "option",
+      "extra": "=[PTN...]",
+      "required": false,
+      "multiple": true
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",
