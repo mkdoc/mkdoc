@@ -263,7 +263,7 @@ function main(argv, conf, cb) {
     }
 
     // set up execution scope for default task collection
-    runner.scope = {args: this.args};
+    runner.scope = {args: req.args};
 
     runner.each(list, done);  
   })

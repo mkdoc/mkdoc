@@ -69,7 +69,7 @@ function main(argv, conf, cb) {
 
     // support --xml, --html etc.
     for(var k in out.types) {
-      if(this.args.flags[k]) {
+      if(req.args.flags[k]) {
         this.type = k;
         break;
       } 
