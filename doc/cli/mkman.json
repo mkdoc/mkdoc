@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkman",
+  "summary": "render to troff man page",
   "synopsis": [
     "[options]"
   ],
@@ -89,6 +90,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "render to troff man page"
+  }
 }

@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkout",
+  "summary": "render to various output formats",
   "synopsis": [
     "[options]"
   ],
@@ -110,6 +111,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "render to various output formats"
+  }
 }

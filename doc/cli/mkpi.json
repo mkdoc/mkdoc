@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkpi",
+  "summary": "processing instruction macros",
   "synopsis": [
     "[options]"
   ],
@@ -43,6 +44,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "processing instruction macros"
+  }
 }

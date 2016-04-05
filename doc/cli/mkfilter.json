@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkfilter",
+  "summary": "filter nodes by type",
   "synopsis": [
     "[options]"
   ],
@@ -202,6 +203,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "filter nodes by type"
+  }
 }

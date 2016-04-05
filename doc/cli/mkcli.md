@@ -23,6 +23,7 @@ Compiles markdown command line interface definitions to JSON and supplies render
 * `-i, --indent=[NUM] {=2}` Number of spaces for help indentation
 * `-a, --align=[TYPE] {left|right}` Alignment of first help column
 * `-u, --usage=[VAL] {=Usage:}` Set usage message for help synopsis
+* `-C, --colon` Append a colon to headings in help output
 * `-S, --section=[PTN...]` Include sections matching patterns in help output
 * `-H, --header` Include default header in help output
 * `-F, --footer` Include default footer in help output

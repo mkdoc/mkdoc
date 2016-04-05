@@ -5,6 +5,7 @@
   ],
   "type": "program",
   "name": "mk",
+  "summary": "task runner",
   "synopsis": [
     "[task...]"
   ],
@@ -46,6 +47,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "task runner"
+  }
 }

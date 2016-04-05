@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkparse",
+  "summary": "parse source file comments",
   "synopsis": [
     "[options] [files...]"
   ],
@@ -86,6 +87,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "parse source file comments"
+  }
 }

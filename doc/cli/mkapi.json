@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkapi",
+  "summary": "documentation generator",
   "synopsis": [
     "[options] [files...]"
   ],
@@ -114,6 +115,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "documentation generator"
+  }
 }

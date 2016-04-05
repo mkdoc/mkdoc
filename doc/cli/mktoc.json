@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mktoc",
+  "summary": "generates a table of contents index",
   "synopsis": [
     "[options]"
   ],
@@ -148,6 +149,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "generates a table of contents index"
+  }
 }

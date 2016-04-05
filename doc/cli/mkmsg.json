@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mkmsg",
+  "summary": "message injection",
   "synopsis": [
     "[options]"
   ],
@@ -46,6 +47,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "message injection"
+  }
 }

@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mktransform",
+  "summary": "custom stream transformations",
   "synopsis": [
     "[files...]"
   ],
@@ -25,6 +26,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "custom stream transformations"
+  }
 }

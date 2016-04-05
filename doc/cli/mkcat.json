@@ -5,6 +5,7 @@
   ],
   "type": "program",
   "name": "mkcat",
+  "summary": "reads markdown documents",
   "synopsis": [
     "[options] [files...]"
   ],
@@ -26,6 +27,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "reads markdown documents"
+  }
 }

@@ -4,6 +4,7 @@
   ],
   "type": "program",
   "name": "mktext",
+  "summary": "render to plain text",
   "synopsis": [
     "[options]"
   ],
@@ -181,6 +182,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "render to plain text"
+  }
 }

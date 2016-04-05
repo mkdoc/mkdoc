@@ -5,6 +5,7 @@
   ],
   "type": "program",
   "name": "mkabs",
+  "summary": "make relative links absolute",
   "synopsis": [
     "[options]"
   ],
@@ -59,6 +60,5 @@
       ],
       "type": "flag"
     }
-  },
-  "summary": "make relative links absolute"
+  }
 }
