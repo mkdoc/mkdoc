@@ -100,6 +100,10 @@ function main(argv, conf, cb) {
     // allow including the tree nodes when full is set
     this.compact = !this.full;
 
+    if(this.desc !== undefined) {
+      this.desc = parseInt(this.desc);
+    }
+
     cli(this, cb);
   })
 }

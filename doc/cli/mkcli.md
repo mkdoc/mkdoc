@@ -19,6 +19,7 @@ Compiles markdown command line interface definitions to JSON and supplies render
 * `-y, --style=[VAL] {col|list|cmd|usage}` Help output style
 * `-c, --cols=[NUM] {=80}` Wrap help output at NUM
 * `-s, --split=[NUM] {=26}` Split help columns at NUM
+* `-d, --desc=[NUM]` Number of description paragraphs for help output
 * `-i, --indent=[NUM] {=2}` Number of spaces for help indentation
 * `-a, --align=[TYPE] {left|right=left}` Align first help column left or right
 * `-u, --usage=[VAL] {=Usage:}` Set usage message for help synopsis

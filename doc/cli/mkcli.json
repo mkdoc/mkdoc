@@ -82,6 +82,18 @@
       "multiple": false,
       "value": "26"
     },
+    "desc": {
+      "key": "desc",
+      "description": "Number of description paragraphs for help output",
+      "names": [
+        "-d",
+        "--desc"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false
+    },
     "indent": {
       "key": "indent",
       "description": "Number of spaces for help indentation",
