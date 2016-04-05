@@ -1,9 +1,20 @@
 var path = require('path')
   , out = require('mkout')
   , cli = require('mkcli')
+  , ast = require('mkast')
+  , Node = ast.Node
+  , types = Node.types
   , def = require('../doc/cli/mktext.json')
   , pkg = require('mkout/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(def)
+  , keys = {}
+  , preserve = {}
+
+types.forEach(function(type) {
+  var key = type.replace(/_/g, '-');
+  preserve[type] = false;
+  keys[cli.camelcase(key)] = type;
+})
 
 /**
  *  @name mktext
@@ -71,8 +82,14 @@ function main(argv, conf, cb) {
       }
     }
 
-    // auto link flag disables autolink
-    this.autolink = !this.autolink;
+    // check args for switches and update filters
+    for(var k in keys) {
+      if(this[k] === true) {
+        preserve[keys[k]] = true;
+      } 
+    }
+
+    this.preserve = preserve;
 
     // NOTE: we pass `opts` not `this` as the scope is the `render` object
     out(opts, cb);
