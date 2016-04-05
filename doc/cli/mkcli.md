@@ -16,7 +16,7 @@ Compiles markdown command line interface definitions to JSON and supplies render
 
 * `-p, --package=[FILE]` Use package descriptor
 * `-t, --type=[TYPE] {json|help|man}` Output renderer type
-* `-y, --style=[VAL] {col|list|cmd}` Help output style
+* `-y, --style=[VAL] {col|list|cmd|usage}` Help output style
 * `-c, --cols=[NUM] {=80}` Wrap help output at NUM
 * `-s, --split=[NUM] {=26}` Split help columns at NUM
 * `-i, --indent=[NUM] {=2}` Number of spaces for help indentation

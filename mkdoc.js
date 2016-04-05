@@ -15,6 +15,11 @@ function bin(type, ext, src, out, cb) {
       return cb();
     }
 
+    // ignore non markdown files (compiled json files)
+    if(!/\.md$/.test(file)) {
+      return next(); 
+    }
+
     var source = path.join(src, file)
       , name = file.replace(/\.[\w]+$/, '')
       , dest = name + '.' + ext
