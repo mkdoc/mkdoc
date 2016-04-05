@@ -52,6 +52,7 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
+          require('mkcli/plugin/epipe'),
           require('mkcli/plugin/hints'),
           require('mkcli/plugin/argv'),
           help,
