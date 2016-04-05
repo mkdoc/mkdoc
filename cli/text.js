@@ -63,6 +63,17 @@ function main(argv, conf, cb) {
       return cb(err); 
     }
 
+    if(this.indent) {
+      var indent = parseInt(this.indent) || 4;
+      this.indent = '';
+      while(indent--) {
+        this.indent += ' '; 
+      }
+    }
+
+    // auto link flag disables autolink
+    this.autolink = !this.autolink;
+
     // NOTE: we pass `opts` not `this` as the scope is the `render` object
     out(opts, cb);
   })

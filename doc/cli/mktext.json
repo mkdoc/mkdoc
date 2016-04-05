@@ -8,6 +8,162 @@
     "[options]"
   ],
   "options": {
+    "indent": {
+      "key": "indent",
+      "description": "Number of spaces to indent code blocks and block quotes",
+      "names": [
+        "-i",
+        "--indent"
+      ],
+      "type": "option",
+      "extra": "=[NUM]",
+      "required": false,
+      "multiple": false,
+      "value": "4"
+    },
+    "quote": {
+      "key": "quote",
+      "description": "Character used to prefix block quotes",
+      "names": [
+        "-q",
+        "--quote"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false
+    },
+    "emph": {
+      "key": "emph",
+      "description": "Preserve emph as markdown",
+      "names": [
+        "-e",
+        "--emph"
+      ],
+      "type": "flag"
+    },
+    "strong": {
+      "key": "strong",
+      "description": "Preserve strong as markdown",
+      "names": [
+        "-s",
+        "--strong"
+      ],
+      "type": "flag"
+    },
+    "code": {
+      "key": "code",
+      "description": "Preserve inline code as markdown",
+      "names": [
+        "-c",
+        "--code"
+      ],
+      "type": "flag"
+    },
+    "link": {
+      "key": "link",
+      "description": "Preserve links as markdown",
+      "names": [
+        "-l",
+        "--link"
+      ],
+      "type": "flag"
+    },
+    "thematicBreak": {
+      "key": "thematicBreak",
+      "description": "Preserve thematic break as markdown",
+      "names": [
+        "-t",
+        "--thematic-break"
+      ],
+      "type": "flag"
+    },
+    "image": {
+      "key": "image",
+      "description": "Preserve image as markdown",
+      "names": [
+        "-I",
+        "--image"
+      ],
+      "type": "flag"
+    },
+    "codeBlock": {
+      "key": "codeBlock",
+      "description": "Preserve code block as markdown",
+      "names": [
+        "-C",
+        "--code-block"
+      ],
+      "type": "flag"
+    },
+    "blockQuote": {
+      "key": "blockQuote",
+      "description": "Preserve block quote as markdown",
+      "names": [
+        "-B",
+        "--block-quote"
+      ],
+      "type": "flag"
+    },
+    "heading": {
+      "key": "heading",
+      "description": "Preserve heading as markdown",
+      "names": [
+        "-H",
+        "--heading"
+      ],
+      "type": "flag"
+    },
+    "softbreak": {
+      "key": "softbreak",
+      "description": "Preserve softbreak as markdown",
+      "names": [
+        "-S",
+        "--softbreak"
+      ],
+      "type": "flag"
+    },
+    "linebreak": {
+      "key": "linebreak",
+      "description": "Preserve linebreak as markdown",
+      "names": [
+        "-L",
+        "--linebreak"
+      ],
+      "type": "flag"
+    },
+    "htmlInline": {
+      "key": "htmlInline",
+      "description": "Preserve inline html as markdown",
+      "names": [
+        "--html-inline"
+      ],
+      "type": "flag"
+    },
+    "htmlBlock": {
+      "key": "htmlBlock",
+      "description": "Preserve html block as markdown",
+      "names": [
+        "--html-block"
+      ],
+      "type": "flag"
+    },
+    "customInline": {
+      "key": "customInline",
+      "description": "Preserve custom inline as markdown",
+      "names": [
+        "--custom-inline"
+      ],
+      "type": "flag"
+    },
+    "customBlock": {
+      "key": "customBlock",
+      "description": "Preserve custom block as markdown",
+      "names": [
+        "--custom-block"
+      ],
+      "type": "flag"
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",
