@@ -1,6 +1,6 @@
 # Name
 
-program
+program - short program summary
 
 # Synopsis
 
