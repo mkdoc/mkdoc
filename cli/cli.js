@@ -76,7 +76,9 @@ function main(argv, conf, cb) {
     }
 
     this.pkg = pack;
-    this.type = this.type || cli.JSON;
+    if(!req.unparsed.length) {
+      this.type = this.type || cli.JSON;
+    }
     this.cols = parseInt(this.cols);
     this.split = parseInt(this.split);
 
