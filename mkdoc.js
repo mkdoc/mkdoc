@@ -33,6 +33,11 @@ function cli(cb) {
   bin(mk.cli.JSON, 'doc/cli', 'doc/cli', cb);
 }
 
+// @task man build the man pages.
+function man(cb) {
+  bin(mk.cli.MAN, 'doc/cli', 'doc/man', cb);
+}
+
 // @task readme build the readme file.
 function readme(cb) {
   mk.doc('doc/readme.md')
@@ -50,5 +55,6 @@ function readme(cb) {
 
 mk.task(api);
 mk.task(cli);
+mk.task(man);
 mk.task(help);
 mk.task(readme);
