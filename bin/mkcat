@@ -6,7 +6,7 @@ if(process.env.MKPI) {
   process.stdin.end();
 }
 
-var util = require('../cli/util')
+var util = require('../lib/util')
   , cli = require('../cli/cat');
 
 cli(util.finish);

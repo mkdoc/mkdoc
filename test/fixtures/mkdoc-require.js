@@ -1,6 +1,6 @@
 var mk = require('mktask')
   // trigger relative code path
-  , relative = require('../../cli/util')
+  , relative = require('../../lib/util')
   // trigger a normal module code path
   , ast = require('mkast');
 

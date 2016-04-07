@@ -1,4 +1,26 @@
-var mk = require('mktask');
+var fs = require('fs')
+  , mk = require('mktask');
+
+function executables() {
+  return fs.readdirSync('bin');
+}
+
+function packages() {
+  var programs = executables()
+    , main
+    , map = {};
+
+  programs.forEach(function(name) {
+    var nm = name;
+    if(nm !== 'mk') {
+      nm = nm.replace(/^mk/, ''); 
+    }
+    // get package descriptor from main function
+    main = require('./cli/' + nm);
+    map[name] = main.pkg;
+  })
+  return map;
+}
 
 function bin(type, src, out, cb) {
   var opts = {
@@ -6,7 +28,8 @@ function bin(type, src, out, cb) {
       type: type,
       dest: {},
       newline: false,
-      footer: true
+      footer: true,
+      packages: packages()
     };
 
   opts.dest[type] = out;

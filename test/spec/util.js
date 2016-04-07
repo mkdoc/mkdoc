@@ -1,5 +1,5 @@
 var expect = require('chai').expect
-  , util = require('../../cli/util');
+  , util = require('../../lib/util');
 
 describe('util:', function() {
 

@@ -10,3 +10,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
+mkcat@1.1.5

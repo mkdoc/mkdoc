@@ -108,7 +108,7 @@ function main(argv, conf, cb) {
     // to type(s)
     if(req.unparsed.length) {
       this.files = req.unparsed;
-      cli = require('../lib/cli'); 
+      cli = require('../lib/exe');
     }
 
     cli(this, cb);

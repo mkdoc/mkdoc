@@ -99,6 +99,7 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
+      console.dir(err);
       return cb(err); 
     }
 
@@ -108,7 +109,7 @@ function main(argv, conf, cb) {
       ast: require('mkast'),
       cat: require('mkcat'),
       cli: require('mkcli'),
-      exe: require('../lib/cli'),
+      exe: require('../lib/exe'),
       filter: require('mkfilter'),
       msg: require('mkmsg'),
       out: require('mkout'),
