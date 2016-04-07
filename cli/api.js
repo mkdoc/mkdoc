@@ -2,9 +2,8 @@ var fs = require('fs')
   , path = require('path')
   , api = require('mkapi')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkapi.json')
   , pkg = require('mkapi/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkapi.json'));
 
 /**
  *  @name mkapi

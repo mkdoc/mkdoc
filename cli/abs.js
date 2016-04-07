@@ -1,9 +1,8 @@
 var path = require('path')
   , abs = require('mkabs')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkabs.json')
   , pkg = require('mkabs/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkabs.json'));
 
 /**
  *  @name mkabs

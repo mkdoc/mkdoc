@@ -1,9 +1,8 @@
 var path = require('path')
   , level = require('mklevel')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mklevel.json')
   , pkg = require('mklevel/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mklevel.json'));
 
 /**
  *  @name mklevel

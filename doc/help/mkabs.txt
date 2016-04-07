@@ -15,4 +15,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkabs@1.2.3

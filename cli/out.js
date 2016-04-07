@@ -2,9 +2,8 @@ var fs = require('fs')
   , path = require('path')
   , out = require('mkout')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkout.json')
   , pkg = require('mkout/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkout.json'));
 
 /**
  *  @name mkout

@@ -10,4 +10,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkparse@1.5.9

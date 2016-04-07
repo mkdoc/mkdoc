@@ -1,9 +1,8 @@
 var path = require('path')
   , ref = require('mkref')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkref.json')
   , pkg = require('mkref/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkref.json'));
 
 /**
  *  @name mkref

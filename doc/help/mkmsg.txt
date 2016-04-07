@@ -6,4 +6,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkmsg@1.2.5

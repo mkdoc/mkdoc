@@ -1,9 +1,8 @@
 var path = require('path')
   , pi = require('mkpi')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkpi.json')
   , pkg = require('mkpi/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkpi.json'));
 
 /**
  *  @name mkpi

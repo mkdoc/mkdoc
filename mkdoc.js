@@ -30,7 +30,7 @@ function help(cb) {
 
 // @task cli build the cli definition files.
 function cli(cb) {
-  bin(mk.cli.JSON, 'doc/cli', 'doc/cli', cb);
+  bin(mk.cli.JSON, 'doc/cli', 'doc/json', cb);
 }
 
 // @task man build the man pages.

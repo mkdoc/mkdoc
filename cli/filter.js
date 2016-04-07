@@ -4,9 +4,8 @@ var path = require('path')
   , ast = require('mkast')
   , Node = ast.Node
   , types = Node.types.concat(Node.extensions)
-  , def = require('../doc/cli/mkfilter.json')
   , pkg = require('mkfilter/package.json')
-  , prg = cli.load(def)
+  , prg = cli.load(require('../doc/json/mkfilter.json'))
   , keys = {}
   , filters = {}
 

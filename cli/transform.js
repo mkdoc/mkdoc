@@ -1,9 +1,8 @@
 var path = require('path')
   , transform = require('mktransform')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mktransform.json')
   , pkg = require('mktransform/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mktransform.json'));
 
 /**
  *  @name mktransform

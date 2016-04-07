@@ -7,9 +7,8 @@ var fs = require('fs')
   , mkparse = require('mkparse')
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
   , cli = require('mkcli')
-  , def = require('../doc/cli/mk.json')
   , pkg = require('mktask/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mk.json'));
 
 function print(files, runner, output, cb) {
   var list = files.slice();

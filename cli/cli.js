@@ -1,8 +1,7 @@
 var path = require('path')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkcli.json')
   , pkg = require('mkcli/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkcli.json'));
 
 /**
  *  @name mkcli

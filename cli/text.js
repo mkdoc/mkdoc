@@ -4,9 +4,8 @@ var path = require('path')
   , ast = require('mkast')
   , Node = ast.Node
   , types = Node.types
-  , def = require('../doc/cli/mktext.json')
   , pkg = require('mkout/package.json')
-  , prg = cli.load(def)
+  , prg = cli.load(require('../doc/json/mktext.json'))
   , keys = {}
   , preserve = {}
 

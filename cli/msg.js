@@ -1,9 +1,8 @@
 var path = require('path')
   , msg = require('mkmsg')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkmsg.json')
   , pkg = require('mkmsg/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkmsg.json'));
 
 /**
  *  @name mkmsg

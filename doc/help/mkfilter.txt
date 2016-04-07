@@ -26,4 +26,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkfilter@1.1.3

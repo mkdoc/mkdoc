@@ -3,9 +3,8 @@ var path = require('path')
   , lang = require('mkparse/lang')
   , Collator = require('mkparse/lib/collator')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mkparse.json')
   , pkg = require('mkparse/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mkparse.json'));
 
 /**
  *  @name mkparse

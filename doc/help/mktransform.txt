@@ -4,4 +4,3 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mktransform@1.0.2

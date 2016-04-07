@@ -1,9 +1,8 @@
 var path = require('path')
   , toc = require('mktoc')
   , cli = require('mkcli')
-  , def = require('../doc/cli/mktoc.json')
   , pkg = require('mktoc/package.json')
-  , prg = cli.load(def);
+  , prg = cli.load(require('../doc/json/mktoc.json'));
 
 /**
  *  @name mktoc
