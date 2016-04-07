@@ -109,6 +109,7 @@ function main(argv, conf, cb) {
       ast: require('mkast'),
       cat: require('mkcat'),
       cli: require('mkcli'),
+      exe: require('../lib/cli'),
       filter: require('mkfilter'),
       msg: require('mkmsg'),
       out: require('mkout'),
