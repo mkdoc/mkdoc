@@ -1,5 +1,5 @@
 {
-  "description": "Compiles markdown command line interface definitions to JSON and supplies renderers for converting the definitions to help files and man pages.",
+  "description": "Compiles markdown command line interface definitions to JSON and supplies renderers for converting the definitions to help files and man pages. If no files are given input from stdin is expected.\n\nIf an input file is a directory then the directory is scanned for files ending in md or markdown.\n\nWhen files are given and no type is specified all types are created otherwise when reading from stdin the json output type is assumed.\n\nOutput files are overwritten if they already exist.",
   "names": [
     "mkcli"
   ],
@@ -7,7 +7,7 @@
   "name": "mkcli",
   "summary": "compiles markdown cli definitions",
   "synopsis": [
-    "[options]"
+    "[options] [files...]"
   ],
   "options": {
     "package": {
@@ -137,6 +137,15 @@
       "multiple": false,
       "value": "Usage:"
     },
+    "full": {
+      "key": "full",
+      "description": "Do not compact compiled descriptor",
+      "names": [
+        "-f",
+        "--full"
+      ],
+      "type": "flag"
+    },
     "colon": {
       "key": "colon",
       "description": "Append a colon to headings in help output",
@@ -194,14 +203,53 @@
       ],
       "type": "flag"
     },
-    "full": {
-      "key": "full",
-      "description": "Do not compact compiled descriptor",
+    "json": {
+      "key": "json",
+      "description": "Set output directory for json files",
       "names": [
-        "-f",
-        "--full"
+        "-J",
+        "--json"
       ],
-      "type": "flag"
+      "type": "option",
+      "extra": "=[DIR]",
+      "required": false,
+      "multiple": false
+    },
+    "text": {
+      "key": "text",
+      "description": "Set output directory for help text files",
+      "names": [
+        "-T",
+        "--text"
+      ],
+      "type": "option",
+      "extra": "=[DIR]",
+      "required": false,
+      "multiple": false
+    },
+    "man": {
+      "key": "man",
+      "description": "Set output directory for man pages",
+      "names": [
+        "-M",
+        "--man"
+      ],
+      "type": "option",
+      "extra": "=[DIR]",
+      "required": false,
+      "multiple": false
+    },
+    "dir": {
+      "key": "dir",
+      "description": "Set output directory for all types",
+      "names": [
+        "-o",
+        "--output"
+      ],
+      "type": "option",
+      "extra": "=[DIR]",
+      "required": false,
+      "multiple": false
     },
     "help": {
       "key": "help",
