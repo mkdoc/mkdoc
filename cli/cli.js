@@ -105,6 +105,13 @@ function main(argv, conf, cb) {
       this.desc = parseInt(this.desc);
     }
 
+    // use the helper to build input files
+    // to type(s)
+    if(req.unparsed.length) {
+      this.files = req.unparsed;
+      cli = require('../lib/cli'); 
+    }
+
     cli(this, cb);
   })
 }
