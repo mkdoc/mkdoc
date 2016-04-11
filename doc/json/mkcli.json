@@ -10,6 +10,15 @@
     "[options] [files...]"
   ],
   "options": {
+    "recursive": {
+      "key": "recursive",
+      "description": "Recursively load command definitions",
+      "names": [
+        "-r",
+        "--recursive"
+      ],
+      "type": "flag"
+    },
     "package": {
       "key": "package",
       "description": "Use package descriptor",
@@ -239,6 +248,18 @@
       "required": false,
       "multiple": false
     },
+    "zsh": {
+      "key": "zsh",
+      "description": "Set output directory for zsh completion",
+      "names": [
+        "-Z",
+        "--zsh"
+      ],
+      "type": "option",
+      "extra": "=[DIR]",
+      "required": false,
+      "multiple": false
+    },
     "dir": {
       "key": "dir",
       "description": "Set output directory for all types",
@@ -264,6 +285,7 @@
       "key": "version",
       "description": "Print the version and exit",
       "names": [
+        "-v",
         "--version"
       ],
       "type": "flag"

@@ -112,11 +112,12 @@ function main(argv, conf, cb) {
       this.files = req.unparsed;
       cli = require('../lib/exe');
 
-      if(this.dir || this.json || this.text || this.man) {
+      if(this.dir || this.json || this.text || this.man || this.zsh) {
         this.dest = {
           json: this.json || this.dir,
           help: this.text || this.dir,
-          man: this.man || this.dir
+          man: this.man || this.dir,
+          zsh: this.zsh || this.dir
         } 
       }
     }

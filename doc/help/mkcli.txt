@@ -13,6 +13,7 @@ Usage: mkcli [options] [files...]
   Output files are overwritten if they already exist.
 
 Options
+  -r, --recursive         Recursively load command definitions
   -p, --package=[FILE]    Use package descriptor
   -t, --type=[TYPE]       Output renderer type (json|help|man)
   -y, --style=[VAL]       Help output style (col|list|cmd|usage)
@@ -32,8 +33,9 @@ Options
   -J, --json=[DIR]        Set output directory for json files
   -T, --text=[DIR]        Set output directory for help text files
   -M, --man=[DIR]         Set output directory for man pages
+  -Z, --zsh=[DIR]         Set output directory for zsh completion
   -o, --output=[DIR]      Set output directory for all types
   -h, --help              Display help and exit
-  --version               Print the version and exit
+  -v, --version           Print the version and exit
 
 mkcli@1.0.22 https://github.com/mkdoc/mkcli

@@ -20,6 +20,7 @@ Output files are overwritten if they already exist.
 
 # Options
 
+* `-r, --recursive` Recursively load command definitions
 * `-p, --package=[FILE]` Use package descriptor
 * `-t, --type=[TYPE] {json|help|man}` Output renderer type
 * `-y, --style=[VAL] {col|list|cmd|usage}` Help output style
@@ -39,7 +40,8 @@ Output files are overwritten if they already exist.
 * `-J, --json=[DIR]` Set output directory for json files
 * `-T, --text=[DIR]` Set output directory for help text files
 * `-M, --man=[DIR]` Set output directory for man pages
+* `-Z, --zsh=[DIR]` Set output directory for zsh completion
 * `dir: -o, --output=[DIR]` Set output directory for all types
 * `-h, --help` Display help and exit
-* `--version` Print the version and exit
+* `-v, --version` Print the version and exit
 
