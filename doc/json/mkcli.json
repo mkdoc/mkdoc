@@ -10,15 +10,6 @@
     "[options] [files...]"
   ],
   "options": {
-    "recursive": {
-      "key": "recursive",
-      "description": "Recursively load command definitions",
-      "names": [
-        "-r",
-        "--recursive"
-      ],
-      "type": "flag"
-    },
     "package": {
       "key": "package",
       "description": "Use package descriptor",
@@ -152,6 +143,15 @@
       "names": [
         "-f",
         "--full"
+      ],
+      "type": "flag"
+    },
+    "recursive": {
+      "key": "recursive",
+      "description": "Recursively load command definitions",
+      "names": [
+        "-r",
+        "--recursive"
       ],
       "type": "flag"
     },

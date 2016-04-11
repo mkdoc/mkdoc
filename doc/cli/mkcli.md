@@ -20,7 +20,6 @@ Output files are overwritten if they already exist.
 
 # Options
 
-* `-r, --recursive` Recursively load command definitions
 * `-p, --package=[FILE]` Use package descriptor
 * `-t, --type=[TYPE] {json|help|man}` Output renderer type
 * `-y, --style=[VAL] {col|list|cmd|usage}` Help output style
@@ -31,6 +30,7 @@ Output files are overwritten if they already exist.
 * `-a, --align=[TYPE] {left|right}` Alignment of first help column
 * `-u, --usage=[VAL] {=Usage:}` Set usage message for help synopsis
 * `-f, --full` Do not compact compiled descriptor
+* `-r, --recursive` Recursively load command definitions
 * `-C, --colon` Append a colon to headings in help output
 * `-S, --section=[PTN...]` Include sections matching patterns in help output
 * `-H, --header` Include default header in help output
