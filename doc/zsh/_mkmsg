@@ -1,0 +1,7 @@
+#compdef mkmsg
+_arguments -C \
+  '-m,--message=-[Custom message, parsed as markdown]' \
+  '-p,--prepend[Prepend message to the stream]' \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;

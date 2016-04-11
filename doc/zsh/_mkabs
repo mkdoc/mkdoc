@@ -1,0 +1,8 @@
+#compdef mkabs
+_arguments -C \
+  '-b,--base=-[Base URL for absolute links]' \
+  '-r,--relative=-[Relative path when repository url]' \
+  '-g,--greedy[Convert links starting with # and ?]' \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;

@@ -1,0 +1,10 @@
+#compdef mkman
+_arguments -C \
+  '-t,--title=-[Set the page title]' \
+  '-s,--section=-[Set the section number]' \
+  '-i,--inline=-[Inline code rendering style]' \
+  '-l,--locale=-[Locale for automatic date generation]' \
+  '-d,--date=-[Use specific date]' \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;

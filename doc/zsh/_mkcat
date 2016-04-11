@@ -1,0 +1,5 @@
+#compdef mkcat
+_arguments -C \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;

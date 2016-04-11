@@ -1,0 +1,13 @@
+#compdef mkapi
+_arguments -C \
+  '-o,--output=-[Write output to FILE]' \
+  '-t,--title=-[Title for initial heading]' \
+  '-l,--level=-[Initial heading level]' \
+  '-L,--lang=-[Language for fenced code blocks]' \
+  '-i,--indent=-[Number of spaces for JSON]' \
+  '-a,--ast[Print AST as JSON]' \
+  '--[no]-private[Enable or disable private symbols]' \
+  '--[no]-protected[Enable or disable protected symbols]' \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;

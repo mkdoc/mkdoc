@@ -1,0 +1,7 @@
+#compdef mk
+_arguments -C \
+  '-f,--file=-[Load specific task files]' \
+  '--tasks[Print task list]' \
+  '-h,--help[Display help and exit]' \
+  '--version[Print the version and exit]' \
+  '*::arguments:_files' && return 0;
