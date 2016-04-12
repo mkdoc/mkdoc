@@ -5,7 +5,7 @@ mkparse - parse source file comments
 # Synopsis
 
 ```
-[options] [files...]
+[options] <files...>
 ```
 
 # Options

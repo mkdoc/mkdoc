@@ -1,4 +1,4 @@
-Usage: mkapi [options] [files...]
+Usage: mkapi [options] <files...>
 
 Options
   -o, --output=[FILE]     Write output to FILE (default: stdout)

@@ -5,7 +5,7 @@ mkapi - documentation generator
 # Synopsis
 
 ```
-[options] [files...]
+[options] <files...>
 ```
 
 # Options

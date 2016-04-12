@@ -1,13 +1,13 @@
 #compdef mkcli
 _arguments \
   "(-p --package)"{-p,--package=}"[Use package descriptor]:file:_files" \
-  "(-t --type)"{-t,--type=}"[Output renderer type]" \
-  "(-y --style)"{-y,--style=}"[Help output style]" \
+  "(-t --type)"{-t,--type=}"[Output renderer type]:value:_values 'json' 'help' 'man'" \
+  "(-y --style)"{-y,--style=}"[Help output style]:value:_values 'col' 'list' 'cmd' 'usage'" \
   "(-c --cols)"{-c,--cols=}"[Wrap help output at NUM]" \
   "(-s --split)"{-s,--split=}"[Split help columns at NUM]" \
   "(-d --desc)"{-d,--desc=}"[Number of description paragraphs for help output]" \
   "(-i --indent)"{-i,--indent=}"[Number of spaces for help indentation]" \
-  "(-a --align)"{-a,--align=}"[Alignment of first help column]" \
+  "(-a --align)"{-a,--align=}"[Alignment of first help column]:value:_values 'left' 'right'" \
   "(-u --usage)"{-u,--usage=}"[Set usage message for help synopsis]" \
   "(-f --full)"{-f,--full}"[Do not compact compiled descriptor]" \
   "(-r --recursive)"{-r,--recursive}"[Recursively load command definitions]" \
@@ -24,4 +24,4 @@ _arguments \
   "(-o --output)"{-o,--output=}"[Set output directory for all types]:directory:_directories" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
   "--version[Print the version and exit]" \
-  && return 0;
+  "::files:_files" && return 0;

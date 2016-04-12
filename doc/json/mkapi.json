@@ -6,7 +6,7 @@
   "name": "mkapi",
   "summary": "documentation generator",
   "synopsis": [
-    "[options] [files...]"
+    "[options] <files...>"
   ],
   "options": {
     "output": {

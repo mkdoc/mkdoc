@@ -1,4 +1,4 @@
-Usage: mkparse [options] [files...]
+Usage: mkparse [options] <files...>
 
 Options
   -l, --lang=[LANG]       Set language for all files

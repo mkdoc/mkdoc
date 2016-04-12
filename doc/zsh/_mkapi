@@ -10,4 +10,4 @@ _arguments \
   "--[no]-protected[Enable or disable protected symbols]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
   "--version[Print the version and exit]" \
-  && return 0;
+  "::files:_files" && return 0;

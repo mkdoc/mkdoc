@@ -46,28 +46,32 @@ function api(cb) {
     }, cb);
 }
 
-// @task cli build the cli definition files.
-function cli(cb) {
+// @task json build the cli descriptor files
+function json(cb) {
   bin(mk.cli.JSON, 'doc/cli', 'doc/json', cb);
 }
 
-// @task help build the cli help files.
+// @task help build the help files
 function help(cb) {
   bin(mk.cli.HELP, 'doc/cli', 'doc/help', cb);
 }
 
-// @task man build the man pages.
+// @task man build the man pages
 function man(cb) {
   bin(mk.cli.MAN, 'doc/cli', 'doc/man', cb);
 }
 
-// @task zsh build the zsh completion files.
+// @task zsh build the zsh completion files
 function zsh(cb) {
   bin(mk.cli.ZSH, 'doc/cli', 'doc/zsh', cb);
 }
 
+// @task cli build all command line interface files
+function cli() {
+  return [json, help, man, zsh];
+}
 
-// @task readme build the readme file.
+// @task readme build the readme file
 function readme(cb) {
   mk.doc('doc/readme.md')
     .pipe(mk.pi())
@@ -83,8 +87,9 @@ function readme(cb) {
 }
 
 mk.task(api);
-mk.task(cli);
+mk.task(json);
 mk.task(help);
 mk.task(man);
 mk.task(zsh);
+mk.task(cli);
 mk.task(readme);
