@@ -1,12 +1,8 @@
 var fs = require('fs')
   , mk = require('mktask');
 
-function executables() {
-  return fs.readdirSync('bin');
-}
-
 function packages() {
-  var programs = executables()
+  var programs = fs.readdirSync('bin')
     , main
     , map = {};
 
