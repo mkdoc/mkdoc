@@ -7,5 +7,5 @@ _arguments \
   "(-j --json)"{-j,--json}"[Print comments as JSON]" \
   "(-i --indent)"{-i,--indent=}"[Number of spaces for JSON]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

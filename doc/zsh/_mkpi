@@ -3,5 +3,5 @@ _arguments \
   "(-s --safe)"{-s,--safe}"[Disable the @exec and @macro directives]" \
   "(-p --preserve)"{-p,--preserve}"[Do not remove processing instructions]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

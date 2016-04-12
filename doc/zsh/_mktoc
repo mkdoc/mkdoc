@@ -12,5 +12,5 @@ _arguments \
   "(-o --ordered)"{-o,--ordered}"[Create an ordered list]" \
   "(-s --standalone)"{-s,--standalone}"[Standalone index, discards input]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

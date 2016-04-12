@@ -43,5 +43,5 @@ Output files are overwritten if they already exist.
 * `-Z, --zsh=[DIR]` Set output directory for zsh completion
 * `dir: -o, --output=[DIR]` Set output directory for all types
 * `-h, --help` Display help and exit
-* `-v, --version` Print the version and exit
+* `--version` Print the version and exit
 

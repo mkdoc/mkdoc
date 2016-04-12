@@ -305,7 +305,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 5, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 12, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast

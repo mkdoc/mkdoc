@@ -10,5 +10,5 @@ _arguments \
   "(-Y --yaml-full)"{-Y,--yaml-full}"[Do not compact YAML output]" \
   "(-n --noop)"{-n,--noop}"[Pass through input JSON]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

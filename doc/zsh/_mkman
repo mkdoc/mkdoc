@@ -6,5 +6,5 @@ _arguments \
   "(-l --locale)"{-l,--locale=}"[Locale for automatic date generation]" \
   "(-d --date)"{-d,--date=}"[Use specific date]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

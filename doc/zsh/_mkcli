@@ -23,5 +23,5 @@ _arguments \
   "(-Z --zsh)"{-Z,--zsh=}"[Set output directory for zsh completion]:directory:_directories" \
   "(-o --output)"{-o,--output=}"[Set output directory for all types]:directory:_directories" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(-v --version)"{-v,--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

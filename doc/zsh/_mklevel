@@ -1,12 +1,12 @@
 #compdef mklevel
 _arguments \
-  "(-1)"{-1=}"[Modify level 1 headings by NUM]" \
-  "(-2)"{-2=}"[Modify level 2 headings by NUM]" \
-  "(-3)"{-3=}"[Modify level 3 headings by NUM]" \
-  "(-4)"{-4=}"[Modify level 4 headings by NUM]" \
-  "(-5)"{-5=}"[Modify level 5 headings by NUM]" \
-  "(-6)"{-6=}"[Modify level 6 headings by NUM]" \
+  "-1=[Modify level 1 headings by NUM]" \
+  "-2=[Modify level 2 headings by NUM]" \
+  "-3=[Modify level 3 headings by NUM]" \
+  "-4=[Modify level 4 headings by NUM]" \
+  "-5=[Modify level 5 headings by NUM]" \
+  "-6=[Modify level 6 headings by NUM]" \
   "(-a --all)"{-a,--all=}"[Modify all headings by NUM]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

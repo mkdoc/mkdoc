@@ -4,5 +4,5 @@ _arguments \
   "(-r --relative)"{-r,--relative=}"[Relative path when repository url]" \
   "(-g --greedy)"{-g,--greedy}"[Convert links starting with # and ?]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;

@@ -285,7 +285,6 @@
       "key": "version",
       "description": "Print the version and exit",
       "names": [
-        "-v",
         "--version"
       ],
       "type": "flag"

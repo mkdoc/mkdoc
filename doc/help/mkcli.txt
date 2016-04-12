@@ -36,6 +36,6 @@ Options
   -Z, --zsh=[DIR]         Set output directory for zsh completion
   -o, --output=[DIR]      Set output directory for all types
   -h, --help              Display help and exit
-  -v, --version           Print the version and exit
+  --version               Print the version and exit
 
 mkcli@1.0.22 https://github.com/mkdoc/mkcli

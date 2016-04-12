@@ -3,5 +3,5 @@ _arguments \
   "(-m --message)"{-m,--message=}"[Custom message, parsed as markdown]" \
   "(-p --prepend)"{-p,--prepend}"[Prepend message to the stream]" \
   "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "(--version)"{--version}"[Print the version and exit]" \
+  "--version[Print the version and exit]" \
   && return 0;
