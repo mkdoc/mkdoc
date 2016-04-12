@@ -1,27 +1,27 @@
 #compdef mkcli
-_arguments -C \
-  '-p,--package=-[Use package descriptor]' \
-  '-t,--type=-[Output renderer type]' \
-  '-y,--style=-[Help output style]' \
-  '-c,--cols=-[Wrap help output at NUM]' \
-  '-s,--split=-[Split help columns at NUM]' \
-  '-d,--desc=-[Number of description paragraphs for help output]' \
-  '-i,--indent=-[Number of spaces for help indentation]' \
-  '-a,--align=-[Alignment of first help column]' \
-  '-u,--usage=-[Set usage message for help synopsis]' \
-  '-f,--full[Do not compact compiled descriptor]' \
-  '-r,--recursive[Recursively load command definitions]' \
-  '-C,--colon[Append a colon to headings in help output]' \
-  '-S,--section=-[Include sections matching patterns in help output]' \
-  '-H,--header[Include default header in help output]' \
-  '-F,--footer[Include default footer in help output]' \
-  '-N,--newline[Print leading newline when no header]' \
-  '-P,--preserve[Do not upper case headings in man output]' \
-  '-J,--json=-[Set output directory for json files]' \
-  '-T,--text=-[Set output directory for help text files]' \
-  '-M,--man=-[Set output directory for man pages]' \
-  '-Z,--zsh=-[Set output directory for zsh completion]' \
-  '-o,--output=-[Set output directory for all types]' \
-  '-h,--help[Display help and exit]' \
-  '-v,--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-p --package)"{-p,--package=}"[Use package descriptor]:file:_files" \
+  "(-t --type)"{-t,--type=}"[Output renderer type]" \
+  "(-y --style)"{-y,--style=}"[Help output style]" \
+  "(-c --cols)"{-c,--cols=}"[Wrap help output at NUM]" \
+  "(-s --split)"{-s,--split=}"[Split help columns at NUM]" \
+  "(-d --desc)"{-d,--desc=}"[Number of description paragraphs for help output]" \
+  "(-i --indent)"{-i,--indent=}"[Number of spaces for help indentation]" \
+  "(-a --align)"{-a,--align=}"[Alignment of first help column]" \
+  "(-u --usage)"{-u,--usage=}"[Set usage message for help synopsis]" \
+  "(-f --full)"{-f,--full}"[Do not compact compiled descriptor]" \
+  "(-r --recursive)"{-r,--recursive}"[Recursively load command definitions]" \
+  "(-C --colon)"{-C,--colon}"[Append a colon to headings in help output]" \
+  "(-S --section)"{-S,--section=}"[Include sections matching patterns in help output]" \
+  "(-H --header)"{-H,--header}"[Include default header in help output]" \
+  "(-F --footer)"{-F,--footer}"[Include default footer in help output]" \
+  "(-N --newline)"{-N,--newline}"[Print leading newline when no header]" \
+  "(-P --preserve)"{-P,--preserve}"[Do not upper case headings in man output]" \
+  "(-J --json)"{-J,--json=}"[Set output directory for json files]:directory:_directories" \
+  "(-T --text)"{-T,--text=}"[Set output directory for help text files]:directory:_directories" \
+  "(-M --man)"{-M,--man=}"[Set output directory for man pages]:directory:_directories" \
+  "(-Z --zsh)"{-Z,--zsh=}"[Set output directory for zsh completion]:directory:_directories" \
+  "(-o --output)"{-o,--output=}"[Set output directory for all types]:directory:_directories" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(-v --version)"{-v,--version}"[Print the version and exit]" \
+  && return 0;

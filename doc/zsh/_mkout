@@ -1,14 +1,14 @@
 #compdef mkout
-_arguments -C \
-  '-o,--output=-[Write output to FILE]' \
-  '-H,--html[Set output renderer to HTML]' \
-  '-j,--json[Set output renderer to JSON]' \
-  '-m,--man[Set output renderer to MAN]' \
-  '-t,--text[Set output renderer to TEXT]' \
-  '-x,--xml[Set output renderer to XML]' \
-  '-y,--yaml[Set output renderer to YAML]' \
-  '-Y,--yaml-full[Do not compact YAML output]' \
-  '-n,--noop[Pass through input JSON]' \
-  '-h,--help[Display help and exit]' \
-  '--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-o --output)"{-o,--output=}"[Write output to FILE]:file:_files" \
+  "(-H --html)"{-H,--html}"[Set output renderer to HTML]" \
+  "(-j --json)"{-j,--json}"[Set output renderer to JSON]" \
+  "(-m --man)"{-m,--man}"[Set output renderer to MAN]" \
+  "(-t --text)"{-t,--text}"[Set output renderer to TEXT]" \
+  "(-x --xml)"{-x,--xml}"[Set output renderer to XML]" \
+  "(-y --yaml)"{-y,--yaml}"[Set output renderer to YAML]" \
+  "(-Y --yaml-full)"{-Y,--yaml-full}"[Do not compact YAML output]" \
+  "(-n --noop)"{-n,--noop}"[Pass through input JSON]" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(--version)"{--version}"[Print the version and exit]" \
+  && return 0;

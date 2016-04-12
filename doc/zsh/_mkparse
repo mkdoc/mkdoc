@@ -1,11 +1,11 @@
 #compdef mkparse
-_arguments -C \
-  '-l,--lang=-[Set language for all files]' \
-  '-s,--strip[Print content only, remove comments]' \
-  '-c,--content[Include non-comment content]' \
-  '-d,--dotted[Parse dotted names]' \
-  '-j,--json[Print comments as JSON]' \
-  '-i,--indent=-[Number of spaces for JSON]' \
-  '-h,--help[Display help and exit]' \
-  '--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-l --lang)"{-l,--lang=}"[Set language for all files]" \
+  "(-s --strip)"{-s,--strip}"[Print content only, remove comments]" \
+  "(-c --content)"{-c,--content}"[Include non-comment content]" \
+  "(-d --dotted)"{-d,--dotted}"[Parse dotted names]" \
+  "(-j --json)"{-j,--json}"[Print comments as JSON]" \
+  "(-i --indent)"{-i,--indent=}"[Number of spaces for JSON]" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(--version)"{--version}"[Print the version and exit]" \
+  && return 0;

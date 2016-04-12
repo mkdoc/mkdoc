@@ -1,13 +1,13 @@
 #compdef mkapi
-_arguments -C \
-  '-o,--output=-[Write output to FILE]' \
-  '-t,--title=-[Title for initial heading]' \
-  '-l,--level=-[Initial heading level]' \
-  '-L,--lang=-[Language for fenced code blocks]' \
-  '-i,--indent=-[Number of spaces for JSON]' \
-  '-a,--ast[Print AST as JSON]' \
-  '--[no]-private[Enable or disable private symbols]' \
-  '--[no]-protected[Enable or disable protected symbols]' \
-  '-h,--help[Display help and exit]' \
-  '--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-o --output)"{-o,--output=}"[Write output to FILE]:file:_files" \
+  "(-t --title)"{-t,--title=}"[Title for initial heading]" \
+  "(-l --level)"{-l,--level=}"[Initial heading level]" \
+  "(-L --lang)"{-L,--lang=}"[Language for fenced code blocks]" \
+  "(-i --indent)"{-i,--indent=}"[Number of spaces for JSON]" \
+  "(-a --ast)"{-a,--ast}"[Print AST as JSON]" \
+  "(--[no]-private)"{--[no]-private}"[Enable or disable private symbols]" \
+  "(--[no]-protected)"{--[no]-protected}"[Enable or disable protected symbols]" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(--version)"{--version}"[Print the version and exit]" \
+  && return 0;

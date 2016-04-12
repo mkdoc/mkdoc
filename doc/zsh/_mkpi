@@ -1,7 +1,7 @@
 #compdef mkpi
-_arguments -C \
-  '-s,--safe[Disable the @exec and @macro directives]' \
-  '-p,--preserve[Do not remove processing instructions]' \
-  '-h,--help[Display help and exit]' \
-  '--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-s --safe)"{-s,--safe}"[Disable the @exec and @macro directives]" \
+  "(-p --preserve)"{-p,--preserve}"[Do not remove processing instructions]" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(--version)"{--version}"[Print the version and exit]" \
+  && return 0;

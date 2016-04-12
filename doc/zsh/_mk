@@ -1,7 +1,7 @@
 #compdef mk
-_arguments -C \
-  '-f,--file=-[Load specific task files]' \
-  '--tasks[Print task list]' \
-  '-h,--help[Display help and exit]' \
-  '--version[Print the version and exit]' \
-  '*::arguments:_files' && return 0;
+_arguments \
+  "(-f --file)"{-f,--file=}"[Load specific task files]:file:_files" \
+  "(--tasks)"{--tasks}"[Print task list]" \
+  "(-h --help)"{-h,--help}"[Display help and exit]" \
+  "(--version)"{--version}"[Print the version and exit]" \
+  && return 0;
