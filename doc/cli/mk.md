@@ -8,6 +8,10 @@ mk - task runner
 [task...]
 ```
 
+```zsh
+::_values 'tasks' ${(f)$(mk --tasks | cut -f 1-1 -d ' ')}
+```
+
 # Description
 
 Runs tasks defined in a task file. Searches for `mkdoc.js` in the current directory (or parent directories) and executes the specified tasks.

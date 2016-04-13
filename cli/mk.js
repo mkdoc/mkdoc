@@ -1,7 +1,6 @@
 var fs = require('fs')
   , path = require('path')
   , vm = require('vm')
-  , util = require('util')
   , EOL = require('os').EOL
   , mk = require('mktask')
   , mkparse = require('mkparse')
@@ -20,24 +19,40 @@ function print(files, runner, output, cb) {
       return cb(err); 
     }
 
-    var file = list.shift();
+    var file = list.shift()
+      , tags = [];
     if(!file) {
       return cb(); 
     }
 
-    var parse = mkparse.load(file, next);
+    var parse = mkparse.load(file, function complete() {
+      var max = tags.reduce(function(prev, item) {
+        return Math.max(prev, item.name.length); 
+      }, 0);
+      tags.forEach(function(tag) {
+        var name = tag.name;
+        while(name.length < max) {
+          name += ' '; 
+        }
+        output.write(name + '  ' + tag.description);
+        if(tag.missing) {
+          output.write(' (missing)'); 
+        }
+        output.write(EOL);
+      })
+      next();
+    });
     parse.on('comment', function(comment) {
       var missing;
       //console.dir(comment);
       comment.tags.forEach(function(tag) {
-        missing = '';
+        missing = false;
         if(tag.id === 'task') {
           if(!runner.get(tag.name)) {
-            missing = ' (missing)'; 
+            missing = true;
           }
-          output.write(
-            util.format(
-              'TASK | [%s] %s%s', tag.name, tag.description, missing) + EOL);
+          tags.push(
+            {name: tag.name, description: tag.description, missing: missing});
         }
       })
     })

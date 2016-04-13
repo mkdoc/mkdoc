@@ -5,7 +5,7 @@ _arguments \
   "(-d --depth)"{-d,--depth=}"[Ignore headings below LEVEL]" \
   "(-m --max)"{-m,--max=}"[Ignore headings above LEVEL]" \
   "(-p --prefix)"{-p,--prefix=}"[Set link destination prefix to VAL]" \
-  "(-b --base)"{-b,--base=}"[Base URL for absolute links]" \
+  "(-b --base)"{-b,--base=}"[Base URL for absolute links]:url:_urls" \
   "(-B --bullet)"{-B,--bullet=}"[Character for bullet lists]" \
   "(-E --delimiter)"{-E,--delimiter=}"[Delimiter for ordered lists]" \
   "(-D --disable)"{-D,--disable}"[Disable automatic links]" \
