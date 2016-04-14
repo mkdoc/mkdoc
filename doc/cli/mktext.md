@@ -10,7 +10,7 @@ mktext - render to plain text
 
 # Options
 
-* `-i, --indent=[NUM] {=4}` Number of spaces to indent code blocks and block quotes
+* `-i, --indent=[NUM] {=4}` Code block and block quote indentation
 * `-q, --quote=[VAL]` Character used to prefix block quotes
 * `-e, --emph` Preserve emph as markdown
 * `-s, --strong` Preserve strong as markdown
