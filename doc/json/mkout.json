@@ -20,7 +20,8 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "value": "stdout"
+      "value": "stdout",
+      "name": "--output"
     },
     "html": {
       "key": "html",
@@ -29,7 +30,8 @@
         "-H",
         "--html"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--html"
     },
     "json": {
       "key": "json",
@@ -38,7 +40,8 @@
         "-j",
         "--json"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--json"
     },
     "man": {
       "key": "man",
@@ -47,7 +50,8 @@
         "-m",
         "--man"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--man"
     },
     "text": {
       "key": "text",
@@ -56,7 +60,8 @@
         "-t",
         "--text"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--text"
     },
     "xml": {
       "key": "xml",
@@ -65,7 +70,8 @@
         "-x",
         "--xml"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--xml"
     },
     "yaml": {
       "key": "yaml",
@@ -74,7 +80,8 @@
         "-y",
         "--yaml"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--yaml"
     },
     "yamlFull": {
       "key": "yamlFull",
@@ -83,7 +90,8 @@
         "-Y",
         "--yaml-full"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--yaml-full"
     },
     "noop": {
       "key": "noop",
@@ -92,7 +100,8 @@
         "-n",
         "--noop"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--noop"
     },
     "help": {
       "key": "help",
@@ -101,7 +110,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -109,7 +119,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

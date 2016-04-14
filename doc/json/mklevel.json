@@ -18,7 +18,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-1"
     },
     "2": {
       "key": "2",
@@ -29,7 +30,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-2"
     },
     "3": {
       "key": "3",
@@ -40,7 +42,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-3"
     },
     "4": {
       "key": "4",
@@ -51,7 +54,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-4"
     },
     "5": {
       "key": "5",
@@ -62,7 +66,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-5"
     },
     "6": {
       "key": "6",
@@ -73,7 +78,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "-6"
     },
     "all": {
       "key": "all",
@@ -85,7 +91,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--all"
     },
     "help": {
       "key": "help",
@@ -94,7 +101,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -102,7 +110,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

@@ -1,5 +1,12 @@
 #compdef mktransform
-_arguments \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  "::files:_files" && return 0;
+_mktransform(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" \
+    ":file:_files" && ret=0;
+  return $ret;
+}
+
+_mktransform "$@"

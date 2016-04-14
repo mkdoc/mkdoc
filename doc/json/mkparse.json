@@ -19,7 +19,8 @@
       "type": "option",
       "extra": "=[LANG]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--lang"
     },
     "strip": {
       "key": "strip",
@@ -28,7 +29,8 @@
         "-s",
         "--strip"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--strip"
     },
     "content": {
       "key": "content",
@@ -37,7 +39,8 @@
         "-c",
         "--content"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--content"
     },
     "dotted": {
       "key": "dotted",
@@ -46,7 +49,8 @@
         "-d",
         "--dotted"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--dotted"
     },
     "json": {
       "key": "json",
@@ -55,7 +59,8 @@
         "-j",
         "--json"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--json"
     },
     "indent": {
       "key": "indent",
@@ -68,7 +73,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "0"
+      "value": "0",
+      "name": "--indent"
     },
     "help": {
       "key": "help",
@@ -77,7 +83,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -85,7 +92,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

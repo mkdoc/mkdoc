@@ -1,7 +1,13 @@
 #compdef mkpi
-_arguments \
-  "(-s --safe)"{-s,--safe}"[Disable the @exec and @macro directives]" \
-  "(-p --preserve)"{-p,--preserve}"[Do not remove processing instructions]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mkpi(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-s --safe)"{-s,--safe}"[Disable the @exec and @macro directives]" \
+    "(-p --preserve)"{-p,--preserve}"[Do not remove processing instructions]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mkpi "$@"

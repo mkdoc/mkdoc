@@ -19,7 +19,8 @@
       "type": "option",
       "extra": "=[TITLE]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--title"
     },
     "level": {
       "key": "level",
@@ -31,7 +32,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--level"
     },
     "depth": {
       "key": "depth",
@@ -43,7 +45,8 @@
       "type": "option",
       "extra": "=[LEVEL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--depth"
     },
     "max": {
       "key": "max",
@@ -55,7 +58,8 @@
       "type": "option",
       "extra": "=[LEVEL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--max"
     },
     "prefix": {
       "key": "prefix",
@@ -67,7 +71,8 @@
       "type": "option",
       "extra": "=[VAL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--prefix"
     },
     "base": {
       "key": "base",
@@ -79,7 +84,8 @@
       "type": "option",
       "extra": "=[URL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--base"
     },
     "bullet": {
       "key": "bullet",
@@ -91,7 +97,8 @@
       "type": "option",
       "extra": "=[CHAR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--bullet"
     },
     "delimiter": {
       "key": "delimiter",
@@ -103,7 +110,8 @@
       "type": "option",
       "extra": "=[CHAR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--delimiter"
     },
     "disable": {
       "key": "disable",
@@ -112,7 +120,8 @@
         "-D",
         "--disable"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--disable"
     },
     "ordered": {
       "key": "ordered",
@@ -121,7 +130,8 @@
         "-o",
         "--ordered"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--ordered"
     },
     "standalone": {
       "key": "standalone",
@@ -130,7 +140,8 @@
         "-s",
         "--standalone"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--standalone"
     },
     "help": {
       "key": "help",
@@ -139,7 +150,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -147,7 +159,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

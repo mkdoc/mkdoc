@@ -16,7 +16,8 @@
         "-i",
         "--invert"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--invert"
     },
     "document": {
       "key": "document",
@@ -24,7 +25,8 @@
       "names": [
         "--document"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--document"
     },
     "softbreak": {
       "key": "softbreak",
@@ -32,7 +34,8 @@
       "names": [
         "--softbreak"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--softbreak"
     },
     "linebreak": {
       "key": "linebreak",
@@ -40,7 +43,8 @@
       "names": [
         "--linebreak"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--linebreak"
     },
     "list": {
       "key": "list",
@@ -48,7 +52,8 @@
       "names": [
         "--list"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--list"
     },
     "item": {
       "key": "item",
@@ -56,7 +61,8 @@
       "names": [
         "--item"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--item"
     },
     "paragraph": {
       "key": "paragraph",
@@ -64,7 +70,8 @@
       "names": [
         "--paragraph"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--paragraph"
     },
     "text": {
       "key": "text",
@@ -72,7 +79,8 @@
       "names": [
         "--text"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--text"
     },
     "heading": {
       "key": "heading",
@@ -80,7 +88,8 @@
       "names": [
         "--heading"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--heading"
     },
     "emph": {
       "key": "emph",
@@ -88,7 +97,8 @@
       "names": [
         "--emph"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--emph"
     },
     "strong": {
       "key": "strong",
@@ -96,7 +106,8 @@
       "names": [
         "--strong"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--strong"
     },
     "link": {
       "key": "link",
@@ -104,7 +115,8 @@
       "names": [
         "--link"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--link"
     },
     "image": {
       "key": "image",
@@ -112,7 +124,8 @@
       "names": [
         "--image"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--image"
     },
     "code": {
       "key": "code",
@@ -120,7 +133,8 @@
       "names": [
         "--code"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--code"
     },
     "codeBlock": {
       "key": "codeBlock",
@@ -128,7 +142,8 @@
       "names": [
         "--code-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--code-block"
     },
     "blockQuote": {
       "key": "blockQuote",
@@ -136,7 +151,8 @@
       "names": [
         "--block-quote"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--block-quote"
     },
     "thematicBreak": {
       "key": "thematicBreak",
@@ -144,7 +160,8 @@
       "names": [
         "--thematic-break"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--thematic-break"
     },
     "htmlInline": {
       "key": "htmlInline",
@@ -152,7 +169,8 @@
       "names": [
         "--html-inline"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--html-inline"
     },
     "htmlBlock": {
       "key": "htmlBlock",
@@ -160,7 +178,8 @@
       "names": [
         "--html-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--html-block"
     },
     "customInline": {
       "key": "customInline",
@@ -168,7 +187,8 @@
       "names": [
         "--custom-inline"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--custom-inline"
     },
     "customBlock": {
       "key": "customBlock",
@@ -176,7 +196,8 @@
       "names": [
         "--custom-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--custom-block"
     },
     "eof": {
       "key": "eof",
@@ -184,7 +205,8 @@
       "names": [
         "--eof"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--eof"
     },
     "help": {
       "key": "help",
@@ -193,7 +215,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -201,7 +224,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

@@ -1,10 +1,16 @@
 #compdef mkman
-_arguments \
-  "(-t --title)"{-t,--title=}"[Set the page title]" \
-  "(-s --section)"{-s,--section=}"[Set the section number]" \
-  "(-i --inline)"{-i,--inline=}"[Inline code rendering style]" \
-  "(-l --locale)"{-l,--locale=}"[Locale for automatic date generation]" \
-  "(-d --date)"{-d,--date=}"[Use specific date]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mkman(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-t --title)"{-t=,--title=}"[Set the page title]" \
+    "(-s --section)"{-s=,--section=}"[Set the section number]" \
+    "(-i --inline)"{-i=,--inline=}"[Inline code rendering style]" \
+    "(-l --locale)"{-l=,--locale=}"[Locale for automatic date generation]" \
+    "(-d --date)"{-d=,--date=}"[Use specific date]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mkman "$@"

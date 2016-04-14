@@ -20,7 +20,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "4"
+      "value": "4",
+      "name": "--indent"
     },
     "quote": {
       "key": "quote",
@@ -32,7 +33,8 @@
       "type": "option",
       "extra": "=[VAL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--quote"
     },
     "emph": {
       "key": "emph",
@@ -41,7 +43,8 @@
         "-e",
         "--emph"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--emph"
     },
     "strong": {
       "key": "strong",
@@ -50,7 +53,8 @@
         "-s",
         "--strong"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--strong"
     },
     "code": {
       "key": "code",
@@ -59,7 +63,8 @@
         "-c",
         "--code"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--code"
     },
     "link": {
       "key": "link",
@@ -68,7 +73,8 @@
         "-l",
         "--link"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--link"
     },
     "thematicBreak": {
       "key": "thematicBreak",
@@ -77,7 +83,8 @@
         "-t",
         "--thematic-break"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--thematic-break"
     },
     "image": {
       "key": "image",
@@ -86,7 +93,8 @@
         "-I",
         "--image"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--image"
     },
     "codeBlock": {
       "key": "codeBlock",
@@ -95,7 +103,8 @@
         "-C",
         "--code-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--code-block"
     },
     "blockQuote": {
       "key": "blockQuote",
@@ -104,7 +113,8 @@
         "-B",
         "--block-quote"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--block-quote"
     },
     "heading": {
       "key": "heading",
@@ -113,7 +123,8 @@
         "-H",
         "--heading"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--heading"
     },
     "softbreak": {
       "key": "softbreak",
@@ -122,7 +133,8 @@
         "-S",
         "--softbreak"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--softbreak"
     },
     "linebreak": {
       "key": "linebreak",
@@ -131,7 +143,8 @@
         "-L",
         "--linebreak"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--linebreak"
     },
     "htmlInline": {
       "key": "htmlInline",
@@ -139,7 +152,8 @@
       "names": [
         "--html-inline"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--html-inline"
     },
     "htmlBlock": {
       "key": "htmlBlock",
@@ -147,7 +161,8 @@
       "names": [
         "--html-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--html-block"
     },
     "customInline": {
       "key": "customInline",
@@ -155,7 +170,8 @@
       "names": [
         "--custom-inline"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--custom-inline"
     },
     "customBlock": {
       "key": "customBlock",
@@ -163,7 +179,8 @@
       "names": [
         "--custom-block"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--custom-block"
     },
     "help": {
       "key": "help",
@@ -172,7 +189,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -180,7 +198,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

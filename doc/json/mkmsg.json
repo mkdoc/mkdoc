@@ -19,7 +19,8 @@
       "type": "option",
       "extra": "=[MSG]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--message"
     },
     "prepend": {
       "key": "prepend",
@@ -28,7 +29,8 @@
         "-p",
         "--prepend"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--prepend"
     },
     "help": {
       "key": "help",
@@ -37,7 +39,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -45,7 +48,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

@@ -20,7 +20,8 @@
       "type": "option",
       "extra": "=[FILE]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--package"
     },
     "type": {
       "key": "type",
@@ -37,7 +38,8 @@
         "json",
         "help",
         "man"
-      ]
+      ],
+      "name": "--type"
     },
     "style": {
       "key": "style",
@@ -55,7 +57,8 @@
         "list",
         "cmd",
         "usage"
-      ]
+      ],
+      "name": "--style"
     },
     "cols": {
       "key": "cols",
@@ -68,7 +71,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "80"
+      "value": "80",
+      "name": "--cols"
     },
     "split": {
       "key": "split",
@@ -81,7 +85,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "26"
+      "value": "26",
+      "name": "--split"
     },
     "desc": {
       "key": "desc",
@@ -93,7 +98,8 @@
       "type": "option",
       "extra": "=[NUM]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--desc"
     },
     "indent": {
       "key": "indent",
@@ -106,7 +112,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "2"
+      "value": "2",
+      "name": "--indent"
     },
     "align": {
       "key": "align",
@@ -122,7 +129,8 @@
       "kind": [
         "left",
         "right"
-      ]
+      ],
+      "name": "--align"
     },
     "usage": {
       "key": "usage",
@@ -135,7 +143,8 @@
       "extra": "=[VAL]",
       "required": false,
       "multiple": false,
-      "value": "Usage:"
+      "value": "Usage:",
+      "name": "--usage"
     },
     "full": {
       "key": "full",
@@ -144,7 +153,8 @@
         "-f",
         "--full"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--full"
     },
     "recursive": {
       "key": "recursive",
@@ -153,7 +163,8 @@
         "-r",
         "--recursive"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--recursive"
     },
     "colon": {
       "key": "colon",
@@ -162,7 +173,8 @@
         "-C",
         "--colon"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--colon"
     },
     "section": {
       "key": "section",
@@ -174,7 +186,8 @@
       "type": "option",
       "extra": "=[PTN...]",
       "required": false,
-      "multiple": true
+      "multiple": true,
+      "name": "--section"
     },
     "header": {
       "key": "header",
@@ -183,7 +196,8 @@
         "-H",
         "--header"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--header"
     },
     "footer": {
       "key": "footer",
@@ -192,7 +206,8 @@
         "-F",
         "--footer"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--footer"
     },
     "newline": {
       "key": "newline",
@@ -201,7 +216,8 @@
         "-N",
         "--newline"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--newline"
     },
     "preserve": {
       "key": "preserve",
@@ -210,7 +226,8 @@
         "-P",
         "--preserve"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--preserve"
     },
     "json": {
       "key": "json",
@@ -222,7 +239,8 @@
       "type": "option",
       "extra": "=[DIR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--json"
     },
     "text": {
       "key": "text",
@@ -234,7 +252,8 @@
       "type": "option",
       "extra": "=[DIR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--text"
     },
     "man": {
       "key": "man",
@@ -246,7 +265,8 @@
       "type": "option",
       "extra": "=[DIR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--man"
     },
     "zsh": {
       "key": "zsh",
@@ -258,7 +278,8 @@
       "type": "option",
       "extra": "=[DIR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--zsh"
     },
     "dir": {
       "key": "dir",
@@ -270,7 +291,8 @@
       "type": "option",
       "extra": "=[DIR]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--output"
     },
     "help": {
       "key": "help",
@@ -279,7 +301,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -287,7 +310,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

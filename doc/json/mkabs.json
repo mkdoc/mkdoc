@@ -20,7 +20,8 @@
       "type": "option",
       "extra": "=[URL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--base"
     },
     "relative": {
       "key": "relative",
@@ -32,7 +33,8 @@
       "type": "option",
       "extra": "=[PATH]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--relative"
     },
     "greedy": {
       "key": "greedy",
@@ -41,7 +43,8 @@
         "-g",
         "--greedy"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--greedy"
     },
     "help": {
       "key": "help",
@@ -50,7 +53,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -58,7 +62,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

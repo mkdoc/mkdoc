@@ -1,11 +1,18 @@
 #compdef mkparse
-_arguments \
-  "(-l --lang)"{-l,--lang=}"[Set language for all files]" \
-  "(-s --strip)"{-s,--strip}"[Print content only, remove comments]" \
-  "(-c --content)"{-c,--content}"[Include non-comment content]" \
-  "(-d --dotted)"{-d,--dotted}"[Parse dotted names]" \
-  "(-j --json)"{-j,--json}"[Print comments as JSON]" \
-  "(-i --indent)"{-i,--indent=}"[Number of spaces for JSON]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  "::files:_files" && return 0;
+_mkparse(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-l --lang)"{-l=,--lang=}"[Set language for all files]" \
+    "(-s --strip)"{-s,--strip}"[Print content only, remove comments]" \
+    "(-c --content)"{-c,--content}"[Include non-comment content]" \
+    "(-d --dotted)"{-d,--dotted}"[Parse dotted names]" \
+    "(-j --json)"{-j,--json}"[Print comments as JSON]" \
+    "(-i --indent)"{-i=,--indent=}"[Number of spaces for JSON]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" \
+    ":file:_files" && ret=0;
+  return $ret;
+}
+
+_mkparse "$@"

@@ -1,5 +1,11 @@
 #compdef mkref
-_arguments \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mkref(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mkref "$@"

@@ -20,7 +20,8 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "value": "stdout"
+      "value": "stdout",
+      "name": "--output"
     },
     "title": {
       "key": "title",
@@ -32,7 +33,8 @@
       "type": "option",
       "extra": "=[VAL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--title"
     },
     "level": {
       "key": "level",
@@ -45,7 +47,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "1"
+      "value": "1",
+      "name": "--level"
     },
     "lang": {
       "key": "lang",
@@ -58,7 +61,8 @@
       "extra": "=[LANG]",
       "required": false,
       "multiple": false,
-      "value": "javascript"
+      "value": "javascript",
+      "name": "--lang"
     },
     "indent": {
       "key": "indent",
@@ -71,7 +75,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "2"
+      "value": "2",
+      "name": "--indent"
     },
     "ast": {
       "key": "ast",
@@ -80,7 +85,8 @@
         "-a",
         "--ast"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--ast"
     },
     "private": {
       "key": "private",
@@ -88,7 +94,8 @@
       "names": [
         "--[no]-private"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--[no]-private"
     },
     "protected": {
       "key": "protected",
@@ -96,7 +103,8 @@
       "names": [
         "--[no]-protected"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--[no]-protected"
     },
     "help": {
       "key": "help",
@@ -105,7 +113,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -113,7 +122,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

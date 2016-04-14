@@ -1,7 +1,13 @@
 #compdef mkmsg
-_arguments \
-  "(-m --message)"{-m,--message=}"[Custom message, parsed as markdown]" \
-  "(-p --prepend)"{-p,--prepend}"[Prepend message to the stream]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mkmsg(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-m --message)"{-m=,--message=}"[Custom message, parsed as markdown]" \
+    "(-p --prepend)"{-p,--prepend}"[Prepend message to the stream]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mkmsg "$@"

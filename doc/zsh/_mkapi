@@ -1,13 +1,20 @@
 #compdef mkapi
-_arguments \
-  "(-o --output)"{-o,--output=}"[Write output to FILE]:file:_files" \
-  "(-t --title)"{-t,--title=}"[Title for initial heading]" \
-  "(-l --level)"{-l,--level=}"[Initial heading level]" \
-  "(-L --lang)"{-L,--lang=}"[Language for fenced code blocks]" \
-  "(-i --indent)"{-i,--indent=}"[Number of spaces for JSON]" \
-  "(-a --ast)"{-a,--ast}"[Print AST as JSON]" \
-  "--[no]-private[Enable or disable private symbols]" \
-  "--[no]-protected[Enable or disable protected symbols]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  "::files:_files" && return 0;
+_mkapi(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-o --output)"{-o=,--output=}"[Write output to FILE]:file:_files" \
+    "(-t --title)"{-t=,--title=}"[Title for initial heading]" \
+    "(-l --level)"{-l=,--level=}"[Initial heading level]" \
+    "(-L --lang)"{-L=,--lang=}"[Language for fenced code blocks]" \
+    "(-i --indent)"{-i=,--indent=}"[Number of spaces for JSON]" \
+    "(-a --ast)"{-a,--ast}"[Print AST as JSON]" \
+    "--[no]-private[Enable or disable private symbols]" \
+    "--[no]-protected[Enable or disable protected symbols]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" \
+    ":file:_files" && ret=0;
+  return $ret;
+}
+
+_mkapi "$@"

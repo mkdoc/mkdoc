@@ -20,7 +20,8 @@
       "extra": "=[VAL]",
       "required": false,
       "multiple": false,
-      "value": "UNTITLED"
+      "value": "UNTITLED",
+      "name": "--title"
     },
     "section": {
       "key": "section",
@@ -33,7 +34,8 @@
       "extra": "=[NUM]",
       "required": false,
       "multiple": false,
-      "value": "1"
+      "value": "1",
+      "name": "--section"
     },
     "inline": {
       "key": "inline",
@@ -46,7 +48,8 @@
       "extra": "=[VAL]",
       "required": false,
       "multiple": false,
-      "value": "strong"
+      "value": "strong",
+      "name": "--inline"
     },
     "locale": {
       "key": "locale",
@@ -59,7 +62,8 @@
       "extra": "=[VAL]",
       "required": false,
       "multiple": false,
-      "value": "en-gb"
+      "value": "en-gb",
+      "name": "--locale"
     },
     "date": {
       "key": "date",
@@ -71,7 +75,8 @@
       "type": "option",
       "extra": "=[VAL]",
       "required": false,
-      "multiple": false
+      "multiple": false,
+      "name": "--date"
     },
     "help": {
       "key": "help",
@@ -80,7 +85,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -88,7 +94,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }

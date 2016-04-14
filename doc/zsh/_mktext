@@ -1,22 +1,28 @@
 #compdef mktext
-_arguments \
-  "(-i --indent)"{-i,--indent=}"[Number of spaces to indent code blocks and block quotes]" \
-  "(-q --quote)"{-q,--quote=}"[Character used to prefix block quotes]" \
-  "(-e --emph)"{-e,--emph}"[Preserve emph as markdown]" \
-  "(-s --strong)"{-s,--strong}"[Preserve strong as markdown]" \
-  "(-c --code)"{-c,--code}"[Preserve inline code as markdown]" \
-  "(-l --link)"{-l,--link}"[Preserve links as markdown]" \
-  "(-t --thematic-break)"{-t,--thematic-break}"[Preserve thematic break as markdown]" \
-  "(-I --image)"{-I,--image}"[Preserve image as markdown]" \
-  "(-C --code-block)"{-C,--code-block}"[Preserve code block as markdown]" \
-  "(-B --block-quote)"{-B,--block-quote}"[Preserve block quote as markdown]" \
-  "(-H --heading)"{-H,--heading}"[Preserve heading as markdown]" \
-  "(-S --softbreak)"{-S,--softbreak}"[Preserve softbreak as markdown]" \
-  "(-L --linebreak)"{-L,--linebreak}"[Preserve linebreak as markdown]" \
-  "--html-inline[Preserve inline html as markdown]" \
-  "--html-block[Preserve html block as markdown]" \
-  "--custom-inline[Preserve custom inline as markdown]" \
-  "--custom-block[Preserve custom block as markdown]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mktext(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-i --indent)"{-i=,--indent=}"[Number of spaces to indent code blocks and block quotes]" \
+    "(-q --quote)"{-q=,--quote=}"[Character used to prefix block quotes]" \
+    "(-e --emph)"{-e,--emph}"[Preserve emph as markdown]" \
+    "(-s --strong)"{-s,--strong}"[Preserve strong as markdown]" \
+    "(-c --code)"{-c,--code}"[Preserve inline code as markdown]" \
+    "(-l --link)"{-l,--link}"[Preserve links as markdown]" \
+    "(-t --thematic-break)"{-t,--thematic-break}"[Preserve thematic break as markdown]" \
+    "(-I --image)"{-I,--image}"[Preserve image as markdown]" \
+    "(-C --code-block)"{-C,--code-block}"[Preserve code block as markdown]" \
+    "(-B --block-quote)"{-B,--block-quote}"[Preserve block quote as markdown]" \
+    "(-H --heading)"{-H,--heading}"[Preserve heading as markdown]" \
+    "(-S --softbreak)"{-S,--softbreak}"[Preserve softbreak as markdown]" \
+    "(-L --linebreak)"{-L,--linebreak}"[Preserve linebreak as markdown]" \
+    "--html-inline[Preserve inline html as markdown]" \
+    "--html-block[Preserve html block as markdown]" \
+    "--custom-inline[Preserve custom inline as markdown]" \
+    "--custom-block[Preserve custom block as markdown]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mktext "$@"

@@ -5,11 +5,16 @@ mk - task runner
 # Synopsis
 
 ```
-[task...]
+[options] [task...]
+```
+
+```zsh-locals
+typeset -a tasks;
+tasks=($(mk --tasks | cut -f 1-1 -d ' '));
 ```
 
 ```zsh
-::_values 'tasks' ${(f)$(mk --tasks | cut -f 1-1 -d ' ')}
+*:tasks:_values 'tasks' $tasks
 ```
 
 # Description

@@ -1,14 +1,20 @@
 #compdef mkout
-_arguments \
-  "(-o --output)"{-o,--output=}"[Write output to FILE]:file:_files" \
-  "(-H --html)"{-H,--html}"[Set output renderer to HTML]" \
-  "(-j --json)"{-j,--json}"[Set output renderer to JSON]" \
-  "(-m --man)"{-m,--man}"[Set output renderer to MAN]" \
-  "(-t --text)"{-t,--text}"[Set output renderer to TEXT]" \
-  "(-x --xml)"{-x,--xml}"[Set output renderer to XML]" \
-  "(-y --yaml)"{-y,--yaml}"[Set output renderer to YAML]" \
-  "(-Y --yaml-full)"{-Y,--yaml-full}"[Do not compact YAML output]" \
-  "(-n --noop)"{-n,--noop}"[Pass through input JSON]" \
-  "(-h --help)"{-h,--help}"[Display help and exit]" \
-  "--version[Print the version and exit]" \
-  && return 0;
+_mkout(){
+  local context="$curcontext" state state_descr line ret=1;
+  typeset -A opt_args;
+  _arguments \
+    "(-o --output)"{-o=,--output=}"[Write output to FILE]:file:_files" \
+    "(-H --html)"{-H,--html}"[Set output renderer to HTML]" \
+    "(-j --json)"{-j,--json}"[Set output renderer to JSON]" \
+    "(-m --man)"{-m,--man}"[Set output renderer to MAN]" \
+    "(-t --text)"{-t,--text}"[Set output renderer to TEXT]" \
+    "(-x --xml)"{-x,--xml}"[Set output renderer to XML]" \
+    "(-y --yaml)"{-y,--yaml}"[Set output renderer to YAML]" \
+    "(-Y --yaml-full)"{-Y,--yaml-full}"[Do not compact YAML output]" \
+    "(-n --noop)"{-n,--noop}"[Pass through input JSON]" \
+    "(-h --help)"{-h,--help}"[Display help and exit]" \
+    "--version[Print the version and exit]" && ret=0;
+  return $ret;
+}
+
+_mkout "$@"

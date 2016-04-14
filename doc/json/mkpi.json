@@ -16,7 +16,8 @@
         "-s",
         "--safe"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--safe"
     },
     "preserve": {
       "key": "preserve",
@@ -25,7 +26,8 @@
         "-p",
         "--preserve"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--preserve"
     },
     "help": {
       "key": "help",
@@ -34,7 +36,8 @@
         "-h",
         "--help"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--help"
     },
     "version": {
       "key": "version",
@@ -42,7 +45,8 @@
       "names": [
         "--version"
       ],
-      "type": "flag"
+      "type": "flag",
+      "name": "--version"
     }
   }
 }
