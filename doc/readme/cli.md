@@ -154,6 +154,11 @@ Render a stream to markdown, XML, HTML and JSON.
 mkcat file.md | mkout --html
 ```
 
+There are also some specialized output programs for certain types that expose more options:
+
+* [mkman](https://github.com/mkdoc/mkout#mkman) - render to man pages
+* [mktext](https://github.com/mkdoc/mkout#mktext) - render to plain text
+
 [Source Code][mkout] | [CLI Help][mkout help]
 
 ### mkparse

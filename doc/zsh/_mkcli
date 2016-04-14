@@ -27,7 +27,7 @@ _mkcli(){
     "(-o --output)"{-o=,--output=}"[Set output directory for all types]:directory:_directories" \
     "(-h --help)"{-h,--help}"[Display help and exit]" \
     "--version[Print the version and exit]" \
-    ":file:_files" && ret=0;
+    "*:file:_files" && ret=0;
   return $ret;
 }
 
