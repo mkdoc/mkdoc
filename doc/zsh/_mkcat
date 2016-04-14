@@ -5,7 +5,7 @@ _mkcat(){
   _arguments \
     "(-h --help)"{-h,--help}"[Display help and exit]" \
     "--version[Print the version and exit]" \
-    "*:file:_files" && ret=0;
+    ":file:_files -g '*.md'" && ret=0;
   return $ret;
 }
 

@@ -8,6 +8,10 @@ mkcat - reads markdown documents
 [options] [files...]
 ```
 
+```zsh
+:file:_files -g '*.md'
+```
+
 # Description
 
 Reads markdown documents from stdin and files; writes serialized nodes to stdout.

@@ -14,7 +14,7 @@ Compiles markdown command line interface definitions to JSON and renders to help
 
 # Options
 
-* `-p, --package=[FILE]` Use package descriptor
+* `-p, --package=[FILE] :file:_files -g '*.json'` Use package descriptor
 * `-t, --type=[TYPE] {json|help|man}` Output renderer type
 * `-y, --style=[VAL] {col|list|cmd|usage}` Help output style
 * `-c, --cols=[NUM] {=80}` Wrap help output at NUM
