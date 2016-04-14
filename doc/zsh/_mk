@@ -7,7 +7,7 @@ _mk(){
   tasks=($(mk --tasks | cut -f 1-1 -d ' '));
 
   _arguments \
-    "*"{-f=,--file=}"[Load specific task files]*:file:_files" \
+    "*"{-f=,--file=}"[Load specific task files]:file:_files" \
     "--tasks[Print task list]" \
     "(-h --help)"{-h,--help}"[Display help and exit]" \
     "--version[Print the version and exit]" \

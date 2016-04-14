@@ -3,7 +3,7 @@ _mktext(){
   local context="$curcontext" state state_descr line ret=1;
   typeset -A opt_args;
   _arguments \
-    "(-i --indent)"{-i=,--indent=}"[Number of spaces to indent code blocks and block quotes]" \
+    "(-i --indent)"{-i=,--indent=}"[Code block and block quote indentation]" \
     "(-q --quote)"{-q=,--quote=}"[Character used to prefix block quotes]" \
     "(-e --emph)"{-e,--emph}"[Preserve emph as markdown]" \
     "(-s --strong)"{-s,--strong}"[Preserve strong as markdown]" \
