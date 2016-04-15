@@ -4,6 +4,26 @@ var path = require('path')
   , pkg = require('mkpage/package.json')
   , prg = cli.load(require('../doc/json/mkpage.json'));
 
+function collect(id, scope) {
+  var map = {}
+    , k
+    , match = new RegExp('^' + id + '\\w')
+    , strip = new RegExp('^' + id)
+    , key;
+
+  for(k in scope) {
+    if(match.test(k)) {
+      key = k.replace(strip, '');
+      if(key.length) {
+        key = key.charAt(0).toLowerCase() + key.substr(1);
+      }
+      map[key]  = scope[k];
+    } 
+  }
+
+  return map;
+}
+
 /**
  *  @name mkpage
  *  @cli doc/cli/mkpage.md
@@ -51,7 +71,8 @@ function main(argv, conf, cb) {
           require('mkcli/plugin/hints'),
           require('mkcli/plugin/argv'),
           require('mkcli/plugin/help'),
-          require('mkcli/plugin/version')
+          require('mkcli/plugin/version'),
+          require('mkcli/plugin/multiple')
         ]
       };
 
@@ -59,6 +80,13 @@ function main(argv, conf, cb) {
     if(err || req.aborted) {
       return cb(err); 
     }
+
+    // collect prefixed options into object maps
+    this.html = collect('html', this);
+    this.meta = collect('meta', this);
+    this.body = collect('body', this);
+    this.attr = collect('attr', this);
+
     page(this, cb);
   })
 }
