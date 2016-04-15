@@ -5,7 +5,9 @@ Options
   -d, --doctype=[VAL]     Doctype declaration (default: <!doctype html>)
   -l, --lang=[VAL]        Language attribute (default: en-us)
   -t, --title=[VAL]       Document title
-  -s, --style=[PATH...]   Stylesheets to use in document head
+  -s, --style=[PATH...]   Stylesheet paths for link elements
+  -c, --css=[FILE]        Create css element from FILE
+  -j, --javascript=[FILE] Create script element from FILE
   -f, --favicon=[PATH]    Path to use for a favicon
   --html-[ATTR]=[VAL...]  Set attributes on the html element
   --meta-[NAME]=[DESC...] Set meta data in document head

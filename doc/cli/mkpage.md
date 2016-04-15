@@ -14,7 +14,9 @@ mkpage - convert a document to an HTML page
 * `-d, --doctype=[VAL] {=<!doctype html>}` Doctype declaration
 * `-l, --lang=[VAL] {=en-us}` Language attribute 
 * `-t, --title=[VAL]` Document title
-* `-s, --style=[PATH...]` Stylesheets to use in document head
+* `-s, --style=[PATH...]` Stylesheet paths for link elements
+* `-c, --css=[FILE] :file:_files -g '*.css'` Create css element from FILE
+* `-j, --javascript=[FILE] :file:_files -g '*.js'` Create script element from FILE
 * `-f, --favicon=[PATH]` Path to use for a favicon
 * `--html-[ATTR]=[VAL...]` Set attributes on the html element
 * `--meta-[NAME]=[DESC...]` Set meta data in document head
