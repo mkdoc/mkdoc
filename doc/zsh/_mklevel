@@ -1,17 +1,28 @@
 #compdef mklevel
 _mklevel(){
-  local context="$curcontext" state state_descr line ret=1;
   typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "-1=[Modify level 1 headings by NUM]" 
+    "-2=[Modify level 2 headings by NUM]" 
+    "-3=[Modify level 3 headings by NUM]" 
+    "-4=[Modify level 4 headings by NUM]" 
+    "-5=[Modify level 5 headings by NUM]" 
+    "-6=[Modify level 6 headings by NUM]" 
+    "(-a --all)"{-a=,--all=}"[Modify all headings by NUM]" 
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
   _arguments \
-    "-1=[Modify level 1 headings by NUM]" \
-    "-2=[Modify level 2 headings by NUM]" \
-    "-3=[Modify level 3 headings by NUM]" \
-    "-4=[Modify level 4 headings by NUM]" \
-    "-5=[Modify level 5 headings by NUM]" \
-    "-6=[Modify level 6 headings by NUM]" \
-    "(-a --all)"{-a=,--all=}"[Modify all headings by NUM]" \
-    "(-h --help)"{-h,--help}"[Display help and exit]" \
-    "--version[Print the version and exit]" && ret=0;
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
   return $ret;
 }
 

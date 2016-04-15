@@ -8,6 +8,10 @@ mkcli - compiles markdown cli definitions
 [options] [files...]
 ```
 
+```zsh
+*:file:_files -g '*.md'
+```
+
 # Description
 
 Compiles markdown command line interface definitions to JSON and renders to help text files, man pages and shell completion scripts.

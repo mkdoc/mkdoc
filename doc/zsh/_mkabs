@@ -1,13 +1,24 @@
 #compdef mkabs
 _mkabs(){
-  local context="$curcontext" state state_descr line ret=1;
   typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "(-b --base)"{-b=,--base=}"[Base URL for absolute links]:url:_urls" 
+    "(-r --relative)"{-r=,--relative=}"[Relative path when repository url]" 
+    "(-g --greedy)"{-g,--greedy}"[Convert links starting with # and ?]" 
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
   _arguments \
-    "(-b --base)"{-b=,--base=}"[Base URL for absolute links]:url:_urls" \
-    "(-r --relative)"{-r=,--relative=}"[Relative path when repository url]" \
-    "(-g --greedy)"{-g,--greedy}"[Convert links starting with # and ?]" \
-    "(-h --help)"{-h,--help}"[Display help and exit]" \
-    "--version[Print the version and exit]" && ret=0;
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
   return $ret;
 }
 

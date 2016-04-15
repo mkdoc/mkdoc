@@ -8,6 +8,10 @@ mktransform - custom stream transformations
 [files...]
 ```
 
+```zsh
+*:file:_files -g '*.js'
+```
+
 # Options
 
 * `-h, --help` Display help and exit

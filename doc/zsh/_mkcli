@@ -1,33 +1,47 @@
 #compdef mkcli
 _mkcli(){
-  local context="$curcontext" state state_descr line ret=1;
   typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "(-p --package)"{-p=,--package=}"[Use package descriptor]:file:_files -g '*.json'" 
+    "(-t --type)"{-t=,--type=}"[Output renderer type]:value:_values select  'json' 'help' 'man'" 
+    "(-y --style)"{-y=,--style=}"[Help output style]:value:_values select  'col' 'list' 'cmd' 'usage'" 
+    "(-c --cols)"{-c=,--cols=}"[Wrap help output at NUM]" 
+    "(-s --split)"{-s=,--split=}"[Split help columns at NUM]" 
+    "(-d --desc)"{-d=,--desc=}"[Number of description paragraphs for help output]" 
+    "(-i --indent)"{-i=,--indent=}"[Number of spaces for help indentation]" 
+    "(-a --align)"{-a=,--align=}"[Alignment of first help column]:value:_values select  'left' 'right'" 
+    "(-u --usage)"{-u=,--usage=}"[Set usage message for help synopsis]" 
+    "(-f --full)"{-f,--full}"[Do not compact compiled descriptor]" 
+    "(-r --recursive)"{-r,--recursive}"[Recursively load command definitions]" 
+    "(-C --colon)"{-C,--colon}"[Append a colon to headings in help output]" 
+    "*"{-S=,--section=}"[Include sections matching patterns in help output]" 
+    "(-H --header)"{-H,--header}"[Include default header in help output]" 
+    "(-F --footer)"{-F,--footer}"[Include default footer in help output]" 
+    "(-N --newline)"{-N,--newline}"[Print leading newline when no header]" 
+    "(-P --preserve)"{-P,--preserve}"[Do not upper case headings in man output]" 
+    "(-J --json)"{-J=,--json=}"[Set output directory for json files]:directory:_directories" 
+    "(-T --text)"{-T=,--text=}"[Set output directory for help text files]:directory:_directories" 
+    "(-M --man)"{-M=,--man=}"[Set output directory for man pages]:directory:_directories" 
+    "(-Z --zsh)"{-Z=,--zsh=}"[Set output directory for zsh completion]:directory:_directories" 
+    "(-o --output)"{-o=,--output=}"[Set output directory for all types]:directory:_directories" 
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
+  actions=(
+    "*:file:_files -g '*.md'"
+  )
+
   _arguments \
-    "(-p --package)"{-p=,--package=}"[Use package descriptor]:file:_files -g '*.json'" \
-    "(-t --type)"{-t=,--type=}"[Output renderer type]:value:_values 'json' 'help' 'man'" \
-    "(-y --style)"{-y=,--style=}"[Help output style]:value:_values 'col' 'list' 'cmd' 'usage'" \
-    "(-c --cols)"{-c=,--cols=}"[Wrap help output at NUM]" \
-    "(-s --split)"{-s=,--split=}"[Split help columns at NUM]" \
-    "(-d --desc)"{-d=,--desc=}"[Number of description paragraphs for help output]" \
-    "(-i --indent)"{-i=,--indent=}"[Number of spaces for help indentation]" \
-    "(-a --align)"{-a=,--align=}"[Alignment of first help column]:value:_values 'left' 'right'" \
-    "(-u --usage)"{-u=,--usage=}"[Set usage message for help synopsis]" \
-    "(-f --full)"{-f,--full}"[Do not compact compiled descriptor]" \
-    "(-r --recursive)"{-r,--recursive}"[Recursively load command definitions]" \
-    "(-C --colon)"{-C,--colon}"[Append a colon to headings in help output]" \
-    "*"{-S=,--section=}"[Include sections matching patterns in help output]" \
-    "(-H --header)"{-H,--header}"[Include default header in help output]" \
-    "(-F --footer)"{-F,--footer}"[Include default footer in help output]" \
-    "(-N --newline)"{-N,--newline}"[Print leading newline when no header]" \
-    "(-P --preserve)"{-P,--preserve}"[Do not upper case headings in man output]" \
-    "(-J --json)"{-J=,--json=}"[Set output directory for json files]:directory:_directories" \
-    "(-T --text)"{-T=,--text=}"[Set output directory for help text files]:directory:_directories" \
-    "(-M --man)"{-M=,--man=}"[Set output directory for man pages]:directory:_directories" \
-    "(-Z --zsh)"{-Z=,--zsh=}"[Set output directory for zsh completion]:directory:_directories" \
-    "(-o --output)"{-o=,--output=}"[Set output directory for all types]:directory:_directories" \
-    "(-h --help)"{-h,--help}"[Display help and exit]" \
-    "--version[Print the version and exit]" \
-    "*:file:_files" && ret=0;
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
   return $ret;
 }
 
