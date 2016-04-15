@@ -37,6 +37,20 @@
       "value": "<!doctype html>",
       "name": "--doctype"
     },
+    "charset": {
+      "key": "charset",
+      "description": "Document charset",
+      "names": [
+        "-r",
+        "--charset"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "utf-8",
+      "name": "--charset"
+    },
     "lang": {
       "key": "lang",
       "description": "Language attribute",
@@ -66,7 +80,7 @@
     },
     "style": {
       "key": "style",
-      "description": "Stylesheets to use in document head",
+      "description": "Paths for link elements",
       "names": [
         "-s",
         "--style"
@@ -76,6 +90,47 @@
       "required": false,
       "multiple": true,
       "name": "--style"
+    },
+    "script": {
+      "key": "script",
+      "description": "Paths for script elements",
+      "names": [
+        "-S",
+        "--script"
+      ],
+      "type": "option",
+      "extra": "=[PATH...]",
+      "required": false,
+      "multiple": true,
+      "name": "--script"
+    },
+    "css": {
+      "key": "css",
+      "description": "Create css element from FILE",
+      "names": [
+        "-c",
+        "--css"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "zaction": ":file:_files -g '*.css'",
+      "name": "--css"
+    },
+    "javascript": {
+      "key": "javascript",
+      "description": "Create script element from FILE",
+      "names": [
+        "-j",
+        "--javascript"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "zaction": ":file:_files -g '*.js'",
+      "name": "--javascript"
     },
     "favicon": {
       "key": "favicon",
@@ -150,6 +205,18 @@
       "multiple": true,
       "name": "--attr-[NAME]"
     },
+    "app": {
+      "key": "app",
+      "description": "Script elements before the end of the body",
+      "names": [
+        "--app"
+      ],
+      "type": "option",
+      "extra": "=[PATH...]",
+      "required": false,
+      "multiple": true,
+      "name": "--app"
+    },
     "header": {
       "key": "header",
       "description": "Include file at start of document body",
@@ -173,6 +240,15 @@
       "required": false,
       "multiple": false,
       "name": "--footer"
+    },
+    "async": {
+      "key": "async",
+      "description": "Add async attribute to script elements",
+      "names": [
+        "--async"
+      ],
+      "type": "flag",
+      "name": "--async"
     },
     "help": {
       "key": "help",

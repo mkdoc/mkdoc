@@ -57,6 +57,7 @@ function main(argv, conf, cb) {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
         hints: prg,
+        multiple: prg,
         help: {
           file: 'doc/help/mkpage.txt',
           output: conf.output
