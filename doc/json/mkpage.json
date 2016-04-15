@@ -1,0 +1,197 @@
+{
+  "names": [
+    "mkpage"
+  ],
+  "type": "program",
+  "name": "mkpage",
+  "summary": "convert a document to an HTML page",
+  "synopsis": [
+    "[options]"
+  ],
+  "options": {
+    "output": {
+      "key": "output",
+      "description": "Write output to FILE",
+      "names": [
+        "-o",
+        "--output"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "value": "stdout",
+      "name": "--output"
+    },
+    "doctype": {
+      "key": "doctype",
+      "description": "Doctype declaration",
+      "names": [
+        "-d",
+        "--doctype"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "<!doctype html>",
+      "name": "--doctype"
+    },
+    "lang": {
+      "key": "lang",
+      "description": "Language attribute",
+      "names": [
+        "-l",
+        "--lang"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "en-us",
+      "name": "--lang"
+    },
+    "title": {
+      "key": "title",
+      "description": "Document title",
+      "names": [
+        "-t",
+        "--title"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "name": "--title"
+    },
+    "style": {
+      "key": "style",
+      "description": "Stylesheets to use in document head",
+      "names": [
+        "-s",
+        "--style"
+      ],
+      "type": "option",
+      "extra": "=[PATH...]",
+      "required": false,
+      "multiple": true,
+      "name": "--style"
+    },
+    "favicon": {
+      "key": "favicon",
+      "description": "Path to use for a favicon",
+      "names": [
+        "-f",
+        "--favicon"
+      ],
+      "type": "option",
+      "extra": "=[PATH]",
+      "required": false,
+      "multiple": false,
+      "name": "--favicon"
+    },
+    "html[ATTR]": {
+      "key": "html[ATTR]",
+      "description": "Set attributes on the html element",
+      "names": [
+        "--html-[ATTR]"
+      ],
+      "type": "option",
+      "extra": "=[VAL...]",
+      "required": false,
+      "multiple": true,
+      "name": "--html-[ATTR]"
+    },
+    "meta[NAME]": {
+      "key": "meta[NAME]",
+      "description": "Set meta data in document head",
+      "names": [
+        "--meta-[NAME]"
+      ],
+      "type": "option",
+      "extra": "=[DESC...]",
+      "required": false,
+      "multiple": true,
+      "name": "--meta-[NAME]"
+    },
+    "body[ATTR]": {
+      "key": "body[ATTR]",
+      "description": "Set attributes on the body element",
+      "names": [
+        "--body-[ATTR]"
+      ],
+      "type": "option",
+      "extra": "=[VAL...]",
+      "required": false,
+      "multiple": true,
+      "name": "--body-[ATTR]"
+    },
+    "element": {
+      "key": "element",
+      "description": "Container element for the input document",
+      "names": [
+        "--element"
+      ],
+      "type": "option",
+      "extra": "=[NAME]",
+      "required": false,
+      "multiple": false,
+      "name": "--element"
+    },
+    "attr[NAME]": {
+      "key": "attr[NAME]",
+      "description": "Set attributes on container element",
+      "names": [
+        "--attr-[NAME]"
+      ],
+      "type": "option",
+      "extra": "=[VAL...]",
+      "required": false,
+      "multiple": true,
+      "name": "--attr-[NAME]"
+    },
+    "header": {
+      "key": "header",
+      "description": "Include file at start of document body",
+      "names": [
+        "--header"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "name": "--header"
+    },
+    "footer": {
+      "key": "footer",
+      "description": "Include file at end of document body",
+      "names": [
+        "--footer"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "name": "--footer"
+    },
+    "help": {
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag",
+      "name": "--help"
+    },
+    "version": {
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag",
+      "name": "--version"
+    }
+  }
+}

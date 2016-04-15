@@ -54,7 +54,7 @@
 ..
 .h1 "NAME"
 .P
-mkout \- render to various output formats
+mkpage \- convert a document to an HTML page
 .nl
 .h1 "SYNOPSIS"
 .PP
@@ -66,28 +66,40 @@ mkout \- render to various output formats
 \fB\-o, \-\-output=[FILE]\fR Write output to FILE
 .nl
 .IP "\[ci]" 4
-\fB\-H, \-\-html\fR Set output renderer to HTML
+\fB\-d, \-\-doctype=[VAL]\fR Doctype declaration
 .nl
 .IP "\[ci]" 4
-\fB\-j, \-\-json\fR Set output renderer to JSON
+\fB\-l, \-\-lang=[VAL]\fR Language attribute
 .nl
 .IP "\[ci]" 4
-\fB\-m, \-\-man\fR Set output renderer to MAN
+\fB\-t, \-\-title=[VAL]\fR Document title
 .nl
 .IP "\[ci]" 4
-\fB\-t, \-\-text\fR Set output renderer to TEXT
+\fB\-s, \-\-style=[PATH...]\fR Stylesheets to use in document head
 .nl
 .IP "\[ci]" 4
-\fB\-x, \-\-xml\fR Set output renderer to XML
+\fB\-f, \-\-favicon=[PATH]\fR Path to use for a favicon
 .nl
 .IP "\[ci]" 4
-\fB\-y, \-\-yaml\fR Set output renderer to YAML
+\fB\-\-html\-[ATTR]=[VAL...]\fR Set attributes on the html element
 .nl
 .IP "\[ci]" 4
-\fB\-Y, \-\-yaml\-full\fR Do not compact YAML output
+\fB\-\-meta\-[NAME]=[DESC...]\fR Set meta data in document head
 .nl
 .IP "\[ci]" 4
-\fB\-n, \-\-noop\fR Pass through input JSON
+\fB\-\-body\-[ATTR]=[VAL...]\fR Set attributes on the body element
+.nl
+.IP "\[ci]" 4
+\fB\-\-element=[NAME]\fR Container element for the input document
+.nl
+.IP "\[ci]" 4
+\fB\-\-attr\-[NAME]=[VAL...]\fR Set attributes on container element
+.nl
+.IP "\[ci]" 4
+\fB\-\-header=[FILE]\fR Include file at start of document body
+.nl
+.IP "\[ci]" 4
+\fB\-\-footer=[FILE]\fR Include file at end of document body
 .nl
 .IP "\[ci]" 4
 \fB\-h, \-\-help\fR Display help and exit

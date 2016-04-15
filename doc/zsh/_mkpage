@@ -1,0 +1,35 @@
+#compdef mkpage
+_mkpage(){
+  typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "(-o --output)"{-o=,--output=}"[Write output to FILE]:file:_files" 
+    "(-d --doctype)"{-d=,--doctype=}"[Doctype declaration]" 
+    "(-l --lang)"{-l=,--lang=}"[Language attribute]" 
+    "(-t --title)"{-t=,--title=}"[Document title]" 
+    "*"{-s=,--style=}"[Stylesheets to use in document head]" 
+    "(-f --favicon)"{-f=,--favicon=}"[Path to use for a favicon]" 
+    "--html-\[ATTR\]=[Set attributes on the html element]" 
+    "--meta-\[NAME\]=[Set meta data in document head]" 
+    "--body-\[ATTR\]=[Set attributes on the body element]" 
+    "--element=[Container element for the input document]" 
+    "--attr-\[NAME\]=[Set attributes on container element]" 
+    "--header=[Include file at start of document body]:file:_files" 
+    "--footer=[Include file at end of document body]:file:_files" 
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
+  _arguments \
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
+  return $ret;
+}
+
+_mkpage "$@"

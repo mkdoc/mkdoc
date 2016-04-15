@@ -28,5 +28,11 @@
       "type": "flag",
       "name": "--version"
     }
-  }
+  },
+  "zsh": [
+    {
+      "info": "zsh",
+      "literal": "*:file:_files -g '*.js'"
+    }
+  ]
 }

@@ -11,7 +11,7 @@
   "options": {
     "indent": {
       "key": "indent",
-      "description": "Number of spaces to indent code blocks and block quotes",
+      "description": "Code block and block quote indentation",
       "names": [
         "-i",
         "--indent"

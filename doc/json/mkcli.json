@@ -21,6 +21,7 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
+      "zaction": ":file:_files -g '*.json'",
       "name": "--package"
     },
     "type": {
@@ -313,5 +314,11 @@
       "type": "flag",
       "name": "--version"
     }
-  }
+  },
+  "zsh": [
+    {
+      "info": "zsh",
+      "literal": "*:file:_files -g '*.md'"
+    }
+  ]
 }
