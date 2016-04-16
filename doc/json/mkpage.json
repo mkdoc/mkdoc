@@ -9,20 +9,6 @@
     "[options]"
   ],
   "options": {
-    "output": {
-      "key": "output",
-      "description": "Write output to FILE",
-      "names": [
-        "-o",
-        "--output"
-      ],
-      "type": "option",
-      "extra": "=[FILE]",
-      "required": false,
-      "multiple": false,
-      "value": "stdout",
-      "name": "--output"
-    },
     "doctype": {
       "key": "doctype",
       "description": "Doctype declaration",

@@ -1,7 +1,6 @@
 Usage: mkpage [options]
 
 Options
-  -o, --output=[FILE]     Write output to FILE (default: stdout)
   -d, --doctype=[VAL]     Doctype declaration (default: <!doctype html>)
   -r, --charset=[VAL]     Document charset (default: utf-8)
   -l, --lang=[VAL]        Language attribute (default: en-us)

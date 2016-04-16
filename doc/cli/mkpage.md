@@ -10,7 +10,6 @@ mkpage - convert a document to an HTML page
 
 # Options
 
-* `-o, --output=[FILE] {=stdout}` Write output to FILE
 * `-d, --doctype=[VAL] {=<!doctype html>}` Doctype declaration
 * `-r, --charset=[VAL] {=utf-8}` Document charset
 * `-l, --lang=[VAL] {=en-us}` Language attribute 

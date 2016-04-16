@@ -5,7 +5,6 @@ _mkpage(){
   local actions options commands;
 
   options=(
-    "(-o --output)"{-o=,--output=}"[Write output to FILE]:file:_files" 
     "(-d --doctype)"{-d=,--doctype=}"[Doctype declaration]" 
     "(-r --charset)"{-r=,--charset=}"[Document charset]" 
     "(-l --lang)"{-l=,--lang=}"[Language attribute]" 
