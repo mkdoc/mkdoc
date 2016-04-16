@@ -16,7 +16,7 @@ mkpage - convert a document to an HTML page
 * `-t, --title=[VAL]` Document title
 * `-s, --style=[PATH...]` Paths for link elements
 * `-S, --script=[PATH...]` Paths for script elements
-* `-c, --css=[FILE] :file:_files -g '*.css'` Create css element from FILE
+* `-c, --css=[FILE] :file:_files -g '*.css'` Create style element from FILE
 * `-j, --javascript=[FILE] :file:_files -g '*.js'` Create script element from FILE
 * `-f, --favicon=[PATH]` Path to use for a favicon
 * `--html-[ATTR]=[VAL...]` Set attributes on the html element

@@ -11,7 +11,7 @@ _mkpage(){
     "(-t --title)"{-t=,--title=}"[Document title]" 
     "*"{-s=,--style=}"[Paths for link elements]" 
     "*"{-S=,--script=}"[Paths for script elements]" 
-    "(-c --css)"{-c=,--css=}"[Create css element from FILE]:file:_files -g '*.css'" 
+    "(-c --css)"{-c=,--css=}"[Create style element from FILE]:file:_files -g '*.css'" 
     "(-j --javascript)"{-j=,--javascript=}"[Create script element from FILE]:file:_files -g '*.js'" 
     "(-f --favicon)"{-f=,--favicon=}"[Path to use for a favicon]" 
     "--html-\[ATTR\]=[Set attributes on the html element]" 

@@ -92,7 +92,7 @@
     },
     "css": {
       "key": "css",
-      "description": "Create css element from FILE",
+      "description": "Create style element from FILE",
       "names": [
         "-c",
         "--css"
