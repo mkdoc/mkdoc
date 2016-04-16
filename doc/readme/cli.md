@@ -146,6 +146,16 @@ mkcat README.md | mktoc | mkout > README.md
 
 [Source Code][mktoc] | [CLI Help][mktoc help]
 
+### mkpage
+
+Create an HTML page:
+
+```shell
+mkcat file.md | mkpage --title=TITLE --style=style.css | mkout --html
+```
+
+[Source Code][mkpage] | [CLI Help][mkpage help]
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.

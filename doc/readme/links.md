@@ -7,6 +7,7 @@
 [mkmsg]: https://github.com/mkdoc/mkmsg
 [mkref]: https://github.com/mkdoc/mkref
 [mkabs]: https://github.com/mkdoc/mkabs
+[mkpage]: https://github.com/mkdoc/mkpage
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
@@ -21,6 +22,7 @@
 [mkmsg help]: https://github.com/mkdoc/mkmsg#help
 [mkref help]: https://github.com/mkdoc/mkref#help
 [mkabs help]: https://github.com/mkdoc/mkabs#help
+[mkpage help]: https://github.com/mkdoc/mkpage#help
 [mkout help]: https://github.com/mkdoc/mkout#help
 [mkparse help]: https://github.com/mkdoc/mkparse#help
 [mkapi help]: https://github.com/mkdoc/mkapi#help

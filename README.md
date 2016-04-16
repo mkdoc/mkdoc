@@ -39,6 +39,7 @@ npm i -g mkdoc
   - [mklevel](#mklevel)
   - [mktransform](#mktransform)
   - [mktoc](#mktoc)
+  - [mkpage](#mkpage)
   - [mkout](#mkout)
   - [mkparse](#mkparse)
   - [mkapi](#mkapi)
@@ -246,6 +247,16 @@ mkcat README.md | mktoc | mkout > README.md
 
 [Source Code][mktoc] | [CLI Help][mktoc help]
 
+### mkpage
+
+Create an HTML page:
+
+```shell
+mkcat file.md | mkpage --title=TITLE --style=style.css | mkout --html
+```
+
+[Source Code][mkpage] | [CLI Help][mkpage help]
+
 ### mkout
 
 Render a stream to markdown, XML, HTML and JSON.
@@ -310,7 +321,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 14, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 16, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
@@ -321,6 +332,7 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 14, 2016
 [mkmsg]: https://github.com/mkdoc/mkmsg
 [mkref]: https://github.com/mkdoc/mkref
 [mkabs]: https://github.com/mkdoc/mkabs
+[mkpage]: https://github.com/mkdoc/mkpage
 [mkout]: https://github.com/mkdoc/mkout
 [mkparse]: https://github.com/mkdoc/mkparse
 [mkapi]: https://github.com/mkdoc/mkapi
@@ -334,6 +346,7 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 14, 2016
 [mkmsg help]: https://github.com/mkdoc/mkmsg#help
 [mkref help]: https://github.com/mkdoc/mkref#help
 [mkabs help]: https://github.com/mkdoc/mkabs#help
+[mkpage help]: https://github.com/mkdoc/mkpage#help
 [mkout help]: https://github.com/mkdoc/mkout#help
 [mkparse help]: https://github.com/mkdoc/mkparse#help
 [mkapi help]: https://github.com/mkdoc/mkapi#help
