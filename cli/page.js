@@ -7,16 +7,12 @@ var path = require('path')
 function collect(id, scope) {
   var map = {}
     , k
-    , match = new RegExp('^' + id + '\\w')
-    , strip = new RegExp('^' + id)
+    , match = new RegExp('^' + id + '-')
     , key;
 
   for(k in scope) {
     if(match.test(k)) {
-      key = k.replace(strip, '');
-      if(key.length) {
-        key = key.charAt(0).toLowerCase() + key.substr(1);
-      }
+      key = k.replace(match, '');
       map[key]  = scope[k];
     } 
   }
@@ -57,6 +53,9 @@ function main(argv, conf, cb) {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
         hints: prg,
+        argv: {
+          camelcase: false
+        },
         multiple: prg,
         help: {
           file: 'doc/help/mkpage.txt',
