@@ -1,0 +1,22 @@
+#compdef mkhigh
+_mkhigh(){
+  typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
+  _arguments \
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
+  return $ret;
+}
+
+_mkhigh "$@"

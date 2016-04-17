@@ -1,9 +1,9 @@
-Usage: mkhtml [options]
+Usage: mkhigh [options]
 
-  Render to HTML page.
+  Highlight code blocks.
 
 Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.32
+mktransform@1.0.3

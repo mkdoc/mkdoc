@@ -1,0 +1,33 @@
+{
+  "description": "For each code block in the stream with an info string attempt to convert the code to a highlighted version using source-highlight(1).",
+  "names": [
+    "mkhigh"
+  ],
+  "type": "program",
+  "name": "mkhigh",
+  "summary": "highlight code blocks",
+  "synopsis": [
+    "[options]"
+  ],
+  "options": {
+    "help": {
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag",
+      "name": "--help"
+    },
+    "version": {
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag",
+      "name": "--version"
+    }
+  }
+}

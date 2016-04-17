@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8" />
+</head>
+<body>
+<h1>Markdown Tools</h1>
+<p><a href="https://travis-ci.org/mkdoc/mkdoc"><img src="https://travis-ci.org/mkdoc/mkdoc.svg?v=2" alt="Build Status" /></a>
+<a href="https://npmjs.org/package/mkdoc"><img src="http://img.shields.io/npm/v/mkdoc.svg?v=2" alt="npm version" /></a>
+<a href="https://coveralls.io/github/mkdoc/mkdoc?branch=master"><img src="https://coveralls.io/repos/mkdoc/mkdoc/badge.svg?branch=master&amp;service=github&amp;v=2" alt="Coverage Status" /></a></p>
+<blockquote>
+<p>Make markdown documents</p>
+</blockquote>
+<p>Creates stream pipelines that convert input <a href="http://commonmark.org/">commonmark</a> to an abstract syntax tree and transforms the tree; the result is then typically converted back to markdown or to another format such as HTML, XML or JSON.</p>
+<h2>Install</h2>
+<pre><code>npm i -g mkdoc
+</code></pre>
+<h2>Features</h2>
+<ul>
+<li>Command line and programmatic control.</li>
+<li>Streaming build system, see <a href="https://github.com/mkdoc/mktask">mktask</a>.</li>
+<li>DSL for including files, executing commands and more, see <a href="https://github.com/mkdoc/mkpi">mkpi</a>.</li>
+<li>Comment parser for 30+ languages, see <a href="https://github.com/mkdoc/mkparse">mkparse</a>.</li>
+<li>Fast, modular code with good coverage.</li>
+</ul>
+<hr />
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#command-line-tools">Command Line Tools</a>
+<ul>
+<li><a href="#mk">mk</a></li>
+<li><a href="#mkcat">mkcat</a></li>
+<li><a href="#mkpi">mkpi</a></li>
+<li><a href="#mkmsg">mkmsg</a></li>
+<li><a href="#mkref">mkref</a></li>
+<li><a href="#mkabs">mkabs</a></li>
+<li><a href="#mkfilter">mkfilter</a></li>
+<li><a href="#mklevel">mklevel</a></li>
+<li><a href="#mktransform">mktransform</a></li>
+<li><a href="#mktoc">mktoc</a></li>
+<li><a href="#mkpage">mkpage</a></li>
+<li><a href="#mkout">mkout</a></li>
+<li><a href="#mkparse">mkparse</a></li>
+<li><a href="#mkapi">mkapi</a></li>
+</ul>
+</li>
+<li><a href="#api">API</a>
+<ul>
+<li><a href="#doc">doc</a></li>
+</ul>
+</li>
+<li><a href="#license">License</a></li>
+</ul>
+<hr />
+<h2>Usage</h2>
+<p>This example illustrates how to create a readme file like this one from a <a href="https://github.com/mkdoc/mkdoc/blob/master/doc/readme.md">source file</a> and some <a href="https://github.com/mkdoc/mkdoc/blob/master/doc/readme">include files</a>:</p>
+<pre><tt><b><font color="#0000FF">var</font></b> doc <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkdoc'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> pi <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkpi'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> ref <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkref'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> abs <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkabs'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> msg <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkmsg'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> toc <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mktoc'</font><font color="#990000">)</font>
+  <font color="#990000">,</font> out <font color="#990000">=</font> <b><font color="#000000">require</font></b><font color="#990000">(</font><font color="#FF0000">'mkout'</font><font color="#990000">);</font>
+
+<b><font color="#000000">doc</font></b><font color="#990000">(</font><font color="#FF0000">'doc/readme.md'</font><font color="#990000">)</font>          <i><font color="#9A1900">// read markdown source document</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">pi</font></b><font color="#990000">())</font>                 <i><font color="#9A1900">// parse processing instructions, includes etc.</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">ref</font></b><font color="#990000">())</font>                <i><font color="#9A1900">// include link references</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">abs</font></b><font color="#990000">())</font>                <i><font color="#9A1900">// make links absolute</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">msg</font></b><font color="#990000">())</font>                <i><font color="#9A1900">// append generator message</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">toc</font></b><font color="#990000">())</font>                <i><font color="#9A1900">// create and inject table of contents list</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font><b><font color="#000000">out</font></b><font color="#990000">())</font>                <i><font color="#9A1900">// convert abstract syntax tree to markdown</font></i>
+  <font color="#990000">.</font><b><font color="#000000">pipe</font></b><font color="#990000">(</font>process<font color="#990000">.</font>stdout<font color="#990000">);</font>      <i><font color="#9A1900">// print the document</font></i>
+</tt></pre>
+<p>The equivalent command line:</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkpi <font color="#990000">|</font> mkref <font color="#990000">|</font> mkabs <font color="#990000">|</font> mkmsg <font color="#990000">|</font> mktoc <font color="#990000">|</font> mkout
+</tt></pre>
+<p>But the javascript version will be faster as it does not need to launch multiple processes and does not convert the stream to JSON.</p>
+<h2>Modules</h2>
+<p>Designed to be modular, a brief overview:</p>
+<ul>
+<li><a href="https://github.com/mkdoc/mktask">mktask</a> is a streaming build system.</li>
+<li><a href="https://github.com/mkdoc/mkcat">mkcat</a> loads source markdown files.</li>
+<li><a href="https://github.com/mkdoc/mkast">mkast</a> is a library for converting tree nodes to JSON.</li>
+<li><a href="https://github.com/mkdoc/mkpi">mkpi</a> parses processing instructions and runs macro functions.</li>
+<li><a href="https://github.com/mkdoc/mkmsg">mkmsg</a> injects a message into a stream.</li>
+<li><a href="https://github.com/mkdoc/mkref">mkref</a> injects link references into a stream.</li>
+<li><a href="https://github.com/mkdoc/mkabs">mkabs</a> makes links absolute.</li>
+<li><a href="https://github.com/mkdoc/mktoc">mktoc</a> creates a table of contents list.</li>
+<li><a href="https://github.com/mkdoc/mkfilter">mkfilter</a> removes nodes from the stream by type.</li>
+<li><a href="https://github.com/mkdoc/mklevel">mklevel</a> changes heading levels.</li>
+<li><a href="https://github.com/mkdoc/mktransform">mktransform</a> add custom stream transformations to the pipeline.</li>
+<li><a href="https://github.com/mkdoc/mkout">mkout</a> renders the tree to an output format (XML, HTML etc).</li>
+<li><a href="https://github.com/mkdoc/mkparse">mkparse</a> parses comments from source files.</li>
+<li><a href="https://github.com/mkdoc/mkapi">mkapi</a> generates API documentation from comments.</li>
+</ul>
+<h2>Command Line Tools</h2>
+<h3>mk</h3>
+<p>Runs tasks in build files, by default searches for <code>mkdoc.js</code> in the current working directory and parent directories.</p>
+<pre><tt>mk
+</tt></pre>
+<p>When called with no arguments if a <code>main</code> task is available it is invoked otherwise all tasks are executed in sequence.</p>
+<p>Specified tasks are executed in sequence:</p>
+<pre><tt>mk api readme
+</tt></pre>
+<p>See the <a href="https://github.com/mkdoc/mkdoc/blob/master/mkdoc.js">mkdoc.js</a> file for an example and <a href="https://github.com/mkdoc/mktask">mktask</a> for information on creating task functions.</p>
+<p><a href="https://github.com/mkdoc/mktask">Source Code</a> | <a href="https://github.com/mkdoc/mktask#help">CLI Help</a></p>
+<h3>mkcat</h3>
+<p>Reads one or more markdown documents and serializes them to the output stream, this program is normally used at the beginning of a transform pipeline before being sent to <code>mkout</code>:</p>
+<pre><tt>mkcat file<font color="#990000">.</font>md <font color="#990000">|</font> mkout --xml
+</tt></pre>
+<p>It can also accept input from <code>stdin</code>:</p>
+<pre><tt>cat file<font color="#990000">.</font>md <font color="#990000">|</font> mkcat <font color="#990000">|</font> mkout
+</tt></pre>
+<p>However this is not recommended because file path information is lost which is important for some processing tools such as <a href="https://github.com/mkdoc/mkpi">mkpi</a> which uses the file path to resolve relative include files.</p>
+<p><a href="https://github.com/mkdoc/mkcat">Source Code</a> | <a href="https://github.com/mkdoc/mkcat#help">CLI Help</a></p>
+<h3>mkpi</h3>
+<p>Include markdown documents, source files and the output of commands:</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkpi <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> README<font color="#990000">.</font>md
+</tt></pre>
+<p>This program parses and executes processing instructions such as <code>&lt;? @include intro.md install.md ?&gt;</code>.</p>
+<p>You can inline macro functions for application-specific logic or create custom macro functions that may be shared between projects, see the <a href="https://github.com/mkdoc/mkpi">mkpi docs</a> for more details.</p>
+<p><a href="https://github.com/mkdoc/mkpi">Source Code</a> | <a href="https://github.com/mkdoc/mkpi#help">CLI Help</a></p>
+<h3>mkmsg</h3>
+<p>Appends or prepends a document to the stream:</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkpi <font color="#990000">|</font> mkmsg <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> README<font color="#990000">.</font>md
+</tt></pre>
+<p>Typically used to append a generator message but may be used to inject any document at the beginning or end of the stream.</p>
+<p><a href="https://github.com/mkdoc/mkmsg">Source Code</a> | <a href="https://github.com/mkdoc/mkmsg#help">CLI Help</a></p>
+<h3>mkref</h3>
+<p>Collates link references and appends them to the stream.</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkpi <font color="#990000">|</font> mkref <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> README<font color="#990000">.</font>md
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mkref">Source Code</a> | <a href="https://github.com/mkdoc/mkref#help">CLI Help</a></p>
+<h3>mkabs</h3>
+<p>Make relative links absolute using the data in <code>package.json</code> if no base URL is given.</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkpi <font color="#990000">|</font> mkref <font color="#990000">|</font> mkabs <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> README<font color="#990000">.</font>md
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mkabs">Source Code</a> | <a href="https://github.com/mkdoc/mkabs#help">CLI Help</a></p>
+<h3>mkfilter</h3>
+<p>Filters nodes by type from a stream.</p>
+<p>To remove all headings from a document:</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkfilter --heading <font color="#990000">|</font> mkout
+</tt></pre>
+<p>Remove everything but code blocks from a document:</p>
+<pre><tt>mkcat doc/readme<font color="#990000">.</font>md <font color="#990000">|</font> mkfilter --code-block --invert <font color="#990000">|</font> mkout
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mkfilter">Source Code</a> | <a href="https://github.com/mkdoc/mkfilter#help">CLI Help</a></p>
+<h3>mklevel</h3>
+<p>Converts heading levels, use this to indent or outdent headings.</p>
+<p>To increment all headings:</p>
+<pre><tt>mkcat README<font color="#990000">.</font>md <font color="#990000">|</font> mklevel --all<font color="#990000">=</font><font color="#993399">1</font> <font color="#990000">|</font> mkout
+</tt></pre>
+<p>To convert level 3 headings to level 2:</p>
+<pre><tt>mkcat README<font color="#990000">.</font>md <font color="#990000">|</font> mklevel -<font color="#993399">3</font><font color="#990000">=</font>-<font color="#993399">1</font> <font color="#990000">|</font> mkout
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mklevel">Source Code</a> | <a href="https://github.com/mkdoc/mklevel#help">CLI Help</a></p>
+<h3>mktransform</h3>
+<p>Add stream classes from files to a pipeline:</p>
+<pre><tt>mkcat README<font color="#990000">.</font>md <font color="#990000">|</font> mktransform file<font color="#990000">.</font>js transformer<font color="#990000">.</font>js <font color="#990000">|</font> mkout
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mktransform">Source Code</a> | <a href="https://github.com/mkdoc/mktransform#help">CLI Help</a></p>
+<h3>mktoc</h3>
+<p>Create a standalone table of contents:</p>
+<pre><tt>mkcat README<font color="#990000">.</font>md <font color="#990000">|</font> mktoc -s <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> TOC<font color="#990000">.</font>md
+</tt></pre>
+<p>Inject the table of contents into a document containing the <code>&lt;!-- @toc --&gt;</code> marker:</p>
+<pre><tt>mkcat README<font color="#990000">.</font>md <font color="#990000">|</font> mktoc <font color="#990000">|</font> mkout <font color="#990000">&gt;</font> README<font color="#990000">.</font>md
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mktoc">Source Code</a> | <a href="https://github.com/mkdoc/mktoc#help">CLI Help</a></p>
+<h3>mkpage</h3>
+<p>Create an HTML page:</p>
+<pre><tt>mkcat file<font color="#990000">.</font>md <font color="#990000">|</font> mkpage --title<font color="#990000">=</font>TITLE --style<font color="#990000">=</font>style<font color="#990000">.</font>css <font color="#990000">|</font> mkout --html
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mkpage">Source Code</a> | <a href="https://github.com/mkdoc/mkpage#help">CLI Help</a></p>
+<h3>mkout</h3>
+<p>Render a stream to markdown, XML, HTML and JSON.</p>
+<pre><tt>mkcat file<font color="#990000">.</font>md <font color="#990000">|</font> mkout --html
+</tt></pre>
+<p>There are also some specialized output programs for certain types that expose more options:</p>
+<ul>
+<li><a href="https://github.com/mkdoc/mkout#mkman">mkman</a> - render to man page</li>
+<li><a href="https://github.com/mkdoc/mkout#mktext">mktext</a> - render to plain text</li>
+<li><a href="https://github.com/mkdoc/mkout#mkhtml">mkhtml</a> - render to HTML page</li>
+</ul>
+<p><a href="https://github.com/mkdoc/mkout">Source Code</a> | <a href="https://github.com/mkdoc/mkout#help">CLI Help</a></p>
+<h3>mkparse</h3>
+<p>Parse comments and tag annotations from source files.</p>
+<pre><tt>mkparse index<font color="#990000">.</font>js <font color="#990000">&gt;</font> index<font color="#990000">.</font>doc<font color="#990000">.</font>js
+</tt></pre>
+<p>Low-level parser for working with comments and tag annotations, see <a href="https://github.com/mkdoc/mkparse">mkparse</a>. The command line interface provides the means to quickly inspect the comments in a document, extract comments to a separate file or strip comments from a document.</p>
+<p><a href="https://github.com/mkdoc/mkparse">Source Code</a> | <a href="https://github.com/mkdoc/mkparse#help">CLI Help</a></p>
+<h3>mkapi</h3>
+<p>Generate API documentation from comments in source files.</p>
+<pre><tt>mkapi index<font color="#990000">.</font>js lib<font color="#990000">/*.</font>js --title<font color="#990000">=</font>API <font color="#990000">&gt;</font> API<font color="#990000">.</font>md
+</tt></pre>
+<p><a href="https://github.com/mkdoc/mkapi">Source Code</a> | <a href="https://github.com/mkdoc/mkapi#help">CLI Help</a></p>
+<h2>API</h2>
+<h3>doc</h3>
+<pre><tt><b><font color="#000000">doc</font></b><font color="#990000">(</font>files<font color="#990000">[,</font> opts<font color="#990000">])</font>
+</tt></pre>
+<p>Creates a stream pipeline using <a href="https://github.com/mkdoc/mkcat">mkcat</a> from the given source files.</p>
+<p>Rather than an array you can pass file paths in the form:</p>
+<pre><tt><b><font color="#000000">doc</font></b><font color="#990000">(</font><font color="#FF0000">'intro.md'</font><font color="#990000">,</font> <font color="#FF0000">'install.md'</font><font color="#990000">,</font> <font color="#FF0000">{}</font><font color="#990000">);</font>
+</tt></pre>
+<p>Returns an output stream.</p>
+<ul>
+<li><code>files</code> Array source markdown files.</li>
+<li><code>opts</code> Object processing options.</li>
+</ul>
+<h2>License</h2>
+<p>MIT</p>
+<hr />
+<p>Created by <a href="https://github.com/mkdoc/mkdoc">mkdoc</a> on April 17, 2016</p>
+</body>
+</html>
