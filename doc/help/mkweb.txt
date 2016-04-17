@@ -1,0 +1,16 @@
+Usage: mkweb [options] ... <file|dir>
+
+  Build a website.
+
+Options
+  -o, --output=<DIR>      Write files to DIR
+  -c, --conf=[FILE]       Read YAML configuration from FILE
+  -p, --pi                Execute processing instructions
+  -s, --safe              Safe mode for instruction execution
+  -b, --bundle=[FILE...]  Files to add to the asset bundle
+  -t, --theme=[VAL]       Use stylesheet theme
+  -f, --frontmatter       Parse inline frontmatter YAML
+  -h, --help              Display help and exit
+  --version               Print the version and exit
+
+mkpage@1.0.3

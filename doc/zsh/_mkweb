@@ -1,0 +1,34 @@
+#compdef mkweb
+_mkweb(){
+  typeset -A opt_args;
+  local context state state_descr line ret=1;
+  local actions options commands;
+
+  options=(
+    "(-o --output)"{-o=,--output=}"[Write files to DIR]:directory:_directories" 
+    "(-c --conf)"{-c=,--conf=}"[Read YAML configuration from FILE]:file:_files '*.yml'" 
+    "(-p --pi)"{-p,--pi}"[Execute processing instructions]" 
+    "(-s --safe)"{-s,--safe}"[Safe mode for instruction execution]" 
+    "*"{-b=,--bundle=}"[Files to add to the asset bundle]:file:_files" 
+    "(-t --theme)"{-t=,--theme=}"[Use stylesheet theme]" 
+    "(-f --frontmatter)"{-f,--frontmatter}"[Parse inline frontmatter YAML]" 
+    "(-h --help)"{-h,--help}"[Display help and exit]" 
+    "--version[Print the version and exit]"
+  )
+
+  actions=(
+    "*:file:_files" 
+    "*:directory:_directories"
+  )
+
+  _arguments \
+    $options \
+    $actions && ret=0;
+
+  (( $ret == 1 )) && _arguments \
+    $options \
+    $actions && ret=0;
+  return $ret;
+}
+
+_mkweb "$@"

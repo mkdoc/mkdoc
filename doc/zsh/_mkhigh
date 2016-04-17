@@ -6,7 +6,8 @@ _mkhigh(){
 
   options=(
     "(-o --out)"{-o=,--out=}"[Set output format]" 
-    "(-s --src)"{-s=,--src=}"[Source language overrides info string]" 
+    "(-s --src)"{-s=,--src=}"[Source language (overrides info string)]" 
+    "--alias-\[NAME\]=[Alias info strings to source languages]" 
     "(-l --lines)"{-l,--lines}"[Number lines in output]" 
     "(-p --preserve)"{-p,--preserve}"[Keep code elements]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 

@@ -1,0 +1,116 @@
+{
+  "description": "Reads input markdown documents and compiles each document to an HTML page, files are written to the directory specified using the --output option.",
+  "names": [
+    "mkweb"
+  ],
+  "type": "program",
+  "name": "mkweb",
+  "summary": "build a website",
+  "synopsis": [
+    "[options] ... <file|dir>"
+  ],
+  "options": {
+    "output": {
+      "key": "output",
+      "description": "Write files to DIR",
+      "names": [
+        "-o",
+        "--output"
+      ],
+      "type": "option",
+      "extra": "=<DIR>",
+      "required": true,
+      "multiple": false,
+      "name": "--output"
+    },
+    "conf": {
+      "key": "conf",
+      "description": "Read YAML configuration from FILE",
+      "names": [
+        "-c",
+        "--conf"
+      ],
+      "type": "option",
+      "extra": "=[FILE]",
+      "required": false,
+      "multiple": false,
+      "zaction": ":file:_files '*.yml'",
+      "name": "--conf"
+    },
+    "pi": {
+      "key": "pi",
+      "description": "Execute processing instructions",
+      "names": [
+        "-p",
+        "--pi"
+      ],
+      "type": "flag",
+      "name": "--pi"
+    },
+    "safe": {
+      "key": "safe",
+      "description": "Safe mode for instruction execution",
+      "names": [
+        "-s",
+        "--safe"
+      ],
+      "type": "flag",
+      "name": "--safe"
+    },
+    "bundle": {
+      "key": "bundle",
+      "description": "Files to add to the asset bundle",
+      "names": [
+        "-b",
+        "--bundle"
+      ],
+      "type": "option",
+      "extra": "=[FILE...]",
+      "required": false,
+      "multiple": true,
+      "name": "--bundle"
+    },
+    "theme": {
+      "key": "theme",
+      "description": "Use stylesheet theme",
+      "names": [
+        "-t",
+        "--theme"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "name": "--theme"
+    },
+    "frontmatter": {
+      "key": "frontmatter",
+      "description": "Parse inline frontmatter YAML",
+      "names": [
+        "-f",
+        "--frontmatter"
+      ],
+      "type": "flag",
+      "name": "--frontmatter"
+    },
+    "help": {
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag",
+      "name": "--help"
+    },
+    "version": {
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag",
+      "name": "--version"
+    }
+  }
+}
