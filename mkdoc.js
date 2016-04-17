@@ -1,10 +1,11 @@
 var fs = require('fs')
   , mk = require('mktask');
 
-function packages() {
+function info() {
   var programs = fs.readdirSync('bin')
     , main
-    , map = {};
+    , map = {}
+    , names = {};
 
   programs.forEach(function(name) {
     var nm = name;
@@ -14,19 +15,22 @@ function packages() {
     // get package descriptor from main function
     main = require('./cli/' + nm);
     map[name] = main.pkg;
+    names[name] = name;
   })
-  return map;
+  return {packages: map, names: names};
 }
 
 function bin(type, src, out, cb) {
-  var opts = {
-      files: [src],
-      type: type,
-      dest: {},
-      newline: false,
-      footer: true,
-      packages: packages()
-    };
+  var detail = info()
+    , opts = {
+        files: [src],
+        type: type,
+        dest: {},
+        newline: false,
+        footer: true,
+        packages: detail.packages,
+        names: detail.names
+      };
 
   opts.dest[type] = out;
   mk.exe(opts, cb);
