@@ -160,6 +160,8 @@ Generate a standalone HTML page with highlighted code blocks converted to `<pre>
 mkcat README.md | mkhigh | mkpage | mkhtml > README.html
 ```
 
+This program requires that [source-highlight][] is installed.
+
 [Source Code][mkhigh] | [CLI Help][mkhigh help]
 
 ### mkpage

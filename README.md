@@ -262,6 +262,8 @@ Generate a standalone HTML page with highlighted code blocks converted to `<pre>
 mkcat README.md | mkhigh | mkpage | mkhtml > README.html
 ```
 
+This program requires that [source-highlight][] is installed.
+
 [Source Code][mkhigh] | [CLI Help][mkhigh help]
 
 ### mkpage
@@ -376,4 +378,5 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 17, 2016
 [jscs]: http://jscs.info
 [commonmark]: http://commonmark.org/
 [commonmark.js]: https://github.com/jgm/commonmark.js
+[source-highlight]: https://www.gnu.org/software/src-highlite/source-highlight.html
 
