@@ -125,6 +125,7 @@ function main(argv, conf, cb) {
       cli: require('mkcli'),
       exe: require('../lib/exe'),
       filter: require('mkfilter'),
+      level: require('mklevel'),
       msg: require('mkmsg'),
       out: require('mkout'),
       parse: require('mkparse'),
