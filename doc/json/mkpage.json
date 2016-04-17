@@ -131,6 +131,19 @@
       "multiple": false,
       "name": "--favicon"
     },
+    "media": {
+      "key": "media",
+      "description": "Set media attribute for stylesheets",
+      "names": [
+        "-m",
+        "--media"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "name": "--media"
+    },
     "html[ATTR]": {
       "key": "html[ATTR]",
       "description": "Set attributes on the html element",

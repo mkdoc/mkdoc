@@ -10,6 +10,7 @@ Options
   -c, --css=[FILE]        Create style element from FILE
   -j, --javascript=[FILE] Create script element from FILE
   -f, --favicon=[PATH]    Path to use for a favicon
+  -m, --media=[VAL]       Set media attribute for stylesheets
   --html-[ATTR]=[VAL...]  Set attributes on the html element
   --meta-[NAME]=[DESC...] Set meta data in document head
   --body-[ATTR]=[VAL...]  Set attributes on the body element

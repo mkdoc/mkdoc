@@ -19,6 +19,7 @@ mkpage - convert a document to an HTML page
 * `-c, --css=[FILE] :file:_files -g '*.css'` Create style element from FILE
 * `-j, --javascript=[FILE] :file:_files -g '*.js'` Create script element from FILE
 * `-f, --favicon=[PATH]` Path to use for a favicon
+* `-m, --media=[VAL]` Set media attribute for stylesheets
 * `--html-[ATTR]=[VAL...]` Set attributes on the html element
 * `--meta-[NAME]=[DESC...]` Set meta data in document head
 * `--body-[ATTR]=[VAL...]` Set attributes on the body element
@@ -55,7 +56,11 @@ Sometimes you may wish to include inline styles and javascript in the head of th
 
 For inline javascript use the `--javascript` option in which case the file contents are wrapped in a `<script>` element.
 
-# Async
+The `--media` option may be used to add a `media` attribute for all stylesheets (inline and external):
+
+```shell
+mkcat README.md | mkpage --style=style.css --media=print | mkhtml
+```
 
 The `--async` option adds the `async` attribute to all generated `<script>` elements.
 
