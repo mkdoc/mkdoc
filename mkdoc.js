@@ -26,6 +26,7 @@ function bin(type, src, out, cb) {
         files: [src],
         type: type,
         dest: {},
+        pi: [mk.cli.MAN],
         newline: false,
         footer: true,
         packages: detail.packages,
