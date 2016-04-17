@@ -1,24 +1,9 @@
 var path = require('path')
   , page = require('mkpage')
   , cli = require('mkcli')
+  , collect = require('../lib/collect')
   , pkg = require('mkpage/package.json')
   , prg = cli.load(require('../doc/json/mkpage.json'));
-
-function collect(id, scope) {
-  var map = {}
-    , k
-    , match = new RegExp('^' + id + '-')
-    , key;
-
-  for(k in scope) {
-    if(match.test(k)) {
-      key = k.replace(match, '');
-      map[key]  = scope[k];
-    } 
-  }
-
-  return map;
-}
 
 /**
  *  @name mkpage

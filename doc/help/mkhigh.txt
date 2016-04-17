@@ -4,7 +4,8 @@ Usage: mkhigh [options]
 
 Options
   -o, --out=[VAL]         Set output format (default: html)
-  -s, --src=[LANG]        Source language overrides info string
+  -s, --src=[LANG]        Source language (overrides info string)
+  --alias-[NAME]=[VAL...] Alias info strings to source languages
   -l, --lines             Number lines in output
   -p, --preserve          Keep code elements
   -h, --help              Display help and exit

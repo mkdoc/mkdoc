@@ -1,6 +1,7 @@
 var path = require('path')
   , transform = require('mktransform')
   , highlight = require('mktransform/highlight')
+  , collect = require('../lib/collect')
   , cli = require('mkcli')
   , pkg = require('mktransform/package.json')
   , prg = cli.load(require('../doc/json/mkhigh.json'));
@@ -38,6 +39,9 @@ function main(argv, conf, cb) {
     , runtime = {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
+        argv: {
+          camelcase: false 
+        },
         hints: prg,
         help: {
           file: 'doc/help/mkhigh.txt',
@@ -61,6 +65,8 @@ function main(argv, conf, cb) {
     if(err || req.aborted) {
       return cb(err); 
     }
+
+    this.alias = collect('alias', this);
 
     // transform can throw on bad export
     try {
