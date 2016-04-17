@@ -115,4 +115,4 @@ The `--app` option is effectively the same as `--script` (generates `<script>` e
 
 # Bugs
 
-The `async` attribute cannot be selectively applied to certain `<script>` elements.
+The `async` attribute cannot be selectively applied to certain `<script>` elements nor can the `media` attribute be selectively applied to certain `<style>` or `<link>` elements.
