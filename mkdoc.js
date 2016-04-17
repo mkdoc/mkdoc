@@ -77,18 +77,6 @@ function cli() {
   return [json, help, man, zsh];
 }
 
-
-//<? @include 
-  //creating-tasks.md
-  //task-documentation.md
-  //task-names.md
-  //main-task.md
-  //deferred-tasks.md
-  //stream-tasks.md
-  //task-dependencies.md
-  //task-arguments.md ?>
-
-
 // @task guide build the task man page guide
 function guide(cb) {
   var base = 'node_modules/mktask/doc/readme/';
@@ -105,6 +93,7 @@ function guide(cb) {
       ]   
     )
     .pipe(mk.pi())
+    // convert to level 1 headings
     .pipe(mk.level({all: -2}))
     .pipe(mk.out())
     .pipe(mk.dest('doc/cli/include/mk-guide.md'))
