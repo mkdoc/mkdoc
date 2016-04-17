@@ -38,7 +38,7 @@ If you have dependencies the identifier comes afterwards:
 mk.task([api, example], 'docs', function readme(cb){cb()});
 ```
 
-When multiple tasks are passed then the identifier is taken *from the last function* which in this case becomes `readme`:
+When multiple tasks are passed then the identifier is taken from the last function which in this case becomes `readme`:
 
 ```javascript
 mk.task(function api(cb){cb()}, function readme(cb){cb()});
