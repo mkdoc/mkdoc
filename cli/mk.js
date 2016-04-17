@@ -114,7 +114,6 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
-      console.dir(err);
       return cb(err); 
     }
 
