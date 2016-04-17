@@ -10,6 +10,8 @@ mkhigh - highlight code blocks
 
 # Options
 
+* `--lines` Number lines in output
+* `--preserve` Keep code elements
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
