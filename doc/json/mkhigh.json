@@ -1,5 +1,5 @@
 {
-  "description": "For each code block in the stream with an info string attempt to convert the code to a highlighted version using source-highlight(1).",
+  "description": "For each code block in the stream with an info string attempt to convert the code to a highlighted version using source-highlight(1).\n\nTo see the available source languages available to the --src option:\n\nFor output formats available to the --out option run:",
   "names": [
     "mkhigh"
   ],
@@ -10,6 +10,52 @@
     "[options]"
   ],
   "options": {
+    "out": {
+      "key": "out",
+      "description": "Set output format",
+      "names": [
+        "-o",
+        "--out"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "html",
+      "name": "--out"
+    },
+    "src": {
+      "key": "src",
+      "description": "Source language overrides info string",
+      "names": [
+        "-s",
+        "--src"
+      ],
+      "type": "option",
+      "extra": "=[LANG]",
+      "required": false,
+      "multiple": false,
+      "name": "--src"
+    },
+    "l": {
+      "key": "l",
+      "description": "Number lines in output",
+      "names": [
+        "-l"
+      ],
+      "type": "flag",
+      "name": "-l"
+    },
+    "preserve": {
+      "key": "preserve",
+      "description": "Keep code elements",
+      "names": [
+        "-p",
+        "--preserve"
+      ],
+      "type": "flag",
+      "name": "--preserve"
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",

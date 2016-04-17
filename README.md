@@ -39,6 +39,7 @@ npm i -g mkdoc
   - [mklevel](#mklevel)
   - [mktransform](#mktransform)
   - [mktoc](#mktoc)
+  - [mkhigh](#mkhigh)
   - [mkpage](#mkpage)
   - [mkout](#mkout)
   - [mkparse](#mkparse)
@@ -247,6 +248,22 @@ mkcat README.md | mktoc | mkout > README.md
 
 [Source Code][mktoc] | [CLI Help][mktoc help]
 
+### mkhigh
+
+Highlight code blocks with ANSI escape characters suitable for printing to a terminal:
+
+```shell
+mkcat README.md | mkhigh -o esc | mkout
+```
+
+Generate a standalone HTML page with highlighted code blocks converted to `<pre>` elements:
+
+```shell
+mkcat README.md | mkhigh | mkpage | mkhtml > README.html
+```
+
+[Source Code][mkhigh] | [CLI Help][mkhigh help]
+
 ### mkpage
 
 Create an HTML page:
@@ -353,6 +370,8 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 17, 2016
 [mkapi help]: https://github.com/mkdoc/mkapi#help
 [mktoc help]: https://github.com/mkdoc/mktoc#help
 [mktask help]: https://github.com/mkdoc/mktask#help
+[mkhigh]: https://github.com/mkdoc/mktransform
+[mkhigh help]: https://github.com/mkdoc/mktransform#mkhigh
 [jshint]: http://jshint.com
 [jscs]: http://jscs.info
 [commonmark]: http://commonmark.org/

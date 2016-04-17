@@ -5,6 +5,10 @@ _mkhigh(){
   local actions options commands;
 
   options=(
+    "(-o --out)"{-o=,--out=}"[Set output format]" 
+    "(-s --src)"{-s=,--src=}"[Source language overrides info string]" 
+    "-l[Number lines in output]" 
+    "(-p --preserve)"{-p,--preserve}"[Keep code elements]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 
     "--version[Print the version and exit]"
   )

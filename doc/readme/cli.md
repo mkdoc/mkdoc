@@ -146,6 +146,22 @@ mkcat README.md | mktoc | mkout > README.md
 
 [Source Code][mktoc] | [CLI Help][mktoc help]
 
+### mkhigh
+
+Highlight code blocks with ANSI escape characters suitable for printing to a terminal:
+
+```shell
+mkcat README.md | mkhigh -o esc | mkout
+```
+
+Generate a standalone HTML page with highlighted code blocks converted to `<pre>` elements:
+
+```shell
+mkcat README.md | mkhigh | mkpage | mkhtml > README.html
+```
+
+[Source Code][mkhigh] | [CLI Help][mkhigh help]
+
 ### mkpage
 
 Create an HTML page:

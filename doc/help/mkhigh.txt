@@ -3,6 +3,10 @@ Usage: mkhigh [options]
   Highlight code blocks.
 
 Options
+  -o, --out=[VAL]         Set output format (default: html)
+  -s, --src=[LANG]        Source language overrides info string
+  -l                      Number lines in output
+  -p, --preserve          Keep code elements
   -h, --help              Display help and exit
   --version               Print the version and exit
 

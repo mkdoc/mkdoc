@@ -29,6 +29,9 @@
 [mktoc help]: https://github.com/mkdoc/mktoc#help
 [mktask help]: https://github.com/mkdoc/mktask#help
 
+[mkhigh]: https://github.com/mkdoc/mktransform
+[mkhigh help]: https://github.com/mkdoc/mktransform#mkhigh
+
 [jshint]: http://jshint.com
 [jscs]: http://jscs.info
 [commonmark]: http://commonmark.org/
