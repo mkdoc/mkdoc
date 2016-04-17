@@ -37,14 +37,15 @@
       "multiple": false,
       "name": "--src"
     },
-    "l": {
-      "key": "l",
+    "lines": {
+      "key": "lines",
       "description": "Number lines in output",
       "names": [
-        "-l"
+        "-l",
+        "--lines"
       ],
       "type": "flag",
-      "name": "-l"
+      "name": "--lines"
     },
     "preserve": {
       "key": "preserve",

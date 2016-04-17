@@ -12,7 +12,7 @@ mkhigh - highlight code blocks
 
 * `-o, --out=[VAL] {=html}` Set output format
 * `-s, --src=[LANG]` Source language overrides info string
-* `-l --lines` Number lines in output
+* `-l, --lines` Number lines in output
 * `-p, --preserve` Keep code elements
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
