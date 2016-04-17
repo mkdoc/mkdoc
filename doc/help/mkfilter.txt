@@ -1,5 +1,7 @@
 Usage: mkfilter [options]
 
+  Filter nodes by type.
+
 Options
   -i, --invert            Invert the filter
   --document              Filter document nodes

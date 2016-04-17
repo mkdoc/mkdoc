@@ -1,5 +1,7 @@
 Usage: mkman [options]
 
+  Render to troff man page.
+
 Options
   -t, --title=[VAL]       Set the page title (default: UNTITLED)
   -s, --section=[NUM]     Set the section number (default: 1)

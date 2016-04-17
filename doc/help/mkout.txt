@@ -1,5 +1,7 @@
 Usage: mkout [options]
 
+  Render to various output formats.
+
 Options
   -o, --output=[FILE]     Write output to FILE (default: stdout)
   -H, --html              Set output renderer to HTML

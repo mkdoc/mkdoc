@@ -1,5 +1,7 @@
 Usage: mkapi [options] <files...>
 
+  Documentation generator.
+
 Options
   -o, --output=[FILE]     Write output to FILE (default: stdout)
   -t, --title=[VAL]       Title for initial heading

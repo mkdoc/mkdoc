@@ -1,5 +1,7 @@
 Usage: mkmsg [options]
 
+  Message injection.
+
 Options
   -m, --message=[MSG]     Custom message, parsed as markdown
   -p, --prepend           Prepend message to the stream

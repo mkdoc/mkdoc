@@ -1,5 +1,7 @@
 Usage: mkpage [options]
 
+  Convert a document to an HTML page.
+
 Options
   -d, --doctype=[VAL]     Doctype declaration (default: <!doctype html>)
   -r, --charset=[VAL]     Document charset (default: utf-8)
@@ -23,4 +25,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkpage@1.0.2
+mkpage@1.0.3

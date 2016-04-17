@@ -1,5 +1,7 @@
 Usage: mkhtml [options]
 
+  Render to HTML page.
+
 Options
   -h, --help              Display help and exit
   --version               Print the version and exit

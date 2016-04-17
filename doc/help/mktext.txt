@@ -1,5 +1,7 @@
 Usage: mktext [options]
 
+  Render to plain text.
+
 Options
   -i, --indent=[NUM]      Code block and block quote indentation (default: 4)
   -q, --quote=[VAL]       Character used to prefix block quotes

@@ -32,6 +32,11 @@ function bin(type, src, out, cb) {
         names: detail.names
       };
 
+  if(type === mk.cli.HELP) {
+    opts.summarize = true;
+    opts.desc = 0;
+  }
+
   opts.dest[type] = out;
   mk.exe(opts, cb);
 }
