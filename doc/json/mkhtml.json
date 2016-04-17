@@ -1,0 +1,32 @@
+{
+  "names": [
+    "mkhtml"
+  ],
+  "type": "program",
+  "name": "mkhtml",
+  "summary": "render to HTML page",
+  "synopsis": [
+    "[options]"
+  ],
+  "options": {
+    "help": {
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag",
+      "name": "--help"
+    },
+    "version": {
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag",
+      "name": "--version"
+    }
+  }
+}

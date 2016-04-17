@@ -267,8 +267,9 @@ mkcat file.md | mkout --html
 
 There are also some specialized output programs for certain types that expose more options:
 
-* [mkman](https://github.com/mkdoc/mkout#mkman) - render to man pages
+* [mkman](https://github.com/mkdoc/mkout#mkman) - render to man page
 * [mktext](https://github.com/mkdoc/mkout#mktext) - render to plain text
+* [mkhtml](https://github.com/mkdoc/mkout#mkhtml) - render to HTML page
 
 [Source Code][mkout] | [CLI Help][mkout help]
 
@@ -321,7 +322,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 16, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 17, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast

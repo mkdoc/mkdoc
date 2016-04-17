@@ -1,0 +1,7 @@
+Usage: mkhtml [options]
+
+Options
+  -h, --help              Display help and exit
+  --version               Print the version and exit
+
+mkout@1.0.31
