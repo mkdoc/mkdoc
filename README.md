@@ -341,7 +341,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 17, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 18, 2016
 
 [mkcat]: https://github.com/mkdoc/mkcat
 [mkast]: https://github.com/mkdoc/mkast
@@ -372,8 +372,8 @@ Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 17, 2016
 [mkapi help]: https://github.com/mkdoc/mkapi#help
 [mktoc help]: https://github.com/mkdoc/mktoc#help
 [mktask help]: https://github.com/mkdoc/mktask#help
-[mkhigh]: https://github.com/mkdoc/mktransform
-[mkhigh help]: https://github.com/mkdoc/mktransform#mkhigh
+[mkhigh]: https://github.com/mkdoc/mkhighlight
+[mkhigh help]: https://github.com/mkdoc/mkhighlight#help
 [jshint]: http://jshint.com
 [jscs]: http://jscs.info
 [commonmark]: http://commonmark.org/
