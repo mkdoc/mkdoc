@@ -22,3 +22,4 @@ When no --base URL is given and a package.json file is available in the current 
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mkabs-example.md ?>

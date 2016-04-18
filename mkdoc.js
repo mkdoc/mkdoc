@@ -101,6 +101,46 @@ function guide(cb) {
   cb(); 
 }
 
+// @task inc build the manual include files 
+function inc(cb) {
+  var detail = info()
+    , k
+    , pkg
+    , files = [];
+
+  for(k in detail.packages) {
+    pkg = detail.packages[k];
+    if(pkg.config && pkg.config.man) {
+      if(pkg.config.man.example) {
+        files.push(
+          {
+            src: 'node_modules/' + pkg.name + '/doc/readme/example.md',
+            dest: 'doc/cli/include/' + pkg.name + '-example.md',
+          }); 
+      } 
+    }
+  }
+
+  function next(err) {
+    if(err) {
+      return cb(err); 
+    }
+    var file = files.shift();
+    if(!file) {
+      return cb();
+    }
+    mk.doc(file.src)
+      .pipe(mk.pi())
+      // convert to level 1 headings from level 2
+      .pipe(mk.level({all: -1}))
+      .pipe(mk.out())
+      .pipe(mk.dest(file.dest))
+      .on('finish', next);
+  }
+
+  next();
+}
+
 // @task readme build the readme file
 function readme(cb) {
   mk.doc('doc/readme.md')
@@ -119,8 +159,9 @@ function readme(cb) {
 mk.task(api);
 mk.task(json);
 mk.task(help);
-mk.task([guide], man);
+mk.task([guide, inc], man);
 mk.task(zsh);
 mk.task(cli);
 mk.task(guide);
+mk.task(inc);
 mk.task(readme);
