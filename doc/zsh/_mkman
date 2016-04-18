@@ -9,6 +9,7 @@ _mkman(){
     "(-s --section)"{-s=,--section=}"[Set the section number]" 
     "(-i --inline)"{-i=,--inline=}"[Inline code rendering style]" 
     "(-l --locale)"{-l=,--locale=}"[Locale for automatic date generation]" 
+    "(-v --preamble-version)"{-v=,--preamble-version=}"[Version for document preamble]" 
     "(-d --date)"{-d=,--date=}"[Use specific date]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 
     "--version[Print the version and exit]"

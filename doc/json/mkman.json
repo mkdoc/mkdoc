@@ -65,6 +65,20 @@
       "value": "en-gb",
       "name": "--locale"
     },
+    "preambleVersion": {
+      "key": "preambleVersion",
+      "description": "Version for document preamble",
+      "names": [
+        "-v",
+        "--preamble-version"
+      ],
+      "type": "option",
+      "extra": "=[VAL]",
+      "required": false,
+      "multiple": false,
+      "value": "1.0",
+      "name": "--preamble-version"
+    },
     "date": {
       "key": "date",
       "description": "Use specific date",

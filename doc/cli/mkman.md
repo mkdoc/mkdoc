@@ -14,6 +14,7 @@ mkman - render to troff man page
 * `-s, --section=[NUM] {=1}` Set the section number
 * `-i, --inline=[VAL] {=strong}` Inline code rendering style
 * `-l, --locale=[VAL] {=en-gb}` Locale for automatic date generation
+* `-v, --preamble-version=[VAL] {=1.0}` Version for document preamble
 * `-d, --date=[VAL]` Use specific date
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit

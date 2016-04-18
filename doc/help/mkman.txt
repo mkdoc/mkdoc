@@ -7,8 +7,10 @@ Options
   -s, --section=[NUM]     Set the section number (default: 1)
   -i, --inline=[VAL]      Inline code rendering style (default: strong)
   -l, --locale=[VAL]      Locale for automatic date generation (default: en-gb)
+  -v, --preamble-version=[VAL]     
+                          Version for document preamble (default: 1.0)
   -d, --date=[VAL]        Use specific date
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.32
+mkout@1.0.33
