@@ -24,3 +24,4 @@ mktoc - generates a table of contents index
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
+<? @include {=include} mktoc-example.md ?>
