@@ -15,3 +15,4 @@ mkmsg - message injection
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mkmsg-example.md ?>

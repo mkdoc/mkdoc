@@ -18,6 +18,14 @@ mkman - render to troff man page
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+# Example
+
+Render to a man page:
+
+```shell
+mkcat README.md | mkman --title README --section 7 > README.7
+```
+
 # See Also
 
 mkout(1)
