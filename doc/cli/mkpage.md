@@ -113,6 +113,8 @@ Creates an element `<section class="article">` that contains the input markdown 
 
 The `--app` option is effectively the same as `--script` (generates `<script>` elements) except that the generated elements appear before the close of the body element. This allows injecting javascript files that will execute after the DOM has been loaded. These script elements appear after any container element or footer; that is they are guaranteed to be the final elements before the close of the body element.
 
+<? @include {=include} mkpage-example.md ?>
+
 # Bugs
 
 The `async` attribute cannot be selectively applied to certain `<script>` elements nor can the `media` attribute be selectively applied to certain `<style>` or `<link>` elements.

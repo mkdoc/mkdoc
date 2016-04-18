@@ -22,3 +22,8 @@ mkout - render to various output formats
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mkout-example.md ?>
+
+# See Also
+
+mkhtml(1), mkman(1), mktext(1)

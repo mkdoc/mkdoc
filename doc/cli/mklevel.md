@@ -20,3 +20,4 @@ mklevel - modify heading levels
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mklevel-example.md ?>

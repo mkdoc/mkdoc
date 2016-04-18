@@ -35,3 +35,4 @@ mkfilter - filter nodes by type
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mkfilter-example.md ?>
