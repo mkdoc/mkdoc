@@ -77,3 +77,19 @@ mkpi \- processing instruction macros
 \fB\-\-version\fR
  Print the version and exit
 .nl
+.h1 "EXAMPLE"
+.P
+Execute processing instructions in a file:
+.nl
+.PP
+.in 10
+mkcat README.md | mkpi | mkout
+.br
+
+.P
+Disable unsafe macros for untrusted input:
+.nl
+.PP
+.in 10
+mkcat README.md | mkpi \-\-safe | mkout
+.br

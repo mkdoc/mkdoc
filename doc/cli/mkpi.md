@@ -15,3 +15,4 @@ mkpi - processing instruction macros
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
+<? @include {=include} mkpi-example.md ?>
