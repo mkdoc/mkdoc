@@ -16,6 +16,14 @@ mkcli - compiles markdown cli definitions
 
 Compiles markdown command line interface definitions to JSON and renders to help text files, man pages and shell completion scripts.
 
+If no files are given input from stdin is expected.
+
+If an input file is a directory then the directory is scanned for files ending in `md` or `markdown`.
+
+When files are given and no type is specified all types are created otherwise when reading from stdin the `json` output type is assumed.
+
+Output files are overwritten if they already exist.
+
 # Options
 
 * `-p, --package=[FILE] :file:_files -g '*.json'` Use package descriptor
@@ -43,13 +51,4 @@ Compiles markdown command line interface definitions to JSON and renders to help
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
-# Files
-
-If no files are given input from stdin is expected.
-
-If an input file is a directory then the directory is scanned for files ending in `md` or `markdown`.
-
-When files are given and no type is specified all types are created otherwise when reading from stdin the `json` output type is assumed.
-
-Output files are overwritten if they already exist.
-
+<? @include {=include} mkcli-example.md ?>

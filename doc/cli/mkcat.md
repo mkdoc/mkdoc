@@ -23,3 +23,4 @@ The output is newline-delimited JSON records representing the abstract syntax tr
 * `-h, --help` Display help and exit
 * `--version` Print the version and exit
 
+<? @include {=include} mkcat-example.md ?>
