@@ -93,3 +93,27 @@ mkparse \- parse source file comments
 \fB\-\-version\fR
  Print the version and exit
 .nl
+.h1 "EXAMPLE"
+.P
+Print comments in a file:
+.nl
+.PP
+.in 10
+mkparse index.js
+.br
+
+.P
+Print as json:
+.nl
+.PP
+.in 10
+mkparse lib/*.js \-j
+.br
+
+.P
+Print the source content without comments:
+.nl
+.PP
+.in 10
+mkparse index.js \-s
+.br

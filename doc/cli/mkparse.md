@@ -19,3 +19,4 @@ mkparse - parse source file comments
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
+<? @include {=include} mkparse-example.md ?>
