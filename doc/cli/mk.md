@@ -33,3 +33,4 @@ Runs tasks defined in a task file. Searches for `mkdoc.js` in the current direct
 If TASK_FILE is set it changes the name of the file searched for, default is `mkdoc.js`.
 
 <? @include {=include} mktask-guide.md mktask-example.md ?>
+<? @include {=../../node_modules/mktask/doc/readme} links.md ?>

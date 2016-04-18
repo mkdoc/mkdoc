@@ -60,6 +60,10 @@ mktransform \- custom stream transformations
 .PP
 .in 10
 [files...]
+.h1 "DESCRIPTION"
+.P
+Processes the input stream on stdin using the specified stream transformation files.
+.nl
 .h1 "Options"
 .TP
 \fB\-h, \-\-help\fR
@@ -68,6 +72,122 @@ mktransform \- custom stream transformations
 .TP
 \fB\-\-version\fR
  Print the version and exit
+.nl
+.h1 "STREAM FUNCTIONS"
+.P
+A stream function has the signature:
+.nl
+.PP
+.in 10
+function(through, ast, opts)
+.br
+
+.P
+It is passed the [through][] module so you can easily create stream transform classes and [ast][mkast] so you may easily inspect nodes; the \fBopts\fR object is the original options object. The function \fBmust\fR return a transform stream subclass.
+.nl
+.P
+The input and output data should always be abstract syntax tree nodes.
+.nl
+.P
+To create a transform stream subclass:
+.nl
+.PP
+.in 10
+function transformer(through) {
+.br
+
+.br
+  function transform(chunk, encoding, cb) {
+.br
+    // pass through stream
+.br
+    cb(null, chunk);
+.br
+  }
+.br
+
+.br
+  // return the stream subclass
+.br
+  return through.transform(transform);
+.br
+}
+.br
+
+.br
+module.exports = transformer;
+.br
+
+.P
+If you also need a \fBflush\fR function:
+.nl
+.PP
+.in 10
+function transformer(through) {
+.br
+
+.br
+  function transform(chunk, encoding, cb) {
+.br
+    cb(null, chunk);
+.br
+  }
+.br
+
+.br
+  function flush(cb) {
+.br
+    cb(); 
+.br
+  }
+.br
+
+.br
+  return through.transform(transform, flush);
+.br
+}
+.br
+
+.br
+module.exports = transformer;
+.br
+
+.P
+To use a specific constructor:
+.nl
+.PP
+.in 10
+function transformer(through) {
+.br
+
+.br
+  function Component(opts) {
+.br
+    this.opts = opts || {}; 
+.br
+  }
+.br
+
+.br
+  function transform(chunk, encoding, cb) {
+.br
+    cb(null, chunk);
+.br
+  }
+.br
+
+.br
+  return through.transform(transform, {ctor: Component});
+.br
+}
+.br
+
+.br
+module.exports = transformer;
+.br
+
+.P
+See [through][through], [ast][mkast] and the api docs[1] for more detail.
 .nl
 .h1 "EXAMPLE"
 .P

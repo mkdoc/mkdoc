@@ -101,6 +101,24 @@ function guide(cb) {
   cb(); 
 }
 
+// @task transform build the transform man page guide
+function transform(cb) {
+  var base = 'node_modules/mktransform/doc/readme/';
+  mk.doc(
+      [
+        base + 'stream-functions.md'
+      ]   
+    )
+    .pipe(mk.pi())
+    // convert to level 1 headings
+    .pipe(mk.level({all: -1}))
+    .pipe(mk.out())
+    .pipe(mk.dest('doc/cli/include/mktransform-guide.md'))
+    .on('finish', cb);
+  cb(); 
+}
+
+
 // @task inc build the manual include files 
 function inc(cb) {
   var detail = info()
@@ -159,9 +177,10 @@ function readme(cb) {
 mk.task(api);
 mk.task(json);
 mk.task(help);
-mk.task([guide, inc], man);
+mk.task([guide, transform, inc], man);
 mk.task(zsh);
 mk.task(cli);
 mk.task(guide);
+mk.task(transform);
 mk.task(inc);
 mk.task(readme);
