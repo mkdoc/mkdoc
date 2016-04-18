@@ -23,10 +23,10 @@ Runs tasks defined in a task file. Searches for `mkdoc.js` in the current direct
 
 # Options
 
-* `-f, --file=[FILE...]` Load specific task files
-* `--tasks` Print task list
-* `-h, --help` Display help and exit
-* `--version` Print the version and exit
++ `-f, --file=[FILE...]` Load specific task files
++ `--tasks` Print task list
++ `-h, --help` Display help and exit
++ `--version` Print the version and exit
 
 # Environment
 

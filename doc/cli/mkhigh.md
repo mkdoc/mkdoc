@@ -10,13 +10,13 @@ mkhigh - highlight code blocks
 
 # Options
 
-* `-o, --out=[VAL] {=html}` Set output format
-* `-s, --src=[LANG]` Source language (overrides info string)
-* `--alias-[NAME]=[VAL...]` Alias info strings to source languages
-* `-l, --lines` Number lines in output
-* `-p, --preserve` Keep code elements
-* `-h, --help` Display help and exit
-* `--version` Print the version and exit
++ `-o, --out=[VAL] {=html}` Set output format
++ `-s, --src=[LANG]` Source language (overrides info string)
++ `--alias-[NAME]=[VAL...]` Alias info strings to source languages
++ `-l, --lines` Number lines in output
++ `-p, --preserve` Keep code elements
++ `-h, --help` Display help and exit
++ `--version` Print the version and exit
 
 # Description
 

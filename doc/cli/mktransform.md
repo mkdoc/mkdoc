@@ -14,6 +14,6 @@ mktransform - custom stream transformations
 
 # Options
 
-* `-h, --help` Display help and exit
-* `--version` Print the version and exit
++ `-h, --help` Display help and exit
++ `--version` Print the version and exit
 

@@ -10,8 +10,8 @@ mkhtml - render to HTML page
 
 # Options
 
-* `-h, --help` Display help and exit
-* `--version` Print the version and exit
++ `-h, --help` Display help and exit
++ `--version` Print the version and exit
 
 # Example
 
