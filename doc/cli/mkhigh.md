@@ -80,4 +80,4 @@ mkcat README.md | mkhigh --lines | mkpage | mkhtml > README.html
 
 # See Also
 
-source-highlight(1)
+mkpage(1), source-highlight(1)

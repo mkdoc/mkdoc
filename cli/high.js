@@ -1,6 +1,6 @@
 var path = require('path')
   , transform = require('mktransform')
-  , highlight = require('mktransform/highlight')
+  , highlight = require('mkhighlight')
   , collect = require('../lib/collect')
   , cli = require('mkcli')
   , pkg = require('mktransform/package.json')
