@@ -67,19 +67,27 @@ Runs tasks defined in a task file. Searches for \fBmkdoc.js\fR in the current di
 .h1 "Options"
 .TP
 \fB\-f, \-\-file\fR=[\fIFILE\fR...]
-Load specific task files
+ Load specific task files
+.nl
+.TP
+.in 8
+\fBWith\fR another paragraph.
+.nl
 .nl
 .TP
 \fB\-\-tasks\fR
-Print task list
+ Print task list
+.nl
 .nl
 .TP
 \fB\-h, \-\-help\fR
-Display help and exit
+ Display help and exit
+.nl
 .nl
 .TP
 \fB\-\-version\fR
-Print the version and exit
+ Print the version and exit
+.nl
 .nl
 .h1 "ENVIRONMENT"
 .P
@@ -329,3 +337,35 @@ Note that some command line arguments are handled by the \fBmk\fR program you sh
 .P
 For detailed information on the \fBargs\fR object see the [argparse library][argparse].
 .nl
+.h1 "EXAMPLE"
+.P
+Build all tasks (or a main task when defined):
+.nl
+.PP
+.in 10
+mk
+.br
+
+.P
+Build specific tasks:
+.nl
+.PP
+.in 10
+mk api readme
+.br
+
+.P
+Use a specific build file:
+.nl
+.PP
+.in 10
+mk \-f ~/mkdoc.js readme
+.br
+
+.P
+To see a list of tasks use:
+.nl
+.PP
+.in 10
+mk \-\-tasks
+.br

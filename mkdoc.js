@@ -96,7 +96,7 @@ function guide(cb) {
     // convert to level 1 headings
     .pipe(mk.level({all: -2}))
     .pipe(mk.out())
-    .pipe(mk.dest('doc/cli/include/mk-guide.md'))
+    .pipe(mk.dest('doc/cli/include/mktask-guide.md'))
     .on('finish', cb);
   cb(); 
 }
