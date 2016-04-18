@@ -17,3 +17,4 @@ mktransform - custom stream transformations
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
+<? @include {=include} mktransform-example.md ?>
