@@ -21,3 +21,4 @@ mkapi - documentation generator
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
+<? @include {=include} mkapi-example.md ?>
