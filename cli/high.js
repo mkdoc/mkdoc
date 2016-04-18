@@ -3,7 +3,7 @@ var path = require('path')
   , highlight = require('mkhighlight')
   , collect = require('../lib/collect')
   , cli = require('mkcli')
-  , pkg = require('mktransform/package.json')
+  , pkg = require('mkhighlight/package.json')
   , prg = cli.load(require('../doc/json/mkhigh.json'));
 
 /**
