@@ -209,6 +209,9 @@ Section headings are not case\-sensitive so you can use upper case, title case o
 Like man pages the name section is required and it \fBmust\fR include a brief summary of the program after the program name. Delimit the program name from the short summary using a hyphen surrounded by spaces as shown below.
 .nl
 .P
+The name section must be the first section in the file otherwise the compiler will error.
+.nl
+.P
 The program name and summary is extracted from the first paragraph under the \fINAME\fR heading:
 .nl
 .PP
@@ -218,6 +221,16 @@ The program name and summary is extracted from the first paragraph under the \fI
 
 .br
 prg \- short program summary
+.P
+For subcommands define parent names for a command using whitespace between the words:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg list \- perform list action
 .P
 Add a list when a program can have multiple names:
 .nl
@@ -232,9 +245,6 @@ prg \- short program summary
 
 .br
 + prg\-alias
-.P
-The name section must be the first section in the file otherwise the compiler will error.
-.nl
 .h2 "Synopsis"
 .P
 The program synopsis is created from all code block elements under the \fISYNOPSIS\fR heading:
