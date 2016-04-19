@@ -90,7 +90,7 @@ If TASK_FILE is set it changes the name of the file searched for, default is \fB
 Tasks are \fInamed\fR functions that are passed to the \fBtask\fR function:
 .nl
 .PP
-.in 10
+.in 12
 var mk = require('mktask');
 .br
 
@@ -108,8 +108,6 @@ function readme(cb) {
 
 .br
 mk.task(readme);
-.br
-
 .P
 Anonymous functions are not allowed and will generate an error if used.
 .nl
@@ -118,41 +116,33 @@ Anonymous functions are not allowed and will generate an error if used.
 It is considered good practice to annotate your tasks with comments that provide a name and description of the task so that it will be included in the list printed when running \fBmk \-\-tasks\fR.
 .nl
 .PP
-.in 10
+.in 12
 // @task readme build the readme file.
-.br
-
 .h1 "TASK NAMES"
 .P
 By default the task identifier (referenced on the command line) is taken from the function name but you may explicitly specify an identifier if you prefer:
 .nl
 .PP
-.in 10
+.in 12
 mk.task('docs', function readme(cb){cb()});
-.br
-
 .P
 If you have dependencies the identifier comes afterwards:
 .nl
 .PP
-.in 10
+.in 12
 mk.task([api, example], 'docs', function readme(cb){cb()});
-.br
-
 .P
 When multiple tasks are passed then the identifier is taken from the last function which in this case becomes \fBreadme\fR:
 .nl
 .PP
-.in 10
+.in 12
 mk.task(function api(cb){cb()}, function readme(cb){cb()});
-.br
-
 .h1 "MAIN TASK"
 .P
 The \fBmk\fR program when executed with no arguments will either run all available tasks in series or a \fBmain\fR task if declared. To declare a main task give it the name \fBmain\fR:
 .nl
 .PP
-.in 10
+.in 12
 var mk = require('mktask');
 .br
 
@@ -170,14 +160,12 @@ function main(cb) {
 
 .br
 mk.task(main);
-.br
-
 .h1 "DEFERRED TASKS"
 .P
 Typically task functions will invoke the callback function when done but they may also return an array of task functions which is useful when a task wishes to defer to a series of other tasks:
 .nl
 .PP
-.in 10
+.in 12
 var mk = require('mktask');
 .br
 
@@ -221,8 +209,6 @@ mk.task(api);
 mk.task(readme);
 .br
 mk.task(main);
-.br
-
 .P
 Note that when deferring to other task functions they must have been registered by calling \fBtask()\fR.
 .nl
@@ -231,7 +217,7 @@ Note that when deferring to other task functions they must have been registered 
 Sometimes when creating complex stream pipelines it is useful to return streams so that parts of the pipeline become reusable between tasks, for example:
 .nl
 .PP
-.in 10
+.in 12
 var mk = require('mktask')
 .br
   , ast = require('mkast');
@@ -259,8 +245,6 @@ function out() {
 
 .br
 mk.task(in, out);
-.br
-
 .P
 When a task returns a stream it is piped to the next task function in the pipeline and the callback function is added as a listener for the \fBfinish\fR event on the last stream in the pipeline.
 .nl
@@ -272,7 +256,7 @@ Task functions may declare an array of functions to call before the task functio
 Dependencies are executed in parallel but they must all complete before the tasks are executed:
 .nl
 .PP
-.in 10
+.in 12
 var mk = require('mktask');
 .br
 
@@ -314,8 +298,6 @@ function readme(cb) {
 
 .br
 mk.task([api, example], readme);
-.br
-
 .h1 "TASK ARGUMENTS"
 .P
 Task functions are automatically exposed the parsed arguments object via \fBthis.args\fR such that \fBmk readme \-\-env devel\fR would result in the readme task being able to access the \fBenv\fR option using \fBthis.args.options.env\fR.
@@ -334,30 +316,23 @@ For detailed information on the \fBargs\fR object see the [argparse library][arg
 Build all tasks (or a main task when defined):
 .nl
 .PP
-.in 10
+.in 12
 mk
-.br
-
 .P
 Build specific tasks:
 .nl
 .PP
-.in 10
+.in 12
 mk api readme
-.br
-
 .P
 Use a specific build file:
 .nl
 .PP
-.in 10
+.in 12
 mk \-f ~/mkdoc.js readme
-.br
-
 .P
 To see a list of tasks use:
 .nl
 .PP
-.in 10
+.in 12
 mk \-\-tasks
-.br

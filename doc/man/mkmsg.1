@@ -82,22 +82,17 @@ mkmsg [\-ph] [\-\-prepend] [\-\-help] [\-\-version] [\-\-message=<msg>]
 Append the default generator message:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkmsg | mkout
-.br
-
 .P
 Append a custom message:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkmsg \-m "Commit: $(git rev\-parse HEAD)" | mkout
-.br
-
 .P
 Prepend a custom message:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkmsg \-p \-m "Commit: $(git rev\-parse HEAD)" | mkout
-.br

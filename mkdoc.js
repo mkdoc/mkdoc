@@ -127,6 +127,19 @@ function guides(cb) {
     }
   );
 
+  // mkcli(1)
+  base = 'node_modules/mkcli/doc/readme/';
+  files = [
+    base + 'guide.md'
+  ];
+  conf.push(
+    {
+      files: files,
+      options: {all: -2},
+      output: 'doc/cli/include/mkcli-guide.md'
+    }
+  );
+
   function next(err) {
     if(err) {
       return cb(err); 

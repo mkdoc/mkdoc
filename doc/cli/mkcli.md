@@ -52,4 +52,4 @@ Output files are overwritten if they already exist.
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
-<? @include {=include} mkcli-example.md ?>
+<? @include {=include} mkcli-guide.md mkcli-example.md ?>

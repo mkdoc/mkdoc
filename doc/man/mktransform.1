@@ -78,10 +78,8 @@ Processes the input stream on stdin using the specified stream transformation fi
 A stream function has the signature:
 .nl
 .PP
-.in 10
+.in 12
 function(through, ast, opts)
-.br
-
 .P
 It is passed the [through][] module so you can easily create stream transform classes and [ast][mkast] so you may easily inspect nodes; the \fBopts\fR object is the original options object. The function \fBmust\fR return a transform stream subclass.
 .nl
@@ -92,7 +90,7 @@ The input and output data should always be abstract syntax tree nodes.
 To create a transform stream subclass:
 .nl
 .PP
-.in 10
+.in 12
 function transformer(through) {
 .br
 
@@ -116,13 +114,11 @@ function transformer(through) {
 
 .br
 module.exports = transformer;
-.br
-
 .P
 If you also need a \fBflush\fR function:
 .nl
 .PP
-.in 10
+.in 12
 function transformer(through) {
 .br
 
@@ -150,13 +146,11 @@ function transformer(through) {
 
 .br
 module.exports = transformer;
-.br
-
 .P
 To use a specific constructor:
 .nl
 .PP
-.in 10
+.in 12
 function transformer(through) {
 .br
 
@@ -184,8 +178,6 @@ function transformer(through) {
 
 .br
 module.exports = transformer;
-.br
-
 .P
 See [through][through], [ast][mkast] and the api docs[1] for more detail.
 .nl
@@ -194,14 +186,11 @@ See [through][through], [ast][mkast] and the api docs[1] for more detail.
 Run a custom stream transformation:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mktransform doc/upper.js | mkout
-.br
-
 .P
 Run multiple transformations:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mktransform test/fixtures/upper1.js test/fixtures/upper2.js | mkout
-.br

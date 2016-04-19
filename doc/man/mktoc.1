@@ -122,38 +122,29 @@ mktoc [\-Dosh] [\-\-disable] [\-\-ordered] [\-\-standalone] [\-\-help] [\-\-vers
 Create a standalone table of contents:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mktoc \-s | mkout > TOC.md
-.br
-
 .P
 Inject the table of contents into a document containing the \fB<!\-\- @toc \-\->\fR marker:
 .nl
 .PP
-.in 10
+.in 12
 mkcat readme.md | mktoc | mkout > README.md
-.br
-
 .P
 Set an initial heading with the specified level:
 .nl
 .PP
-.in 10
+.in 12
 mkcat readme.md | mktoc \-\-title 'Table of Contents' \-\-level 2 | mkout > README.md
-.br
-
 .P
 Only include headings for levels 2\-4:
 .nl
 .PP
-.in 10
+.in 12
 mkcat readme.md | mktoc \-d 2 \-m 4 | mkout > README.md
-.br
-
 .P
 Create an ordered list and set the delimiter:
 .nl
 .PP
-.in 10
+.in 12
 mkcat readme.md | mktoc \-o \-E '.' | mkout > README.md
-.br

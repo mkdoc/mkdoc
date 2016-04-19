@@ -170,42 +170,32 @@ mkfilter [\-ih] [\-\-invert] [\-\-document] [\-\-softbreak] [\-\-linebreak] [\-\
 Remove all headings from a document:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkfilter \-\-heading | mkout
-.br
-
 .P
 Remove everything but headings and text from a document:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkfilter \-\-heading \-\-text \-\-invert | mkout
-.br
-
 .P
 Print code blocks in a document:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkfilter \-\-code\-block \-\-invert | mkout
-.br
-
 .P
 Be careful with inline elements, if the parent element is filtered out they are not included:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkfilter \-\-link \-\-invert | mkout
-.br
-
 .P
 But if you add a block level element to the filter:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkfilter \-\-link \-\-paragraph \-\-invert | mkout
-.br
-
 .P
 They will be included in the output.
 .nl

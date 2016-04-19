@@ -81,18 +81,14 @@ The output is newline\-delimited JSON records representing the abstract syntax t
 Read files:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mkout
-.br
-
 .P
 Read stdin:
 .nl
 .PP
-.in 10
+.in 12
 cat README.md | mkcat | mkout
-.br
-
 .P
 However this is not recommended because file path information is lost which is important for some processing tools.
 .nl
@@ -100,6 +96,5 @@ However this is not recommended because file path information is lost which is i
 Concatenate stdin with files:
 .nl
 .PP
-.in 10
+.in 12
 cat README.md | mkcat API.md DEVELOPER.md | mkout
-.br

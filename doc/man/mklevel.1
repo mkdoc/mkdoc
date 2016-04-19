@@ -104,30 +104,23 @@ mklevel [\-h] [\-\-help] [\-\-version] [\-1=<num>] [\-2=<num>] [\-3=<num>] [\-4=
 Increment all heading levels:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mklevel \-\-all=1 | mkout
-.br
-
 .P
 Decrement all heading levels:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mklevel \-\-all=\-1 | mkout
-.br
-
 .P
 Convert level 2 headings to level 5:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mklevel \-2=3 | mkout
-.br
-
 .P
 Convert level 1 and 3 headings to level 2:
 .nl
 .PP
-.in 10
+.in 12
 mkcat README.md | mklevel \-1=1 \-3=\-1 | mkout
-.br

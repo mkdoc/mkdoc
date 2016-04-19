@@ -187,51 +187,631 @@ Output files are overwritten if they already exist.
 \fB\-\-version\fR
  Print the version and exit
 .nl
+.h1 "GUIDE"
+.h1 "DEFINING PROGRAMS"
+.P
+The markdown document defines sections that start with a level one heading and continue until the next level one heading or the end of file is reached.
+.nl
+.P
+The sections that have special meaning to the compiler are NAME[1], SYNOPSIS[2], DESCRIPTION[3], COMMANDS[4] and OPTIONS[5].
+.nl
+.P
+It is considered best practice to declare these sections in the order listed.
+.nl
+.P
+All other sections are deemed to be man page sections they are ignored from help output by default (but may be included at compile time) and are always included when generating man pages.
+.nl
+.P
+Section headings are not case\-sensitive so you can use upper case, title case or lower case but they must match exactly.
+.nl
+.h2 "Name"
+.P
+Like man pages the name section is required and it \fBmust\fR include a brief summary of the program after the program name. Delimit the program name from the short summary using a hyphen surrounded by spaces as shown below.
+.nl
+.P
+The program name and summary is extracted from the first paragraph under the \fINAME\fR heading:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.P
+Add a list when a program can have multiple names:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
++ prg\-alias
+.P
+The name section must be the first section in the file otherwise the compiler will error.
+.nl
+.h2 "Synopsis"
+.P
+The program synopsis is created from all code block elements under the \fISYNOPSIS\fR heading:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Synopsis
+.br
+
+.br
+    [options] [file...]
+.P
+It is a compiler error if any other type is declared in the synopsis section.
+.nl
+.h2 "Description"
+.P
+The program description is created from all block level elements under the \fIDESCRIPTION\fR heading:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Description
+.br
+
+.br
+An extended description that can include paragraphs, lists, code blocks and other block level elements.
+.P
+Note that the help output only includes paragraphs so some meaning may be lost if you include lists, code blocks or block quotes. For this reason it is recommended that the description section only contain paragraphs.
+.nl
+.P
+If you mix content in the description section you can use the \fB\-d, \-\-desc\fR option when generating the help file to restrict the number of paragraphs included in the help output.
+.nl
+.P
+Consider this example:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Description
+.br
+
+.br
+Simple program.
+.br
+
+.br
+Run with:
+.br
+
+.br
+    cat file.md | prg
+.P
+Context would be lost on the second paragraph because the code block would not be included in the help output, whilst it would make perfect sense in the man output.
+.nl
+.P
+To prevent this loss of context just include the first paragraph in the help output:
+.nl
+.PP
+.in 14
+mkcat program.md | mkcli \-\-desc 1 | mktext
+.h2 "Arguments"
+.P
+Program arguments are declared with a heading of \fIOPTIONS\fR and a list following the heading.
+.nl
+.P
+Note the list bullet character \fB+\fR is preferred because it creates a more idiomatic listing in generated man pages.
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Options
+.br
+
+.br
++ `\-i, \-\-input [FILE...]` Input files
+.br
++ `\-o, \-\-output [FILE]` Output file
+.P
+An argument is declared as a list item whose first child is an inline code element which defines a \fIspecification\fR.
+.nl
+.P
+The specification is parsed into an object representing the argument which may be of type \fBflag\fR, \fBoption\fR or \fBcommand\fR.
+.nl
+.P
+The remaining list item content after the specification is treated as a description for the argument.
+.nl
+.h3 "Flags"
+.P
+An argument specification with no value is treated as a flag option:
+.nl
+.PP
+.in 16
++ `\-v, \-\-verbose` Print more information
+.h3 "Options"
+.P
+To create an option argument specify a value in either \fB[]\fR or \fB<>\fR:
+.nl
+.PP
+.in 16
++ `\-o, \-\-output [FILE]` Output file
+.h4 "Required"
+.P
+When the \fB<>\fR notation is used it indicates that that the option is required:
+.nl
+.PP
+.in 18
++ `\-t, \-\-type <TYPE>` Output format
+.P
+The parsed option will have the \fBrequired\fR flag set.
+.nl
+.h4 "Multiple"
+.P
+To signify that an option argument is repeatable include an ellipsis:
+.nl
+.PP
+.in 18
++ `\-i, \-\-input [FILE...]` Input files
+.P
+The parsed option will have the \fBmultiple\fR flag set.
+.nl
+.h4 "Type Info"
+.P
+You can associate some type information with the \fB{}\fR notation:
+.nl
+.PP
+.in 18
++ `\-i, \-\-indent [NUM] {Number}` Amount of indentation
+.P
+The parsed option will have the \fBkind\fR property set to \fBNumber\fR.
+.nl
+.P
+You can delimit multiple types with \fB|\fR and \fBkind\fR is expanded to an array. This is useful to indicate an argument may be of multiple types or if you want to treat an argument value as an enum:
+.nl
+.PP
+.in 18
++ `\-t, \-\-type [VAL] {json|help|man}` Renderer type
+.h4 "Default Value"
+.P
+To specify a default value for the option use the \fB=\fR operator in the type:
+.nl
+.PP
+.in 18
++ `\-i, \-\-indent [NUM] {Number=2}` Amount of indentation
+.P
+The parsed option will have the \fBkind\fR property set to \fBNumber\fR and the  \fBvalue\fR property set to \fB2\fR.
+.nl
+.P
+You can just specify the default value using:
+.nl
+.PP
+.in 18
++ `\-i, \-\-indent [NUM] {=2}` Amount of indentation
+.P
+In which case the \fBkind\fR property will be \fBundefined\fR and the  \fBvalue\fR property is set to \fB2\fR.
+.nl
+.h2 "Commands"
+.P
+Commands are declared in the same way as program arguments but under the \fICOMMANDS\fR heading:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Commands
+.br
+
+.br
++ `ls, list` List tasks
+.br
++ `i, info` Print task information
+.P
+They allow you to create complex programs with options specific to a command.
+.nl
+.P
+Command files are loaded and compiled automatically following a naming convention. Using the above example to define the \fBlist\fR command create a file named \fBprg\-list.md\fR:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+list \- list tasks
+.br
+
+.br
+# Options
+.br
+
+.br
++ `\-a, \-\-all` List all tasks
+.br
++ `\-t=[TYPE...]` List tasks of TYPE
+.P
+Will result in the compiled tree containing options specific to the \fBlist\fR command.
+.nl
+.h2 "Identifiers"
+.P
+When a program is created from a source markdown document each argument and command is given a key for the resulting map. This key is generated automcatically by using the longest argument (or command) name and converting it to camel case.
+.nl
+.P
+If you wish to use a fixed key you can add an identifier followed by a colon (\fB:\fR) to the beginning of the specification:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Commands
+.br
+
+.br
++ `tasks: ls, list` List tasks
+.br
+
+.br
+# Options
+.br
+
+.br
++ `verbose: \-v` Print more information
+.h2 "Manual Sections"
+.P
+A heading that is not matched by any of the rules above is treated as a manual section:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Environment
+.br
+
+.br
+The environment variable FOO changes the behaviour to `bar`.
+.P
+The section ends when the next level one heading is encountered or the end of the file is reached.
+.nl
+.h1 "SYNOPSIS EXPANSION"
+.P
+Unless disabled the synopsis declaration is expanded for the \fBman\fR and \fBhelp\fR output types.
+.nl
+.h2 "Flags"
+.P
+Use the notation \fB[flags]\fR (or \fB<flags>\fR) in the synopsis and it will be replaced with all short form (single character) flag options (for example: \fB\-xvf\fR).
+.nl
+.h2 "Options"
+.P
+Use the notation \fB[options]\fR (or \fB<options>\fR) in the synopsis and it will be replaced with all option names that are not declared in the synopsis and were not expanded using the \fB[flags]\fR notation.
+.nl
+.h2 "Exclusive Options"
+.P
+You should indicate mutually exclusive options using a vertical bar between option names.
+.nl
+.h2 "Expansion Example"
+.P
+Given a definition such as:
+.nl
+.PP
+.in 14
+# Name
+.br
+
+.br
+prg \- short program summary
+.br
+
+.br
+# Synopsis
+.br
+
+.br
+    [flags] [options] [\-\-xml|\-\-html] <file...>
+.br
+
+.br
+# Options
+.br
+
+.br
++ `\-X, \-\-xml` Print as XML
+.br
++ `\-H, \-\-html` Print as HTML
+.br
++ `\-V` Print more information
+.br
++ `\-h, \-\-help` Display help and exit
+.br
++ `\-\-version` Print the version and exit
+.P
+The synopsis is expanded to:
+.nl
+.PP
+.in 14
+prg [\-XHVh] [\-\-help] [\-\-version] [\-\-xml|\-\-html] <file...>
+.h1 "COMPILING PROGRAMS"
+.P
+To compile the markdown document to a JSON program descriptor run:
+.nl
+.PP
+.in 12
+mkcli \-t json program.md
+.P
+Now you have a JSON document that describes your program commands and options.
+.nl
+.h1 "CREATING DOCUMENTATION"
+.P
+Once you have defined the program you will want to generate a man page and some help text.
+.nl
+.P
+To create the help text run:
+.nl
+.PP
+.in 12
+mkcli \-t help program.md
+.P
+For a man page run:
+.nl
+.PP
+.in 12
+mkcli \-t man program.md
+.h2 "Help Styles"
+.P
+The default column help style (\fBcol\fR) should suit most purposes however the other styles can be useful. The \fBlist\fR style renders a list of the commands and options which is designed for when you have very long argument names or a few arguments that require long descriptions.
+.nl
+.P
+The \fBcmd\fR style is a list of command names (options are not printed) designed to be used when a program has lots of commands and a command is required. Typically the program would show this help page when no command was specified to indicate to the user a command is required.
+.nl
+.P
+Sometimes you may want very minimal help output that just includes the usage synopsis in which case use the \fBusage\fR style.
+.nl
+.h2 "Help Sections"
+.P
+Sometimes when creating help files you may want to include a section from the manual, possibly you want to include an \fIEnvironment\fR section to show the environment variables your program recognises.
+.nl
+.P
+Pass regular expression patterns using the \fB\-\-section\fR option and if they match a section heading the section will be included in the help after the commands and options.
+.nl
+.P
+To include an \fIEnvironment\fR section you could use:
+.nl
+.PP
+.in 14
+mkcli \-t help \-S env program.md
+.P
+To include the \fIEnvironment\fR and \fIBugs\fR sections you could use:
+.nl
+.PP
+.in 14
+mkcli \-t help \-S env \-S bug program.md
+.P
+Or if you prefer:
+.nl
+.PP
+.in 14
+mkcli \-t help \-S '(env|bug)' program.md
+.P
+See the help[1] for more options available when creating help and man pages.
+.nl
+.h1 "COMPLETION"
+.P
+Completion scripts are currently available for zsh. To install a completion script for a program copy the script to a directory in \fB$fpath\fR or modify \fB~/.zshrc\fR to autoload the directory containing the completion script:
+.nl
+.PP
+.in 12
+fpath=(/path/to/completion $fpath)
+.P
+A full working completion example is the notes[1] test fixture.
+.nl
+.P
+Sometimes you may wish to reload a completion for testing purposes:
+.nl
+.PP
+.in 12
+unfunction _notes && autoload \-U _notes
+.h2 "Actions"
+.P
+Some option value specifications map to zsh completion functions:
+.nl
+.BL
+.IP "\[ci]" 4
+user: \fB:user:_users\fR
+.nl
+.IP "\[ci]" 4
+group: \fB:group:_groups\fR
+.nl
+.IP "\[ci]" 4
+host: \fB:host:_hosts\fR
+.nl
+.IP "\[ci]" 4
+domain: \fB:domain:_domains\fR
+.nl
+.IP "\[ci]" 4
+file: \fB:file:_files\fR
+.nl
+.IP "\[ci]" 4
+dir: \fB:directory:_directories\fR
+.nl
+.IP "\[ci]" 4
+url: \fB:url:_urls\fR
+.nl
+.EL
+.P
+Such that an option specification such as:
+.nl
+.PP
+.in 14
++ `\-i, \-\-input [file...]` Input files
+.br
++ `\-o, \-\-output <dir>` Output directory
+.P
+Will result in the \fB_files\fR completion function being called to complete file paths for the \fB\-\-input\fR option and the \fB_directories\fR function for the \fB\-\-output\fR option. Note that the ellipsis (...) multiple flag is respected so \fB\-\-input\fR will be completed multiple times whilst \fB\-\-output\fR will only complete once.
+.nl
+.P
+For options that specify a list of types the \fB_values\fR completion function is called.
+.nl
+.PP
+.in 14
++ `\-t, \-\-type=[TYPE] {json|yaml}` Output type
+.P
+Results in automatic completion for the \fB\-\-type\fR option to one of \fBjson\fR or \fByaml\fR.
+.nl
+.P
+Actions are enclosed in double quotes (") so you may use single quotes and paired double quotes but not a single double quote which will generate an \fBunmatched "\fR zsh error.
+.nl
+.h2 "Synopsis Completion"
+.P
+The program synopsis section is inspected and will use completion functions when a match is available, so a synopsis such as:
+.nl
+.PP
+.in 14
+[options] [files...]
+.P
+Will result in the _files completion function called, see above for the list of matches and completion functions.
+.nl
+.P
+Sometimes you may need to create a custom completion list; you can set the info string of fenced code blocks in the synopsis section to inject scripts. The value may be either \fBzsh\-locals\fR to inject code into the beginning of the body of the generated completion function and \fBzsh\fR to add to the list of completion actions.
+.nl
+.P
+A real\-world example is mk[1] (program definition[2] and compiled completion script[3]) which completes on the available task names.
+.nl
+.h2 "Specification Completion"
+.P
+You may wish to change the zsh action taken per option, this can be done by appending a colon and the zsh action to an option specification:
+.nl
+.PP
+.in 14
++ `\-p, \-\-package=[FILE] :file:_files \-g '+.json'` Package descriptor
+.P
+Which will complete files with a \fB.json\fR extension for the \fB\-\-package\fR option.
+.nl
+.h2 "Command Completion"
+.P
+Commands are recursively added to the completion script; they are completed using the following rules:
+.nl
+.BL
+.IP "\[ci]" 4
+Required commands (\fB<command>\fR in the synopsis) will not list options by default.
+.nl
+.IP "\[ci]" 4
+Command options inherit from the global options.
+.nl
+.IP "\[ci]" 4
+Command options cascade to child options.
+.nl
+.IP "\[ci]" 4
+Rest pattern matches (\fB*: :file:_files\fR for example) are respected.
+.nl
+.EL
+.P
+It is recommended you use a program synopsis with the command first:
+.nl
+.PP
+.in 14
+# Synopsis
+.br
+
+.br
+    <command> [options] [files...] 
+.P
+Or if the command is not required:
+.nl
+.PP
+.in 14
+# Synopsis
+.br
+
+.br
+    [command] [options] [files...] 
+.P
+Which is because command completion is terminated when an option is intermingled with the command hierarchy. Consider a program that has the command structure \fBnotes > list > bug|todo|feature\fR if you present a command line such as:
+.nl
+.PP
+.in 14
+notes list \-\-private
+.P
+Completion will no longer be attempted on the \fBlist\fR sub\-commands. To put it another way \fIcommands must be consecutive\fR for command completion to occur.
+.nl
 .h1 "EXAMPLE"
 .P
 To compile all output types to the same directory as the input file:
 .nl
 .PP
-.in 10
+.in 12
 mkcli program.md
-.br
-
 .P
 Compile all output types to a specific directory:
 .nl
 .PP
-.in 10
+.in 12
 mkcli program.md \-o build
-.br
-
 .P
 Compile a specific output type:
 .nl
 .PP
-.in 10
+.in 12
 mkcli \-t man program.md
-.br
-
 .P
 Compile a specific output type to a particular directory:
 .nl
 .PP
-.in 10
+.in 12
 mkcli \-t zsh program.md \-\-zsh build/zsh
-.br
-
 .P
 If you have a lot of programs pass a directory and all markdown documents in the directory are compiled:
 .nl
 .PP
-.in 10
+.in 12
 mkcli doc/cli \-o build
-.br
-
 .P
 You may pipe input for more control over the output; to set a man page title:
 .nl
 .PP
-.in 10
+.in 12
 mkcat program.md | mkcli \-t man | mkman \-\-title program > program.1
-.br
