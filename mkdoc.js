@@ -77,50 +77,72 @@ function cli() {
   return [json, help, man, zsh];
 }
 
-// @task guide build the task man page guide
-function guide(cb) {
-  var base = 'node_modules/mktask/doc/readme/';
-  mk.doc(
-      [
-        base + 'creating-tasks.md',
-        base + 'task-documentation.md',
-        base + 'task-names.md',
-        base + 'main-task.md',
-        base + 'deferred-tasks.md',
-        base + 'stream-tasks.md',
-        base + 'task-dependencies.md',
-        base + 'task-arguments.md'
-      ]   
-    )
-    .pipe(mk.pi())
-    // convert to level 1 headings
-    .pipe(mk.level({all: -2}))
-    .pipe(mk.out())
-    .pipe(mk.dest('doc/cli/include/mktask-guide.md'))
-    .on('finish', cb);
-  cb(); 
+// @task guides build the man page include guides
+function guides(cb) {
+  var conf = []
+    , files
+    , base;
+
+  function guide(build, cb) {
+    mk.doc(build.files)
+      .pipe(mk.pi())
+      // convert to level 1 headings
+      .pipe(mk.level(build.options))
+      .pipe(mk.out())
+      .pipe(mk.dest(build.output))
+      .on('finish', cb);
+    cb(); 
+  }
+
+  // mk(1)
+  base = 'node_modules/mktask/doc/readme/';
+  files = [
+    base + 'creating-tasks.md',
+    base + 'task-documentation.md',
+    base + 'task-names.md',
+    base + 'main-task.md',
+    base + 'deferred-tasks.md',
+    base + 'stream-tasks.md',
+    base + 'task-dependencies.md',
+    base + 'task-arguments.md'
+  ];
+  conf.push(
+    {
+      files: files,
+      options: {all: -2},
+      output: 'doc/cli/include/mktask-guide.md'
+    }
+  );
+
+  // mktransform(1)
+  base = 'node_modules/mktransform/doc/readme/';
+  files = [
+    base + 'stream-functions.md'
+  ];
+  conf.push(
+    {
+      files: files,
+      options: {all: -1},
+      output: 'doc/cli/include/mktransform-guide.md'
+    }
+  );
+
+  function next(err) {
+    if(err) {
+      return cb(err); 
+    }
+    var build = conf.shift();
+    if(!build) {
+      return cb();
+    }
+    guide(build, next);
+  }
+
+  next();
 }
 
-// @task transform build the transform man page guide
-function transform(cb) {
-  var base = 'node_modules/mktransform/doc/readme/';
-  mk.doc(
-      [
-        base + 'stream-functions.md'
-      ]   
-    )
-    .pipe(mk.pi())
-    // convert to level 1 headings
-    .pipe(mk.level({all: -1}))
-    .pipe(mk.out())
-    .pipe(mk.dest('doc/cli/include/mktransform-guide.md'))
-    .on('finish', cb);
-  cb(); 
-}
-
-
-// @task inc build the manual include files 
-function inc(cb) {
+// @task examples build the manual example include files 
+function examples(cb) {
   var detail = info()
     , k
     , pkg
@@ -177,10 +199,9 @@ function readme(cb) {
 mk.task(api);
 mk.task(json);
 mk.task(help);
-mk.task([guide, transform, inc], man);
+mk.task([guides, examples], man);
 mk.task(zsh);
 mk.task(cli);
-mk.task(guide);
-mk.task(transform);
-mk.task(inc);
+mk.task(guides);
+mk.task(examples);
 mk.task(readme);

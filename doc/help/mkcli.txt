@@ -35,4 +35,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkcli@1.0.30 https://github.com/mkdoc/mkcli
+mkcli@1.0.31 https://github.com/mkdoc/mkcli
