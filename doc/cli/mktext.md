@@ -5,7 +5,7 @@ mktext - render to plain text
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

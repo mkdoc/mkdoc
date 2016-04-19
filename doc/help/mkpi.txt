@@ -1,4 +1,4 @@
-Usage: mkpi [options]
+Usage: mkpi [-sph] [--safe] [--preserve] [--help] [--version]
 
   Processing instruction macros.
 

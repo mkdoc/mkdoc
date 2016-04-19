@@ -5,7 +5,7 @@ mkmsg - message injection
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

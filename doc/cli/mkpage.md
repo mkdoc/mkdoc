@@ -5,7 +5,7 @@ mkpage - convert a document to an HTML page
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

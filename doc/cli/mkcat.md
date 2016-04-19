@@ -5,7 +5,7 @@ mkcat - reads markdown documents
 # Synopsis
 
 ```
-[options] [files...]
+[flags] [options] [files...]
 ```
 
 ```zsh

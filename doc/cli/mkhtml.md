@@ -5,7 +5,7 @@ mkhtml - render to HTML page
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

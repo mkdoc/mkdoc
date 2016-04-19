@@ -1,4 +1,6 @@
-Usage: mkweb [options] ... <file|dir>
+Usage: mkweb [-psfh] [--pi] [--safe] [--frontmatter] [--help] [--version]
+             [--output=<dir>] [--conf=<file>] [--bundle=<file...>]
+             [--theme=<val>] ... <file|dir>
 
   Build a website.
 

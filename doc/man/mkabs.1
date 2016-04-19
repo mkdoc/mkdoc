@@ -59,7 +59,7 @@ mkabs \- make relative links absolute
 .h1 "SYNOPSIS"
 .PP
 .in 10
-[options]
+mkabs [\-gh] [\-\-greedy] [\-\-help] [\-\-version] [\-\-base=<url>] [\-\-relative=<path>]
 .h1 "DESCRIPTION"
 .P
 Converts relative links beginning with \fB/\fR to absolute URLs; when the \-\-greedy option is given links beginning with \fB#\fR and \fB?\fR are also made absolute.
@@ -67,7 +67,7 @@ Converts relative links beginning with \fB/\fR to absolute URLs; when the \-\-gr
 .P
 When no \-\-base URL is given and a package.json file is available in the current working directory the base URL is extracted from the repository URL in package.json and the \-\-relative path when not set assumes a github repository using the \fB/blob/master\fR path.
 .nl
-.h1 "Options"
+.h1 "OPTIONS"
 .TP
 \fB\-b, \-\-base\fR=[\fIURL\fR]
  Base URL for absolute links

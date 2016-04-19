@@ -5,7 +5,7 @@ mkout - render to various output formats
 # Synopsis
 
 ```
-[options]
+[flags] [options] [--html|--json|--man|--text|--xml|--yaml|--yaml-full]
 ```
 
 # Options

@@ -1,4 +1,5 @@
-Usage: mkabs [options]
+Usage: mkabs [-gh] [--greedy] [--help] [--version] [--base=<url>]
+             [--relative=<path>]
 
   Make relative links absolute.
 

@@ -1,4 +1,6 @@
-Usage: mkapi [options] <files...>
+Usage: mkapi [-ah] [--ast] [--[no]-private] [--[no]-protected] [--help]
+             [--version] [--output=<file>] [--title=<val>] [--level=<num>]
+             [--lang=<lang>] [--indent=<num>] <files...>
 
   Documentation generator.
 
@@ -14,4 +16,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkapi@1.1.7
+mkapi@1.1.9

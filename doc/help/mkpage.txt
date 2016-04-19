@@ -1,4 +1,11 @@
-Usage: mkpage [options]
+Usage: mkpage [-h] [--async] [--help] [--version] [--doctype=<val>]
+              [--charset=<val>] [--lang=<val>] [--title=<val>]
+              [--style=<path...>] [--script=<path...>] [--css=<file>]
+              [--javascript=<file>] [--favicon=<path>] [--media=<val>]
+              [--html-[ATTR]=<val...>] [--meta-[NAME]=<desc...>]
+              [--body-[ATTR]=<val...>] [--element=<name>]
+              [--attr-[NAME]=<val...>] [--app=<path...>] [--header=<file>]
+              [--footer=<file>]
 
   Convert a document to an HTML page.
 

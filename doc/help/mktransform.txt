@@ -1,4 +1,4 @@
-Usage: mktransform [files...]
+Usage: mktransform [-h] [--help] [--version] [files...]
 
   Custom stream transformations.
 

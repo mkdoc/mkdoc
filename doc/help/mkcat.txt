@@ -1,4 +1,4 @@
-Usage: mkcat [options] [files...]
+Usage: mkcat [-h] [--help] [--version] [files...]
 
   Reads markdown documents.
 

@@ -1,4 +1,6 @@
-Usage: mkman [options]
+Usage: mkman [-h] [--help] [--version] [--title=<val>] [--section=<num>]
+             [--inline=<val>] [--locale=<val>] [--preamble-version=<val>]
+             [--date=<val>]
 
   Render to troff man page.
 
@@ -13,4 +15,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.33
+mkout@1.0.37

@@ -5,7 +5,7 @@ mkref - link reference collation
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Description

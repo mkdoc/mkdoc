@@ -5,7 +5,7 @@ mkapi - documentation generator
 # Synopsis
 
 ```
-[options] <files...>
+[flags] [options] <files...>
 ```
 
 # Options

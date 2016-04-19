@@ -1,4 +1,4 @@
-Usage: mkmsg [options]
+Usage: mkmsg [-ph] [--prepend] [--help] [--version] [--message=<msg>]
 
   Message injection.
 

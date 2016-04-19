@@ -5,7 +5,7 @@ mkhigh - highlight code blocks
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

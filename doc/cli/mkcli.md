@@ -5,7 +5,7 @@ mkcli - compiles markdown cli definitions
 # Synopsis
 
 ```
-[options] [files...]
+[flags] [options] [files...]
 ```
 
 ```zsh

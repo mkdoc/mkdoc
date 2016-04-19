@@ -5,7 +5,7 @@ mkpi - processing instruction macros
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

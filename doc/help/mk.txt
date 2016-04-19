@@ -1,4 +1,4 @@
-Usage: mk [options] [task...]
+Usage: mk [-h] [--tasks] [--help] [--version] [--file=<file...>] [task...]
 
   Task runner.
 

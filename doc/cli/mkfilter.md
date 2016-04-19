@@ -5,7 +5,7 @@ mkfilter - filter nodes by type
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options 

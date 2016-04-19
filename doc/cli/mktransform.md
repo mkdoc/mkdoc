@@ -5,7 +5,7 @@ mktransform - custom stream transformations
 # Synopsis
 
 ```
-[files...]
+[flags] [options] [files...]
 ```
 
 ```zsh

@@ -1,4 +1,9 @@
-Usage: mkfilter [options]
+Usage: mkfilter [-ih] [--invert] [--document] [--softbreak] [--linebreak]
+                [--list] [--item] [--paragraph] [--text] [--heading] [--emph]
+                [--strong] [--link] [--image] [--code] [--code-block]
+                [--block-quote] [--thematic-break] [--html-inline]
+                [--html-block] [--custom-inline] [--custom-block] [--eof]
+                [--help] [--version]
 
   Filter nodes by type.
 

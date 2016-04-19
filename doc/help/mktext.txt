@@ -1,4 +1,8 @@
-Usage: mktext [options]
+Usage: mktext [-escltICBHSLh] [--emph] [--strong] [--code] [--link]
+              [--thematic-break] [--image] [--code-block] [--block-quote]
+              [--heading] [--softbreak] [--linebreak] [--html-inline]
+              [--html-block] [--custom-inline] [--custom-block] [--help]
+              [--version] [--indent=<num>] [--quote=<val>]
 
   Render to plain text.
 
@@ -23,4 +27,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.33
+mkout@1.0.37

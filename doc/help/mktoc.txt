@@ -1,4 +1,7 @@
-Usage: mktoc [options]
+Usage: mktoc [-Dosh] [--disable] [--ordered] [--standalone] [--help]
+             [--version] [--title=<title>] [--level=<num>] [--depth=<level>]
+             [--max=<level>] [--prefix=<val>] [--base=<url>] [--bullet=<char>]
+             [--delimiter=<char>]
 
   Generates a table of contents index.
 

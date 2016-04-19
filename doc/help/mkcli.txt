@@ -1,4 +1,9 @@
-Usage: mkcli [options] [files...]
+Usage: mkcli [-frCHFNPh] [--full] [--recursive] [--colon] [--header] [--footer]
+             [--newline] [--preserve] [--help] [--version] [--package=<file>]
+             [--type=<type>] [--style=<val>] [--cols=<num>] [--split=<num>]
+             [--desc=<num>] [--indent=<num>] [--align=<type>] [--usage=<val>]
+             [--section=<ptn...>] [--json=<dir>] [--text=<dir>] [--man=<dir>]
+             [--zsh=<dir>] [--output=<dir>] [files...]
 
   Compiles markdown cli definitions.
 
@@ -28,4 +33,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkcli@1.0.28 https://github.com/mkdoc/mkcli
+mkcli@1.0.29 https://github.com/mkdoc/mkcli

@@ -1,4 +1,5 @@
-Usage: mkparse [options] <files...>
+Usage: mkparse [-scdjh] [--strip] [--content] [--dotted] [--json] [--help]
+               [--version] [--lang=<lang>] [--indent=<num>] <files...>
 
   Parse source file comments.
 

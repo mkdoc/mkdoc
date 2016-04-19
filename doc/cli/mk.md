@@ -5,7 +5,7 @@ mk - task runner
 # Synopsis
 
 ```
-[options] [task...]
+[flags] [options] [task...]
 ```
 
 ```zsh-locals

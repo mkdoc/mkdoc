@@ -5,7 +5,7 @@ mkabs - make relative links absolute
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Description

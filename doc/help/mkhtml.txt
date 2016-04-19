@@ -1,4 +1,4 @@
-Usage: mkhtml [options]
+Usage: mkhtml [-h] [--help] [--version]
 
   Render to HTML page.
 
@@ -6,4 +6,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.33
+mkout@1.0.37

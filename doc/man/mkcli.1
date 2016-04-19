@@ -59,7 +59,7 @@ mkcli \- compiles markdown cli definitions
 .h1 "SYNOPSIS"
 .PP
 .in 10
-[options] [files...]
+mkcli [\-frCHFNPh] [\-\-full] [\-\-recursive] [\-\-colon] [\-\-header] [\-\-footer] [\-\-newline] [\-\-preserve] [\-\-help] [\-\-version] [\-\-package=<file>] [\-\-type=<type>] [\-\-style=<val>] [\-\-cols=<num>] [\-\-split=<num>] [\-\-desc=<num>] [\-\-indent=<num>] [\-\-align=<type>] [\-\-usage=<val>] [\-\-section=<ptn...>] [\-\-json=<dir>] [\-\-text=<dir>] [\-\-man=<dir>] [\-\-zsh=<dir>] [\-\-output=<dir>] [files...]
 .h1 "DESCRIPTION"
 .P
 Compiles markdown command line interface definitions to JSON and renders to help text files, man pages and shell completion scripts.
@@ -76,7 +76,7 @@ When files are given and no type is specified all types are created otherwise wh
 .P
 Output files are overwritten if they already exist.
 .nl
-.h1 "Options"
+.h1 "OPTIONS"
 .TP
 \fB\-p, \-\-package\fR=[\fIFILE\fR]
  Use package descriptor

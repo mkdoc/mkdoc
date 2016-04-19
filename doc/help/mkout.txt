@@ -1,4 +1,5 @@
-Usage: mkout [options]
+Usage: mkout [-nh] [--noop] [--help] [--version] [--output=<file>]
+             [--html|--json|--man|--text|--xml|--yaml|--yaml-full]
 
   Render to various output formats.
 
@@ -15,4 +16,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkout@1.0.33
+mkout@1.0.37

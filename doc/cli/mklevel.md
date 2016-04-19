@@ -5,7 +5,7 @@ mklevel - modify heading levels
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

@@ -5,7 +5,7 @@ mktoc - generates a table of contents index
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

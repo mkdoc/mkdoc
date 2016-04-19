@@ -1,4 +1,5 @@
-Usage: mklevel [options]
+Usage: mklevel [-h] [--help] [--version] [-1=<num>] [-2=<num>] [-3=<num>]
+               [-4=<num>] [-5=<num>] [-6=<num>] [--all=<num>]
 
   Modify heading levels.
 

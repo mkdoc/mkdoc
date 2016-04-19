@@ -5,7 +5,7 @@ mkman - render to troff man page
 # Synopsis
 
 ```
-[options]
+[flags] [options]
 ```
 
 # Options

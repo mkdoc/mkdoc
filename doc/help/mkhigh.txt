@@ -1,4 +1,5 @@
-Usage: mkhigh [options]
+Usage: mkhigh [-lph] [--lines] [--preserve] [--help] [--version] [--out=<val>]
+              [--src=<lang>] [--alias-[NAME]=<val...>]
 
   Highlight code blocks.
 

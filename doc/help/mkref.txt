@@ -1,4 +1,4 @@
-Usage: mkref [options]
+Usage: mkref [-h] [--help] [--version]
 
   Link reference collation.
 
