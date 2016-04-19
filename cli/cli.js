@@ -122,6 +122,8 @@ function main(argv, conf, cb) {
       }
     }
 
+    this.synopsis = !this.rawSynopsis;
+
     cli(this, cb);
   })
 }

@@ -1,9 +1,10 @@
-Usage: mkcli [-frCHFNPh] [--full] [--recursive] [--colon] [--header] [--footer]
-             [--newline] [--preserve] [--help] [--version] [--package=<file>]
-             [--type=<type>] [--style=<val>] [--cols=<num>] [--split=<num>]
-             [--desc=<num>] [--indent=<num>] [--align=<type>] [--usage=<val>]
-             [--section=<ptn...>] [--json=<dir>] [--text=<dir>] [--man=<dir>]
-             [--zsh=<dir>] [--output=<dir>] [files...]
+Usage: mkcli [-frRCHFNPh] [--full] [--recursive] [--raw-synopsis] [--colon]
+             [--header] [--footer] [--newline] [--preserve] [--help]
+             [--version] [--package=<file>] [--type=<type>] [--style=<val>]
+             [--cols=<num>] [--split=<num>] [--desc=<num>] [--indent=<num>]
+             [--align=<type>] [--usage=<val>] [--section=<ptn...>]
+             [--json=<dir>] [--text=<dir>] [--man=<dir>] [--zsh=<dir>]
+             [--output=<dir>] [files...]
 
   Compiles markdown cli definitions.
 
@@ -19,6 +20,7 @@ Options
   -u, --usage=[VAL]       Set usage message for help synopsis (default: Usage:)
   -f, --full              Do not compact compiled descriptor
   -r, --recursive         Recursively load command definitions
+  -R, --raw-synopsis      Do not expand synopsis
   -C, --colon             Append a colon to headings in help output
   -S, --section=[PTN...]  Include sections matching patterns in help output
   -H, --header            Include default header in help output
@@ -33,4 +35,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkcli@1.0.29 https://github.com/mkdoc/mkcli
+mkcli@1.0.30 https://github.com/mkdoc/mkcli

@@ -167,6 +167,16 @@
       "type": "flag",
       "name": "--recursive"
     },
+    "rawSynopsis": {
+      "key": "rawSynopsis",
+      "description": "Do not expand synopsis",
+      "names": [
+        "-R",
+        "--raw-synopsis"
+      ],
+      "type": "flag",
+      "name": "--raw-synopsis"
+    },
     "colon": {
       "key": "colon",
       "description": "Append a colon to headings in help output",

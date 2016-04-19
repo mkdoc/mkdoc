@@ -37,6 +37,7 @@ Output files are overwritten if they already exist.
 + `-u, --usage=[VAL] {=Usage:}` Set usage message for help synopsis
 + `-f, --full` Do not compact compiled descriptor
 + `-r, --recursive` Recursively load command definitions
++ `-R, --raw-synopsis` Do not expand synopsis
 + `-C, --colon` Append a colon to headings in help output
 + `-S, --section=[PTN...]` Include sections matching patterns in help output
 + `-H, --header` Include default header in help output

@@ -16,6 +16,7 @@ _mkcli(){
     "(-u --usage)"{-u=,--usage=}"[Set usage message for help synopsis]" 
     "(-f --full)"{-f,--full}"[Do not compact compiled descriptor]" 
     "(-r --recursive)"{-r,--recursive}"[Recursively load command definitions]" 
+    "(-R --raw-synopsis)"{-R,--raw-synopsis}"[Do not expand synopsis]" 
     "(-C --colon)"{-C,--colon}"[Append a colon to headings in help output]" 
     "*"{-S=,--section=}"[Include sections matching patterns in help output]" 
     "(-H --header)"{-H,--header}"[Include default header in help output]" 
