@@ -7,7 +7,7 @@
   "name": "mk",
   "summary": "task runner",
   "synopsis": [
-    "[options] [task...]"
+    "[flags] [options] [task...]"
   ],
   "options": {
     "file": {

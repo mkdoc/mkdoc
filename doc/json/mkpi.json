@@ -6,7 +6,7 @@
   "name": "mkpi",
   "summary": "processing instruction macros",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "safe": {

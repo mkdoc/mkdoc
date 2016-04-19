@@ -1,4 +1,5 @@
 {
+  "description": "Processes the input stream on stdin using the specified stream transformation files.",
   "names": [
     "mktransform"
   ],
@@ -6,7 +7,7 @@
   "name": "mktransform",
   "summary": "custom stream transformations",
   "synopsis": [
-    "[files...]"
+    "[flags] [options] [files...]"
   ],
   "options": {
     "help": {

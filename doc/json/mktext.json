@@ -6,7 +6,7 @@
   "name": "mktext",
   "summary": "render to plain text",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "indent": {

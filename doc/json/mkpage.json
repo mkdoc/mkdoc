@@ -6,7 +6,7 @@
   "name": "mkpage",
   "summary": "convert a document to an HTML page",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "doctype": {
@@ -101,7 +101,7 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "zaction": ":file:_files -g '*.css'",
+      "zaction": ":file:_files -g '+.css'",
       "name": "--css"
     },
     "javascript": {
@@ -115,7 +115,7 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "zaction": ":file:_files -g '*.js'",
+      "zaction": ":file:_files -g '+.js'",
       "name": "--javascript"
     },
     "favicon": {

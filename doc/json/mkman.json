@@ -6,7 +6,7 @@
   "name": "mkman",
   "summary": "render to troff man page",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "title": {

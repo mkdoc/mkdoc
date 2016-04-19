@@ -7,7 +7,7 @@
   "name": "mkabs",
   "summary": "make relative links absolute",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "base": {

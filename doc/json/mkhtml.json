@@ -6,7 +6,7 @@
   "name": "mkhtml",
   "summary": "render to HTML page",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "help": {

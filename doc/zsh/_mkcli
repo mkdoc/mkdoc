@@ -5,7 +5,7 @@ _mkcli(){
   local actions options commands;
 
   options=(
-    "(-p --package)"{-p=,--package=}"[Use package descriptor]:file:_files -g '*.json'" 
+    "(-p --package)"{-p=,--package=}"[Use package descriptor]:file:_files -g '+.json'" 
     "(-t --type)"{-t=,--type=}"[Output renderer type]:value:_values select  'json' 'help' 'man'" 
     "(-y --style)"{-y=,--style=}"[Help output style]:value:_values select  'col' 'list' 'cmd' 'usage'" 
     "(-c --cols)"{-c=,--cols=}"[Wrap help output at NUM]" 

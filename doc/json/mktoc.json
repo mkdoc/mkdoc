@@ -6,7 +6,7 @@
   "name": "mktoc",
   "summary": "generates a table of contents index",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "title": {

@@ -6,7 +6,7 @@ _mkweb(){
 
   options=(
     "(-o --output)"{-o=,--output=}"[Write files to DIR]:directory:_directories" 
-    "(-c --conf)"{-c=,--conf=}"[Read YAML configuration from FILE]:file:_files '*.yml'" 
+    "(-c --conf)"{-c=,--conf=}"[Read YAML configuration from FILE]:file:_files '+.yml'" 
     "(-p --pi)"{-p,--pi}"[Execute processing instructions]" 
     "(-s --safe)"{-s,--safe}"[Safe mode for instruction execution]" 
     "*"{-b=,--bundle=}"[Files to add to the asset bundle]:file:_files" 

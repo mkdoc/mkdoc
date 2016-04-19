@@ -7,7 +7,7 @@
   "name": "mkcat",
   "summary": "reads markdown documents",
   "synopsis": [
-    "[options] [files...]"
+    "[flags] [options] [files...]"
   ],
   "options": {
     "help": {

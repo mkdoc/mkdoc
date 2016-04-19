@@ -6,7 +6,7 @@
   "name": "mkfilter",
   "summary": "filter nodes by type",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "invert": {

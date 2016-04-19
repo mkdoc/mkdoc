@@ -7,7 +7,7 @@
   "name": "mkcli",
   "summary": "compiles markdown cli definitions",
   "synopsis": [
-    "[options] [files...]"
+    "[flags] [options] [files...]"
   ],
   "options": {
     "package": {
@@ -21,7 +21,7 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "zaction": ":file:_files -g '*.json'",
+      "zaction": ":file:_files -g '+.json'",
       "name": "--package"
     },
     "type": {

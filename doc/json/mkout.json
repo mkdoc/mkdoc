@@ -6,7 +6,7 @@
   "name": "mkout",
   "summary": "render to various output formats",
   "synopsis": [
-    "[options]"
+    "[flags] [options] [--html|--json|--man|--text|--xml|--yaml|--yaml-full]"
   ],
   "options": {
     "output": {

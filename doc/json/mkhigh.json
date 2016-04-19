@@ -7,7 +7,7 @@
   "name": "mkhigh",
   "summary": "highlight code blocks",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "out": {

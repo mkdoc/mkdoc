@@ -6,7 +6,7 @@
   "name": "mkparse",
   "summary": "parse source file comments",
   "synopsis": [
-    "[options] <files...>"
+    "[flags] [options] <files...>"
   ],
   "options": {
     "lang": {

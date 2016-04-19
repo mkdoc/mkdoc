@@ -6,7 +6,7 @@
   "name": "mkmsg",
   "summary": "message injection",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "message": {

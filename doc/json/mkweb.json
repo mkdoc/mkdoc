@@ -7,7 +7,7 @@
   "name": "mkweb",
   "summary": "build a website",
   "synopsis": [
-    "[options] ... <file|dir>"
+    "[flags] [options] ... <file|dir>"
   ],
   "options": {
     "output": {
@@ -34,7 +34,7 @@
       "extra": "=[FILE]",
       "required": false,
       "multiple": false,
-      "zaction": ":file:_files '*.yml'",
+      "zaction": ":file:_files '+.yml'",
       "name": "--conf"
     },
     "pi": {

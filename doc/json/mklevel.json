@@ -6,7 +6,7 @@
   "name": "mklevel",
   "summary": "modify heading levels",
   "synopsis": [
-    "[options]"
+    "[flags] [options]"
   ],
   "options": {
     "1": {
