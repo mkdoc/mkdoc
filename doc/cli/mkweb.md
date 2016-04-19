@@ -5,7 +5,7 @@ mkweb - build a website
 # Synopsis
 
 ```
-[flags] [options] ... <file|dir>
+[flags] [options] <file...>
 ```
 
 # Options

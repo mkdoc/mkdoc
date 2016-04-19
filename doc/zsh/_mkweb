@@ -17,8 +17,7 @@ _mkweb(){
   )
 
   actions=(
-    "*:file:_files" 
-    "*:directory:_directories"
+    "*:file:_files"
   )
 
   _arguments \

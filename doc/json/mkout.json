@@ -122,5 +122,19 @@
       "type": "flag",
       "name": "--version"
     }
-  }
+  },
+  "exclusive": [
+    {
+      "literal": "[--html|--json|--man|--text|--xml|--yaml|--yaml-full]",
+      "keys": [
+        "html",
+        "json",
+        "man",
+        "text",
+        "xml",
+        "yaml",
+        "yamlFull"
+      ]
+    }
+  ]
 }
