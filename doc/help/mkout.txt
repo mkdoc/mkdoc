@@ -1,4 +1,4 @@
-Usage: mkout [-nh] [--noop] [--help] [--version] [--output=<file>]
+Usage: mkout [-HjmtxyYnh] [--noop] [--help] [--version] [--output=<file>]
              [--html|--json|--man|--text|--xml|--yaml|--yaml-full]
 
   Render to various output formats.
