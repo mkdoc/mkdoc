@@ -1,0 +1,9 @@
+Usage: mkql [-h] [--help] [--version] <selector...>
+
+  Query documents with selectors.
+
+Options
+  -h, --help              Display help and exit
+  --version               Print the version and exit
+
+mkpage@1.0.4

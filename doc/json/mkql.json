@@ -1,0 +1,33 @@
+{
+  "description": "Applies the selectors specified on the command line to the documents written to stdin; writes the matched nodes to stdout.",
+  "names": [
+    "mkql"
+  ],
+  "type": "program",
+  "name": "mkql",
+  "summary": "query documents with selectors",
+  "synopsis": [
+    "[flags] [options] <selector...>"
+  ],
+  "options": {
+    "help": {
+      "key": "help",
+      "description": "Display help and exit",
+      "names": [
+        "-h",
+        "--help"
+      ],
+      "type": "flag",
+      "name": "--help"
+    },
+    "version": {
+      "key": "version",
+      "description": "Print the version and exit",
+      "names": [
+        "--version"
+      ],
+      "type": "flag",
+      "name": "--version"
+    }
+  }
+}

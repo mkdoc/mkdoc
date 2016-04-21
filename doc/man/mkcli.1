@@ -544,6 +544,12 @@ Use the notation \fB[options]\fR (or \fB<options>\fR) in the synopsis and it wil
 .P
 You should indicate mutually exclusive options using a vertical bar between option names.
 .nl
+.P
+When compiling to JSON the synopsis is parsed and any mutually exclusive declarations are added to the output using the target option keys.
+.nl
+.P
+It is a compiler error if the target option is not declared.
+.nl
 .h2 "Expansion Example"
 .P
 Given a definition such as:
