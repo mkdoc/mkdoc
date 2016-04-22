@@ -31,7 +31,10 @@ function main(argv, conf, cb) {
 
   var opts = {
       input: conf.input,
-      output: conf.output
+      output: conf.output,
+      query: {
+        selectors: []
+      }
     }
     , runtime = {
         base: path.normalize(path.join(__dirname, '..')),
@@ -60,6 +63,23 @@ function main(argv, conf, cb) {
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
       return cb(err); 
+    }
+
+    if(!req.unparsed.length) {
+      return cb(new Error('no selectors specified'));
+    }
+
+    var i
+      , query;
+
+    for(i = 0;i < req.unparsed.length;i++) {
+      try {
+        query = ql.compile(req.unparsed[i]);
+        this.query.selectors = 
+          this.query.selectors.concat(query.selectors);
+      }catch(e) {
+        return cb(e); 
+      }
     }
 
     ql(this, cb);
