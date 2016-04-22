@@ -181,7 +181,13 @@ function main(argv, conf, cb) {
         }
 
         //console.error('require proxy %s', mod);
-        return require(mod);
+        try {
+          return require(mod);
+        }catch(e) {
+          // try path relative to build file
+          mod = path.join(path.dirname(file), 'node_modules', mod);
+          return require(mod);
+        }
       }
 
       var context = vm.createContext(
