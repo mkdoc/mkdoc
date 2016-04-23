@@ -128,8 +128,10 @@ function main(argv, conf, cb) {
       level: require('mklevel'),
       msg: require('mkmsg'),
       out: require('mkout'),
+      page: require('mkpage'),
       parse: require('mkparse'),
       pi: require('mkpi'),
+      ql: require('mkql'),
       ref: require('mkref'),
       toc: require('mktoc')
     };
