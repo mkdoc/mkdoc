@@ -11,6 +11,16 @@
     "[flags] [options] --range <start-selector> [end-selector]"
   ],
   "options": {
+    "delete": {
+      "key": "delete",
+      "description": "Remove matched nodes",
+      "names": [
+        "-d",
+        "--delete"
+      ],
+      "type": "flag",
+      "name": "--delete"
+    },
     "range": {
       "key": "range",
       "description": "Execute a range query",
@@ -20,6 +30,16 @@
       ],
       "type": "flag",
       "name": "--range"
+    },
+    "multiple": {
+      "key": "multiple",
+      "description": "Include multiple ranges",
+      "names": [
+        "-m",
+        "--multiple"
+      ],
+      "type": "flag",
+      "name": "--multiple"
     },
     "help": {
       "key": "help",

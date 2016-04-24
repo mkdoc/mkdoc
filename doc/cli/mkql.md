@@ -14,7 +14,9 @@ mkql - query documents with selectors
 
 # Options
 
++ `-d, --delete` Remove matched nodes
 + `-r, --range` Execute a range query
++ `-m, --multiple` Include multiple ranges
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
 
