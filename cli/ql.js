@@ -70,15 +70,20 @@ function main(argv, conf, cb) {
     }
 
     var i
+      , unparsed = req.unparsed
       , query;
 
-    for(i = 0;i < req.unparsed.length;i++) {
-      try {
-        query = ql.compile(req.unparsed[i]);
-        this.query.selectors = 
-          this.query.selectors.concat(query.selectors);
-      }catch(e) {
-        return cb(e); 
+    if(this.range) {
+      this.query = ql.range(unparsed[0], unparsed[1]); 
+    }else{
+      for(i = 0;i < unparsed.length;i++) {
+        try {
+          query = ql.compile(unparsed[i]);
+          this.query.selectors = 
+            this.query.selectors.concat(query.selectors);
+        }catch(e) {
+          return cb(e); 
+        }
       }
     }
 
