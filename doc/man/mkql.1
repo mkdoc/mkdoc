@@ -58,9 +58,15 @@ mkql \- query documents with selectors
 .nl
 .h1 "SYNOPSIS"
 .P
-mkql [\-h] [\-\-help] [\-\-version] <selector...>
+mkql [\-rh] [\-\-range] [\-\-help] [\-\-version] <selector...>
+.br
+mkql [\-rh] [\-\-help] [\-\-version] \-\-range <start\-selector> [end\-selector]
 .nl
 .h1 "OPTIONS"
+.TP
+\fB\-r, \-\-range\fR
+ Execute a range query
+.nl
 .TP
 \fB\-h, \-\-help\fR
  Display help and exit

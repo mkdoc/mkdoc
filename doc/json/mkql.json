@@ -7,9 +7,20 @@
   "name": "mkql",
   "summary": "query documents with selectors",
   "synopsis": [
-    "[flags] [options] <selector...>"
+    "[flags] [options] <selector...>",
+    "[flags] [options] --range <start-selector> [end-selector]"
   ],
   "options": {
+    "range": {
+      "key": "range",
+      "description": "Execute a range query",
+      "names": [
+        "-r",
+        "--range"
+      ],
+      "type": "flag",
+      "name": "--range"
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",

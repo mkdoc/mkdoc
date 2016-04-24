@@ -1,8 +1,10 @@
-Usage: mkql [-h] [--help] [--version] <selector...>
+Usage: mkql [-rh] [--range] [--help] [--version] <selector...>
+       mkql [-rh] [--help] [--version] --range <start-selector> [end-selector]
 
   Query documents with selectors.
 
 Options
+  -r, --range             Execute a range query
   -h, --help              Display help and exit
   --version               Print the version and exit
 

@@ -5,6 +5,7 @@ _mkql(){
   local actions options commands;
 
   options=(
+    "(-r --range)"{-r,--range}"[Execute a range query]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 
     "--version[Print the version and exit]"
   )
