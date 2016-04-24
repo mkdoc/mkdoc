@@ -6,6 +6,7 @@ _mkql(){
 
   options=(
     "(-d --delete)"{-d,--delete}"[Remove matched nodes]" 
+    "(-p --preserve)"{-p,--preserve}"[Preserve text when deleting]" 
     "(-r --range)"{-r,--range}"[Execute a range query]" 
     "(-m --multiple)"{-m,--multiple}"[Include multiple ranges]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 

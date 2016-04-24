@@ -58,11 +58,11 @@ mkql \- query documents with selectors
 .nl
 .h1 "SYNOPSIS"
 .P
-mkql [\-drmh] [\-\-delete] [\-\-range] [\-\-multiple] [\-\-help] [\-\-version]
+mkql [\-dprmh] [\-\-delete] [\-\-preserve] [\-\-range] [\-\-multiple] [\-\-help]
 .br
-     <selector...>
+     [\-\-version] <selector...>
 .br
-mkql [\-drmh] [\-\-delete] [\-\-multiple] [\-\-help] [\-\-version] \-\-range
+mkql [\-dprmh] [\-\-delete] [\-\-preserve] [\-\-multiple] [\-\-help] [\-\-version] \-\-range
 .br
      <start\-selector> [end\-selector]
 .nl
@@ -70,6 +70,10 @@ mkql [\-drmh] [\-\-delete] [\-\-multiple] [\-\-help] [\-\-version] \-\-range
 .TP
 \fB\-d, \-\-delete\fR
  Remove matched nodes
+.nl
+.TP
+\fB\-p, \-\-preserve\fR
+ Preserve text when deleting
 .nl
 .TP
 \fB\-r, \-\-range\fR

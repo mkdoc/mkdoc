@@ -15,6 +15,7 @@ mkql - query documents with selectors
 # Options
 
 + `-d, --delete` Remove matched nodes
++ `-p, --preserve` Preserve text when deleting
 + `-r, --range` Execute a range query
 + `-m, --multiple` Include multiple ranges
 + `-h, --help` Display help and exit

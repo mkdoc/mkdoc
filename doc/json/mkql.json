@@ -21,6 +21,16 @@
       "type": "flag",
       "name": "--delete"
     },
+    "preserve": {
+      "key": "preserve",
+      "description": "Preserve text when deleting",
+      "names": [
+        "-p",
+        "--preserve"
+      ],
+      "type": "flag",
+      "name": "--preserve"
+    },
     "range": {
       "key": "range",
       "description": "Execute a range query",
