@@ -9,6 +9,7 @@ _mkql(){
     "(-p --preserve)"{-p,--preserve}"[Preserve text when deleting]" 
     "(-r --range)"{-r,--range}"[Execute a range query]" 
     "(-m --multiple)"{-m,--multiple}"[Include multiple ranges]" 
+    "(-n --newline)"{-n,--newline}"[Add line break between matches]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 
     "--version[Print the version and exit]"
   )

@@ -58,13 +58,13 @@ mkql \- query documents with selectors
 .nl
 .h1 "SYNOPSIS"
 .P
-mkql [\-dprmh] [\-\-delete] [\-\-preserve] [\-\-range] [\-\-multiple] [\-\-help]
+mkql [\-dprmnh] [\-\-delete] [\-\-preserve] [\-\-range] [\-\-multiple] [\-\-newline]
 .br
-     [\-\-version] <selector...>
+     [\-\-help] [\-\-version] <selector...>
 .br
-mkql [\-dprmh] [\-\-delete] [\-\-preserve] [\-\-multiple] [\-\-help] [\-\-version] \-\-range
+mkql [\-dprmnh] [\-\-delete] [\-\-preserve] [\-\-multiple] [\-\-newline] [\-\-help]
 .br
-     <start\-selector> [end\-selector]
+     [\-\-version] \-\-range <start\-selector> [end\-selector]
 .nl
 .h1 "OPTIONS"
 .TP
@@ -82,6 +82,10 @@ mkql [\-dprmh] [\-\-delete] [\-\-preserve] [\-\-multiple] [\-\-help] [\-\-versio
 .TP
 \fB\-m, \-\-multiple\fR
  Include multiple ranges
+.nl
+.TP
+\fB\-n, \-\-newline\fR
+ Add line break between matches
 .nl
 .TP
 \fB\-h, \-\-help\fR

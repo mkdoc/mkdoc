@@ -51,6 +51,16 @@
       "type": "flag",
       "name": "--multiple"
     },
+    "newline": {
+      "key": "newline",
+      "description": "Add line break between matches",
+      "names": [
+        "-n",
+        "--newline"
+      ],
+      "type": "flag",
+      "name": "--newline"
+    },
     "help": {
       "key": "help",
       "description": "Display help and exit",
