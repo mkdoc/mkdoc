@@ -168,6 +168,18 @@
       "multiple": true,
       "name": "--meta-[NAME]"
     },
+    "equiv[NAME]": {
+      "key": "equiv[NAME]",
+      "description": "Set http-equiv meta data in document head",
+      "names": [
+        "--equiv-[NAME]"
+      ],
+      "type": "option",
+      "extra": "=[DESC...]",
+      "required": false,
+      "multiple": true,
+      "name": "--equiv-[NAME]"
+    },
     "body[ATTR]": {
       "key": "body[ATTR]",
       "description": "Set attributes on the body element",

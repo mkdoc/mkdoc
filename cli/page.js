@@ -69,6 +69,7 @@ function main(argv, conf, cb) {
     // collect prefixed options into object maps
     this.html = collect('html', this);
     this.meta = collect('meta', this);
+    this.equiv = collect('equiv', this);
     this.body = collect('body', this);
     this.attr = collect('attr', this);
 

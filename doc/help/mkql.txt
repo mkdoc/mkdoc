@@ -14,4 +14,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkql@1.0.8
+mkql@1.0.9

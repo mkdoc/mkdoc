@@ -22,6 +22,7 @@ mkpage - convert a document to an HTML page
 + `-m, --media=[VAL]` Set media attribute for stylesheets
 + `--html-[ATTR]=[VAL...]` Set attributes on the html element
 + `--meta-[NAME]=[DESC...]` Set meta data in document head
++ `--equiv-[NAME]=[DESC...]` Set http-equiv meta data in document head
 + `--body-[ATTR]=[VAL...]` Set attributes on the body element
 + `--element=[NAME]` Container element for the input document 
 + `--attr-[NAME]=[VAL...]` Set attributes on container element
@@ -81,6 +82,14 @@ These correspond to `<meta>` elements with the `name` and `content` attributes s
 ```html
 <meta name="author" content="Author" />
 <meta name="keywords" content="brochure" />
+```
+
+# Http Equiv
+
+To use the `http-equiv` attribute keyword when defining meta data elements use the `--equiv-*` options:
+
+```shell
+mkcat README.md | mkpage --equiv-X-UA-Compatible='IE=10' | mkhtml
 ```
 
 # Attributes
