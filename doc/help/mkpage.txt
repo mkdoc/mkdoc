@@ -1,11 +1,12 @@
-Usage: mkpage [-h] [--async] [--help] [--version] [--doctype=<val>]
-              [--charset=<val>] [--lang=<val>] [--title=<val>]
-              [--style=<path...>] [--script=<path...>] [--css=<file>]
-              [--javascript=<file>] [--favicon=<path>] [--media=<val>]
-              [--html-[ATTR]=<val...>] [--meta-[NAME]=<desc...>]
-              [--equiv-[NAME]=<desc...>] [--body-[ATTR]=<val...>]
-              [--element=<name>] [--attr-[NAME]=<val...>] [--app=<path...>]
-              [--header=<file>] [--footer=<file>]
+Usage: mkpage [-h] [--markdown] [--async] [--help] [--version]
+              [--doctype=<val>] [--charset=<val>] [--lang=<val>]
+              [--title=<val>] [--style=<path...>] [--script=<path...>]
+              [--css=<file>] [--javascript=<file>] [--favicon=<path>]
+              [--media=<val>] [--html-[ATTR]=<val...>]
+              [--meta-[NAME]=<desc...>] [--equiv-[NAME]=<desc...>]
+              [--body-[ATTR]=<val...>] [--element=<name>]
+              [--attr-[NAME]=<val...>] [--app=<path...>] [--header=<file...>]
+              [--footer=<file...>]
 
   Convert a document to an HTML page.
 
@@ -28,8 +29,9 @@ Options
   --element=[NAME]        Container element for the input document
   --attr-[NAME]=[VAL...]  Set attributes on container element
   --app=[PATH...]         Script elements before the end of the body
-  --header=[FILE]         Include file at start of document body
-  --footer=[FILE]         Include file at end of document body
+  --header=[FILE...]      Include files at start of document body
+  --footer=[FILE...]      Include files at end of document body
+  --markdown              : Parse headers and footers as markdown
   --async                 Add async attribute to script elements
   -h, --help              Display help and exit
   --version               Print the version and exit

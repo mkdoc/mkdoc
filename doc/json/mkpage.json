@@ -230,27 +230,36 @@
     },
     "header": {
       "key": "header",
-      "description": "Include file at start of document body",
+      "description": "Include files at start of document body",
       "names": [
         "--header"
       ],
       "type": "option",
-      "extra": "=[FILE]",
+      "extra": "=[FILE...]",
       "required": false,
-      "multiple": false,
+      "multiple": true,
       "name": "--header"
     },
     "footer": {
       "key": "footer",
-      "description": "Include file at end of document body",
+      "description": "Include files at end of document body",
       "names": [
         "--footer"
       ],
       "type": "option",
-      "extra": "=[FILE]",
+      "extra": "=[FILE...]",
       "required": false,
-      "multiple": false,
+      "multiple": true,
       "name": "--footer"
+    },
+    "markdown": {
+      "key": "markdown",
+      "description": ": Parse headers and footers as markdown",
+      "names": [
+        "--markdown"
+      ],
+      "type": "flag",
+      "name": "--markdown"
     },
     "async": {
       "key": "async",

@@ -58,19 +58,19 @@ mkpage \- convert a document to an HTML page
 .nl
 .h1 "SYNOPSIS"
 .P
-mkpage [\-h] [\-\-async] [\-\-help] [\-\-version] [\-\-doctype=<val>] [\-\-charset=<val>]
+mkpage [\-h] [\-\-markdown] [\-\-async] [\-\-help] [\-\-version] [\-\-doctype=<val>]
 .br
-       [\-\-lang=<val>] [\-\-title=<val>] [\-\-style=<path...>] [\-\-script=<path...>]
+       [\-\-charset=<val>] [\-\-lang=<val>] [\-\-title=<val>] [\-\-style=<path...>]
 .br
-       [\-\-css=<file>] [\-\-javascript=<file>] [\-\-favicon=<path>] [\-\-media=<val>]
+       [\-\-script=<path...>] [\-\-css=<file>] [\-\-javascript=<file>]
 .br
-       [\-\-html\-[ATTR]=<val...>] [\-\-meta\-[NAME]=<desc...>]
+       [\-\-favicon=<path>] [\-\-media=<val>] [\-\-html\-[ATTR]=<val...>]
 .br
-       [\-\-equiv\-[NAME]=<desc...>] [\-\-body\-[ATTR]=<val...>] [\-\-element=<name>]
+       [\-\-meta\-[NAME]=<desc...>] [\-\-equiv\-[NAME]=<desc...>]
 .br
-       [\-\-attr\-[NAME]=<val...>] [\-\-app=<path...>] [\-\-header=<file>]
+       [\-\-body\-[ATTR]=<val...>] [\-\-element=<name>] [\-\-attr\-[NAME]=<val...>]
 .br
-       [\-\-footer=<file>]
+       [\-\-app=<path...>] [\-\-header=<file...>] [\-\-footer=<file...>]
 .nl
 .h1 "OPTIONS"
 .TP
@@ -142,12 +142,16 @@ mkpage [\-h] [\-\-async] [\-\-help] [\-\-version] [\-\-doctype=<val>] [\-\-chars
  Script elements before the end of the body
 .nl
 .TP
-\fB\-\-header\fR=[\fIFILE\fR]
- Include file at start of document body
+\fB\-\-header\fR=[\fIFILE\fR...]
+ Include files at start of document body
 .nl
 .TP
-\fB\-\-footer\fR=[\fIFILE\fR]
- Include file at end of document body
+\fB\-\-footer\fR=[\fIFILE\fR...]
+ Include files at end of document body
+.nl
+.TP
+\fB\-\-markdown\fR
+: Parse headers and footers as markdown
 .nl
 .TP
 \fB\-\-async\fR

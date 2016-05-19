@@ -27,8 +27,9 @@ mkpage - convert a document to an HTML page
 + `--element=[NAME]` Container element for the input document 
 + `--attr-[NAME]=[VAL...]` Set attributes on container element
 + `--app=[PATH...]` Script elements before the end of the body
-+ `--header=[FILE]` Include file at start of document body
-+ `--footer=[FILE]` Include file at end of document body
++ `--header=[FILE...]` Include files at start of document body
++ `--footer=[FILE...]` Include files at end of document body
++ `--markdown`: Parse headers and footers as markdown
 + `--async` Add async attribute to script elements
 + `-h, --help` Display help and exit
 + `--version` Print the version and exit
