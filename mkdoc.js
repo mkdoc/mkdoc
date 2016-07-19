@@ -48,7 +48,7 @@ function api(cb) {
     ['index.js'],
     {
       output: mk.dest('API.md'),
-      heading: 'API'
+      title: 'API'
     }, cb);
 }
 
