@@ -36,4 +36,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkpage@1.0.5
+mkpage@1.0.6

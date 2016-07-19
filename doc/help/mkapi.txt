@@ -16,4 +16,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkapi@1.1.9
+mkapi@1.2.2
