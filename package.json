@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "mkabs": "~1.2.3",
-    "mkapi": "~1.1.7",
+    "mkapi": "~1.2.2",
     "mkast": "~1.2.6",
     "mkcat": "~1.1.5",
     "mkcli": "~1.0.22",
