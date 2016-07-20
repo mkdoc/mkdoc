@@ -194,6 +194,8 @@ function main(argv, conf, cb) {
 
       var context = vm.createContext(
           {
+            __filename: file,
+            __dirname: path.dirname(file),
             Buffer: Buffer,
             require: req,
             console: console,
