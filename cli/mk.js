@@ -9,6 +9,25 @@ var fs = require('fs')
   , pkg = require('mktask/package.json')
   , prg = cli.load(require('../doc/json/mk.json'));
 
+/**
+ *  Execute an external command synchronously or asynchronously 
+ *  when a callback is given.
+ */
+function exec(cmd, options, cb) {
+  var ps = require('child_process')
+    , ex = (typeof cb === 'function') ? ps.exec : ps.execSync;
+  return ex(cmd, options, cb);
+}
+
+function command(program) {
+  return function(cmd, options, cb) {
+    if(program) {
+      cmd = program + ' ' + cmd;
+    }
+    return exec(cmd, options, cb);
+  }
+}
+
 function print(files, runner, output, cb) {
   var list = files.slice();
 
@@ -135,6 +154,12 @@ function main(argv, conf, cb) {
       ref: require('mkref'),
       toc: require('mktoc')
     };
+
+    // utility to execute programs
+    mk.exec = exec;
+
+    // utility to bind a command to a program
+    mk.command = command;
 
     // decorate with `doc` function
     mk.doc = require('../index');
