@@ -5,7 +5,7 @@ var fs = require('fs')
   , mk = require('mktask')
   , mkparse = require('mkparse')
   , NAME = process.env.TASK_FILE || 'mkdoc.js'
-  , cli = require('mkcli')
+  , cli = require('mkcli-runtime')
   , pkg = require('mktask/package.json')
   , prg = cli.load(require('../doc/json/mk.json'));
 
@@ -123,11 +123,11 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
-          require('mkcli/plugin/epipe'),
-          require('mkcli/plugin/hints'),
-          require('mkcli/plugin/argv'),
-          require('mkcli/plugin/help'),
-          require('mkcli/plugin/version')
+          require('mkcli-runtime/plugin/epipe'),
+          require('mkcli-runtime/plugin/hints'),
+          require('mkcli-runtime/plugin/argv'),
+          require('mkcli-runtime/plugin/help'),
+          require('mkcli-runtime/plugin/version')
         ]
       };
 

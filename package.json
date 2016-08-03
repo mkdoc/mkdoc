@@ -29,6 +29,7 @@
     "mkast": "~1.2.6",
     "mkcat": "~1.1.5",
     "mkcli": "~1.0.22",
+    "mkcli-runtime": "~1.0.0",
     "mkfilter": "~1.1.2",
     "mkhighlight": "~1.0.1",
     "mklevel": "~1.0.3",

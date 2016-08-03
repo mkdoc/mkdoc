@@ -1,6 +1,6 @@
 var path = require('path')
   , cat = require('mkcat')
-  , cli = require('mkcli')
+  , cli = require('mkcli-runtime')
   , pkg = require('mkcat/package.json')
   , prg = cli.load(require('../doc/json/mkcat.json'));
 
@@ -36,7 +36,7 @@ function main(argv, conf, cb) {
       output: conf.output,
       serialize: true
     }
-    , help = require('mkcli/plugin/help')
+    , help = require('mkcli-runtime/plugin/help')
     , runtime = {
         base: path.normalize(path.join(__dirname, '..')),
         target: opts,
@@ -51,11 +51,11 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
-          require('mkcli/plugin/epipe'),
-          require('mkcli/plugin/hints'),
-          require('mkcli/plugin/argv'),
+          require('mkcli-runtime/plugin/epipe'),
+          require('mkcli-runtime/plugin/hints'),
+          require('mkcli-runtime/plugin/argv'),
           help,
-          require('mkcli/plugin/version')
+          require('mkcli-runtime/plugin/version')
         ]
       };
 

@@ -1,6 +1,6 @@
 var path = require('path')
   , transform = require('mktransform')
-  , cli = require('mkcli')
+  , cli = require('mkcli-runtime')
   , pkg = require('mktransform/package.json')
   , prg = cli.load(require('../doc/json/mktransform.json'));
 
@@ -48,11 +48,11 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
-          require('mkcli/plugin/epipe'),
-          require('mkcli/plugin/hints'),
-          require('mkcli/plugin/argv'),
-          require('mkcli/plugin/help'),
-          require('mkcli/plugin/version')
+          require('mkcli-runtime/plugin/epipe'),
+          require('mkcli-runtime/plugin/hints'),
+          require('mkcli-runtime/plugin/argv'),
+          require('mkcli-runtime/plugin/help'),
+          require('mkcli-runtime/plugin/version')
         ]
       };
 

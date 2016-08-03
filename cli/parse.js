@@ -2,7 +2,7 @@ var path = require('path')
   , parse = require('mkparse')
   , lang = require('mkparse/lang')
   , Collator = require('mkparse/lib/collator')
-  , cli = require('mkcli')
+  , cli = require('mkcli-runtime')
   , pkg = require('mkparse/package.json')
   , prg = cli.load(require('../doc/json/mkparse.json'));
 
@@ -46,11 +46,11 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
-          require('mkcli/plugin/epipe'),
-          require('mkcli/plugin/hints'),
-          require('mkcli/plugin/argv'),
-          require('mkcli/plugin/help'),
-          require('mkcli/plugin/version')
+          require('mkcli-runtime/plugin/epipe'),
+          require('mkcli-runtime/plugin/hints'),
+          require('mkcli-runtime/plugin/argv'),
+          require('mkcli-runtime/plugin/help'),
+          require('mkcli-runtime/plugin/version')
         ]
       };
 

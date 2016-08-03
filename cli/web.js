@@ -1,6 +1,6 @@
 var path = require('path')
   , page = require('mkpage')
-  , cli = require('mkcli')
+  , cli = require('mkcli-runtime')
   , pkg = require('mkpage/package.json')
   , prg = cli.load(require('../doc/json/mkweb.json'));
 
@@ -48,12 +48,12 @@ function main(argv, conf, cb) {
           output: conf.output
         },
         plugins: [
-          require('mkcli/plugin/epipe'),
-          require('mkcli/plugin/hints'),
-          require('mkcli/plugin/argv'),
-          require('mkcli/plugin/help'),
-          require('mkcli/plugin/version'),
-          require('mkcli/plugin/multiple')
+          require('mkcli-runtime/plugin/epipe'),
+          require('mkcli-runtime/plugin/hints'),
+          require('mkcli-runtime/plugin/argv'),
+          require('mkcli-runtime/plugin/help'),
+          require('mkcli-runtime/plugin/version'),
+          require('mkcli-runtime/plugin/multiple')
         ]
       };
 
