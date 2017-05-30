@@ -10,7 +10,7 @@ var fs = require('fs')
   , prg = cli.load(require('../doc/json/mk.json'));
 
 /**
- *  Execute an external command synchronously or asynchronously 
+ *  Execute an external command synchronously or asynchronously
  *  when a callback is given.
  */
 function exec(cmd, options, cb) {
@@ -35,27 +35,27 @@ function print(files, runner, output, cb) {
 
     /* istanbul ignore next: files are validated earlier so tough to mock */
     if(err) {
-      return cb(err); 
+      return cb(err);
     }
 
     var file = list.shift()
       , tags = [];
     if(!file) {
-      return cb(); 
+      return cb();
     }
 
     var parse = mkparse.load(file, function complete() {
       var max = tags.reduce(function(prev, item) {
-        return Math.max(prev, item.name.length); 
+        return Math.max(prev, item.name.length);
       }, 0);
       tags.forEach(function(tag) {
         var name = tag.name;
         while(name.length < max) {
-          name += ' '; 
+          name += ' ';
         }
         output.write(name + '  ' + tag.description);
         if(tag.missing) {
-          output.write(' (missing)'); 
+          output.write(' (missing)');
         }
         output.write(EOL);
       })
@@ -133,7 +133,7 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
-      return cb(err); 
+      return cb(err);
     }
 
     var deps = {
@@ -179,9 +179,9 @@ function main(argv, conf, cb) {
 
     function done(err) {
       if(!called) {
-        called = true; 
+        called = true;
         cb(err);
-      } 
+      }
     }
 
     function get(file, strict) {
@@ -191,26 +191,29 @@ function main(argv, conf, cb) {
       }catch(e) {}
 
       if(strict && (!stat || stat && !stat.isFile())) {
-        return done(new Error('invalid file: ' + file)); 
+        return done(new Error('invalid file: ' + file));
       }
 
       function req(mod) {
 
-        // return our reference to `mktask` so there are not 
+        // return our reference to `mktask` so there are not
         // module conflicts
         if(mod === 'mktask') {
-          return mk; 
+          return mk;
         }
 
         // resolve relative paths
-        if(/^\.\.?\//.test(mod)) {
-          mod = path.join(process.cwd(), mod);
+        if(!path.isAbsolute(mod) && /^\.\.?\//.test(mod)) {
+          mod = path.join(path.dirname(file), mod);
         }
 
-        //console.error('require proxy %s', mod);
+        // console.error('require proxy %s', mod);
+
         try {
           return require(mod);
         }catch(e) {
+          //console.error(e);
+         // console.dir('trying relative path...');
           // try path relative to build file
           mod = path.join(path.dirname(file), 'node_modules', mod);
           return require(mod);
@@ -240,7 +243,7 @@ function main(argv, conf, cb) {
           script.runInContext(context, {filename: file});
           return true;
         }catch(e) {
-          return done(e); 
+          return done(e);
         }
       }
     }
@@ -248,7 +251,7 @@ function main(argv, conf, cb) {
     if(files) {
 
       if(!Array.isArray(files)) {
-        files = [files]; 
+        files = [files];
       }
 
       files.forEach(function(file) {
@@ -257,13 +260,13 @@ function main(argv, conf, cb) {
         }
         tasks = get(file, true);
       })
-    
+
     }else{
       while(!(tasks = get(file))) {
         dir = path.dirname(dir);
         file = path.join(dir, NAME);
         if(dir === '/') {
-          break; 
+          break;
         }
       }
 
@@ -281,7 +284,7 @@ function main(argv, conf, cb) {
         new Error(
           'no task file (' + NAME + ') found in ' + process.cwd()
           + ' or any parent directories '
-        )); 
+        ));
     }
 
     var collection = mk.task()
@@ -291,7 +294,7 @@ function main(argv, conf, cb) {
       return done(
         new Error(
           'task file ' + file + ' does not define task functions'
-        )); 
+        ));
     }
 
     runner = collection.run();
@@ -303,21 +306,21 @@ function main(argv, conf, cb) {
       if(!files) {
         files = [file];
       }
-         
-      return print(files, runner, conf.output, done); 
+
+      return print(files, runner, conf.output, done);
     }
 
     for(var i = 0;i < list.length;i++) {
       if(!runner.get(list[i])) {
         return done(
-          new Error('task not found: ' + list[i])); 
-      } 
+          new Error('task not found: ' + list[i]));
+      }
     }
 
     // set up execution scope for default task collection
     runner.scope = {args: req.args};
 
-    runner.each(list, done);  
+    runner.each(list, done);
   })
 }
 

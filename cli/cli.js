@@ -1,5 +1,4 @@
 var path = require('path')
-  , mkcli = require('mkcli')
   , cli = require('mkcli-runtime')
   , pkg = require('mkcli/package.json')
   , prg = cli.load(require('../doc/json/mkcli.json'));
@@ -59,7 +58,7 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
-      return cb(err); 
+      return cb(err);
     }
 
     // user defined package.json with additional meta data
@@ -72,7 +71,7 @@ function main(argv, conf, cb) {
       try {
         pack = require(pth);
       }catch(e) {
-        return cb(e); 
+        return cb(e);
       }
     }
 
@@ -87,15 +86,15 @@ function main(argv, conf, cb) {
       var indent = parseInt(this.indent) || 2;
       this.indent = '';
       while(indent--) {
-        this.indent += ' '; 
+        this.indent += ' ';
       }
     }
 
     this.section = this.section.map(function(ptn) {
       try {
-        return new RegExp(ptn, 'im'); 
+        return new RegExp(ptn, 'im');
       }catch(e) {
-        return cb(e); 
+        return cb(e);
       }
     })
 
@@ -119,13 +118,13 @@ function main(argv, conf, cb) {
           help: this.text || this.dir,
           man: this.man || this.dir,
           zsh: this.zsh || this.dir
-        } 
+        }
       }
     }
 
     this.synopsis = !this.rawSynopsis;
 
-    mkcli(this, cb);
+    cli(this, cb);
   })
 }
 
