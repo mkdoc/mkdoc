@@ -1,5 +1,6 @@
 var path = require('path')
   , cli = require('mkcli-runtime')
+  , mkcli = require('mkcli')
   , pkg = require('mkcli/package.json')
   , prg = cli.load(require('../doc/json/mkcli.json'));
 
@@ -110,7 +111,9 @@ function main(argv, conf, cb) {
     // to type(s)
     if(req.unparsed.length) {
       this.files = req.unparsed;
-      cli = require('../lib/exe');
+
+      // override the entry point with the file iterator
+      mkcli = require('../lib/exe');
 
       if(this.dir || this.json || this.text || this.man || this.zsh) {
         this.dest = {
@@ -124,7 +127,7 @@ function main(argv, conf, cb) {
 
     this.synopsis = !this.rawSynopsis;
 
-    cli(this, cb);
+    mkcli(this, cb);
   })
 }
 

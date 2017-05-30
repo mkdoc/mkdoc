@@ -19,6 +19,7 @@ describe('cli:', function() {
         };
 
     cli(argv, conf, function(err) {
+      console.dir(err)
       expect(err).to.eql(undefined);
       var result = JSON.parse('' + fs.readFileSync(target));
       assert(result);
@@ -77,7 +78,7 @@ describe('cli:', function() {
 
     cli(argv, conf, function(err) {
       function fn() {
-        throw err; 
+        throw err;
       }
       expect(fn).throws(Error);
       done();
