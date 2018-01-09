@@ -8,4 +8,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkpi@1.1.5
+mkpi@1.1.6

@@ -56,7 +56,7 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
-      return cb(err); 
+      return cb(err);
     }
 
     if(!req.unparsed.length) {
@@ -71,7 +71,7 @@ function main(argv, conf, cb) {
     this.indent = parseInt(this.indent);
 
     if(typeof this.output === 'string') {
-      this.output = fs.createWriteStream(this.output); 
+      this.output = fs.createWriteStream(this.output);
     }
 
     if(this.private !== undefined) {
@@ -80,6 +80,10 @@ function main(argv, conf, cb) {
 
     if(this.protected !== undefined) {
       this.conf.include.protected = this.protected;
+    }
+
+    if (this.cues === false) {
+      this.conf.cues = false
     }
 
     api(req.unparsed, this, cb);

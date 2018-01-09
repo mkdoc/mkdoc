@@ -88,6 +88,15 @@
       "type": "flag",
       "name": "--ast"
     },
+    "cues": {
+      "key": "cues",
+      "description": "Enable or disable visual cues.",
+      "names": [
+        "--[no]-cues"
+      ],
+      "type": "flag",
+      "name": "--[no]-cues"
+    },
     "private": {
       "key": "private",
       "description": "Enable or disable private symbols",

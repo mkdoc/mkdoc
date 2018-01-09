@@ -12,4 +12,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkhighlight@1.0.1
+mkhighlight@1.0.3

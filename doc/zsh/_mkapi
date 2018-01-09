@@ -11,6 +11,7 @@ _mkapi(){
     "(-L --lang)"{-L=,--lang=}"[Language for fenced code blocks]" 
     "(-i --indent)"{-i=,--indent=}"[Number of spaces for JSON]" 
     "(-a --ast)"{-a,--ast}"[Print AST as JSON]" 
+    "(--cues --no-cues)"{--cues,--no-cues}"[Enable or disable visual cues.]" 
     "(--private --no-private)"{--private,--no-private}"[Enable or disable private symbols]" 
     "(--protected --no-protected)"{--protected,--no-protected}"[Enable or disable protected symbols]" 
     "(-h --help)"{-h,--help}"[Display help and exit]" 

@@ -20,4 +20,4 @@ Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mktoc@1.0.8
+mktoc@1.0.10

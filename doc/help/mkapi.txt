@@ -1,6 +1,6 @@
-Usage: mkapi [-ah] [--ast] [--[no]-private] [--[no]-protected] [--help]
-             [--version] [--output=<file>] [--title=<val>] [--level=<num>]
-             [--lang=<lang>] [--indent=<num>] <files...>
+Usage: mkapi [-ah] [--ast] [--[no]-cues] [--[no]-private] [--[no]-protected]
+             [--help] [--version] [--output=<file>] [--title=<val>]
+             [--level=<num>] [--lang=<lang>] [--indent=<num>] <files...>
 
   Documentation generator.
 
@@ -11,9 +11,10 @@ Options
   -L, --lang=[LANG]       Language for fenced code blocks (default: javascript)
   -i, --indent=[NUM]      Number of spaces for JSON (default: 2)
   -a, --ast               Print AST as JSON
+  --[no]-cues             Enable or disable visual cues.
   --[no]-private          Enable or disable private symbols
   --[no]-protected        Enable or disable protected symbols
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-mkapi@1.2.2
+mkapi@1.2.6
