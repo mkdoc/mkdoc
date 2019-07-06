@@ -81,7 +81,7 @@ describe('cat:', function() {
 
     cat(argv, conf, function(err) {
       function fn() {
-        throw err; 
+        throw err;
       }
       expect(fn).throws(/ENOENT/);
       done();

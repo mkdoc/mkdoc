@@ -32,7 +32,7 @@ function main(argv, conf, cb) {
   var opts = {
       // read from stdin before files, but be aware that file
       // information is lost so relative includes will not work as expected
-      input: conf.input, 
+      input: conf.input,
       output: conf.output,
       serialize: true
     }
@@ -61,12 +61,13 @@ function main(argv, conf, cb) {
 
   cli.run(prg, argv, runtime, function parsed(err, req) {
     if(err || req.aborted) {
-      return cb(err); 
+      return cb(err);
     }
 
     this.files = req.unparsed;
 
     function done(err, res) {
+      console.error('done called')
       process.stdin.end();
       cb(err || null, res);
     }
@@ -74,7 +75,7 @@ function main(argv, conf, cb) {
     var stream = cat(this);
 
     stream.once('error', function(err) {
-      done(err); 
+      done(err);
     })
 
     // show help when no files and no input on stdin

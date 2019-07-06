@@ -24,6 +24,9 @@ function command(program) {
     if(program) {
       cmd = program + ' ' + cmd;
     }
+    if (Array.isArray(options.args)) {
+      cmd += ' ' + options.args.join(' ')
+    }
     return exec(cmd, options, cb);
   }
 }
